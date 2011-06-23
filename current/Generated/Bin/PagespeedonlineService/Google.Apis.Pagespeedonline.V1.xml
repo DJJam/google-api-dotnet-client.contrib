@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Pagespeedonline.V1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.FormattedResults">
+            <summary>Localized Page Speed results. Contains a ruleResults entry for each Page Speed rule instantiated and run by the server.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.Id">
+            <summary>Canonicalized and final URL for the document, after following page redirects (if any).</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.InvalidRules">
+            <summary>List of rules that were specified in the request, but which the server did not know how to instantiate.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.Kind">
+            <summary>Kind of result.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStats">
+            <summary>Summary statistics for the page, such as number of JavaScript bytes, number of HTML bytes, etc.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.ResponseCode">
+            <summary>Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.Score">
+            <summary>The Page Speed Score (0-100), which indicates how much faster a page could be. A high score indicates little room for improvement, while a lower score indicates more room for improvement.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.Title">
+            <summary>Title of the page, as displayed in the browser&apos;s title bar.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.Version">
+            <summary>The version of the Page Speed SDK used to generate these results.</summary>
+        </member>
+        <member name="T:Google.Apis.Pagespeedonline.V1.Data.Result.FormattedResultsData">
+            <summary>Localized Page Speed results. Contains a ruleResults entry for each Page Speed rule instantiated and run by the server.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.FormattedResultsData.Locale">
+            <summary>The locale of the formattedResults, e.g. &quot;en_US&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.FormattedResultsData.RuleResults">
+            <summary>Dictionary of formatted rule results, with one entry for each Page Speed rule instantiated and run by the server.</summary>
+        </member>
+        <member name="T:Google.Apis.Pagespeedonline.V1.Data.Result.FormattedResultsData.RuleResultsData">
+            <summary>Dictionary of formatted rule results, with one entry for each Page Speed rule instantiated and run by the server.</summary>
+        </member>
+        <member name="T:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData">
+            <summary>Summary statistics for the page, such as number of JavaScript bytes, number of HTML bytes, etc.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.CssResponseBytes">
+            <summary>Number of uncompressed response bytes for CSS resources on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.FlashResponseBytes">
+            <summary>Number of response bytes for flash resources on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.HtmlResponseBytes">
+            <summary>Number of uncompressed response bytes for the main HTML document and all iframes on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.ImageResponseBytes">
+            <summary>Number of response bytes for image resources on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.JavascriptResponseBytes">
+            <summary>Number of uncompressed response bytes for JS resources on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.NumberCssResources">
+            <summary>Number of CSS resources referenced by the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.NumberHosts">
+            <summary>Number of unique hosts referenced by the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.NumberJsResources">
+            <summary>Number of JavaScript resources referenced by the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.NumberResources">
+            <summary>Number of HTTP resources loaded by the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.NumberStaticResources">
+            <summary>Number of static (i.e. cacheable) resources on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.OtherResponseBytes">
+            <summary>Number of response bytes for other resources on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.TextResponseBytes">
+            <summary>Number of uncompressed response bytes for text resources not covered by other statistics (i.e non-HTML, non-script, non-CSS resources) on the page.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.PageStatsData.TotalRequestBytes">
+            <summary>Total size of all request bytes sent by the page.</summary>
+        </member>
+        <member name="T:Google.Apis.Pagespeedonline.V1.Data.Result.VersionData">
+            <summary>The version of the Page Speed SDK used to generate these results.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.VersionData.Major">
+            <summary>The major version number of the Page Speed SDK used to generate these results.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.Data.Result.VersionData.Minor">
+            <summary>The minor version number of the Page Speed SDK used to generate these results.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.V1.PagespeedonlineService.DeveloperKey">
+            <summary>Sets the DeveloperKey which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Pagespeedonline.V1.PagespeedapiResource.RunpagespeedAsStream(System.String,System.String,Google.Apis.Util.Repeatable{System.String},System.Nullable{Google.Apis.Pagespeedonline.V1.PagespeedapiResource.Strategy})">
+            <summary>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list of suggestions to make that page faster, and other information.</summary>
+            <param name="url">Required - Must match pattern http(s)?://.* - The URL to fetch and analyze</param>
+            <param name="locale">Optional - Must match pattern [a-zA-Z]+(_[a-zA-Z]+)? - The locale used to localize formatted results</param>
+            <param name="rule">Optional - Must match pattern [a-zA-Z]+ - A Page Speed rule to run; if none are given, all rules are run</param>
+            <param name="strategy">Optional - Must be one of the following values [desktop, mobile] - The analysis strategy to use</param>
+        </member>
+        <member name="M:Google.Apis.Pagespeedonline.V1.PagespeedapiResource.Runpagespeed(System.String,System.String,Google.Apis.Util.Repeatable{System.String},System.Nullable{Google.Apis.Pagespeedonline.V1.PagespeedapiResource.Strategy})">
+            <summary>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list of suggestions to make that page faster, and other information.</summary>
+            <param name="url">Required - Must match pattern http(s)?://.* - The URL to fetch and analyze</param>
+            <param name="locale">Optional - Must match pattern [a-zA-Z]+(_[a-zA-Z]+)? - The locale used to localize formatted results</param>
+            <param name="rule">Optional - Must match pattern [a-zA-Z]+ - A Page Speed rule to run; if none are given, all rules are run</param>
+            <param name="strategy">Optional - Must be one of the following values [desktop, mobile] - The analysis strategy to use</param>
+        </member>
+        <member name="T:Google.Apis.Pagespeedonline.V1.PagespeedapiResource.Strategy">
+            <summary>The analysis strategy to use</summary>
+        </member>
+        <member name="F:Google.Apis.Pagespeedonline.V1.PagespeedapiResource.Strategy.Desktop">
+            <summary>Fetch and analyze the URL for desktop browsers</summary>
+        </member>
+        <member name="F:Google.Apis.Pagespeedonline.V1.PagespeedapiResource.Strategy.Mobile">
+            <summary>Fetch and analyze the URL for mobile devices</summary>
+        </member>
+    </members>
+</doc>

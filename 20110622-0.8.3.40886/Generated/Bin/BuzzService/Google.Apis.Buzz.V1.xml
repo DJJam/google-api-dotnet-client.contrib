@@ -1,0 +1,856 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Buzz.V1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Buzz.V1.BuzzService.DeveloperKey">
+            <summary>Sets the DeveloperKey which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.CountAsStream(System.String,Google.Apis.Util.Repeatable{System.String})">
+            <summary>Get a count of link shares</summary>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="url">Optional - URLs for which to get share counts.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.DeleteAsStream(System.String,Google.Apis.Buzz.V1.ActivitiesResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String)">
+            <summary>Delete an activity</summary>
+            <param name="postId">Required - ID of the activity to delete.</param>
+            <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user whose post to delete.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.ExtractPeopleFromSearchAsStream(System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Int64},System.String,System.String,System.String)">
+            <summary>Search for people by topic</summary>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="lat">Optional - Latitude to use in a geographic location query.</param>
+            <param name="lon">Optional - Longitude to use in a geographic location query.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
+            <param name="q">Optional - Full-text search query string.</param>
+            <param name="radius">Optional - Radius to use in a geographic location query.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.GetAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Boolean})">
+            <summary>Get an activity</summary>
+            <param name="postId">Required - ID of the post to get.</param>
+            <param name="userId">Required - ID of the user whose post to get.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
+            <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
+            <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.InsertAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.Nullable{System.Boolean})">
+            <summary>Create a new activity</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="preview">Optional - If true, only preview the action.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.ListAsStream(Google.Apis.Buzz.V1.ActivitiesResource.ScopeEnum,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Boolean})">
+            <summary>List activities</summary>
+            <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
+            <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.PatchAsStream(System.String,System.String,Google.Apis.Buzz.V1.ActivitiesResource.ScopeMember,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String)">
+            <summary>Update an activity. This method supports patch semantics.</summary>
+            <param name="postId">Required - ID of the activity to update.</param>
+            <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user whose post to update.</param>
+            <param name="abuseType">Optional</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.SearchAsStream(System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Int64},System.String,System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>Search for activities</summary>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="lat">Optional - Latitude to use in a geographic location query.</param>
+            <param name="lon">Optional - Longitude to use in a geographic location query.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
+            <param name="q">Optional - Full-text search query string.</param>
+            <param name="radius">Optional - Radius to use in a geographic location query.</param>
+            <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.TrackAsStream(System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Int64},System.String,System.String,System.String)">
+            <summary>Get real-time activity tracking information</summary>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="lat">Optional - Latitude to use in a geographic location query.</param>
+            <param name="lon">Optional - Longitude to use in a geographic location query.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
+            <param name="q">Optional - Full-text search query string.</param>
+            <param name="radius">Optional - Radius to use in a geographic location query.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.UpdateAsStream(System.String,System.String,Google.Apis.Buzz.V1.ActivitiesResource.ScopeMember,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String)">
+            <summary>Update an activity</summary>
+            <param name="postId">Required - ID of the activity to update.</param>
+            <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user whose post to update.</param>
+            <param name="abuseType">Optional</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.Count(System.String,Google.Apis.Util.Repeatable{System.String})">
+            <summary>Get a count of link shares</summary>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="url">Optional - URLs for which to get share counts.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.Delete(System.String,Google.Apis.Buzz.V1.ActivitiesResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String)">
+            <summary>Delete an activity</summary>
+            <param name="postId">Required - ID of the activity to delete.</param>
+            <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user whose post to delete.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.ExtractPeopleFromSearch(System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Int64},System.String,System.String,System.String)">
+            <summary>Search for people by topic</summary>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="lat">Optional - Latitude to use in a geographic location query.</param>
+            <param name="lon">Optional - Longitude to use in a geographic location query.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
+            <param name="q">Optional - Full-text search query string.</param>
+            <param name="radius">Optional - Radius to use in a geographic location query.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.Get(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Boolean})">
+            <summary>Get an activity</summary>
+            <param name="postId">Required - ID of the post to get.</param>
+            <param name="userId">Required - ID of the user whose post to get.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
+            <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
+            <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.Insert(Google.Apis.Buzz.V1.Data.Activity,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.Nullable{System.Boolean})">
+            <summary>Create a new activity</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="preview">Optional - If true, only preview the action.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.List(Google.Apis.Buzz.V1.ActivitiesResource.ScopeEnum,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Boolean})">
+            <summary>List activities</summary>
+            <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
+            <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.Patch(Google.Apis.Buzz.V1.Data.Activity,System.String,Google.Apis.Buzz.V1.ActivitiesResource.ScopeMember,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String)">
+            <summary>Update an activity. This method supports patch semantics.</summary>
+            <param name="postId">Required - ID of the activity to update.</param>
+            <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user whose post to update.</param>
+            <param name="abuseType">Optional</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.Search(System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Int64},System.String,System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>Search for activities</summary>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="lat">Optional - Latitude to use in a geographic location query.</param>
+            <param name="lon">Optional - Longitude to use in a geographic location query.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
+            <param name="q">Optional - Full-text search query string.</param>
+            <param name="radius">Optional - Radius to use in a geographic location query.</param>
+            <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.Track(System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Int64},System.String,System.String,System.String)">
+            <summary>Get real-time activity tracking information</summary>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="lat">Optional - Latitude to use in a geographic location query.</param>
+            <param name="lon">Optional - Longitude to use in a geographic location query.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
+            <param name="q">Optional - Full-text search query string.</param>
+            <param name="radius">Optional - Radius to use in a geographic location query.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.ActivitiesResource.Update(Google.Apis.Buzz.V1.Data.Activity,System.String,Google.Apis.Buzz.V1.ActivitiesResource.ScopeMember,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.ActivitiesResource.Alt},System.String)">
+            <summary>Update an activity</summary>
+            <param name="postId">Required - ID of the activity to update.</param>
+            <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user whose post to update.</param>
+            <param name="abuseType">Optional</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.ActivitiesResource.Alt">
+            <summary>Specifies an alternative representation type.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.Alt.Atom">
+            <summary>Use Atom XML format</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.Alt.Json">
+            <summary>Use JSON format</summary>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.ActivitiesResource.Scope">
+            <summary>The collection to which the activity belongs.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.Scope.Liked">
+            <summary>Activities liked by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.Scope.Muted">
+            <summary>Activities muted by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.Scope.Self">
+            <summary>Activities posted by the user.</summary>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.ActivitiesResource.ScopeEnum">
+            <summary>The collection of activities to list.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.ScopeEnum.Comments">
+            <summary>Limit to activities commented on by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.ScopeEnum.Consumption">
+            <summary>Limit to activities to be consumed by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.ScopeEnum.Liked">
+            <summary>Limit to activities liked by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.ScopeEnum.Public">
+            <summary>Limit to public activities posted by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.ScopeEnum.Self">
+            <summary>Limit to activities posted by the user.</summary>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.ActivitiesResource.ScopeMember">
+            <summary>The collection to which the activity belongs.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.ScopeMember.Abuse">
+            <summary>Activities reported by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.ScopeMember.Liked">
+            <summary>Activities liked by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.ScopeMember.Muted">
+            <summary>Activities muted by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.ActivitiesResource.ScopeMember.Self">
+            <summary>Activities posted by the user.</summary>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.DeleteAsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Delete a comment</summary>
+            <param name="commentId">Required - ID of the comment being referenced.</param>
+            <param name="postId">Required - ID of the activity for which to delete the comment.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.GetAsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Get a comment</summary>
+            <param name="commentId">Required - ID of the comment being referenced.</param>
+            <param name="postId">Required - ID of the activity for which to get comments.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.InsertAsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Create a comment</summary>
+            <param name="postId">Required - ID of the activity on which to comment.</param>
+            <param name="userId">Required - ID of the user on whose behalf to comment.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.ListAsStream(System.String,Google.Apis.Buzz.V1.CommentsResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>List comments</summary>
+            <param name="postId">Required - ID of the activity for which to get comments.</param>
+            <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user for whose post to get comments.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.PatchAsStream(System.String,System.String,System.String,Google.Apis.Buzz.V1.CommentsResource.ScopeEnum,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Update a comment. This method supports patch semantics.</summary>
+            <param name="commentId">Required - ID of the comment being referenced.</param>
+            <param name="postId">Required - ID of the activity for which to update the comment.</param>
+            <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="abuseType">Optional</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.UpdateAsStream(System.String,System.String,System.String,Google.Apis.Buzz.V1.CommentsResource.ScopeEnum,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Update a comment</summary>
+            <param name="commentId">Required - ID of the comment being referenced.</param>
+            <param name="postId">Required - ID of the activity for which to update the comment.</param>
+            <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="abuseType">Optional</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.Delete(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Delete a comment</summary>
+            <param name="commentId">Required - ID of the comment being referenced.</param>
+            <param name="postId">Required - ID of the activity for which to delete the comment.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.Get(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Get a comment</summary>
+            <param name="commentId">Required - ID of the comment being referenced.</param>
+            <param name="postId">Required - ID of the activity for which to get comments.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.Insert(Google.Apis.Buzz.V1.Data.Comment,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Create a comment</summary>
+            <param name="postId">Required - ID of the activity on which to comment.</param>
+            <param name="userId">Required - ID of the user on whose behalf to comment.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.List(System.String,Google.Apis.Buzz.V1.CommentsResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>List comments</summary>
+            <param name="postId">Required - ID of the activity for which to get comments.</param>
+            <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user for whose post to get comments.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.Patch(Google.Apis.Buzz.V1.Data.Comment,System.String,System.String,Google.Apis.Buzz.V1.CommentsResource.ScopeEnum,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Update a comment. This method supports patch semantics.</summary>
+            <param name="commentId">Required - ID of the comment being referenced.</param>
+            <param name="postId">Required - ID of the activity for which to update the comment.</param>
+            <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="abuseType">Optional</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.CommentsResource.Update(Google.Apis.Buzz.V1.Data.Comment,System.String,System.String,Google.Apis.Buzz.V1.CommentsResource.ScopeEnum,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.CommentsResource.Alt},System.String)">
+            <summary>Update a comment</summary>
+            <param name="commentId">Required - ID of the comment being referenced.</param>
+            <param name="postId">Required - ID of the activity for which to update the comment.</param>
+            <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="abuseType">Optional</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.CommentsResource.Alt">
+            <summary>Specifies an alternative representation type.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.CommentsResource.Alt.Atom">
+            <summary>Use Atom XML format</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.CommentsResource.Alt.Json">
+            <summary>Use JSON format</summary>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.CommentsResource.Scope">
+            <summary>The collection to which the activity belongs.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.CommentsResource.Scope.Self">
+            <summary>Activities posted by the user.</summary>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.CommentsResource.ScopeEnum">
+            <summary>The collection to which the activity belongs.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.CommentsResource.ScopeEnum.Abuse">
+            <summary>Comments reported by the user.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.CommentsResource.ScopeEnum.Self">
+            <summary>Comments posted by the user.</summary>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.DeleteAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Delete a group</summary>
+            <param name="groupId">Required - ID of the group to delete.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.GetAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Get a group</summary>
+            <param name="groupId">Required - ID of the group to get.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.InsertAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Create a group</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.ListAsStream(System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get a user&apos;s groups</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.PatchAsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Update a group. This method supports patch semantics.</summary>
+            <param name="groupId">Required - ID of the group to update.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.UpdateAsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Update a group</summary>
+            <param name="groupId">Required - ID of the group to update.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.Delete(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Delete a group</summary>
+            <param name="groupId">Required - ID of the group to delete.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.Get(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Get a group</summary>
+            <param name="groupId">Required - ID of the group to get.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.Insert(Google.Apis.Buzz.V1.Data.Group,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Create a group</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.List(System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get a user&apos;s groups</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.Patch(Google.Apis.Buzz.V1.Data.Group,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Update a group. This method supports patch semantics.</summary>
+            <param name="groupId">Required - ID of the group to update.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.GroupsResource.Update(Google.Apis.Buzz.V1.Data.Group,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.GroupsResource.Alt},System.String)">
+            <summary>Update a group</summary>
+            <param name="groupId">Required - ID of the group to update.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.GroupsResource.Alt">
+            <summary>Specifies an alternative representation type.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.GroupsResource.Alt.Atom">
+            <summary>Use Atom XML format</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.GroupsResource.Alt.Json">
+            <summary>Use JSON format</summary>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.DeleteAsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String)">
+            <summary>Remove a person from a group</summary>
+            <param name="groupId">Required - ID of the group from which to remove the person.</param>
+            <param name="personId">Required - ID of the person to remove from the group.</param>
+            <param name="userId">Required - ID of the owner of the group.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.GetAsStream(System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String)">
+            <summary>Get a user profile</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.LikedAsStream(Google.Apis.Buzz.V1.PeopleResource.GroupId,System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get people who liked an activity</summary>
+            <param name="groupId">Required - Must be one of the following values [@liked]</param>
+            <param name="postId">Required - ID of the activity that was liked.</param>
+            <param name="scope">Required</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.ListAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get people in a group</summary>
+            <param name="groupId">Required - ID of the group for which to list users.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.PatchAsStream(System.String,System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String)">
+            <summary>Add a person to a group. This method supports patch semantics.</summary>
+            <param name="groupId">Required - ID of the group to which to add the person.</param>
+            <param name="personId">Required - ID of the person to add to the group.</param>
+            <param name="userId">Required - ID of the owner of the group.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.ResharedAsStream(Google.Apis.Buzz.V1.PeopleResource.GroupIdEnum,System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get people who reshared an activity</summary>
+            <param name="groupId">Required - Must be one of the following values [@reshared]</param>
+            <param name="postId">Required - ID of the activity that was reshared.</param>
+            <param name="scope">Required</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.SearchAsStream(System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String,System.String,System.Nullable{System.Int64},System.String)">
+            <summary>Search for people</summary>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="q">Optional - Full-text search query string.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.UpdateAsStream(System.String,System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String)">
+            <summary>Add a person to a group</summary>
+            <param name="groupId">Required - ID of the group to which to add the person.</param>
+            <param name="personId">Required - ID of the person to add to the group.</param>
+            <param name="userId">Required - ID of the owner of the group.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.Delete(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String)">
+            <summary>Remove a person from a group</summary>
+            <param name="groupId">Required - ID of the group from which to remove the person.</param>
+            <param name="personId">Required - ID of the person to remove from the group.</param>
+            <param name="userId">Required - ID of the owner of the group.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.Get(System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String)">
+            <summary>Get a user profile</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.Liked(Google.Apis.Buzz.V1.PeopleResource.GroupId,System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get people who liked an activity</summary>
+            <param name="groupId">Required - Must be one of the following values [@liked]</param>
+            <param name="postId">Required - ID of the activity that was liked.</param>
+            <param name="scope">Required</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.List(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get people in a group</summary>
+            <param name="groupId">Required - ID of the group for which to list users.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.Patch(Google.Apis.Buzz.V1.Data.Person,System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String)">
+            <summary>Add a person to a group. This method supports patch semantics.</summary>
+            <param name="groupId">Required - ID of the group to which to add the person.</param>
+            <param name="personId">Required - ID of the person to add to the group.</param>
+            <param name="userId">Required - ID of the owner of the group.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.Reshared(Google.Apis.Buzz.V1.PeopleResource.GroupIdEnum,System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get people who reshared an activity</summary>
+            <param name="groupId">Required - Must be one of the following values [@reshared]</param>
+            <param name="postId">Required - ID of the activity that was reshared.</param>
+            <param name="scope">Required</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.Search(System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String,System.String,System.Nullable{System.Int64},System.String)">
+            <summary>Search for people</summary>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+            <param name="q">Optional - Full-text search query string.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PeopleResource.Update(Google.Apis.Buzz.V1.Data.Person,System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PeopleResource.Alt},System.String)">
+            <summary>Add a person to a group</summary>
+            <param name="groupId">Required - ID of the group to which to add the person.</param>
+            <param name="personId">Required - ID of the person to add to the group.</param>
+            <param name="userId">Required - ID of the owner of the group.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.PeopleResource.Alt">
+            <summary>Specifies an alternative representation type.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PeopleResource.Alt.Atom">
+            <summary>Use Atom XML format</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PeopleResource.Alt.Json">
+            <summary>Use JSON format</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PeopleResource.GroupId.Liked">
+            <summary>People who liked this activity.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PeopleResource.GroupIdEnum.Reshared">
+            <summary>People who reshared this activity.</summary>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotoAlbumsResource.DeleteAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt},System.String)">
+            <summary>Delete a photo album</summary>
+            <param name="albumId">Required - ID of the album to delete.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotoAlbumsResource.GetAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt},System.String)">
+            <summary>Get a photo album</summary>
+            <param name="albumId">Required - ID of the album to get.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotoAlbumsResource.InsertAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt},System.String)">
+            <summary>Create a photo album</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotoAlbumsResource.ListAsStream(Google.Apis.Buzz.V1.PhotoAlbumsResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>List a user&apos;s photo albums</summary>
+            <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotoAlbumsResource.Delete(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt},System.String)">
+            <summary>Delete a photo album</summary>
+            <param name="albumId">Required - ID of the album to delete.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotoAlbumsResource.Get(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt},System.String)">
+            <summary>Get a photo album</summary>
+            <param name="albumId">Required - ID of the album to get.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotoAlbumsResource.Insert(Google.Apis.Buzz.V1.Data.Album,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt},System.String)">
+            <summary>Create a photo album</summary>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotoAlbumsResource.List(Google.Apis.Buzz.V1.PhotoAlbumsResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>List a user&apos;s photo albums</summary>
+            <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt">
+            <summary>Specifies an alternative representation type.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt.Atom">
+            <summary>Use Atom XML format</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PhotoAlbumsResource.Alt.Json">
+            <summary>Use JSON format</summary>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.PhotoAlbumsResource.Scope">
+            <summary>The collection of albums to list.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PhotoAlbumsResource.Scope.Self">
+            <summary>Albums posted by the user.</summary>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.DeleteAsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String)">
+            <summary>Delete a photo</summary>
+            <param name="albumId">Required - ID of the album to which to photo belongs.</param>
+            <param name="photoId">Required - ID of the photo to delete.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.GetAsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String)">
+            <summary>Get photo metadata</summary>
+            <param name="albumId">Required - ID of the album containing the photo.</param>
+            <param name="photoId">Required - ID of the photo for which to get metadata.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.InsertAsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String)">
+            <summary>Upload a photo to an album</summary>
+            <param name="albumId">Required - ID of the album to which to upload.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.Insert2AsStream(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String)">
+            <summary>Upload a photo to an album</summary>
+            <param name="albumId">Required - ID of the album to which to upload.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.ListByAlbumAsStream(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>List photos in an album</summary>
+            <param name="albumId">Required - ID of the album for which to list photos.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.ListByScopeAsStream(Google.Apis.Buzz.V1.PhotosResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get a user&apos;s photos</summary>
+            <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.Delete(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String)">
+            <summary>Delete a photo</summary>
+            <param name="albumId">Required - ID of the album to which to photo belongs.</param>
+            <param name="photoId">Required - ID of the photo to delete.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.Get(System.String,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String)">
+            <summary>Get photo metadata</summary>
+            <param name="albumId">Required - ID of the album containing the photo.</param>
+            <param name="photoId">Required - ID of the photo for which to get metadata.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.Insert(Google.Apis.Buzz.V1.Data.AlbumLite,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String)">
+            <summary>Upload a photo to an album</summary>
+            <param name="albumId">Required - ID of the album to which to upload.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.Insert2(Google.Apis.Buzz.V1.Data.ChiliPhotosResourceJson,System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String)">
+            <summary>Upload a photo to an album</summary>
+            <param name="albumId">Required - ID of the album to which to upload.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.ListByAlbum(System.String,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>List photos in an album</summary>
+            <param name="albumId">Required - ID of the album for which to list photos.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.PhotosResource.ListByScope(Google.Apis.Buzz.V1.PhotosResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.PhotosResource.Alt},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Get a user&apos;s photos</summary>
+            <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="c">Optional - A continuation token that allows pagination.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.PhotosResource.Alt">
+            <summary>Specifies an alternative representation type.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PhotosResource.Alt.Atom">
+            <summary>Use Atom XML format</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PhotosResource.Alt.Json">
+            <summary>Use JSON format</summary>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.PhotosResource.Scope">
+            <summary>The collection of photos to list.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.PhotosResource.Scope.Recent">
+            <summary>Recent photos uploaded by the user.</summary>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.RelatedResource.ListAsStream(System.String,Google.Apis.Buzz.V1.RelatedResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.RelatedResource.Alt},System.String)">
+            <summary>Get related links for an activity</summary>
+            <param name="postId">Required - ID of the activity to which to get related links.</param>
+            <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="M:Google.Apis.Buzz.V1.RelatedResource.List(System.String,Google.Apis.Buzz.V1.RelatedResource.Scope,System.String,System.Nullable{Google.Apis.Buzz.V1.RelatedResource.Alt},System.String)">
+            <summary>Get related links for an activity</summary>
+            <param name="postId">Required - ID of the activity to which to get related links.</param>
+            <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
+            <param name="userId">Required - ID of the user being referenced.</param>
+            <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+            <param name="hl">Optional - Language code to limit language results.</param>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.RelatedResource.Alt">
+            <summary>Specifies an alternative representation type.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.RelatedResource.Alt.Atom">
+            <summary>Use Atom XML format</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.RelatedResource.Alt.Json">
+            <summary>Use JSON format</summary>
+        </member>
+        <member name="T:Google.Apis.Buzz.V1.RelatedResource.Scope">
+            <summary>The collection to which the activity belongs.</summary>
+        </member>
+        <member name="F:Google.Apis.Buzz.V1.RelatedResource.Scope.Self">
+            <summary>Activities posted by the user.</summary>
+        </member>
+    </members>
+</doc>
