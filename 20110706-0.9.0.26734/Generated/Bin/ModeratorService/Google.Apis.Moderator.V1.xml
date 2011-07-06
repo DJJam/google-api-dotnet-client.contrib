@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Moderator.V1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Moderator.V1.ModeratorService.DeveloperKey">
+            <summary>Sets the DeveloperKey which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.FeaturedResource.SeriesResource.ListAsStream">
+            <summary>Lists the featured series.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.FeaturedResource.SeriesResource.List">
+            <summary>Lists the featured series.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.GlobalResource.SeriesResource.ListAsStream(System.Nullable{System.Int64},System.String,System.Nullable{System.Int64})">
+            <summary>Searches the public series and returns the search results.</summary>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.GlobalResource.SeriesResource.List(System.Nullable{System.Int64},System.String,System.Nullable{System.Int64})">
+            <summary>Searches the public series and returns the search results.</summary>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.MyResource.SeriesResource.ListAsStream">
+            <summary>Lists all series created by the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.MyResource.SeriesResource.List">
+            <summary>Lists all series created by the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.MyrecentResource.SeriesResource.ListAsStream">
+            <summary>Lists the series the authenticated user has visited.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.MyrecentResource.SeriesResource.List">
+            <summary>Lists the series the authenticated user has visited.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ProfilesResource.GetAsStream">
+            <summary>Returns the profile information for the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ProfilesResource.PatchAsStream(System.String)">
+            <summary>Updates the profile information for the authenticated user. This method supports patch semantics.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ProfilesResource.UpdateAsStream(System.String)">
+            <summary>Updates the profile information for the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ProfilesResource.Get">
+            <summary>Returns the profile information for the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ProfilesResource.Patch(Google.Apis.Moderator.V1.Data.Profile)">
+            <summary>Updates the profile information for the authenticated user. This method supports patch semantics.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ProfilesResource.Update(Google.Apis.Moderator.V1.Data.Profile)">
+            <summary>Updates the profile information for the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ResponsesResource.InsertAsStream(System.String,System.Int64,System.Int64,System.Int64,System.Nullable{System.Boolean})">
+            <summary>Inserts a response for the specified submission in the specified topic within the specified series.</summary>
+            <param name="parentSubmissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the parent Submission within the Series.</param>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+            <param name="anonymous">Optional - Set to true to mark the new submission as anonymous.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ResponsesResource.ListAsStream(System.Int64,System.Int64,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Lists or searches the responses for the specified submission within the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
+            <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="sort">Optional - Sort order.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ResponsesResource.Insert(Google.Apis.Moderator.V1.Data.Submission,System.Int64,System.Int64,System.Int64,System.Nullable{System.Boolean})">
+            <summary>Inserts a response for the specified submission in the specified topic within the specified series.</summary>
+            <param name="parentSubmissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the parent Submission within the Series.</param>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+            <param name="anonymous">Optional - Set to true to mark the new submission as anonymous.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.ResponsesResource.List(System.Int64,System.Int64,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Lists or searches the responses for the specified submission within the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
+            <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="sort">Optional - Sort order.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.GetAsStream(System.Int64)">
+            <summary>Returns the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.InsertAsStream(System.String)">
+            <summary>Inserts a new series.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.ListAsStream(System.Nullable{System.Int64},System.String,System.Nullable{System.Int64})">
+            <summary>Searches the series and returns the search results.</summary>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.PatchAsStream(System.String,System.Int64)">
+            <summary>Updates the specified series. This method supports patch semantics.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.UpdateAsStream(System.String,System.Int64)">
+            <summary>Updates the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.Get(System.Int64)">
+            <summary>Returns the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.Insert(Google.Apis.Moderator.V1.Data.Series)">
+            <summary>Inserts a new series.</summary>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.List(System.Nullable{System.Int64},System.String,System.Nullable{System.Int64})">
+            <summary>Searches the series and returns the search results.</summary>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.Patch(Google.Apis.Moderator.V1.Data.Series,System.Int64)">
+            <summary>Updates the specified series. This method supports patch semantics.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.Update(Google.Apis.Moderator.V1.Data.Series,System.Int64)">
+            <summary>Updates the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.ResponsesResource.ListAsStream(System.Int64,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Searches the responses for the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
+            <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="sort">Optional - Sort order.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.ResponsesResource.List(System.Int64,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Searches the responses for the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
+            <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="sort">Optional - Sort order.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.SubmissionsResource.ListAsStream(System.Int64,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Searches the submissions for the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
+            <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
+            <param name="includeVotes">Optional - Specifies whether to include the current user&apos;s vote</param>
+            <param name="lang">Optional - The language code for the language the client prefers resuls in.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="sort">Optional - Sort order.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SeriesResource.SubmissionsResource.List(System.Int64,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Searches the submissions for the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
+            <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
+            <param name="includeVotes">Optional - Specifies whether to include the current user&apos;s vote</param>
+            <param name="lang">Optional - The language code for the language the client prefers resuls in.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="sort">Optional - Sort order.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SubmissionsResource.GetAsStream(System.Int64,System.Int64,System.Nullable{System.Boolean},System.String)">
+            <summary>Returns the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="includeVotes">Optional - Specifies whether to include the current user&apos;s vote</param>
+            <param name="lang">Optional - The language code for the language the client prefers resuls in.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SubmissionsResource.InsertAsStream(System.String,System.Int64,System.Int64,System.Nullable{System.Boolean})">
+            <summary>Inserts a new submission in the specified topic within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+            <param name="anonymous">Optional - Set to true to mark the new submission as anonymous.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SubmissionsResource.Get(System.Int64,System.Int64,System.Nullable{System.Boolean},System.String)">
+            <summary>Returns the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="includeVotes">Optional - Specifies whether to include the current user&apos;s vote</param>
+            <param name="lang">Optional - The language code for the language the client prefers resuls in.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.SubmissionsResource.Insert(Google.Apis.Moderator.V1.Data.Submission,System.Int64,System.Int64,System.Nullable{System.Boolean})">
+            <summary>Inserts a new submission in the specified topic within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+            <param name="anonymous">Optional - Set to true to mark the new submission as anonymous.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TagsResource.DeleteAsStream(System.Int64,System.Int64,System.String)">
+            <summary>Deletes the specified tag from the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="tagId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TagsResource.InsertAsStream(System.String,System.Int64,System.Int64)">
+            <summary>Inserts a new tag for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TagsResource.ListAsStream(System.Int64,System.Int64)">
+            <summary>Lists all tags for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TagsResource.Delete(System.Int64,System.Int64,System.String)">
+            <summary>Deletes the specified tag from the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="tagId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TagsResource.Insert(Google.Apis.Moderator.V1.Data.Tag,System.Int64,System.Int64)">
+            <summary>Inserts a new tag for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TagsResource.List(System.Int64,System.Int64)">
+            <summary>Lists all tags for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.GetAsStream(System.Int64,System.Int64)">
+            <summary>Returns the specified topic from the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.InsertAsStream(System.String,System.Int64)">
+            <summary>Inserts a new topic into the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.ListAsStream(System.Int64,System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Searches the topics within the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="mode">Optional</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.UpdateAsStream(System.String,System.Int64,System.Int64)">
+            <summary>Updates the specified topic within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.Get(System.Int64,System.Int64)">
+            <summary>Returns the specified topic from the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.Insert(Google.Apis.Moderator.V1.Data.Topic,System.Int64)">
+            <summary>Inserts a new topic into the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.List(System.Int64,System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Searches the topics within the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="mode">Optional</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.Update(Google.Apis.Moderator.V1.Data.Topic,System.Int64,System.Int64)">
+            <summary>Updates the specified topic within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.SubmissionsResource.ListAsStream(System.Int64,System.Int64,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Searches the submissions for the specified topic within the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+            <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
+            <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
+            <param name="includeVotes">Optional - Specifies whether to include the current user&apos;s vote</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="sort">Optional - Sort order.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.TopicsResource.SubmissionsResource.List(System.Int64,System.Int64,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64})">
+            <summary>Searches the submissions for the specified topic within the specified series and returns the search results.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
+            <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
+            <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
+            <param name="includeVotes">Optional - Specifies whether to include the current user&apos;s vote</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="q">Optional - Search query.</param>
+            <param name="sort">Optional - Sort order.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.GetAsStream(System.Int64,System.Int64,System.String)">
+            <summary>Returns the votes by the authenticated user for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="userId">Optional</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.InsertAsStream(System.String,System.Int64,System.Int64)">
+            <summary>Inserts a new vote by the authenticated user for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.ListAsStream(System.Int64,System.Nullable{System.Int64},System.Nullable{System.Int64})">
+            <summary>Lists the votes by the authenticated user for the given series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.PatchAsStream(System.String,System.Int64,System.Int64,System.String)">
+            <summary>Updates the votes by the authenticated user for the specified submission within the specified series. This method supports patch semantics.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="userId">Optional</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.UpdateAsStream(System.String,System.Int64,System.Int64,System.String)">
+            <summary>Updates the votes by the authenticated user for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="userId">Optional</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.Get(System.Int64,System.Int64,System.String)">
+            <summary>Returns the votes by the authenticated user for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="userId">Optional</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.Insert(Google.Apis.Moderator.V1.Data.Vote,System.Int64,System.Int64)">
+            <summary>Inserts a new vote by the authenticated user for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.List(System.Int64,System.Nullable{System.Int64},System.Nullable{System.Int64})">
+            <summary>Lists the votes by the authenticated user for the given series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
+            <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.Patch(Google.Apis.Moderator.V1.Data.Vote,System.Int64,System.Int64,System.String)">
+            <summary>Updates the votes by the authenticated user for the specified submission within the specified series. This method supports patch semantics.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="userId">Optional</param>
+        </member>
+        <member name="M:Google.Apis.Moderator.V1.VotesResource.Update(Google.Apis.Moderator.V1.Data.Vote,System.Int64,System.Int64,System.String)">
+            <summary>Updates the votes by the authenticated user for the specified submission within the specified series.</summary>
+            <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
+            <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
+            <param name="userId">Optional</param>
+        </member>
+    </members>
+</doc>
