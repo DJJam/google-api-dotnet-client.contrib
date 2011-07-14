@@ -40,29 +40,27 @@
         <member name="P:Google.Apis.Translate.V2.TranslateService.DeveloperKey">
             <summary>Sets the DeveloperKey which this service uses for all requests</summary>
         </member>
-        <member name="M:Google.Apis.Translate.V2.DetectionsResource.ListAsStream(Google.Apis.Util.Repeatable{System.String})">
-            <summary>Detect the language of text.</summary>
-            <param name="q">Required - The text to detect</param>
-        </member>
         <member name="M:Google.Apis.Translate.V2.DetectionsResource.List(Google.Apis.Util.Repeatable{System.String})">
             <summary>Detect the language of text.</summary>
             <param name="q">Required - The text to detect</param>
         </member>
-        <member name="M:Google.Apis.Translate.V2.LanguagesResource.ListAsStream(System.String)">
+        <member name="P:Google.Apis.Translate.V2.DetectionsResource.ListRequest.Q">
+            <summary>The text to detect</summary>
+        </member>
+        <member name="M:Google.Apis.Translate.V2.LanguagesResource.List">
             <summary>List the source/target languages supported by the API</summary>
-            <param name="target">Optional - the language and collation in which the localized results should be returned</param>
         </member>
         <member name="M:Google.Apis.Translate.V2.LanguagesResource.List(System.String)">
             <summary>List the source/target languages supported by the API</summary>
             <param name="target">Optional - the language and collation in which the localized results should be returned</param>
         </member>
-        <member name="M:Google.Apis.Translate.V2.TranslationsResource.ListAsStream(Google.Apis.Util.Repeatable{System.String},System.String,Google.Apis.Util.Repeatable{System.String},System.Nullable{Google.Apis.Translate.V2.TranslationsResource.Format},System.String)">
+        <member name="P:Google.Apis.Translate.V2.LanguagesResource.ListRequest.Target">
+            <summary>the language and collation in which the localized results should be returned</summary>
+        </member>
+        <member name="M:Google.Apis.Translate.V2.TranslationsResource.List(Google.Apis.Util.Repeatable{System.String},System.String)">
             <summary>Returns text translations from one language to another.</summary>
             <param name="q">Required - The text to translate</param>
             <param name="target">Required - The target language into which the text should be translated</param>
-            <param name="cid">Optional - The customization id for translate</param>
-            <param name="format">Optional - Must be one of the following values [html, text] - The format of the text</param>
-            <param name="source">Optional - The source language of the text</param>
         </member>
         <member name="M:Google.Apis.Translate.V2.TranslationsResource.List(Google.Apis.Util.Repeatable{System.String},System.String,Google.Apis.Util.Repeatable{System.String},System.Nullable{Google.Apis.Translate.V2.TranslationsResource.Format},System.String)">
             <summary>Returns text translations from one language to another.</summary>
@@ -80,6 +78,21 @@
         </member>
         <member name="F:Google.Apis.Translate.V2.TranslationsResource.Format.Text">
             <summary>Specifies the input is in plain textual format</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.V2.TranslationsResource.ListRequest.Cid">
+            <summary>The customization id for translate</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.V2.TranslationsResource.ListRequest.Format">
+            <summary>The format of the text</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.V2.TranslationsResource.ListRequest.Q">
+            <summary>The text to translate</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.V2.TranslationsResource.ListRequest.Source">
+            <summary>The source language of the text</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.V2.TranslationsResource.ListRequest.Target">
+            <summary>The target language into which the text should be translated</summary>
         </member>
     </members>
 </doc>

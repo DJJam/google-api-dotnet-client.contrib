@@ -109,7 +109,7 @@ namespace Google.Apis.Taskqueue.V1beta1.Data {
     
     public class Taskqueue : Google.Apis.Requests.IResponse {
         
-        private AclData acl;
+        private Taskqueue.AclData acl;
         
         private string id;
         
@@ -117,13 +117,13 @@ namespace Google.Apis.Taskqueue.V1beta1.Data {
         
         private long maxLeases;
         
-        private StatsData stats;
+        private Taskqueue.StatsData stats;
         
         private Google.Apis.Requests.RequestError error;
         
         /// <summary>ACLs that are applicable to this TaskQueue object.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("acl")]
-        public virtual AclData Acl {
+        public virtual Taskqueue.AclData Acl {
             get {
                 return this.acl;
             }
@@ -167,7 +167,7 @@ namespace Google.Apis.Taskqueue.V1beta1.Data {
         
         /// <summary>Statistics for the TaskQueue object in question.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("stats")]
-        public virtual StatsData Stats {
+        public virtual Taskqueue.StatsData Stats {
             get {
                 return this.stats;
             }
@@ -404,7 +404,7 @@ namespace Google.Apis.Taskqueue.V1beta1 {
         }
         
         public TaskqueueService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", TaskqueueService.Name, TaskqueueService.Version)))).GetService(TaskqueueService.Version, TaskqueueService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(TaskqueueService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", TaskqueueService.Name, TaskqueueService.Version)))).GetService(TaskqueueService.Version, TaskqueueService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(TaskqueueService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -453,6 +453,18 @@ namespace Google.Apis.Taskqueue.V1beta1 {
          {
             return genericService.DeserializeResponse<T>(stream);
         }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Manage your Tasks and Taskqueues</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/taskqueue")]
+            Taskqueue,
+            
+            /// <summary>Consume Tasks from your Taskqueues</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/taskqueue.consumer")]
+            TaskqueueConsumer,
+        }
     }
     
     public class TaskqueuesResource {
@@ -470,33 +482,77 @@ namespace Google.Apis.Taskqueue.V1beta1 {
         /// <summary>Get detailed information about a TaskQueue.</summary>
         /// <param name="project">Required - The project under which the queue lies.</param>
         /// <param name="taskqueue">Required - The id of the taskqueue to get the properties of.</param>
-        /// <param name="getStats">Optional - Whether to get stats. Optional.</param>
-        public virtual System.IO.Stream GetAsStream(string project, string taskqueue, System.Boolean? getStats) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["project"] = project;
-            parameters["taskqueue"] = taskqueue;
-            parameters["getStats"] = getStats;
-            logger.Debug("Executing taskqueues.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(TaskqueuesResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing taskqueues.get");
-            return ret;
+        public virtual GetRequest Get(string project, string taskqueue) {
+            return new GetRequest(service, project, taskqueue);
         }
         
         /// <summary>Get detailed information about a TaskQueue.</summary>
         /// <param name="project">Required - The project under which the queue lies.</param>
         /// <param name="taskqueue">Required - The id of the taskqueue to get the properties of.</param>
         /// <param name="getStats">Optional - Whether to get stats. Optional.</param>
-        public virtual Google.Apis.Taskqueue.V1beta1.Data.Taskqueue Get(string project, string taskqueue, System.Boolean? getStats) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["project"] = project;
-            parameters["taskqueue"] = taskqueue;
-            parameters["getStats"] = getStats;
-            logger.Debug("Executing taskqueues.get");
-            Google.Apis.Taskqueue.V1beta1.Data.Taskqueue ret = this.service.JsonToObject<Google.Apis.Taskqueue.V1beta1.Data.Taskqueue>(this.service.ExecuteRequest(TaskqueuesResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing taskqueues.get");
-            return ret;
+        public virtual GetRequest Get(string project, string taskqueue, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? getStats) {
+            return new GetRequest(service, project, taskqueue, getStats);
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.V1beta1.Data.Taskqueue> {
+            
+            private System.Boolean? getStats;
+            
+            private string project;
+            
+            private string taskqueue;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string project, string taskqueue) : 
+                    base(service) {
+                this.project = project;
+                this.taskqueue = taskqueue;
+            }
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string project, string taskqueue, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? getStats) : 
+                    base(service) {
+                this.project = project;
+                this.taskqueue = taskqueue;
+                this.getStats = getStats;
+            }
+            
+            /// <summary>Whether to get stats. Optional.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("getStats")]
+            public virtual System.Boolean? GetStats {
+                get {
+                    return this.getStats;
+                }
+                set {
+                    this.getStats = value;
+                }
+            }
+            
+            /// <summary>The project under which the queue lies.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("project")]
+            public virtual string Project {
+                get {
+                    return this.project;
+                }
+            }
+            
+            /// <summary>The id of the taskqueue to get the properties of.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            public virtual string Taskqueue {
+                get {
+                    return this.taskqueue;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "taskqueues";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
         }
     }
     
@@ -514,128 +570,242 @@ namespace Google.Apis.Taskqueue.V1beta1 {
         
         /// <summary>Delete a task from a TaskQueue.</summary>
         /// <param name="project">Required - The project under which the queue lies.</param>
-        /// <param name="task">Required - The id of the task to delete.</param>
         /// <param name="taskqueue">Required - The taskqueue to delete a task from.</param>
-        public virtual System.IO.Stream DeleteAsStream(string project, string task, string taskqueue) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["project"] = project;
-            parameters["task"] = task;
-            parameters["taskqueue"] = taskqueue;
-            logger.Debug("Executing tasks.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing tasks.delete");
-            return ret;
+        /// <param name="task">Required - The id of the task to delete.</param>
+        public virtual DeleteRequest Delete(string project, string taskqueue, string task) {
+            return new DeleteRequest(service, project, taskqueue, task);
         }
         
         /// <summary>Get a particular task from a TaskQueue.</summary>
         /// <param name="project">Required - The project under which the queue lies.</param>
-        /// <param name="task">Required - The task to get properties of.</param>
         /// <param name="taskqueue">Required - The taskqueue in which the task belongs.</param>
-        public virtual System.IO.Stream GetAsStream(string project, string task, string taskqueue) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["project"] = project;
-            parameters["task"] = task;
-            parameters["taskqueue"] = taskqueue;
-            logger.Debug("Executing tasks.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing tasks.get");
-            return ret;
+        /// <param name="task">Required - The task to get properties of.</param>
+        public virtual GetRequest Get(string project, string taskqueue, string task) {
+            return new GetRequest(service, project, taskqueue, task);
         }
         
         /// <summary>Lease 1 or more tasks from a TaskQueue.</summary>
-        /// <param name="leaseSecs">Required - The lease in seconds.</param>
-        /// <param name="numTasks">Required - The number of tasks to lease.</param>
         /// <param name="project">Required - The project under which the queue lies.</param>
         /// <param name="taskqueue">Required - The taskqueue to lease a task from.</param>
-        public virtual System.IO.Stream LeaseAsStream(string body, long leaseSecs, long numTasks, string project, string taskqueue) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["leaseSecs"] = leaseSecs;
-            parameters["numTasks"] = numTasks;
-            parameters["project"] = project;
-            parameters["taskqueue"] = taskqueue;
-            logger.Debug("Executing tasks.lease");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "lease", body, parameters);
-            logger.Debug("Done Executing tasks.lease");
-            return ret;
+        /// <param name="numTasks">Required - The number of tasks to lease.</param>
+        /// <param name="leaseSecs">Required - The lease in seconds.</param>
+        public virtual LeaseRequest Lease(string project, string taskqueue, long numTasks, long leaseSecs) {
+            return new LeaseRequest(service, project, taskqueue, numTasks, leaseSecs);
         }
         
         /// <summary>List Tasks in a TaskQueue</summary>
         /// <param name="project">Required - The project under which the queue lies.</param>
         /// <param name="taskqueue">Required - The id of the taskqueue to list tasks from.</param>
-        public virtual System.IO.Stream ListAsStream(string project, string taskqueue) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["project"] = project;
-            parameters["taskqueue"] = taskqueue;
-            logger.Debug("Executing tasks.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing tasks.list");
-            return ret;
+        public virtual ListRequest List(string project, string taskqueue) {
+            return new ListRequest(service, project, taskqueue);
         }
         
-        /// <summary>Delete a task from a TaskQueue.</summary>
-        /// <param name="project">Required - The project under which the queue lies.</param>
-        /// <param name="task">Required - The id of the task to delete.</param>
-        /// <param name="taskqueue">Required - The taskqueue to delete a task from.</param>
-        public virtual System.IO.Stream Delete(string project, string task, string taskqueue) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["project"] = project;
-            parameters["task"] = task;
-            parameters["taskqueue"] = taskqueue;
-            logger.Debug("Executing tasks.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing tasks.delete");
-            return ret;
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string project;
+            
+            private string task;
+            
+            private string taskqueue;
+            
+            public DeleteRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string project, string taskqueue, string task) : 
+                    base(service) {
+                this.project = project;
+                this.taskqueue = taskqueue;
+                this.task = task;
+            }
+            
+            /// <summary>The project under which the queue lies.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("project")]
+            public virtual string Project {
+                get {
+                    return this.project;
+                }
+            }
+            
+            /// <summary>The id of the task to delete.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("task")]
+            public virtual string Task {
+                get {
+                    return this.task;
+                }
+            }
+            
+            /// <summary>The taskqueue to delete a task from.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            public virtual string Taskqueue {
+                get {
+                    return this.taskqueue;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
         }
         
-        /// <summary>Get a particular task from a TaskQueue.</summary>
-        /// <param name="project">Required - The project under which the queue lies.</param>
-        /// <param name="task">Required - The task to get properties of.</param>
-        /// <param name="taskqueue">Required - The taskqueue in which the task belongs.</param>
-        public virtual Google.Apis.Taskqueue.V1beta1.Data.Task Get(string project, string task, string taskqueue) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["project"] = project;
-            parameters["task"] = task;
-            parameters["taskqueue"] = taskqueue;
-            logger.Debug("Executing tasks.get");
-            Google.Apis.Taskqueue.V1beta1.Data.Task ret = this.service.JsonToObject<Google.Apis.Taskqueue.V1beta1.Data.Task>(this.service.ExecuteRequest(TasksResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing tasks.get");
-            return ret;
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.V1beta1.Data.Task> {
+            
+            private string project;
+            
+            private string task;
+            
+            private string taskqueue;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string project, string taskqueue, string task) : 
+                    base(service) {
+                this.project = project;
+                this.taskqueue = taskqueue;
+                this.task = task;
+            }
+            
+            /// <summary>The project under which the queue lies.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("project")]
+            public virtual string Project {
+                get {
+                    return this.project;
+                }
+            }
+            
+            /// <summary>The task to get properties of.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("task")]
+            public virtual string Task {
+                get {
+                    return this.task;
+                }
+            }
+            
+            /// <summary>The taskqueue in which the task belongs.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            public virtual string Taskqueue {
+                get {
+                    return this.taskqueue;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
         }
         
-        /// <summary>Lease 1 or more tasks from a TaskQueue.</summary>
-        /// <param name="leaseSecs">Required - The lease in seconds.</param>
-        /// <param name="numTasks">Required - The number of tasks to lease.</param>
-        /// <param name="project">Required - The project under which the queue lies.</param>
-        /// <param name="taskqueue">Required - The taskqueue to lease a task from.</param>
-        public virtual Google.Apis.Taskqueue.V1beta1.Data.Tasks Lease(string body, long leaseSecs, long numTasks, string project, string taskqueue) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["leaseSecs"] = leaseSecs;
-            parameters["numTasks"] = numTasks;
-            parameters["project"] = project;
-            parameters["taskqueue"] = taskqueue;
-            logger.Debug("Executing tasks.lease");
-            Google.Apis.Taskqueue.V1beta1.Data.Tasks ret = this.service.JsonToObject<Google.Apis.Taskqueue.V1beta1.Data.Tasks>(this.service.ExecuteRequest(TasksResource.Resource, "lease", body, parameters));
-            logger.Debug("Done Executing tasks.lease");
-            return ret;
+        public class LeaseRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.V1beta1.Data.Tasks> {
+            
+            private long leaseSecs;
+            
+            private long numTasks;
+            
+            private string project;
+            
+            private string taskqueue;
+            
+            public LeaseRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string project, string taskqueue, long numTasks, long leaseSecs) : 
+                    base(service) {
+                this.project = project;
+                this.taskqueue = taskqueue;
+                this.numTasks = numTasks;
+                this.leaseSecs = leaseSecs;
+            }
+            
+            /// <summary>The lease in seconds.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("leaseSecs")]
+            public virtual long LeaseSecs {
+                get {
+                    return this.leaseSecs;
+                }
+            }
+            
+            /// <summary>The number of tasks to lease.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("numTasks")]
+            public virtual long NumTasks {
+                get {
+                    return this.numTasks;
+                }
+            }
+            
+            /// <summary>The project under which the queue lies.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("project")]
+            public virtual string Project {
+                get {
+                    return this.project;
+                }
+            }
+            
+            /// <summary>The taskqueue to lease a task from.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            public virtual string Taskqueue {
+                get {
+                    return this.taskqueue;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "lease";
+                }
+            }
         }
         
-        /// <summary>List Tasks in a TaskQueue</summary>
-        /// <param name="project">Required - The project under which the queue lies.</param>
-        /// <param name="taskqueue">Required - The id of the taskqueue to list tasks from.</param>
-        public virtual Google.Apis.Taskqueue.V1beta1.Data.Tasks2 List(string project, string taskqueue) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["project"] = project;
-            parameters["taskqueue"] = taskqueue;
-            logger.Debug("Executing tasks.list");
-            Google.Apis.Taskqueue.V1beta1.Data.Tasks2 ret = this.service.JsonToObject<Google.Apis.Taskqueue.V1beta1.Data.Tasks2>(this.service.ExecuteRequest(TasksResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing tasks.list");
-            return ret;
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.V1beta1.Data.Tasks2> {
+            
+            private string project;
+            
+            private string taskqueue;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string project, string taskqueue) : 
+                    base(service) {
+                this.project = project;
+                this.taskqueue = taskqueue;
+            }
+            
+            /// <summary>The project under which the queue lies.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("project")]
+            public virtual string Project {
+                get {
+                    return this.project;
+                }
+            }
+            
+            /// <summary>The id of the taskqueue to list tasks from.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            public virtual string Taskqueue {
+                get {
+                    return this.taskqueue;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Google.Apis.Discovery.V1.Data {
     
     public class DirectoryList : Google.Apis.Requests.IResponse {
         
-        private IList<ItemsData> items;
+        private IList<DirectoryList.ItemsData> items;
         
         private string kind;
         
@@ -24,7 +24,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>The individual directory entries.  One entry per api/version pair.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<ItemsData> Items {
+        public virtual IList<DirectoryList.ItemsData> Items {
             get {
                 return this.items;
             }
@@ -62,7 +62,7 @@ namespace Google.Apis.Discovery.V1.Data {
             
             private string documentationLink;
             
-            private IconsData icons;
+            private ItemsData.IconsData icons;
             
             private string id;
             
@@ -113,7 +113,7 @@ namespace Google.Apis.Discovery.V1.Data {
             
             /// <summary>Links to 16x16 and 32x32 icons representing the API.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("icons")]
-            public virtual IconsData Icons {
+            public virtual ItemsData.IconsData Icons {
                 get {
                     return this.icons;
                 }
@@ -259,7 +259,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         private string pattern;
         
-        private PropertiesData properties;
+        private Jsonschema.PropertiesData properties;
         
         private bool repeated;
         
@@ -410,7 +410,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>If this is a schema for an object, list the schema for each property of this object.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("properties")]
-        public virtual PropertiesData Properties {
+        public virtual Jsonschema.PropertiesData Properties {
             get {
                 return this.properties;
             }
@@ -453,13 +453,13 @@ namespace Google.Apis.Discovery.V1.Data {
         }
         
         /// <summary>If this is a schema for an object, list the schema for each property of this object.</summary>
-        public class PropertiesData {
+        public class PropertiesData : System.Collections.Generic.Dictionary<string, Jsonschema> {
         }
     }
     
     public class RestDescription : Google.Apis.Requests.IResponse {
         
-        private AuthData auth;
+        private RestDescription.AuthData auth;
         
         private string basePath;
         
@@ -469,7 +469,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         private IList<System.String> features;
         
-        private IconsData icons;
+        private RestDescription.IconsData icons;
         
         private string id;
         
@@ -477,17 +477,17 @@ namespace Google.Apis.Discovery.V1.Data {
         
         private IList<System.String> labels;
         
-        private MethodsData methods;
+        private RestDescription.MethodsData methods;
         
         private string name;
         
-        private ParametersData parameters;
+        private RestDescription.ParametersData parameters;
         
         private string protocol;
         
-        private ResourcesData resources;
+        private RestDescription.ResourcesData resources;
         
-        private SchemasData schemas;
+        private RestDescription.SchemasData schemas;
         
         private string title;
         
@@ -497,7 +497,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>Authentication information.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("auth")]
-        public virtual AuthData Auth {
+        public virtual RestDescription.AuthData Auth {
             get {
                 return this.auth;
             }
@@ -552,7 +552,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>Links to 16x16 and 32x32 icons representing the API.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("icons")]
-        public virtual IconsData Icons {
+        public virtual RestDescription.IconsData Icons {
             get {
                 return this.icons;
             }
@@ -596,7 +596,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>API-level methods for this API.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("methods")]
-        public virtual MethodsData Methods {
+        public virtual RestDescription.MethodsData Methods {
             get {
                 return this.methods;
             }
@@ -618,7 +618,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>Common parameters that apply across all apis.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("parameters")]
-        public virtual ParametersData Parameters {
+        public virtual RestDescription.ParametersData Parameters {
             get {
                 return this.parameters;
             }
@@ -640,7 +640,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>The resources in this API.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("resources")]
-        public virtual ResourcesData Resources {
+        public virtual RestDescription.ResourcesData Resources {
             get {
                 return this.resources;
             }
@@ -651,7 +651,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>The schemas for this API.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("schemas")]
-        public virtual SchemasData Schemas {
+        public virtual RestDescription.SchemasData Schemas {
             get {
                 return this.schemas;
             }
@@ -695,11 +695,11 @@ namespace Google.Apis.Discovery.V1.Data {
         /// <summary>Authentication information.</summary>
         public class AuthData {
             
-            private Oauth2Data oauth2;
+            private AuthData.Oauth2Data oauth2;
             
             /// <summary>OAuth 2.0 authentication information.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("oauth2")]
-            public virtual Oauth2Data Oauth2 {
+            public virtual AuthData.Oauth2Data Oauth2 {
                 get {
                     return this.oauth2;
                 }
@@ -711,11 +711,11 @@ namespace Google.Apis.Discovery.V1.Data {
             /// <summary>OAuth 2.0 authentication information.</summary>
             public class Oauth2Data {
                 
-                private ScopesData scopes;
+                private Oauth2Data.ScopesData scopes;
                 
                 /// <summary>Available OAuth 2.0 scopes.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("scopes")]
-                public virtual ScopesData Scopes {
+                public virtual Oauth2Data.ScopesData Scopes {
                     get {
                         return this.scopes;
                     }
@@ -725,7 +725,23 @@ namespace Google.Apis.Discovery.V1.Data {
                 }
                 
                 /// <summary>Available OAuth 2.0 scopes.</summary>
-                public class ScopesData {
+                public class ScopesData : System.Collections.Generic.Dictionary<string, ScopesData.ScopesDataSchema> {
+                    
+                    public class ScopesDataSchema {
+                        
+                        private string description;
+                        
+                        /// <summary>Description of scope.</summary>
+                        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+                        public virtual string Description {
+                            get {
+                                return this.description;
+                            }
+                            set {
+                                this.description = value;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -761,19 +777,19 @@ namespace Google.Apis.Discovery.V1.Data {
         }
         
         /// <summary>API-level methods for this API.</summary>
-        public class MethodsData {
+        public class MethodsData : System.Collections.Generic.Dictionary<string, Restmethod> {
         }
         
         /// <summary>Common parameters that apply across all apis.</summary>
-        public class ParametersData {
+        public class ParametersData : System.Collections.Generic.Dictionary<string, Jsonschema> {
         }
         
         /// <summary>The resources in this API.</summary>
-        public class ResourcesData {
+        public class ResourcesData : System.Collections.Generic.Dictionary<string, Restresource> {
         }
         
         /// <summary>The schemas for this API.</summary>
-        public class SchemasData {
+        public class SchemasData : System.Collections.Generic.Dictionary<string, Jsonschema> {
         }
     }
     
@@ -785,17 +801,17 @@ namespace Google.Apis.Discovery.V1.Data {
         
         private string id;
         
-        private MediaUploadData mediaUpload;
+        private Restmethod.MediaUploadData mediaUpload;
         
         private IList<System.String> parameterOrder;
         
-        private ParametersData parameters;
+        private Restmethod.ParametersData parameters;
         
         private string path;
         
-        private RequestData request;
+        private Restmethod.RequestData request;
         
-        private ResponseData response;
+        private Restmethod.ResponseData response;
         
         private IList<System.String> scopes;
         
@@ -834,7 +850,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>Media upload parameters.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("mediaUpload")]
-        public virtual MediaUploadData MediaUpload {
+        public virtual Restmethod.MediaUploadData MediaUpload {
             get {
                 return this.mediaUpload;
             }
@@ -856,7 +872,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>Details for all parameters in this method.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("parameters")]
-        public virtual ParametersData Parameters {
+        public virtual Restmethod.ParametersData Parameters {
             get {
                 return this.parameters;
             }
@@ -878,7 +894,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>The schema for the request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("request")]
-        public virtual RequestData Request {
+        public virtual Restmethod.RequestData Request {
             get {
                 return this.request;
             }
@@ -889,7 +905,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>The schema for the response.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("response")]
-        public virtual ResponseData Response {
+        public virtual Restmethod.ResponseData Response {
             get {
                 return this.response;
             }
@@ -916,7 +932,7 @@ namespace Google.Apis.Discovery.V1.Data {
             
             private string maxSize;
             
-            private ProtocolsData protocols;
+            private MediaUploadData.ProtocolsData protocols;
             
             /// <summary>MIME Media Ranges for acceptable media uploads to this method.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("accept")]
@@ -942,7 +958,7 @@ namespace Google.Apis.Discovery.V1.Data {
             
             /// <summary>Supported upload protocols.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("protocols")]
-            public virtual ProtocolsData Protocols {
+            public virtual MediaUploadData.ProtocolsData Protocols {
                 get {
                     return this.protocols;
                 }
@@ -954,13 +970,13 @@ namespace Google.Apis.Discovery.V1.Data {
             /// <summary>Supported upload protocols.</summary>
             public class ProtocolsData {
                 
-                private ResumableData resumable;
+                private ProtocolsData.ResumableData resumable;
                 
-                private SimpleData simple;
+                private ProtocolsData.SimpleData simple;
                 
                 /// <summary>Supports the Resumable Media Upload protocol.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("resumable")]
-                public virtual ResumableData Resumable {
+                public virtual ProtocolsData.ResumableData Resumable {
                     get {
                         return this.resumable;
                     }
@@ -971,7 +987,7 @@ namespace Google.Apis.Discovery.V1.Data {
                 
                 /// <summary>Supports uploading as a single HTTP request.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("simple")]
-                public virtual SimpleData Simple {
+                public virtual ProtocolsData.SimpleData Simple {
                     get {
                         return this.simple;
                     }
@@ -1043,7 +1059,7 @@ namespace Google.Apis.Discovery.V1.Data {
         }
         
         /// <summary>Details for all parameters in this method.</summary>
-        public class ParametersData {
+        public class ParametersData : System.Collections.Generic.Dictionary<string, Jsonschema> {
         }
         
         /// <summary>The schema for the request.</summary>
@@ -1083,13 +1099,13 @@ namespace Google.Apis.Discovery.V1.Data {
     
     public class Restresource {
         
-        private MethodsData methods;
+        private Restresource.MethodsData methods;
         
-        private ResourcesData resources;
+        private Restresource.ResourcesData resources;
         
         /// <summary>Methods on this resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("methods")]
-        public virtual MethodsData Methods {
+        public virtual Restresource.MethodsData Methods {
             get {
                 return this.methods;
             }
@@ -1100,7 +1116,7 @@ namespace Google.Apis.Discovery.V1.Data {
         
         /// <summary>Sub-resources on this resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("resources")]
-        public virtual ResourcesData Resources {
+        public virtual Restresource.ResourcesData Resources {
             get {
                 return this.resources;
             }
@@ -1110,11 +1126,11 @@ namespace Google.Apis.Discovery.V1.Data {
         }
         
         /// <summary>Methods on this resource.</summary>
-        public class MethodsData {
+        public class MethodsData : System.Collections.Generic.Dictionary<string, Restmethod> {
         }
         
         /// <summary>Sub-resources on this resource.</summary>
-        public class ResourcesData {
+        public class ResourcesData : System.Collections.Generic.Dictionary<string, Restresource> {
         }
     }
 }
@@ -1151,7 +1167,7 @@ namespace Google.Apis.Discovery.V1 {
         }
         
         public DiscoveryService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", DiscoveryService.Name, DiscoveryService.Version)))).GetService(DiscoveryService.Version, DiscoveryService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(DiscoveryService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", DiscoveryService.Name, DiscoveryService.Version)))).GetService(DiscoveryService.Version, DiscoveryService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(DiscoveryService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -1211,61 +1227,21 @@ namespace Google.Apis.Discovery.V1 {
         /// <summary>Retrieve the description of a particular version of an api.</summary>
         /// <param name="api">Required - The name of the API.</param>
         /// <param name="version">Required - The version of the API.</param>
-        public virtual System.IO.Stream GetRestAsStream(string api, string version) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["api"] = api;
-            parameters["version"] = version;
-            logger.Debug("Executing apis.getRest");
-            System.IO.Stream ret = this.service.ExecuteRequest(ApisResource.Resource, "getRest", body, parameters);
-            logger.Debug("Done Executing apis.getRest");
-            return ret;
+        public virtual GetRestRequest GetRest(string api, string version) {
+            return new GetRestRequest(service, api, version);
+        }
+        
+        /// <summary>Retrieve the list of APIs supported at this endpoint.</summary>
+        public virtual ListRequest List() {
+            return new ListRequest(service);
         }
         
         /// <summary>Retrieve the list of APIs supported at this endpoint.</summary>
         /// <param name="label">Optional - Must be one of the following values [deprecated, graduated, labs] - Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</param>
         /// <param name="name">Optional - Only include APIs with the given name.</param>
         /// <param name="preferred">Optional - Return only the preferred version of an API.</param>
-        public virtual System.IO.Stream ListAsStream(Label? label, string name, System.Boolean? preferred) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["label"] = label;
-            parameters["name"] = name;
-            parameters["preferred"] = preferred;
-            logger.Debug("Executing apis.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(ApisResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing apis.list");
-            return ret;
-        }
-        
-        /// <summary>Retrieve the description of a particular version of an api.</summary>
-        /// <param name="api">Required - The name of the API.</param>
-        /// <param name="version">Required - The version of the API.</param>
-        public virtual Google.Apis.Discovery.V1.Data.RestDescription GetRest(string api, string version) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["api"] = api;
-            parameters["version"] = version;
-            logger.Debug("Executing apis.getRest");
-            Google.Apis.Discovery.V1.Data.RestDescription ret = this.service.JsonToObject<Google.Apis.Discovery.V1.Data.RestDescription>(this.service.ExecuteRequest(ApisResource.Resource, "getRest", body, parameters));
-            logger.Debug("Done Executing apis.getRest");
-            return ret;
-        }
-        
-        /// <summary>Retrieve the list of APIs supported at this endpoint.</summary>
-        /// <param name="label">Optional - Must be one of the following values [deprecated, graduated, labs] - Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</param>
-        /// <param name="name">Optional - Only include APIs with the given name.</param>
-        /// <param name="preferred">Optional - Return only the preferred version of an API.</param>
-        public virtual Google.Apis.Discovery.V1.Data.DirectoryList List(Label? label, string name, System.Boolean? preferred) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["label"] = label;
-            parameters["name"] = name;
-            parameters["preferred"] = preferred;
-            logger.Debug("Executing apis.list");
-            Google.Apis.Discovery.V1.Data.DirectoryList ret = this.service.JsonToObject<Google.Apis.Discovery.V1.Data.DirectoryList>(this.service.ExecuteRequest(ApisResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing apis.list");
-            return ret;
+        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] Label? label, [System.Runtime.InteropServices.OptionalAttribute()] string name, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preferred) {
+            return new ListRequest(service, label, name, preferred);
         }
         
         /// <summary>Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</summary>
@@ -1283,6 +1259,112 @@ namespace Google.Apis.Discovery.V1 {
             /// <summary>APIs that are experimental</summary>
             [Google.Apis.Util.StringValueAttribute("labs")]
             Labs,
+        }
+        
+        public class GetRestRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Discovery.V1.Data.RestDescription> {
+            
+            private string api;
+            
+            private string version;
+            
+            public GetRestRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string api, string version) : 
+                    base(service) {
+                this.api = api;
+                this.version = version;
+            }
+            
+            /// <summary>The name of the API.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("api")]
+            public virtual string Api {
+                get {
+                    return this.api;
+                }
+            }
+            
+            /// <summary>The version of the API.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("version")]
+            public virtual string Version {
+                get {
+                    return this.version;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "apis";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "getRest";
+                }
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Discovery.V1.Data.DirectoryList> {
+            
+            private Label? label;
+            
+            private string name;
+            
+            private System.Boolean? preferred;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service) : 
+                    base(service) {
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, [System.Runtime.InteropServices.OptionalAttribute()] Label? label, [System.Runtime.InteropServices.OptionalAttribute()] string name, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preferred) : 
+                    base(service) {
+                this.label = label;
+                this.name = name;
+                this.preferred = preferred;
+            }
+            
+            /// <summary>Only include APIs with a matching label, such as 'graduated' or 'labs'.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("label")]
+            public virtual Label? Label {
+                get {
+                    return this.label;
+                }
+                set {
+                    this.label = value;
+                }
+            }
+            
+            /// <summary>Only include APIs with the given name.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("name")]
+            public virtual string Name {
+                get {
+                    return this.name;
+                }
+                set {
+                    this.name = value;
+                }
+            }
+            
+            /// <summary>Return only the preferred version of an API.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("preferred")]
+            public virtual System.Boolean? Preferred {
+                get {
+                    return this.preferred;
+                }
+                set {
+                    this.preferred = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "apis";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
 }

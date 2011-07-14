@@ -74,7 +74,7 @@ namespace Google.Apis.Diacritize.V1 {
         }
         
         public DiacritizeService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", DiacritizeService.Name, DiacritizeService.Version)))).GetService(DiacritizeService.Version, DiacritizeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(DiacritizeService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", DiacritizeService.Name, DiacritizeService.Version)))).GetService(DiacritizeService.Version, DiacritizeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(DiacritizeService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -153,35 +153,63 @@ namespace Google.Apis.Diacritize.V1 {
             }
             
             /// <summary>Adds diacritical marks to the given message.</summary>
-            /// <param name="lang">Required - Language of the message</param>
-            /// <param name="last_letter">Required - Flag to indicate whether the last letter in a word should be diacritized or not</param>
             /// <param name="message">Required - Message to be diacritized</param>
-            public virtual System.IO.Stream GetAsStream(string lang, bool last_letter, string message) {
-                string body = null;
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["lang"] = lang;
-                parameters["last_letter"] = last_letter;
-                parameters["message"] = message;
-                logger.Debug("Executing corpus.get");
-                System.IO.Stream ret = this.service.ExecuteRequest(CorpusResource.Resource, "get", body, parameters);
-                logger.Debug("Done Executing corpus.get");
-                return ret;
+            /// <param name="last_letter">Required - Flag to indicate whether the last letter in a word should be diacritized or not</param>
+            /// <param name="lang">Required - Language of the message</param>
+            public virtual GetRequest Get(string message, bool last_letter, string lang) {
+                return new GetRequest(service, message, last_letter, lang);
             }
             
-            /// <summary>Adds diacritical marks to the given message.</summary>
-            /// <param name="lang">Required - Language of the message</param>
-            /// <param name="last_letter">Required - Flag to indicate whether the last letter in a word should be diacritized or not</param>
-            /// <param name="message">Required - Message to be diacritized</param>
-            public virtual Google.Apis.Diacritize.V1.Data.LanguageDiacritizeCorpusResource Get(string lang, bool last_letter, string message) {
-                string body = null;
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["lang"] = lang;
-                parameters["last_letter"] = last_letter;
-                parameters["message"] = message;
-                logger.Debug("Executing corpus.get");
-                Google.Apis.Diacritize.V1.Data.LanguageDiacritizeCorpusResource ret = this.service.JsonToObject<Google.Apis.Diacritize.V1.Data.LanguageDiacritizeCorpusResource>(this.service.ExecuteRequest(CorpusResource.Resource, "get", body, parameters));
-                logger.Debug("Done Executing corpus.get");
-                return ret;
+            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Diacritize.V1.Data.LanguageDiacritizeCorpusResource> {
+                
+                private string lang;
+                
+                private bool last_letter;
+                
+                private string message;
+                
+                public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string message, bool last_letter, string lang) : 
+                        base(service) {
+                    this.message = message;
+                    this.last_letter = last_letter;
+                    this.lang = lang;
+                }
+                
+                /// <summary>Language of the message</summary>
+                [Google.Apis.Util.RequestParameterAttribute("lang")]
+                public virtual string Lang {
+                    get {
+                        return this.lang;
+                    }
+                }
+                
+                /// <summary>Flag to indicate whether the last letter in a word should be diacritized or not</summary>
+                [Google.Apis.Util.RequestParameterAttribute("last_letter")]
+                public virtual bool Last_letter {
+                    get {
+                        return this.last_letter;
+                    }
+                }
+                
+                /// <summary>Message to be diacritized</summary>
+                [Google.Apis.Util.RequestParameterAttribute("message")]
+                public virtual string Message {
+                    get {
+                        return this.message;
+                    }
+                }
+                
+                protected override string ResourceName {
+                    get {
+                        return "diacritize.corpus";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "get";
+                    }
+                }
             }
         }
     }

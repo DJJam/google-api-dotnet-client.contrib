@@ -49,34 +49,11 @@
         <member name="P:Google.Apis.SiteVerification.V1.SiteVerificationService.DeveloperKey">
             <summary>Sets the DeveloperKey which this service uses for all requests</summary>
         </member>
-        <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.DeleteAsStream(System.String)">
-            <summary>Relinquish ownership of a website or domain.</summary>
-            <param name="id">Required - The id of a verified site or domain.</param>
+        <member name="T:Google.Apis.SiteVerification.V1.SiteVerificationService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
-        <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.GetAsStream(System.String)">
-            <summary>Get the most current data for a website or domain.</summary>
-            <param name="id">Required - The id of a verified site or domain.</param>
-        </member>
-        <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.GetTokenAsStream(System.String,System.String,System.String)">
-            <summary>Get a verification token for placing on a website or domain.</summary>
-            <param name="identifier">Optional - The URL or domain to verify.</param>
-            <param name="type">Optional - Type of resource to verify. Can be &apos;site&apos; (URL) or &apos;inet_domain&apos; (domain name).</param>
-            <param name="verificationMethod">Optional - The method to use for verifying a site or domain.</param>
-        </member>
-        <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.InsertAsStream(System.String,System.String)">
-            <summary>Attempt verification of a website or domain.</summary>
-            <param name="verificationMethod">Required - The method to use for verifying a site or domain.</param>
-        </member>
-        <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.ListAsStream">
-            <summary>Get the list of your verified websites and domains.</summary>
-        </member>
-        <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.PatchAsStream(System.String,System.String)">
-            <summary>Modify the list of owners for your website or domain. This method supports patch semantics.</summary>
-            <param name="id">Required - The id of a verified site or domain.</param>
-        </member>
-        <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.UpdateAsStream(System.String,System.String)">
-            <summary>Modify the list of owners for your website or domain.</summary>
-            <param name="id">Required - The id of a verified site or domain.</param>
+        <member name="F:Google.Apis.SiteVerification.V1.SiteVerificationService.Scopes.Siteverification">
+            <summary>Manage the list of sites and domains you control</summary>
         </member>
         <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.Delete(System.String)">
             <summary>Relinquish ownership of a website or domain.</summary>
@@ -85,6 +62,9 @@
         <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.Get(System.String)">
             <summary>Get the most current data for a website or domain.</summary>
             <param name="id">Required - The id of a verified site or domain.</param>
+        </member>
+        <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.GetToken">
+            <summary>Get a verification token for placing on a website or domain.</summary>
         </member>
         <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.GetToken(System.String,System.String,System.String)">
             <summary>Get a verification token for placing on a website or domain.</summary>
@@ -106,6 +86,39 @@
         <member name="M:Google.Apis.SiteVerification.V1.WebResourceResource.Update(Google.Apis.SiteVerification.V1.Data.SiteverificationWebResourceResource,System.String)">
             <summary>Modify the list of owners for your website or domain.</summary>
             <param name="id">Required - The id of a verified site or domain.</param>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.DeleteRequest.Id">
+            <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.GetRequest.Id">
+            <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.GetTokenRequest.Identifier">
+            <summary>The URL or domain to verify.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.GetTokenRequest.Type">
+            <summary>Type of resource to verify. Can be 'site' (URL) or 'inet_domain' (domain name).</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.GetTokenRequest.VerificationMethod">
+            <summary>The method to use for verifying a site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.InsertRequest.VerificationMethod">
+            <summary>The method to use for verifying a site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.PatchRequest.Id">
+            <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.UpdateRequest.Id">
+            <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.V1.WebResourceResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
         </member>
     </members>
 </doc>

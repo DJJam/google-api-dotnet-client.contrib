@@ -16,12 +16,12 @@ namespace Google.Apis.Customsearch.V1.Data {
     
     public class Context {
         
-        private IList<IList<FacetsData>> facets;
+        private IList<IList<Context.FacetsData>> facets;
         
         private string title;
         
         [Newtonsoft.Json.JsonPropertyAttribute("facets")]
-        public virtual IList<IList<FacetsData>> Facets {
+        public virtual IList<IList<Context.FacetsData>> Facets {
             get {
                 return this.facets;
             }
@@ -70,18 +70,18 @@ namespace Google.Apis.Customsearch.V1.Data {
     
     public class Promotion {
         
-        private IList<BodyLinesData> bodyLines;
+        private IList<Promotion.BodyLinesData> bodyLines;
         
         private string displayLink;
         
-        private ImageData image;
+        private Promotion.ImageData image;
         
         private string link;
         
         private string title;
         
         [Newtonsoft.Json.JsonPropertyAttribute("bodyLines")]
-        public virtual IList<BodyLinesData> BodyLines {
+        public virtual IList<Promotion.BodyLinesData> BodyLines {
             get {
                 return this.bodyLines;
             }
@@ -101,7 +101,7 @@ namespace Google.Apis.Customsearch.V1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("image")]
-        public virtual ImageData Image {
+        public virtual Promotion.ImageData Image {
             get {
                 return this.image;
             }
@@ -382,7 +382,7 @@ namespace Google.Apis.Customsearch.V1.Data {
         
         private string link;
         
-        private PagemapData pagemap;
+        private Result.PagemapData pagemap;
         
         private string snippet;
         
@@ -449,7 +449,7 @@ namespace Google.Apis.Customsearch.V1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("pagemap")]
-        public virtual PagemapData Pagemap {
+        public virtual Result.PagemapData Pagemap {
             get {
                 return this.pagemap;
             }
@@ -478,7 +478,10 @@ namespace Google.Apis.Customsearch.V1.Data {
             }
         }
         
-        public class PagemapData {
+        public class PagemapData : System.Collections.Generic.Dictionary<string, IList<PagemapData.PagemapDataSchema>> {
+            
+            public class PagemapDataSchema : System.Collections.Generic.Dictionary<string, string> {
+            }
         }
     }
     
@@ -492,9 +495,9 @@ namespace Google.Apis.Customsearch.V1.Data {
         
         private IList<Promotion> promotions;
         
-        private QueriesData queries;
+        private Search.QueriesData queries;
         
-        private UrlData url;
+        private Search.UrlData url;
         
         private Google.Apis.Requests.RequestError error;
         
@@ -539,7 +542,7 @@ namespace Google.Apis.Customsearch.V1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("queries")]
-        public virtual QueriesData Queries {
+        public virtual Search.QueriesData Queries {
             get {
                 return this.queries;
             }
@@ -549,7 +552,7 @@ namespace Google.Apis.Customsearch.V1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
-        public virtual UrlData Url {
+        public virtual Search.UrlData Url {
             get {
                 return this.url;
             }
@@ -568,7 +571,7 @@ namespace Google.Apis.Customsearch.V1.Data {
             }
         }
         
-        public class QueriesData {
+        public class QueriesData : System.Collections.Generic.Dictionary<string, IList<Query>> {
         }
         
         public class UrlData {
@@ -632,7 +635,7 @@ namespace Google.Apis.Customsearch.V1 {
         }
         
         public CustomsearchService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", CustomsearchService.Name, CustomsearchService.Version)))).GetService(CustomsearchService.Version, CustomsearchService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(CustomsearchService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", CustomsearchService.Name, CustomsearchService.Version)))).GetService(CustomsearchService.Version, CustomsearchService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(CustomsearchService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -691,28 +694,8 @@ namespace Google.Apis.Customsearch.V1 {
         
         /// <summary>Returns metadata about the search performed, metadata about the custom search engine used for the search, and the search results.</summary>
         /// <param name="q">Required - Query</param>
-        /// <param name="cref">Optional - The URL of a linked custom search engine</param>
-        /// <param name="cx">Optional - The custom search engine ID to scope this search query</param>
-        /// <param name="lr">Optional - Must be one of the following values [lang_ar, lang_bg, lang_ca, lang_cs, lang_da, lang_de, lang_el, lang_en, lang_es, lang_et, lang_fi, lang_fr, lang_hr, lang_hu, lang_id, lang_is, lang_it, lang_iw, lang_ja, lang_ko, lang_lt, lang_lv, lang_nl, lang_no, lang_pl, lang_pt, lang_ro, lang_ru, lang_sk, lang_sl, lang_sr, lang_sv, lang_tr, lang_zh-CN, lang_zh-TW] - The language restriction for the search results</param>
-        /// <param name="num">Optional - Number of search results to return</param>
-        /// <param name="safe">Optional - Must be one of the following values [high, medium, off] - Search safety level</param>
-        /// <param name="sort">Optional - The sort expression to apply to the results</param>
-        /// <param name="start">Optional - The index of the first result to return</param>
-        public virtual System.IO.Stream ListAsStream(string q, string cref, string cx, Lr? lr, string num, Safe? safe, string sort, string start) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["q"] = q;
-            parameters["cref"] = cref;
-            parameters["cx"] = cx;
-            parameters["lr"] = lr;
-            parameters["num"] = num;
-            parameters["safe"] = safe;
-            parameters["sort"] = sort;
-            parameters["start"] = start;
-            logger.Debug("Executing cse.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(CseResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing cse.list");
-            return ret;
+        public virtual ListRequest List(string q) {
+            return new ListRequest(service, q);
         }
         
         /// <summary>Returns metadata about the search performed, metadata about the custom search engine used for the search, and the search results.</summary>
@@ -724,21 +707,8 @@ namespace Google.Apis.Customsearch.V1 {
         /// <param name="safe">Optional - Must be one of the following values [high, medium, off] - Search safety level</param>
         /// <param name="sort">Optional - The sort expression to apply to the results</param>
         /// <param name="start">Optional - The index of the first result to return</param>
-        public virtual Google.Apis.Customsearch.V1.Data.Search List(string q, string cref, string cx, Lr? lr, string num, Safe? safe, string sort, string start) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["q"] = q;
-            parameters["cref"] = cref;
-            parameters["cx"] = cx;
-            parameters["lr"] = lr;
-            parameters["num"] = num;
-            parameters["safe"] = safe;
-            parameters["sort"] = sort;
-            parameters["start"] = start;
-            logger.Debug("Executing cse.list");
-            Google.Apis.Customsearch.V1.Data.Search ret = this.service.JsonToObject<Google.Apis.Customsearch.V1.Data.Search>(this.service.ExecuteRequest(CseResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing cse.list");
-            return ret;
+        public virtual ListRequest List(string q, [System.Runtime.InteropServices.OptionalAttribute()] string cref, [System.Runtime.InteropServices.OptionalAttribute()] string cx, [System.Runtime.InteropServices.OptionalAttribute()] Lr? lr, [System.Runtime.InteropServices.OptionalAttribute()] string num, [System.Runtime.InteropServices.OptionalAttribute()] Safe? safe, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] string start) {
+            return new ListRequest(service, q, cref, cx, lr, num, safe, sort, start);
         }
         
         /// <summary>The language restriction for the search results</summary>
@@ -901,6 +871,139 @@ namespace Google.Apis.Customsearch.V1 {
             /// <summary>Disables safe search filtering.</summary>
             [Google.Apis.Util.StringValueAttribute("off")]
             Off,
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Customsearch.V1.Data.Search> {
+            
+            private string cref;
+            
+            private string cx;
+            
+            private Lr? lr;
+            
+            private string num;
+            
+            private string q;
+            
+            private Safe? safe;
+            
+            private string sort;
+            
+            private string start;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string q) : 
+                    base(service) {
+                this.q = q;
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string q, [System.Runtime.InteropServices.OptionalAttribute()] string cref, [System.Runtime.InteropServices.OptionalAttribute()] string cx, [System.Runtime.InteropServices.OptionalAttribute()] Lr? lr, [System.Runtime.InteropServices.OptionalAttribute()] string num, [System.Runtime.InteropServices.OptionalAttribute()] Safe? safe, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] string start) : 
+                    base(service) {
+                this.q = q;
+                this.cref = cref;
+                this.cx = cx;
+                this.lr = lr;
+                this.num = num;
+                this.safe = safe;
+                this.sort = sort;
+                this.start = start;
+            }
+            
+            /// <summary>The URL of a linked custom search engine</summary>
+            [Google.Apis.Util.RequestParameterAttribute("cref")]
+            public virtual string Cref {
+                get {
+                    return this.cref;
+                }
+                set {
+                    this.cref = value;
+                }
+            }
+            
+            /// <summary>The custom search engine ID to scope this search query</summary>
+            [Google.Apis.Util.RequestParameterAttribute("cx")]
+            public virtual string Cx {
+                get {
+                    return this.cx;
+                }
+                set {
+                    this.cx = value;
+                }
+            }
+            
+            /// <summary>The language restriction for the search results</summary>
+            [Google.Apis.Util.RequestParameterAttribute("lr")]
+            public virtual Lr? Lr {
+                get {
+                    return this.lr;
+                }
+                set {
+                    this.lr = value;
+                }
+            }
+            
+            /// <summary>Number of search results to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("num")]
+            public virtual string Num {
+                get {
+                    return this.num;
+                }
+                set {
+                    this.num = value;
+                }
+            }
+            
+            /// <summary>Query</summary>
+            [Google.Apis.Util.RequestParameterAttribute("q")]
+            public virtual string Q {
+                get {
+                    return this.q;
+                }
+            }
+            
+            /// <summary>Search safety level</summary>
+            [Google.Apis.Util.RequestParameterAttribute("safe")]
+            public virtual Safe? Safe {
+                get {
+                    return this.safe;
+                }
+                set {
+                    this.safe = value;
+                }
+            }
+            
+            /// <summary>The sort expression to apply to the results</summary>
+            [Google.Apis.Util.RequestParameterAttribute("sort")]
+            public virtual string Sort {
+                get {
+                    return this.sort;
+                }
+                set {
+                    this.sort = value;
+                }
+            }
+            
+            /// <summary>The index of the first result to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("start")]
+            public virtual string Start {
+                get {
+                    return this.start;
+                }
+                set {
+                    this.start = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "cse";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
 }

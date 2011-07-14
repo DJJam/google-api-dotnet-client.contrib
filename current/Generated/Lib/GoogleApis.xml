@@ -205,6 +205,85 @@
             Returns all matches for the specified key. May return an empty enumeration if the key is not present.
             </summary>
         </member>
+        <member name="T:Google.Apis.Requests.ServiceRequest`1">
+            <summary>
+            Represents an abstract, strongly typed request base class to make requests made to a service.
+            </summary>
+            <remarks>Internally uses the dynamic Request class to execute requests.</remarks>
+            <typeparam name="TResponse">The type of the response object</typeparam>
+        </member>
+        <member name="F:Google.Apis.Requests.ServiceRequest`1.GetBodyMethodName">
+            <summary>
+            The name of the "GetBody" method
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.#ctor(Google.Apis.Discovery.ISchemaAwareRequestExecutor)">
+            <summary>
+            Creates a new service request.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.GetBody">
+            <summary>
+            Should return the body of the request (if applicable), or null.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.GetSerializedBody">
+            <summary>
+            Returns the serialized version of the body, or null if unavailable.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.Fetch">
+             <summary>
+            Executes the request synchronously and returns the result.
+             </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.FetchAsStream">
+            <summary>
+            Executes the request synchronously and returns the unparsed response stream.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.FetchAsync(Google.Apis.Requests.ExecuteRequestDelegate{`0})">
+            <summary>
+            Executes the request asynchronously and calls the specified method once finished.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.FetchAsyncAsStream(Google.Apis.Requests.ExecuteRequestDelegate{System.IO.Stream})">
+            <summary>
+            Executes the request asynchronously without parsing the response, 
+            and calls the specified method once finished.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.CreateParameterDictionary">
+            <summary>
+            Creates a parameter dictionary by using reflection to look at all properties marked with a KeyAttribute.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.ServiceRequest`1.ResourceName">
+            <summary>
+            Name of the Resource to which the method belongs.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.ServiceRequest`1.MethodName">
+            <summary>
+            The name of the method to which this request belongs.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Requests.ExecuteRequestDelegate`1">
+            <summary>
+            Delegate for executing an asynchronous request.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Util.RequestParameterAttribute">
+            <summary>
+            An attribute which is used to specially mark a property for reflective purposes, and (optionally) to assign
+            a formal name to the property.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Util.RequestParameterAttribute.Name">
+            <summary>
+            Name/key of this attribute
+            </summary>
+        </member>
         <member name="T:Google.Apis.Util.Repeatable`1">
             <summary>
             Class which allows you to both pass a single object, as well as an array, as a parameter value.
@@ -337,7 +416,7 @@
         <member name="T:Google.Apis.Discovery.IMethod">
             <summary>
             Represents one method as defined by the Google Api Discovery Document.
-            This will usaly be found within a resource. There may well be differnt implementations
+            This will usally be found within a resource. There may well be differnt implementations
             of this interface for different versions of discovery.
             </summary>
             <see cref="T:Google.Apis.Discovery.IResource"/>
@@ -377,9 +456,19 @@
             The type of the request required by this method
             </summary>
         </member>
+        <member name="P:Google.Apis.Discovery.IMethod.HasBody">
+            <summary>
+            Whether this request has a body attached to it.
+            </summary>
+        </member>
         <member name="P:Google.Apis.Discovery.IMethod.Parameters">
             <summary>
             A set of parameters passed with the request
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.ParameterOrder">
+            <summary>
+            The order in which parameters should be passed in a request.
             </summary>
         </member>
         <member name="T:Google.Apis.Tests.Apis.Requests.MockParameter">
@@ -1679,6 +1768,11 @@
         <member name="M:Google.Apis.Utilities.Without``1(System.Collections.Generic.IEnumerable{``0},``0)">
             <summary>
             Returns the enumerable with the specified element removed
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Utilities.Concat``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Returns the enumerable with the specified element added to the end of it.
             </summary>
         </member>
         <member name="P:Google.Apis.Utilities.EmptyDate">

@@ -241,7 +241,7 @@ namespace Google.Apis.Translate.V2 {
         }
         
         public TranslateService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", TranslateService.Name, TranslateService.Version)))).GetService(TranslateService.Version, TranslateService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(TranslateService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", TranslateService.Name, TranslateService.Version)))).GetService(TranslateService.Version, TranslateService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(TranslateService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -312,26 +312,38 @@ namespace Google.Apis.Translate.V2 {
         
         /// <summary>Detect the language of text.</summary>
         /// <param name="q">Required - The text to detect</param>
-        public virtual System.IO.Stream ListAsStream(Google.Apis.Util.Repeatable<string> q) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["q"] = q;
-            logger.Debug("Executing detections.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(DetectionsResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing detections.list");
-            return ret;
+        public virtual ListRequest List(Google.Apis.Util.Repeatable<string> q) {
+            return new ListRequest(service, q);
         }
         
-        /// <summary>Detect the language of text.</summary>
-        /// <param name="q">Required - The text to detect</param>
-        public virtual Google.Apis.Translate.V2.Data.DetectionsListResponse List(Google.Apis.Util.Repeatable<string> q) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["q"] = q;
-            logger.Debug("Executing detections.list");
-            Google.Apis.Translate.V2.Data.DetectionsListResponse ret = this.service.JsonToObject<Google.Apis.Translate.V2.Data.DetectionsListResponse>(this.service.ExecuteRequest(DetectionsResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing detections.list");
-            return ret;
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.V2.Data.DetectionsListResponse> {
+            
+            private Google.Apis.Util.Repeatable<string> q;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Util.Repeatable<string> q) : 
+                    base(service) {
+                this.q = q;
+            }
+            
+            /// <summary>The text to detect</summary>
+            [Google.Apis.Util.RequestParameterAttribute("q")]
+            public virtual Google.Apis.Util.Repeatable<string> Q {
+                get {
+                    return this.q;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "detections";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
     
@@ -348,27 +360,51 @@ namespace Google.Apis.Translate.V2 {
         }
         
         /// <summary>List the source/target languages supported by the API</summary>
-        /// <param name="target">Optional - the language and collation in which the localized results should be returned</param>
-        public virtual System.IO.Stream ListAsStream(string target) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["target"] = target;
-            logger.Debug("Executing languages.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(LanguagesResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing languages.list");
-            return ret;
+        public virtual ListRequest List() {
+            return new ListRequest(service);
         }
         
         /// <summary>List the source/target languages supported by the API</summary>
         /// <param name="target">Optional - the language and collation in which the localized results should be returned</param>
-        public virtual Google.Apis.Translate.V2.Data.LanguagesListResponse List(string target) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["target"] = target;
-            logger.Debug("Executing languages.list");
-            Google.Apis.Translate.V2.Data.LanguagesListResponse ret = this.service.JsonToObject<Google.Apis.Translate.V2.Data.LanguagesListResponse>(this.service.ExecuteRequest(LanguagesResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing languages.list");
-            return ret;
+        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] string target) {
+            return new ListRequest(service, target);
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.V2.Data.LanguagesListResponse> {
+            
+            private string target;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service) : 
+                    base(service) {
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, [System.Runtime.InteropServices.OptionalAttribute()] string target) : 
+                    base(service) {
+                this.target = target;
+            }
+            
+            /// <summary>the language and collation in which the localized results should be returned</summary>
+            [Google.Apis.Util.RequestParameterAttribute("target")]
+            public virtual string Target {
+                get {
+                    return this.target;
+                }
+                set {
+                    this.target = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "languages";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
     
@@ -387,21 +423,8 @@ namespace Google.Apis.Translate.V2 {
         /// <summary>Returns text translations from one language to another.</summary>
         /// <param name="q">Required - The text to translate</param>
         /// <param name="target">Required - The target language into which the text should be translated</param>
-        /// <param name="cid">Optional - The customization id for translate</param>
-        /// <param name="format">Optional - Must be one of the following values [html, text] - The format of the text</param>
-        /// <param name="source">Optional - The source language of the text</param>
-        public virtual System.IO.Stream ListAsStream(Google.Apis.Util.Repeatable<string> q, string target, Google.Apis.Util.Repeatable<string> cid, Format? format, string source) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["q"] = q;
-            parameters["target"] = target;
-            parameters["cid"] = cid;
-            parameters["format"] = format;
-            parameters["source"] = source;
-            logger.Debug("Executing translations.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(TranslationsResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing translations.list");
-            return ret;
+        public virtual ListRequest List(Google.Apis.Util.Repeatable<string> q, string target) {
+            return new ListRequest(service, q, target);
         }
         
         /// <summary>Returns text translations from one language to another.</summary>
@@ -410,18 +433,8 @@ namespace Google.Apis.Translate.V2 {
         /// <param name="cid">Optional - The customization id for translate</param>
         /// <param name="format">Optional - Must be one of the following values [html, text] - The format of the text</param>
         /// <param name="source">Optional - The source language of the text</param>
-        public virtual Google.Apis.Translate.V2.Data.TranslationsListResponse List(Google.Apis.Util.Repeatable<string> q, string target, Google.Apis.Util.Repeatable<string> cid, Format? format, string source) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["q"] = q;
-            parameters["target"] = target;
-            parameters["cid"] = cid;
-            parameters["format"] = format;
-            parameters["source"] = source;
-            logger.Debug("Executing translations.list");
-            Google.Apis.Translate.V2.Data.TranslationsListResponse ret = this.service.JsonToObject<Google.Apis.Translate.V2.Data.TranslationsListResponse>(this.service.ExecuteRequest(TranslationsResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing translations.list");
-            return ret;
+        public virtual ListRequest List(Google.Apis.Util.Repeatable<string> q, string target, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> cid, [System.Runtime.InteropServices.OptionalAttribute()] Format? format, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
+            return new ListRequest(service, q, target, cid, format, source);
         }
         
         /// <summary>The format of the text</summary>
@@ -435,6 +448,95 @@ namespace Google.Apis.Translate.V2 {
             /// <summary>Specifies the input is in plain textual format</summary>
             [Google.Apis.Util.StringValueAttribute("text")]
             Text,
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.V2.Data.TranslationsListResponse> {
+            
+            private Google.Apis.Util.Repeatable<string> cid;
+            
+            private Format? format;
+            
+            private Google.Apis.Util.Repeatable<string> q;
+            
+            private string source;
+            
+            private string target;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Util.Repeatable<string> q, string target) : 
+                    base(service) {
+                this.q = q;
+                this.target = target;
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Util.Repeatable<string> q, string target, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> cid, [System.Runtime.InteropServices.OptionalAttribute()] Format? format, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                    base(service) {
+                this.q = q;
+                this.target = target;
+                this.cid = cid;
+                this.format = format;
+                this.source = source;
+            }
+            
+            /// <summary>The customization id for translate</summary>
+            [Google.Apis.Util.RequestParameterAttribute("cid")]
+            public virtual Google.Apis.Util.Repeatable<string> Cid {
+                get {
+                    return this.cid;
+                }
+                set {
+                    this.cid = value;
+                }
+            }
+            
+            /// <summary>The format of the text</summary>
+            [Google.Apis.Util.RequestParameterAttribute("format")]
+            public virtual Format? Format {
+                get {
+                    return this.format;
+                }
+                set {
+                    this.format = value;
+                }
+            }
+            
+            /// <summary>The text to translate</summary>
+            [Google.Apis.Util.RequestParameterAttribute("q")]
+            public virtual Google.Apis.Util.Repeatable<string> Q {
+                get {
+                    return this.q;
+                }
+            }
+            
+            /// <summary>The source language of the text</summary>
+            [Google.Apis.Util.RequestParameterAttribute("source")]
+            public virtual string Source {
+                get {
+                    return this.source;
+                }
+                set {
+                    this.source = value;
+                }
+            }
+            
+            /// <summary>The target language into which the text should be translated</summary>
+            [Google.Apis.Util.RequestParameterAttribute("target")]
+            public virtual string Target {
+                get {
+                    return this.target;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "translations";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
 }

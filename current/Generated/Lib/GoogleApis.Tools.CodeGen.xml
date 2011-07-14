@@ -9,19 +9,16 @@
             Helper class for all decorators.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateAutoProperty``1(System.CodeDom.CodeTypeDeclaration,System.String,System.String)">
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateAutoProperty(System.String,System.String,System.CodeDom.CodeTypeReference,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
             <summary>
             Creates and adds a public auto-property (property and backening field) to the class.
             </summary>
-            <typeparam name="TProperty">Type used for the propery.</typeparam>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateBackingField``1(System.CodeDom.CodeTypeDeclaration,System.String)">
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateBackingField(System.String,System.CodeDom.CodeTypeReference,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Creates a backening field for the name provided.
             </summary>
-            <typeparam name="TProperty">Type used for the propery.</typeparam>
             <param name="name">The name of the property.</param>
-            <returns></returns>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateSummaryComment(System.String)">
             <summary>
@@ -63,17 +60,82 @@
             Determines whether the given enum has the same pairs as specified.
             </summary>
         </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.SubresourceClassDecorator">
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.DefaultObjectTypeProvider">
             <summary>
-            This decorator adds subresources as nested classes to the current resource.
+            The default object type provider. Returns references to schema types.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider">
+            <summary>
+            Defines a ObjectTypeProvider to be used by method and class decorators.
+            Used to get/generate a code type reference to the ReturnType and BodyType of a method.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider.GetReturnType(Google.Apis.Discovery.IMethod)">
+            <summary>
+            Returns a reference to the return type of this method.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider.GetBodyType(Google.Apis.Discovery.IMethod)">
+            <summary>
+            Returns  a reference to the body type of this method.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DefaultObjectTypeProvider.#ctor(System.String)">
+            <summary>
+            Creates a new default object type provider using the specified namespace name.
+            </summary>
+            <param name="schemaNamespace"></param>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BodyPropertyDecorator">
+            <summary>
+            A decorator that adds support for a request body to the request class by implementing the "Body"-autoproperty.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator">
+            <summary>
+            Classes that implement this interface will be called when building a request within a resource class.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator.DecorateClass(Google.Apis.Discovery.IResource,Google.Apis.Discovery.IMethod,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Adds code to the class "requestClass" based on the specified "request" method.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BodyPropertyDecorator.BodyPropertyName">
+            <summary>
+            Name of the "Body" property.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BodyPropertyDecorator.BodyPropertyComment">
+            <summary>
+            Comment of the "Body" property.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BodyPropertyDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider)">
+            <summary>
+            Creates a new body property decorator, which will use the specified object type provider for the body type.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BodyPropertyDecorator.GenerateBodyProperty(Google.Apis.Discovery.IMethod,System.CodeDom.CodeTypeReference)">
+            <summary>
+            Generates the Body propery with the method's response type.
+            Does not perform name-checking as it is implementing an abstract property.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BodyPropertyDecorator.GenerateGetBodyOverride(Google.Apis.Discovery.IMethod)">
+            <summary>
+            Generates the GetBody override, which will return a reference to the Body property.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator">
+            <summary>
+            Adds a method to the resource class for each method defined in the resource json. 
+            The designed method returns a Requestclass-instance instead of directly executing the requests.
+            All required parameters will be added the the method parameter list, whereas optional ones are left out.
             
             Example:
-              public class TopResource {
-                 ...
-                 public class SubResource {
-                    ...
-                 }
-              }
+            <c>public virtual ListRequest List(string apiName, string apiVersion)</c>
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.IResourceDecorator">
@@ -98,15 +160,14 @@
             This can be used for logging, instramenting or modifing the return value after execution.
             </summary>
         </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.DictionaryOptionalParameterResourceDecorator">
+        <member name="P:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator.AddOptionalParameters">
             <summary>
-            An optional Decorator that adds a Method to the resource class for each Method.
-            The method added will have a parameter for each of the required parameters, all the optional parameters will be 
-            passed in a IDictionary&lt;string,string&gt;
-            e.g.
-            <code>
-                public virtual Stream Search(IDictionary&lt;string, string&gt; parameters)
-            </code>
+            Defines whether optional parameters are added to the request methods or not.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator.ResourceGenerator">
+            <summary>
+            The internal method generator used by this decorator.
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator">
@@ -147,6 +208,100 @@
         <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.CreateExecuteRequest(Google.Apis.Discovery.IMethod)">
             <summary>
             ret = this.service.ExecuteRequest(...);
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator">
+            <summary>
+            Generates the two standard constructors of a request.
+             1. A constructor taking the service and mandatory parameters.
+             2. A constructor taking the service and all mandatory + optional parameters.
+            Example:
+            <c>public ListRequest(ISchemaAwareRequestExecutor service, int requiredParameter, ..) : base(service) {..}</c>
+            <c>public ListRequest(ISchemaAwareRequestExecutor s, int required, string optional..) : base(service) {..}</c>
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider)">
+            <summary>
+            Creates a new request constructor decorator.
+            </summary>
+            <remarks>Will create only the mandatory-only constructor</remarks>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator.CreateRequiredConstructor(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IMethod,System.Boolean)">
+            <summary>
+            Creates the constructor for this request class which only takes required arguments.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator.AddBodyParameter(System.CodeDom.CodeConstructor,Google.Apis.Discovery.IMethod)">
+            <summary>
+            Adds the body parameter and statement to the constructor if it is required.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator.AddRequestParameters(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IMethod,System.CodeDom.CodeConstructor,System.Boolean)">
+            <summary>
+            Adds all required parameters and assign statements of this request to the specified constructor.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator.CreateOptionalConstructor">
+            <summary>
+            Defines whether this decorator should also add a constructor containing optional and mandatory parameters.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestFieldDecorator">
+            <summary>
+            A decorator which implements abstract properties of the ServiceRequest class
+            
+            Example:
+            <c>protected override string ResourceName { get { return ...; } } </c>
+            <c>protected override string MethodName { get { return ...; } } </c>
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestFieldDecorator.GenerateImplementedStringConstantProperty(System.String,System.String)">
+            <summary>
+            Generates a property which will return a constant string.
+            Will not do a used-name check. Assumes the name can be chosen.
+            Example:
+            <c>protected override string PropertyName { get { ... } }</c>
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestInheritanceDecorator">
+            <summary>
+            A decorator which adds the ServiceRequest inheritance to the class
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestInheritanceDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider)">
+            <summary>
+            Creates a new ServiceRequestInheritanceDecorator, which uses the specified type provider.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ParameterPropertyDecorator">
+            <summary>
+            Decorator which adds a property for each parameter in the method to the request class.
+            e.g.
+                <c>public string Name { get; set; }</c>
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.SubresourceClassDecorator">
+            <summary>
+            This decorator adds subresources as nested classes to the current resource.
+            
+            Example:
+              public class TopResource {
+                 ...
+                 public class SubResource {
+                    ...
+                 }
+              }
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.DictionaryOptionalParameterResourceDecorator">
+            <summary>
+            An optional Decorator that adds a Method to the resource class for each Method.
+            The method added will have a parameter for each of the required parameters, all the optional parameters will be 
+            passed in a IDictionary&lt;string,string&gt;
+            e.g.
+            <code>
+                public virtual Stream Search(IDictionary&lt;string, string&gt; parameters)
+            </code>
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.DictionaryOptionalParameterResourceDecorator.ResourceGenerator.GetBodyType(Google.Apis.Discovery.IMethod)">
@@ -204,14 +359,6 @@
             <summary>
             Constructs a StandardMethodResourceDecorator which creates methods with body parameter as string 
             and return type as System.io.Stream.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.StandardMethodResourceDecorator.IObjectTypeProvider">
-            <summary>
-            Implementors of this interface will know what the return type of a given method should be
-            and what the type of the body parameter should be.
-            For example the return type may be System.IO.String or a 
-            generated type based on the schema section of the discovery document,
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.StandardMethodResourceDecorator.ResourceGenerator.CreateExecuteRequest(Google.Apis.Discovery.IMethod)">
@@ -320,6 +467,40 @@
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.ScopeEnumDecorator.GetValueName(Google.Apis.Discovery.Scope)">
             <summary>
             Generates an enumeration value name for the specified scope.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator">
+            <summary>
+            Represents a generator for request classes. The generated class represents a request made to an service, 
+            containing all the request parameters and defining the response type.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.RequestClassNamingScheme">
+            <summary>
+            Defines the naming scheme for request classes.
+            </summary>
+            <remarks>{0} represents the name of the method for which this request is intended.</remarks>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.#ctor(System.Collections.Generic.IEnumerable{Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator})">
+            <summary>
+            Constructs a new instance of the request class generator, and uses the specified decorator list
+            to decorate the generated request classes.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.GenerateRequestClasses(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IResource)">
+            <summary>
+            Generates the Request-classes for all methods in a resource.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.GenerateRequestClass(Google.Apis.Discovery.IResource,Google.Apis.Discovery.IMethod,System.CodeDom.CodeTypeDeclaration,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Generates a request class for the specified method
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.GetProposedName(Google.Apis.Discovery.IMethod)">
+            <summary>
+            Returns the proposed name for a request class for the specified method.
+            Does not check for used names.
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Generator.SchemaImplementationDetails">
@@ -586,6 +767,11 @@
             Returns a safe and appropriate class name for the given schema
             </summary>
         </member>
+        <member name="M:Google.Apis.Tools.CodeGen.GeneratorUtils.GetSchemaReference(System.String,System.String)">
+            <summary>
+            Returns the reference to a specific schema.
+            </summary>
+        </member>
         <member name="M:Google.Apis.Tools.CodeGen.GeneratorUtils.GetWordContextListFromClass(System.CodeDom.CodeTypeDeclaration)">
             <summary>
             Returns a list of used and therefore forbidden words from a type declaration.
@@ -685,19 +871,19 @@
         <member name="M:Google.Apis.Tools.CodeGen.Generator.MethodGeneratorUtils.GetRequiredParameters(Google.Apis.Discovery.IMethod)">
             <summary>
             Return all required IParemters from the given method.
-            Sorted alphabeticly by name 
+            Sorted by proposed order, and alphabeticly for the remaining parameters.
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Generator.MethodGeneratorUtils.GetOptionalParameters(Google.Apis.Discovery.IMethod)">
             <summary>
-            Return all optional IParemters from the given method.
-            Sorted alphabeticly by name 
+            Return all optional IParameters from the given method.
+            Sorted by proposed order, and alphabeticly for the remaining parameters.
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Generator.MethodGeneratorUtils.GetAllParametersSorted(Google.Apis.Discovery.IMethod)">
             <summary>
-            Return all IParemters from the given method.
-            sorted by required then optional, alphabeticly within those groupings 
+            Return all IParameters from the given method.
+            Sorted by proposed order, then required, then optional, alphabeticly within those groupings.
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Generator.MethodGeneratorUtils.HasRequiredParameters(Google.Apis.Discovery.IMethod)">
@@ -736,6 +922,11 @@
         <member name="F:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.StandardServiceDecorators">
             <summary>
             List of all service decorators
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.GetSchemaAwareRequestDecorators(System.String)">
+            <summary>
+            List of all request class decorators
             </summary>
         </member>
         <member name="F:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.SchemaAwareServiceDecorators">
@@ -797,7 +988,12 @@
         </member>
         <member name="P:Google.Apis.Tools.CodeGen.Generator.ResourceClassGenerator.ContainerGenerator">
             <summary>
-            Returns the generator used to generate the Resource Container
+            Returns the generator used to generate the Resource Container.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Tools.CodeGen.Generator.ResourceClassGenerator.RequestGenerator">
+            <summary>
+            Returns the generator used to generate all Request classes.
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Generator.ServiceClassGenerator">
@@ -950,7 +1146,7 @@
             Resolves/generates an object type reference for a schema.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.SchemaDecoratorUtil.GetArrayTypeRefereence(Newtonsoft.Json.Schema.JsonSchema,Google.Apis.Tools.CodeGen.Generator.SchemaImplementationDetails,Google.Apis.Tools.CodeGen.INestedClassProvider)">
+        <member name="M:Google.Apis.Tools.CodeGen.SchemaDecoratorUtil.GetArrayTypeReference(Newtonsoft.Json.Schema.JsonSchema,Google.Apis.Tools.CodeGen.Generator.SchemaImplementationDetails,Google.Apis.Tools.CodeGen.INestedClassProvider)">
             <summary>
             Resolves/generates an array type reference for a schema.
             </summary>

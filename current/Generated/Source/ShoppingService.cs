@@ -26,12 +26,13 @@ namespace Google.Apis.Shopping.V1.Data {
         
         private ShoppingModelProductJsonV1 product;
         
-        private IList<RecommendationsData> recommendations;
+        private IList<Product.RecommendationsData> recommendations;
         
         private string selfLink;
         
         private Google.Apis.Requests.RequestError error;
         
+        /// <summary>List of categories for product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("categories")]
         public virtual IList<ShoppingModelCategoryJsonV1> Categories {
             get {
@@ -52,6 +53,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Id of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
@@ -62,6 +64,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>The kind of item, always shopping#product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -82,8 +85,9 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Recommendations for product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("recommendations")]
-        public virtual IList<RecommendationsData> Recommendations {
+        public virtual IList<Product.RecommendationsData> Recommendations {
             get {
                 return this.recommendations;
             }
@@ -92,6 +96,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Self link of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
@@ -114,12 +119,13 @@ namespace Google.Apis.Shopping.V1.Data {
         
         public class RecommendationsData {
             
-            private IList<RecommendationListData> recommendationList;
+            private IList<RecommendationsData.RecommendationListData> recommendationList;
             
             private string type;
             
+            /// <summary>List of recommendations.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("recommendationList")]
-            public virtual IList<RecommendationListData> RecommendationList {
+            public virtual IList<RecommendationsData.RecommendationListData> RecommendationList {
                 get {
                     return this.recommendationList;
                 }
@@ -128,6 +134,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Type of recommendation list (one of: all, purchaseToPurchase, visitToVisit, visitToPurchase).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
@@ -165,7 +172,7 @@ namespace Google.Apis.Shopping.V1.Data {
         
         private string etag;
         
-        private IList<FacetsData> facets;
+        private IList<Products.FacetsData> facets;
         
         private string id;
         
@@ -179,7 +186,7 @@ namespace Google.Apis.Shopping.V1.Data {
         
         private string previousLink;
         
-        private IList<PromotionsData> promotions;
+        private IList<Products.PromotionsData> promotions;
         
         private IList<System.String> redirects;
         
@@ -187,18 +194,19 @@ namespace Google.Apis.Shopping.V1.Data {
         
         private string selfLink;
         
-        private IList<ShelfSpaceAdsData> shelfSpaceAds;
+        private IList<Products.ShelfSpaceAdsData> shelfSpaceAds;
         
-        private SpellingData spelling;
+        private Products.SpellingData spelling;
         
         private long startIndex;
         
-        private IList<StoresData> stores;
+        private IList<Products.StoresData> stores;
         
         private long totalItems;
         
         private Google.Apis.Requests.RequestError error;
         
+        /// <summary>List of categories.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("categories")]
         public virtual IList<ShoppingModelCategoryJsonV1> Categories {
             get {
@@ -209,6 +217,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Current item count.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("currentItemCount")]
         public virtual long CurrentItemCount {
             get {
@@ -229,6 +238,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Etag of feed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string Etag {
             get {
@@ -239,8 +249,9 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>List of facets.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("facets")]
-        public virtual IList<FacetsData> Facets {
+        public virtual IList<Products.FacetsData> Facets {
             get {
                 return this.facets;
             }
@@ -249,6 +260,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Id of feed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
@@ -259,6 +271,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>List of returned products.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual IList<Product> Items {
             get {
@@ -269,6 +282,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Number of items per page of results.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
         public virtual long ItemsPerPage {
             get {
@@ -279,6 +293,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>The fixed string &quot;shopping#products&quot;. The kind of feed returned.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -289,6 +304,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Next link of feed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
         public virtual string NextLink {
             get {
@@ -299,6 +315,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Previous link of feed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("previousLink")]
         public virtual string PreviousLink {
             get {
@@ -309,8 +326,9 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>List of promotions.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("promotions")]
-        public virtual IList<PromotionsData> Promotions {
+        public virtual IList<Products.PromotionsData> Promotions {
             get {
                 return this.promotions;
             }
@@ -319,6 +337,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Redirects.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("redirects")]
         public virtual IList<System.String> Redirects {
             get {
@@ -329,6 +348,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Related queries.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("relatedQueries")]
         public virtual IList<System.String> RelatedQueries {
             get {
@@ -339,6 +359,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Self link of feed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
@@ -350,7 +371,7 @@ namespace Google.Apis.Shopping.V1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("shelfSpaceAds")]
-        public virtual IList<ShelfSpaceAdsData> ShelfSpaceAds {
+        public virtual IList<Products.ShelfSpaceAdsData> ShelfSpaceAds {
             get {
                 return this.shelfSpaceAds;
             }
@@ -359,8 +380,9 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Spelling.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("spelling")]
-        public virtual SpellingData Spelling {
+        public virtual Products.SpellingData Spelling {
             get {
                 return this.spelling;
             }
@@ -369,6 +391,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>1-based index of the first item in the search results.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
         public virtual long StartIndex {
             get {
@@ -379,8 +402,9 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>List of returned stores.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("stores")]
-        public virtual IList<StoresData> Stores {
+        public virtual IList<Products.StoresData> Stores {
             get {
                 return this.stores;
             }
@@ -389,6 +413,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Total number of search results.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
         public virtual long TotalItems {
             get {
@@ -411,7 +436,7 @@ namespace Google.Apis.Shopping.V1.Data {
         
         public class FacetsData {
             
-            private IList<BucketsData> buckets;
+            private IList<FacetsData.BucketsData> buckets;
             
             private long count;
             
@@ -425,8 +450,9 @@ namespace Google.Apis.Shopping.V1.Data {
             
             private string unit;
             
+            /// <summary>List of Buckets within facet.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("buckets")]
-            public virtual IList<BucketsData> Buckets {
+            public virtual IList<FacetsData.BucketsData> Buckets {
                 get {
                     return this.buckets;
                 }
@@ -435,6 +461,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Number of products matching the query that have a value for the facet&apos;s property or attribute.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("count")]
             public virtual long Count {
                 get {
@@ -445,6 +472,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Display name of facet.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
@@ -455,6 +483,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Name of the facet&apos;s attribute (omitted for property facets).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
@@ -465,6 +494,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Property of facet (omitted for attribute facets).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("property")]
             public virtual string Property {
                 get {
@@ -475,6 +505,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Type of facet&apos;s attribute (omitted for property facets, one of: text, bool, int, float).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
@@ -485,6 +516,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Unit of the facet&apos;s property or attribute (omitted if the facet&apos;s property or attribute has no unit).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("unit")]
             public virtual string Unit {
                 get {
@@ -509,6 +541,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 
                 private string value;
                 
+                /// <summary>Number of products matching the query that have a value for the facet&apos;s property or attribute that matches the bucket.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("count")]
                 public virtual long Count {
                     get {
@@ -519,6 +552,7 @@ namespace Google.Apis.Shopping.V1.Data {
                     }
                 }
                 
+                /// <summary>Upper bound of the bucket (omitted for value buckets or if the range has no upper bound).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("max")]
                 public virtual string Max {
                     get {
@@ -529,6 +563,7 @@ namespace Google.Apis.Shopping.V1.Data {
                     }
                 }
                 
+                /// <summary>Whether the upper bound of the bucket is exclusive (omitted for value buckets or if the range has no upper bound).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("maxExclusive")]
                 public virtual bool MaxExclusive {
                     get {
@@ -539,6 +574,7 @@ namespace Google.Apis.Shopping.V1.Data {
                     }
                 }
                 
+                /// <summary>Lower bound of the bucket (omitted for value buckets or if the range has no lower bound).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("min")]
                 public virtual string Min {
                     get {
@@ -549,6 +585,7 @@ namespace Google.Apis.Shopping.V1.Data {
                     }
                 }
                 
+                /// <summary>Whether the lower bound of the bucket is exclusive (omitted for value buckets or if the range has no lower bound).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("minExclusive")]
                 public virtual bool MinExclusive {
                     get {
@@ -559,6 +596,7 @@ namespace Google.Apis.Shopping.V1.Data {
                     }
                 }
                 
+                /// <summary>Value of the bucket (omitted for range buckets).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("value")]
                 public virtual string Value {
                     get {
@@ -573,7 +611,7 @@ namespace Google.Apis.Shopping.V1.Data {
         
         public class PromotionsData {
             
-            private IList<CustomFieldsData> customFields;
+            private IList<PromotionsData.CustomFieldsData> customFields;
             
             private string customHtml;
             
@@ -591,8 +629,9 @@ namespace Google.Apis.Shopping.V1.Data {
             
             private string type;
             
+            /// <summary>List of custom fields of promotion.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("customFields")]
-            public virtual IList<CustomFieldsData> CustomFields {
+            public virtual IList<PromotionsData.CustomFieldsData> CustomFields {
                 get {
                     return this.customFields;
                 }
@@ -601,6 +640,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Custom HTML of promotion (omitted if type is not custom).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("customHtml")]
             public virtual string CustomHtml {
                 get {
@@ -611,6 +651,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Description of promotion (omitted if type is not standard).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("description")]
             public virtual string Description {
                 get {
@@ -621,6 +662,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Link to promotion (omitted if type is not standard).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("destLink")]
             public virtual string DestLink {
                 get {
@@ -631,6 +673,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Link to promotion image (omitted if type is not standard).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("imageLink")]
             public virtual string ImageLink {
                 get {
@@ -641,6 +684,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Link to promotion without scheme. DEPRECATED. WILL BE REMOVED SOON. USE destLink.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("link")]
             public virtual string Link {
                 get {
@@ -651,6 +695,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Name of promotion (omitted if type is not standard).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
@@ -671,6 +716,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Type of promotion (one of: standard, product, custom).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
@@ -687,6 +733,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 
                 private string value;
                 
+                /// <summary>Name of field.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("name")]
                 public virtual string Name {
                     get {
@@ -697,6 +744,7 @@ namespace Google.Apis.Shopping.V1.Data {
                     }
                 }
                 
+                /// <summary>Value of field.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("value")]
                 public virtual string Value {
                     get {
@@ -724,10 +772,12 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Spelling.</summary>
         public class SpellingData {
             
             private string suggestion;
             
+            /// <summary>Suggestion for spelling.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("suggestion")]
             public virtual string Suggestion {
                 get {
@@ -753,6 +803,7 @@ namespace Google.Apis.Shopping.V1.Data {
             
             private string telephone;
             
+            /// <summary>Address of store.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("address")]
             public virtual string Address {
                 get {
@@ -763,6 +814,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Location of store.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("location")]
             public virtual string Location {
                 get {
@@ -773,6 +825,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Name of store.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
@@ -783,6 +836,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Merchant-supplied store code.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("storeCode")]
             public virtual string StoreCode {
                 get {
@@ -793,6 +847,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Id of store.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("storeId")]
             public virtual string StoreId {
                 get {
@@ -803,6 +858,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Telephone number of store.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("telephone")]
             public virtual string Telephone {
                 get {
@@ -825,6 +881,7 @@ namespace Google.Apis.Shopping.V1.Data {
         
         private string url;
         
+        /// <summary>Id of category.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
@@ -835,6 +892,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Ids of the parents of the category.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("parents")]
         public virtual IList<System.String> Parents {
             get {
@@ -845,6 +903,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Short name of category.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("shortName")]
         public virtual string ShortName {
             get {
@@ -855,6 +914,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>URL of category.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
@@ -874,6 +934,7 @@ namespace Google.Apis.Shopping.V1.Data {
         
         private string searchResponse;
         
+        /// <summary>Google internal.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("rdcResponse")]
         public virtual string RdcResponse {
             get {
@@ -884,6 +945,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Google internal.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("searchRequest")]
         public virtual string SearchRequest {
             get {
@@ -894,6 +956,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Google internal.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("searchResponse")]
         public virtual string SearchResponse {
             get {
@@ -907,9 +970,9 @@ namespace Google.Apis.Shopping.V1.Data {
     
     public class ShoppingModelProductJsonV1 {
         
-        private IList<AttributesData> attributes;
+        private IList<ShoppingModelProductJsonV1.AttributesData> attributes;
         
-        private AuthorData author;
+        private ShoppingModelProductJsonV1.AuthorData author;
         
         private string brand;
         
@@ -927,9 +990,9 @@ namespace Google.Apis.Shopping.V1.Data {
         
         private string gtin;
         
-        private IList<ImagesData> images;
+        private IList<ShoppingModelProductJsonV1.ImagesData> images;
         
-        private IList<InventoriesData> inventories;
+        private IList<ShoppingModelProductJsonV1.InventoriesData> inventories;
         
         private string language;
         
@@ -941,8 +1004,9 @@ namespace Google.Apis.Shopping.V1.Data {
         
         private string title;
         
+        /// <summary>Attributes of product (available only with a cx source).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("attributes")]
-        public virtual IList<AttributesData> Attributes {
+        public virtual IList<ShoppingModelProductJsonV1.AttributesData> Attributes {
             get {
                 return this.attributes;
             }
@@ -951,8 +1015,9 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Author of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
-        public virtual AuthorData Author {
+        public virtual ShoppingModelProductJsonV1.AuthorData Author {
             get {
                 return this.author;
             }
@@ -961,6 +1026,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Brand of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("brand")]
         public virtual string Brand {
             get {
@@ -971,6 +1037,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Categories of product according to the selected taxonomy, omitted if no taxonomy is selected.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("categories")]
         public virtual IList<System.String> Categories {
             get {
@@ -981,6 +1048,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Condition of product (one of: new, refurbished, used).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("condition")]
         public virtual string Condition {
             get {
@@ -991,6 +1059,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>ISO 3166 code of target country of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("country")]
         public virtual string Country {
             get {
@@ -1001,6 +1070,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>RFC 3339 formatted creation time and date of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("creationTime")]
         public virtual string CreationTime {
             get {
@@ -1011,6 +1081,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Description of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
@@ -1021,6 +1092,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Google id of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("googleId")]
         public virtual string GoogleId {
             get {
@@ -1031,6 +1103,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>GTIN of product (in GTIN-14 format).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("gtin")]
         public virtual string Gtin {
             get {
@@ -1041,8 +1114,9 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Images of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("images")]
-        public virtual IList<ImagesData> Images {
+        public virtual IList<ShoppingModelProductJsonV1.ImagesData> Images {
             get {
                 return this.images;
             }
@@ -1051,8 +1125,9 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Inventories of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("inventories")]
-        public virtual IList<InventoriesData> Inventories {
+        public virtual IList<ShoppingModelProductJsonV1.InventoriesData> Inventories {
             get {
                 return this.inventories;
             }
@@ -1061,6 +1136,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>BCP 47 language tag of language of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("language")]
         public virtual string Language {
             get {
@@ -1071,6 +1147,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Link to product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("link")]
         public virtual string Link {
             get {
@@ -1081,6 +1158,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>RFC 3339 formatted modification time and date of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("modificationTime")]
         public virtual string ModificationTime {
             get {
@@ -1091,6 +1169,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Merchant-provided id of product (available only with a cx source).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("providedId")]
         public virtual string ProvidedId {
             get {
@@ -1101,6 +1180,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Title of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
@@ -1123,6 +1203,7 @@ namespace Google.Apis.Shopping.V1.Data {
             
             private string value;
             
+            /// <summary>Display Name of prodct attribute.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
@@ -1133,6 +1214,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Name of product attribute.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
@@ -1143,6 +1225,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Type of product attribute (one of: text, bool, int, float, dateRange, url).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
@@ -1153,6 +1236,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Unit of product attribute.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("unit")]
             public virtual string Unit {
                 get {
@@ -1163,6 +1247,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Value of product attribute.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("value")]
             public virtual string Value {
                 get {
@@ -1174,6 +1259,7 @@ namespace Google.Apis.Shopping.V1.Data {
             }
         }
         
+        /// <summary>Author of product.</summary>
         public class AuthorData {
             
             private string accountId;
@@ -1186,6 +1272,7 @@ namespace Google.Apis.Shopping.V1.Data {
             
             private string uri;
             
+            /// <summary>Account id of product author.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("accountId")]
             public virtual string AccountId {
                 get {
@@ -1196,6 +1283,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Aggregator id of product author.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("aggregatorId")]
             public virtual string AggregatorId {
                 get {
@@ -1206,6 +1294,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Email address of product author.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("email")]
             public virtual string Email {
                 get {
@@ -1216,6 +1305,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Name of product author.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
@@ -1226,6 +1316,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>URI of product author.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("uri")]
             public virtual string Uri {
                 get {
@@ -1241,8 +1332,9 @@ namespace Google.Apis.Shopping.V1.Data {
             
             private string link;
             
-            private IList<ThumbnailsData> thumbnails;
+            private IList<ImagesData.ThumbnailsData> thumbnails;
             
+            /// <summary>Link to product image.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("link")]
             public virtual string Link {
                 get {
@@ -1253,8 +1345,9 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Thumbnails of product image.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("thumbnails")]
-            public virtual IList<ThumbnailsData> Thumbnails {
+            public virtual IList<ImagesData.ThumbnailsData> Thumbnails {
                 get {
                     return this.thumbnails;
                 }
@@ -1273,6 +1366,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 
                 private long width;
                 
+                /// <summary>Content of thumbnail (only available for the first thumbnail of the top results if SAYT is enabled).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("content")]
                 public virtual string Content {
                     get {
@@ -1283,6 +1377,7 @@ namespace Google.Apis.Shopping.V1.Data {
                     }
                 }
                 
+                /// <summary>Height of thumbnail (omitted if not specified in the request).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("height")]
                 public virtual long Height {
                     get {
@@ -1293,6 +1388,7 @@ namespace Google.Apis.Shopping.V1.Data {
                     }
                 }
                 
+                /// <summary>Link to thumbnail.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("link")]
                 public virtual string Link {
                     get {
@@ -1303,6 +1399,7 @@ namespace Google.Apis.Shopping.V1.Data {
                     }
                 }
                 
+                /// <summary>Width of thumbnail (omitted if not specified in the request).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("width")]
                 public virtual long Width {
                     get {
@@ -1331,6 +1428,7 @@ namespace Google.Apis.Shopping.V1.Data {
             
             private string storeId;
             
+            /// <summary>Availability of product inventory.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("availability")]
             public virtual string Availability {
                 get {
@@ -1341,6 +1439,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Channel of product inventory (one of: online, local).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("channel")]
             public virtual string Channel {
                 get {
@@ -1351,6 +1450,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Currency of product inventory (an ISO 4217 alphabetic code).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("currency")]
             public virtual string Currency {
                 get {
@@ -1361,6 +1461,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Distance of product inventory.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("distance")]
             public virtual double Distance {
                 get {
@@ -1371,6 +1472,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Distance unit of product inventory.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("distanceUnit")]
             public virtual string DistanceUnit {
                 get {
@@ -1381,6 +1483,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Price of product inventory.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("price")]
             public virtual double Price {
                 get {
@@ -1391,6 +1494,7 @@ namespace Google.Apis.Shopping.V1.Data {
                 }
             }
             
+            /// <summary>Store ID of product inventory.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("storeId")]
             public virtual string StoreId {
                 get {
@@ -1436,7 +1540,7 @@ namespace Google.Apis.Shopping.V1 {
         }
         
         public ShoppingService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", ShoppingService.Name, ShoppingService.Version)))).GetService(ShoppingService.Version, ShoppingService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(ShoppingService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", ShoppingService.Name, ShoppingService.Version)))).GetService(ShoppingService.Version, ShoppingService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(ShoppingService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -1494,225 +1598,19 @@ namespace Google.Apis.Shopping.V1 {
         }
         
         /// <summary>Returns a single product</summary>
+        /// <param name="source">Required - Query source</param>
         /// <param name="accountId">Required - Minimum value of 0 - Maximum value of 4294967295 - Merchant center account id</param>
-        /// <param name="productId">Required - Id of product</param>
         /// <param name="productIdType">Required - Type of productId</param>
-        /// <param name="source">Required - Query source</param>
-        /// <param name="attributeFilter">Optional - Comma separated list of attributes to return</param>
-        /// <param name="categoriesEnabled">categories.enabled - Optional - Whether to return category information</param>
-        /// <param name="categoriesInclude">categories.include - Optional - Category specification</param>
-        /// <param name="categoriesUseGcsConfig">categories.useGcsConfig - Optional - This parameter is currently ignored</param>
-        /// <param name="debugEnabled">debug.enabled - Optional - Google Internal</param>
-        /// <param name="debugEnableLogging">debug.enableLogging - Optional - Google Internal</param>
-        /// <param name="debugSearchRequest">debug.searchRequest - Optional - Google Internal</param>
-        /// <param name="debugSearchResponse">debug.searchResponse - Optional - Google Internal</param>
-        /// <param name="productFields">Optional - Google Internal</param>
-        /// <param name="recommendationsEnabled">recommendations.enabled - Optional - Whether to return recommendation information</param>
-        /// <param name="recommendationsInclude">recommendations.include - Optional - Recommendation specification</param>
-        /// <param name="recommendationsUseGcsConfig">recommendations.useGcsConfig - Optional - This parameter is currently ignored</param>
-        /// <param name="taxonomy">Optional - Merchant taxonomy</param>
-        /// <param name="thumbnails">Optional - Thumbnail specification</param>
-        public virtual System.IO.Stream GetAsStream(
-                    long accountId, 
-                    string productId, 
-                    string productIdType, 
-                    string source, 
-                    string attributeFilter, 
-                    System.Boolean? categoriesEnabled, 
-                    string categoriesInclude, 
-                    System.Boolean? categoriesUseGcsConfig, 
-                    System.Boolean? debugEnabled, 
-                    System.Boolean? debugEnableLogging, 
-                    System.Boolean? debugSearchRequest, 
-                    System.Boolean? debugSearchResponse, 
-                    string productFields, 
-                    System.Boolean? recommendationsEnabled, 
-                    string recommendationsInclude, 
-                    System.Boolean? recommendationsUseGcsConfig, 
-                    string taxonomy, 
-                    string thumbnails) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["accountId"] = accountId;
-            parameters["productId"] = productId;
-            parameters["productIdType"] = productIdType;
-            parameters["source"] = source;
-            parameters["attributeFilter"] = attributeFilter;
-            parameters["categories.enabled"] = categoriesEnabled;
-            parameters["categories.include"] = categoriesInclude;
-            parameters["categories.useGcsConfig"] = categoriesUseGcsConfig;
-            parameters["debug.enabled"] = debugEnabled;
-            parameters["debug.enableLogging"] = debugEnableLogging;
-            parameters["debug.searchRequest"] = debugSearchRequest;
-            parameters["debug.searchResponse"] = debugSearchResponse;
-            parameters["productFields"] = productFields;
-            parameters["recommendations.enabled"] = recommendationsEnabled;
-            parameters["recommendations.include"] = recommendationsInclude;
-            parameters["recommendations.useGcsConfig"] = recommendationsUseGcsConfig;
-            parameters["taxonomy"] = taxonomy;
-            parameters["thumbnails"] = thumbnails;
-            logger.Debug("Executing products.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(ProductsResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing products.get");
-            return ret;
-        }
-        
-        /// <summary>Returns a list of products and content modules</summary>
-        /// <param name="source">Required - Query source</param>
-        /// <param name="attributeFilter">Optional - Comma separated list of attributes to return</param>
-        /// <param name="boostBy">Optional - Boosting specification</param>
-        /// <param name="categoriesEnabled">categories.enabled - Optional - Whether to return category information</param>
-        /// <param name="categoriesInclude">categories.include - Optional - Category specification</param>
-        /// <param name="categoriesUseGcsConfig">categories.useGcsConfig - Optional - This parameter is currently ignored</param>
-        /// <param name="channels">Optional - Channels specification</param>
-        /// <param name="country">Optional - Country restriction (ISO 3166)</param>
-        /// <param name="crowdBy">Optional - Crowding specification</param>
-        /// <param name="currency">Optional - Currency restriction (ISO 4217)</param>
-        /// <param name="debugEnabled">debug.enabled - Optional - Google Internal</param>
-        /// <param name="debugEnableLogging">debug.enableLogging - Optional - Google Internal</param>
-        /// <param name="debugGeocodeRequest">debug.geocodeRequest - Optional - Google Internal</param>
-        /// <param name="debugGeocodeResponse">debug.geocodeResponse - Optional - Google Internal</param>
-        /// <param name="debugRdcRequest">debug.rdcRequest - Optional - Google Internal</param>
-        /// <param name="debugRdcResponse">debug.rdcResponse - Optional - Google Internal</param>
-        /// <param name="debugSearchRequest">debug.searchRequest - Optional - Google Internal</param>
-        /// <param name="debugSearchResponse">debug.searchResponse - Optional - Google Internal</param>
-        /// <param name="facetsDiscover">facets.discover - Optional - Facets to discover</param>
-        /// <param name="facetsEnabled">facets.enabled - Optional - Whether to return facet information</param>
-        /// <param name="facetsInclude">facets.include - Optional - Facets to include (applies when useGcsConfig == false)</param>
-        /// <param name="facetsUseGcsConfig">facets.useGcsConfig - Optional - Whether to return facet information as configured in the GCS account</param>
-        /// <param name="language">Optional - Language restriction (BCP 47)</param>
-        /// <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return</param>
-        /// <param name="minAvailability">Optional - Must be one of the following values [inStock, limited, outOfStock, unknown]</param>
-        /// <param name="productFields">Optional - Google Internal</param>
-        /// <param name="promotionsEnabled">promotions.enabled - Optional - Whether to return promotion information</param>
-        /// <param name="promotionsUseGcsConfig">promotions.useGcsConfig - Optional - Whether to return promotion information as configured in the GCS account</param>
-        /// <param name="q">Optional - Search query</param>
-        /// <param name="rankBy">Optional - Ranking specification</param>
-        /// <param name="redirectsEnabled">redirects.enabled - Optional - Whether to return redirect information</param>
-        /// <param name="redirectsUseGcsConfig">redirects.useGcsConfig - Optional - Whether to return redirect information as configured in the GCS account</param>
-        /// <param name="relatedQueriesEnabled">relatedQueries.enabled - Optional - Whether to return related queries</param>
-        /// <param name="relatedQueriesUseGcsConfig">relatedQueries.useGcsConfig - Optional - This parameter is currently ignored</param>
-        /// <param name="restrictBy">Optional - Restriction specification</param>
-        /// <param name="safe">Optional - Whether safe search is enabled. Default: true</param>
-        /// <param name="saytEnabled">sayt.enabled - Optional - Google Internal</param>
-        /// <param name="saytUseGcsConfig">sayt.useGcsConfig - Optional - Google Internal</param>
-        /// <param name="shelfSpaceAdsEnabled">shelfSpaceAds.enabled - Optional - Whether to return shelf space ads</param>
-        /// <param name="shelfSpaceAdsMaxResults">shelfSpaceAds.maxResults - Optional - Minimum value of 0 - Maximum value of 4294967295 - The maximum number of shelf space ads to return</param>
-        /// <param name="shelfSpaceAdsUseGcsConfig">shelfSpaceAds.useGcsConfig - Optional - This parameter is currently ignored</param>
-        /// <param name="spellingEnabled">spelling.enabled - Optional - Whether to return spelling suggestions</param>
-        /// <param name="spellingUseGcsConfig">spelling.useGcsConfig - Optional - This parameter is currently ignored</param>
-        /// <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index (1-based) of first product to return</param>
-        /// <param name="taxonomy">Optional - Taxonomy name</param>
-        /// <param name="thumbnails">Optional - Image thumbnails specification</param>
-        /// <param name="useCase">Optional - One of CommerceSearchUseCase, ShoppingApiUseCase</param>
-        public virtual System.IO.Stream ListAsStream(
-                    string source, 
-                    string attributeFilter, 
-                    string boostBy, 
-                    System.Boolean? categoriesEnabled, 
-                    string categoriesInclude, 
-                    System.Boolean? categoriesUseGcsConfig, 
-                    string channels, 
-                    string country, 
-                    string crowdBy, 
-                    string currency, 
-                    System.Boolean? debugEnabled, 
-                    System.Boolean? debugEnableLogging, 
-                    System.Boolean? debugGeocodeRequest, 
-                    System.Boolean? debugGeocodeResponse, 
-                    System.Boolean? debugRdcRequest, 
-                    System.Boolean? debugRdcResponse, 
-                    System.Boolean? debugSearchRequest, 
-                    System.Boolean? debugSearchResponse, 
-                    string facetsDiscover, 
-                    System.Boolean? facetsEnabled, 
-                    string facetsInclude, 
-                    System.Boolean? facetsUseGcsConfig, 
-                    string language, 
-                    System.Int64? maxResults, 
-                    MinAvailability? minAvailability, 
-                    string productFields, 
-                    System.Boolean? promotionsEnabled, 
-                    System.Boolean? promotionsUseGcsConfig, 
-                    string q, 
-                    string rankBy, 
-                    System.Boolean? redirectsEnabled, 
-                    System.Boolean? redirectsUseGcsConfig, 
-                    System.Boolean? relatedQueriesEnabled, 
-                    System.Boolean? relatedQueriesUseGcsConfig, 
-                    string restrictBy, 
-                    System.Boolean? safe, 
-                    System.Boolean? saytEnabled, 
-                    System.Boolean? saytUseGcsConfig, 
-                    System.Boolean? shelfSpaceAdsEnabled, 
-                    System.Int64? shelfSpaceAdsMaxResults, 
-                    System.Boolean? shelfSpaceAdsUseGcsConfig, 
-                    System.Boolean? spellingEnabled, 
-                    System.Boolean? spellingUseGcsConfig, 
-                    System.Int64? startIndex, 
-                    string taxonomy, 
-                    string thumbnails, 
-                    string useCase) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["source"] = source;
-            parameters["attributeFilter"] = attributeFilter;
-            parameters["boostBy"] = boostBy;
-            parameters["categories.enabled"] = categoriesEnabled;
-            parameters["categories.include"] = categoriesInclude;
-            parameters["categories.useGcsConfig"] = categoriesUseGcsConfig;
-            parameters["channels"] = channels;
-            parameters["country"] = country;
-            parameters["crowdBy"] = crowdBy;
-            parameters["currency"] = currency;
-            parameters["debug.enabled"] = debugEnabled;
-            parameters["debug.enableLogging"] = debugEnableLogging;
-            parameters["debug.geocodeRequest"] = debugGeocodeRequest;
-            parameters["debug.geocodeResponse"] = debugGeocodeResponse;
-            parameters["debug.rdcRequest"] = debugRdcRequest;
-            parameters["debug.rdcResponse"] = debugRdcResponse;
-            parameters["debug.searchRequest"] = debugSearchRequest;
-            parameters["debug.searchResponse"] = debugSearchResponse;
-            parameters["facets.discover"] = facetsDiscover;
-            parameters["facets.enabled"] = facetsEnabled;
-            parameters["facets.include"] = facetsInclude;
-            parameters["facets.useGcsConfig"] = facetsUseGcsConfig;
-            parameters["language"] = language;
-            parameters["maxResults"] = maxResults;
-            parameters["minAvailability"] = minAvailability;
-            parameters["productFields"] = productFields;
-            parameters["promotions.enabled"] = promotionsEnabled;
-            parameters["promotions.useGcsConfig"] = promotionsUseGcsConfig;
-            parameters["q"] = q;
-            parameters["rankBy"] = rankBy;
-            parameters["redirects.enabled"] = redirectsEnabled;
-            parameters["redirects.useGcsConfig"] = redirectsUseGcsConfig;
-            parameters["relatedQueries.enabled"] = relatedQueriesEnabled;
-            parameters["relatedQueries.useGcsConfig"] = relatedQueriesUseGcsConfig;
-            parameters["restrictBy"] = restrictBy;
-            parameters["safe"] = safe;
-            parameters["sayt.enabled"] = saytEnabled;
-            parameters["sayt.useGcsConfig"] = saytUseGcsConfig;
-            parameters["shelfSpaceAds.enabled"] = shelfSpaceAdsEnabled;
-            parameters["shelfSpaceAds.maxResults"] = shelfSpaceAdsMaxResults;
-            parameters["shelfSpaceAds.useGcsConfig"] = shelfSpaceAdsUseGcsConfig;
-            parameters["spelling.enabled"] = spellingEnabled;
-            parameters["spelling.useGcsConfig"] = spellingUseGcsConfig;
-            parameters["startIndex"] = startIndex;
-            parameters["taxonomy"] = taxonomy;
-            parameters["thumbnails"] = thumbnails;
-            parameters["useCase"] = useCase;
-            logger.Debug("Executing products.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(ProductsResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing products.list");
-            return ret;
+        /// <param name="productId">Required - Id of product</param>
+        public virtual GetRequest Get(string source, long accountId, string productIdType, string productId) {
+            return new GetRequest(service, source, accountId, productIdType, productId);
         }
         
         /// <summary>Returns a single product</summary>
-        /// <param name="accountId">Required - Minimum value of 0 - Maximum value of 4294967295 - Merchant center account id</param>
-        /// <param name="productId">Required - Id of product</param>
-        /// <param name="productIdType">Required - Type of productId</param>
         /// <param name="source">Required - Query source</param>
+        /// <param name="accountId">Required - Minimum value of 0 - Maximum value of 4294967295 - Merchant center account id</param>
+        /// <param name="productIdType">Required - Type of productId</param>
+        /// <param name="productId">Required - Id of product</param>
         /// <param name="attributeFilter">Optional - Comma separated list of attributes to return</param>
         /// <param name="categoriesEnabled">categories.enabled - Optional - Whether to return category information</param>
         /// <param name="categoriesInclude">categories.include - Optional - Category specification</param>
@@ -1727,49 +1625,32 @@ namespace Google.Apis.Shopping.V1 {
         /// <param name="recommendationsUseGcsConfig">recommendations.useGcsConfig - Optional - This parameter is currently ignored</param>
         /// <param name="taxonomy">Optional - Merchant taxonomy</param>
         /// <param name="thumbnails">Optional - Thumbnail specification</param>
-        public virtual Google.Apis.Shopping.V1.Data.Product Get(
-                    long accountId, 
-                    string productId, 
-                    string productIdType, 
+        public virtual GetRequest Get(
                     string source, 
-                    string attributeFilter, 
-                    System.Boolean? categoriesEnabled, 
-                    string categoriesInclude, 
-                    System.Boolean? categoriesUseGcsConfig, 
-                    System.Boolean? debugEnabled, 
-                    System.Boolean? debugEnableLogging, 
-                    System.Boolean? debugSearchRequest, 
-                    System.Boolean? debugSearchResponse, 
-                    string productFields, 
-                    System.Boolean? recommendationsEnabled, 
-                    string recommendationsInclude, 
-                    System.Boolean? recommendationsUseGcsConfig, 
-                    string taxonomy, 
-                    string thumbnails) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["accountId"] = accountId;
-            parameters["productId"] = productId;
-            parameters["productIdType"] = productIdType;
-            parameters["source"] = source;
-            parameters["attributeFilter"] = attributeFilter;
-            parameters["categories.enabled"] = categoriesEnabled;
-            parameters["categories.include"] = categoriesInclude;
-            parameters["categories.useGcsConfig"] = categoriesUseGcsConfig;
-            parameters["debug.enabled"] = debugEnabled;
-            parameters["debug.enableLogging"] = debugEnableLogging;
-            parameters["debug.searchRequest"] = debugSearchRequest;
-            parameters["debug.searchResponse"] = debugSearchResponse;
-            parameters["productFields"] = productFields;
-            parameters["recommendations.enabled"] = recommendationsEnabled;
-            parameters["recommendations.include"] = recommendationsInclude;
-            parameters["recommendations.useGcsConfig"] = recommendationsUseGcsConfig;
-            parameters["taxonomy"] = taxonomy;
-            parameters["thumbnails"] = thumbnails;
-            logger.Debug("Executing products.get");
-            Google.Apis.Shopping.V1.Data.Product ret = this.service.JsonToObject<Google.Apis.Shopping.V1.Data.Product>(this.service.ExecuteRequest(ProductsResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing products.get");
-            return ret;
+                    long accountId, 
+                    string productIdType, 
+                    string productId, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string attributeFilter, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? categoriesEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string categoriesInclude, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? categoriesUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugEnableLogging, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugSearchRequest, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugSearchResponse, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string productFields, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? recommendationsEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string recommendationsInclude, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? recommendationsUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string taxonomy, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string thumbnails) {
+            return new GetRequest(service, source, accountId, productIdType, productId, attributeFilter, categoriesEnabled, categoriesInclude, categoriesUseGcsConfig, debugEnabled, debugEnableLogging, debugSearchRequest, debugSearchResponse, productFields, recommendationsEnabled, recommendationsInclude, recommendationsUseGcsConfig, taxonomy, thumbnails);
+        }
+        
+        /// <summary>Returns a list of products and content modules</summary>
+        /// <param name="source">Required - Query source</param>
+        public virtual ListRequest List(string source) {
+            return new ListRequest(service, source);
         }
         
         /// <summary>Returns a list of products and content modules</summary>
@@ -1820,107 +1701,55 @@ namespace Google.Apis.Shopping.V1 {
         /// <param name="taxonomy">Optional - Taxonomy name</param>
         /// <param name="thumbnails">Optional - Image thumbnails specification</param>
         /// <param name="useCase">Optional - One of CommerceSearchUseCase, ShoppingApiUseCase</param>
-        public virtual Google.Apis.Shopping.V1.Data.Products List(
+        public virtual ListRequest List(
                     string source, 
-                    string attributeFilter, 
-                    string boostBy, 
-                    System.Boolean? categoriesEnabled, 
-                    string categoriesInclude, 
-                    System.Boolean? categoriesUseGcsConfig, 
-                    string channels, 
-                    string country, 
-                    string crowdBy, 
-                    string currency, 
-                    System.Boolean? debugEnabled, 
-                    System.Boolean? debugEnableLogging, 
-                    System.Boolean? debugGeocodeRequest, 
-                    System.Boolean? debugGeocodeResponse, 
-                    System.Boolean? debugRdcRequest, 
-                    System.Boolean? debugRdcResponse, 
-                    System.Boolean? debugSearchRequest, 
-                    System.Boolean? debugSearchResponse, 
-                    string facetsDiscover, 
-                    System.Boolean? facetsEnabled, 
-                    string facetsInclude, 
-                    System.Boolean? facetsUseGcsConfig, 
-                    string language, 
-                    System.Int64? maxResults, 
-                    MinAvailability? minAvailability, 
-                    string productFields, 
-                    System.Boolean? promotionsEnabled, 
-                    System.Boolean? promotionsUseGcsConfig, 
-                    string q, 
-                    string rankBy, 
-                    System.Boolean? redirectsEnabled, 
-                    System.Boolean? redirectsUseGcsConfig, 
-                    System.Boolean? relatedQueriesEnabled, 
-                    System.Boolean? relatedQueriesUseGcsConfig, 
-                    string restrictBy, 
-                    System.Boolean? safe, 
-                    System.Boolean? saytEnabled, 
-                    System.Boolean? saytUseGcsConfig, 
-                    System.Boolean? shelfSpaceAdsEnabled, 
-                    System.Int64? shelfSpaceAdsMaxResults, 
-                    System.Boolean? shelfSpaceAdsUseGcsConfig, 
-                    System.Boolean? spellingEnabled, 
-                    System.Boolean? spellingUseGcsConfig, 
-                    System.Int64? startIndex, 
-                    string taxonomy, 
-                    string thumbnails, 
-                    string useCase) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["source"] = source;
-            parameters["attributeFilter"] = attributeFilter;
-            parameters["boostBy"] = boostBy;
-            parameters["categories.enabled"] = categoriesEnabled;
-            parameters["categories.include"] = categoriesInclude;
-            parameters["categories.useGcsConfig"] = categoriesUseGcsConfig;
-            parameters["channels"] = channels;
-            parameters["country"] = country;
-            parameters["crowdBy"] = crowdBy;
-            parameters["currency"] = currency;
-            parameters["debug.enabled"] = debugEnabled;
-            parameters["debug.enableLogging"] = debugEnableLogging;
-            parameters["debug.geocodeRequest"] = debugGeocodeRequest;
-            parameters["debug.geocodeResponse"] = debugGeocodeResponse;
-            parameters["debug.rdcRequest"] = debugRdcRequest;
-            parameters["debug.rdcResponse"] = debugRdcResponse;
-            parameters["debug.searchRequest"] = debugSearchRequest;
-            parameters["debug.searchResponse"] = debugSearchResponse;
-            parameters["facets.discover"] = facetsDiscover;
-            parameters["facets.enabled"] = facetsEnabled;
-            parameters["facets.include"] = facetsInclude;
-            parameters["facets.useGcsConfig"] = facetsUseGcsConfig;
-            parameters["language"] = language;
-            parameters["maxResults"] = maxResults;
-            parameters["minAvailability"] = minAvailability;
-            parameters["productFields"] = productFields;
-            parameters["promotions.enabled"] = promotionsEnabled;
-            parameters["promotions.useGcsConfig"] = promotionsUseGcsConfig;
-            parameters["q"] = q;
-            parameters["rankBy"] = rankBy;
-            parameters["redirects.enabled"] = redirectsEnabled;
-            parameters["redirects.useGcsConfig"] = redirectsUseGcsConfig;
-            parameters["relatedQueries.enabled"] = relatedQueriesEnabled;
-            parameters["relatedQueries.useGcsConfig"] = relatedQueriesUseGcsConfig;
-            parameters["restrictBy"] = restrictBy;
-            parameters["safe"] = safe;
-            parameters["sayt.enabled"] = saytEnabled;
-            parameters["sayt.useGcsConfig"] = saytUseGcsConfig;
-            parameters["shelfSpaceAds.enabled"] = shelfSpaceAdsEnabled;
-            parameters["shelfSpaceAds.maxResults"] = shelfSpaceAdsMaxResults;
-            parameters["shelfSpaceAds.useGcsConfig"] = shelfSpaceAdsUseGcsConfig;
-            parameters["spelling.enabled"] = spellingEnabled;
-            parameters["spelling.useGcsConfig"] = spellingUseGcsConfig;
-            parameters["startIndex"] = startIndex;
-            parameters["taxonomy"] = taxonomy;
-            parameters["thumbnails"] = thumbnails;
-            parameters["useCase"] = useCase;
-            logger.Debug("Executing products.list");
-            Google.Apis.Shopping.V1.Data.Products ret = this.service.JsonToObject<Google.Apis.Shopping.V1.Data.Products>(this.service.ExecuteRequest(ProductsResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing products.list");
-            return ret;
+                    [System.Runtime.InteropServices.OptionalAttribute()] string attributeFilter, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string boostBy, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? categoriesEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string categoriesInclude, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? categoriesUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string channels, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string country, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string crowdBy, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string currency, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugEnableLogging, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugGeocodeRequest, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugGeocodeResponse, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugRdcRequest, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugRdcResponse, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugSearchRequest, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugSearchResponse, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string facetsDiscover, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? facetsEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string facetsInclude, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? facetsUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string language, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] MinAvailability? minAvailability, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string productFields, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? promotionsEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? promotionsUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string q, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string rankBy, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? redirectsEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? redirectsUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? relatedQueriesEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? relatedQueriesUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string restrictBy, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? safe, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? saytEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? saytUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? shelfSpaceAdsEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? shelfSpaceAdsMaxResults, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? shelfSpaceAdsUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? spellingEnabled, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? spellingUseGcsConfig, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string taxonomy, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string thumbnails, 
+                    [System.Runtime.InteropServices.OptionalAttribute()] string useCase) {
+            return new ListRequest(service, source, attributeFilter, boostBy, categoriesEnabled, categoriesInclude, categoriesUseGcsConfig, channels, country, crowdBy, currency, debugEnabled, debugEnableLogging, debugGeocodeRequest, debugGeocodeResponse, debugRdcRequest, debugRdcResponse, debugSearchRequest, debugSearchResponse, facetsDiscover, facetsEnabled, facetsInclude, facetsUseGcsConfig, language, maxResults, minAvailability, productFields, promotionsEnabled, promotionsUseGcsConfig, q, rankBy, redirectsEnabled, redirectsUseGcsConfig, relatedQueriesEnabled, relatedQueriesUseGcsConfig, restrictBy, safe, saytEnabled, saytUseGcsConfig, shelfSpaceAdsEnabled, shelfSpaceAdsMaxResults, shelfSpaceAdsUseGcsConfig, spellingEnabled, spellingUseGcsConfig, startIndex, taxonomy, thumbnails, useCase);
         }
         
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
@@ -1941,6 +1770,1018 @@ namespace Google.Apis.Shopping.V1 {
             /// <summary>All products will be returned</summary>
             [Google.Apis.Util.StringValueAttribute("unknown")]
             Unknown,
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.V1.Data.Product> {
+            
+            private long accountId;
+            
+            private string attributeFilter;
+            
+            private System.Boolean? categoriesEnabled;
+            
+            private string categoriesInclude;
+            
+            private System.Boolean? categoriesUseGcsConfig;
+            
+            private System.Boolean? debugEnableLogging;
+            
+            private System.Boolean? debugEnabled;
+            
+            private System.Boolean? debugSearchRequest;
+            
+            private System.Boolean? debugSearchResponse;
+            
+            private string productFields;
+            
+            private string productId;
+            
+            private string productIdType;
+            
+            private System.Boolean? recommendationsEnabled;
+            
+            private string recommendationsInclude;
+            
+            private System.Boolean? recommendationsUseGcsConfig;
+            
+            private string source;
+            
+            private string taxonomy;
+            
+            private string thumbnails;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string source, long accountId, string productIdType, string productId) : 
+                    base(service) {
+                this.source = source;
+                this.accountId = accountId;
+                this.productIdType = productIdType;
+                this.productId = productId;
+            }
+            
+            public GetRequest(
+                        Google.Apis.Discovery.ISchemaAwareRequestExecutor service, 
+                        string source, 
+                        long accountId, 
+                        string productIdType, 
+                        string productId, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string attributeFilter, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? categoriesEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string categoriesInclude, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? categoriesUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugEnableLogging, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugSearchRequest, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugSearchResponse, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string productFields, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? recommendationsEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string recommendationsInclude, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? recommendationsUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string taxonomy, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string thumbnails) : 
+                    base(service) {
+                this.source = source;
+                this.accountId = accountId;
+                this.productIdType = productIdType;
+                this.productId = productId;
+                this.attributeFilter = attributeFilter;
+                this.categoriesEnabled = categoriesEnabled;
+                this.categoriesInclude = categoriesInclude;
+                this.categoriesUseGcsConfig = categoriesUseGcsConfig;
+                this.debugEnabled = debugEnabled;
+                this.debugEnableLogging = debugEnableLogging;
+                this.debugSearchRequest = debugSearchRequest;
+                this.debugSearchResponse = debugSearchResponse;
+                this.productFields = productFields;
+                this.recommendationsEnabled = recommendationsEnabled;
+                this.recommendationsInclude = recommendationsInclude;
+                this.recommendationsUseGcsConfig = recommendationsUseGcsConfig;
+                this.taxonomy = taxonomy;
+                this.thumbnails = thumbnails;
+            }
+            
+            /// <summary>Merchant center account id</summary>
+            [Google.Apis.Util.RequestParameterAttribute("accountId")]
+            public virtual long AccountId {
+                get {
+                    return this.accountId;
+                }
+            }
+            
+            /// <summary>Comma separated list of attributes to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("attributeFilter")]
+            public virtual string AttributeFilter {
+                get {
+                    return this.attributeFilter;
+                }
+                set {
+                    this.attributeFilter = value;
+                }
+            }
+            
+            /// <summary>Whether to return category information</summary>
+            [Google.Apis.Util.RequestParameterAttribute("categories.enabled")]
+            public virtual System.Boolean? CategoriesEnabled {
+                get {
+                    return this.categoriesEnabled;
+                }
+                set {
+                    this.categoriesEnabled = value;
+                }
+            }
+            
+            /// <summary>Category specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("categories.include")]
+            public virtual string CategoriesInclude {
+                get {
+                    return this.categoriesInclude;
+                }
+                set {
+                    this.categoriesInclude = value;
+                }
+            }
+            
+            /// <summary>This parameter is currently ignored</summary>
+            [Google.Apis.Util.RequestParameterAttribute("categories.useGcsConfig")]
+            public virtual System.Boolean? CategoriesUseGcsConfig {
+                get {
+                    return this.categoriesUseGcsConfig;
+                }
+                set {
+                    this.categoriesUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.enableLogging")]
+            public virtual System.Boolean? DebugEnableLogging {
+                get {
+                    return this.debugEnableLogging;
+                }
+                set {
+                    this.debugEnableLogging = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.enabled")]
+            public virtual System.Boolean? DebugEnabled {
+                get {
+                    return this.debugEnabled;
+                }
+                set {
+                    this.debugEnabled = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.searchRequest")]
+            public virtual System.Boolean? DebugSearchRequest {
+                get {
+                    return this.debugSearchRequest;
+                }
+                set {
+                    this.debugSearchRequest = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.searchResponse")]
+            public virtual System.Boolean? DebugSearchResponse {
+                get {
+                    return this.debugSearchResponse;
+                }
+                set {
+                    this.debugSearchResponse = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("productFields")]
+            public virtual string ProductFields {
+                get {
+                    return this.productFields;
+                }
+                set {
+                    this.productFields = value;
+                }
+            }
+            
+            /// <summary>Id of product</summary>
+            [Google.Apis.Util.RequestParameterAttribute("productId")]
+            public virtual string ProductId {
+                get {
+                    return this.productId;
+                }
+            }
+            
+            /// <summary>Type of productId</summary>
+            [Google.Apis.Util.RequestParameterAttribute("productIdType")]
+            public virtual string ProductIdType {
+                get {
+                    return this.productIdType;
+                }
+            }
+            
+            /// <summary>Whether to return recommendation information</summary>
+            [Google.Apis.Util.RequestParameterAttribute("recommendations.enabled")]
+            public virtual System.Boolean? RecommendationsEnabled {
+                get {
+                    return this.recommendationsEnabled;
+                }
+                set {
+                    this.recommendationsEnabled = value;
+                }
+            }
+            
+            /// <summary>Recommendation specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("recommendations.include")]
+            public virtual string RecommendationsInclude {
+                get {
+                    return this.recommendationsInclude;
+                }
+                set {
+                    this.recommendationsInclude = value;
+                }
+            }
+            
+            /// <summary>This parameter is currently ignored</summary>
+            [Google.Apis.Util.RequestParameterAttribute("recommendations.useGcsConfig")]
+            public virtual System.Boolean? RecommendationsUseGcsConfig {
+                get {
+                    return this.recommendationsUseGcsConfig;
+                }
+                set {
+                    this.recommendationsUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Query source</summary>
+            [Google.Apis.Util.RequestParameterAttribute("source")]
+            public virtual string Source {
+                get {
+                    return this.source;
+                }
+            }
+            
+            /// <summary>Merchant taxonomy</summary>
+            [Google.Apis.Util.RequestParameterAttribute("taxonomy")]
+            public virtual string Taxonomy {
+                get {
+                    return this.taxonomy;
+                }
+                set {
+                    this.taxonomy = value;
+                }
+            }
+            
+            /// <summary>Thumbnail specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("thumbnails")]
+            public virtual string Thumbnails {
+                get {
+                    return this.thumbnails;
+                }
+                set {
+                    this.thumbnails = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "products";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.V1.Data.Products> {
+            
+            private string attributeFilter;
+            
+            private string boostBy;
+            
+            private System.Boolean? categoriesEnabled;
+            
+            private string categoriesInclude;
+            
+            private System.Boolean? categoriesUseGcsConfig;
+            
+            private string channels;
+            
+            private string country;
+            
+            private string crowdBy;
+            
+            private string currency;
+            
+            private System.Boolean? debugEnableLogging;
+            
+            private System.Boolean? debugEnabled;
+            
+            private System.Boolean? debugGeocodeRequest;
+            
+            private System.Boolean? debugGeocodeResponse;
+            
+            private System.Boolean? debugRdcRequest;
+            
+            private System.Boolean? debugRdcResponse;
+            
+            private System.Boolean? debugSearchRequest;
+            
+            private System.Boolean? debugSearchResponse;
+            
+            private string facetsDiscover;
+            
+            private System.Boolean? facetsEnabled;
+            
+            private string facetsInclude;
+            
+            private System.Boolean? facetsUseGcsConfig;
+            
+            private string language;
+            
+            private System.Int64? maxResults;
+            
+            private MinAvailability? minAvailability;
+            
+            private string productFields;
+            
+            private System.Boolean? promotionsEnabled;
+            
+            private System.Boolean? promotionsUseGcsConfig;
+            
+            private string q;
+            
+            private string rankBy;
+            
+            private System.Boolean? redirectsEnabled;
+            
+            private System.Boolean? redirectsUseGcsConfig;
+            
+            private System.Boolean? relatedQueriesEnabled;
+            
+            private System.Boolean? relatedQueriesUseGcsConfig;
+            
+            private string restrictBy;
+            
+            private System.Boolean? safe;
+            
+            private System.Boolean? saytEnabled;
+            
+            private System.Boolean? saytUseGcsConfig;
+            
+            private System.Boolean? shelfSpaceAdsEnabled;
+            
+            private System.Int64? shelfSpaceAdsMaxResults;
+            
+            private System.Boolean? shelfSpaceAdsUseGcsConfig;
+            
+            private string source;
+            
+            private System.Boolean? spellingEnabled;
+            
+            private System.Boolean? spellingUseGcsConfig;
+            
+            private System.Int64? startIndex;
+            
+            private string taxonomy;
+            
+            private string thumbnails;
+            
+            private string useCase;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string source) : 
+                    base(service) {
+                this.source = source;
+            }
+            
+            public ListRequest(
+                        Google.Apis.Discovery.ISchemaAwareRequestExecutor service, 
+                        string source, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string attributeFilter, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string boostBy, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? categoriesEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string categoriesInclude, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? categoriesUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string channels, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string country, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string crowdBy, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string currency, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugEnableLogging, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugGeocodeRequest, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugGeocodeResponse, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugRdcRequest, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugRdcResponse, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugSearchRequest, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? debugSearchResponse, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string facetsDiscover, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? facetsEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string facetsInclude, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? facetsUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string language, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] MinAvailability? minAvailability, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string productFields, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? promotionsEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? promotionsUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string q, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string rankBy, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? redirectsEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? redirectsUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? relatedQueriesEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? relatedQueriesUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string restrictBy, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? safe, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? saytEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? saytUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? shelfSpaceAdsEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? shelfSpaceAdsMaxResults, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? shelfSpaceAdsUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? spellingEnabled, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? spellingUseGcsConfig, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string taxonomy, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string thumbnails, 
+                        [System.Runtime.InteropServices.OptionalAttribute()] string useCase) : 
+                    base(service) {
+                this.source = source;
+                this.attributeFilter = attributeFilter;
+                this.boostBy = boostBy;
+                this.categoriesEnabled = categoriesEnabled;
+                this.categoriesInclude = categoriesInclude;
+                this.categoriesUseGcsConfig = categoriesUseGcsConfig;
+                this.channels = channels;
+                this.country = country;
+                this.crowdBy = crowdBy;
+                this.currency = currency;
+                this.debugEnabled = debugEnabled;
+                this.debugEnableLogging = debugEnableLogging;
+                this.debugGeocodeRequest = debugGeocodeRequest;
+                this.debugGeocodeResponse = debugGeocodeResponse;
+                this.debugRdcRequest = debugRdcRequest;
+                this.debugRdcResponse = debugRdcResponse;
+                this.debugSearchRequest = debugSearchRequest;
+                this.debugSearchResponse = debugSearchResponse;
+                this.facetsDiscover = facetsDiscover;
+                this.facetsEnabled = facetsEnabled;
+                this.facetsInclude = facetsInclude;
+                this.facetsUseGcsConfig = facetsUseGcsConfig;
+                this.language = language;
+                this.maxResults = maxResults;
+                this.minAvailability = minAvailability;
+                this.productFields = productFields;
+                this.promotionsEnabled = promotionsEnabled;
+                this.promotionsUseGcsConfig = promotionsUseGcsConfig;
+                this.q = q;
+                this.rankBy = rankBy;
+                this.redirectsEnabled = redirectsEnabled;
+                this.redirectsUseGcsConfig = redirectsUseGcsConfig;
+                this.relatedQueriesEnabled = relatedQueriesEnabled;
+                this.relatedQueriesUseGcsConfig = relatedQueriesUseGcsConfig;
+                this.restrictBy = restrictBy;
+                this.safe = safe;
+                this.saytEnabled = saytEnabled;
+                this.saytUseGcsConfig = saytUseGcsConfig;
+                this.shelfSpaceAdsEnabled = shelfSpaceAdsEnabled;
+                this.shelfSpaceAdsMaxResults = shelfSpaceAdsMaxResults;
+                this.shelfSpaceAdsUseGcsConfig = shelfSpaceAdsUseGcsConfig;
+                this.spellingEnabled = spellingEnabled;
+                this.spellingUseGcsConfig = spellingUseGcsConfig;
+                this.startIndex = startIndex;
+                this.taxonomy = taxonomy;
+                this.thumbnails = thumbnails;
+                this.useCase = useCase;
+            }
+            
+            /// <summary>Comma separated list of attributes to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("attributeFilter")]
+            public virtual string AttributeFilter {
+                get {
+                    return this.attributeFilter;
+                }
+                set {
+                    this.attributeFilter = value;
+                }
+            }
+            
+            /// <summary>Boosting specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("boostBy")]
+            public virtual string BoostBy {
+                get {
+                    return this.boostBy;
+                }
+                set {
+                    this.boostBy = value;
+                }
+            }
+            
+            /// <summary>Whether to return category information</summary>
+            [Google.Apis.Util.RequestParameterAttribute("categories.enabled")]
+            public virtual System.Boolean? CategoriesEnabled {
+                get {
+                    return this.categoriesEnabled;
+                }
+                set {
+                    this.categoriesEnabled = value;
+                }
+            }
+            
+            /// <summary>Category specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("categories.include")]
+            public virtual string CategoriesInclude {
+                get {
+                    return this.categoriesInclude;
+                }
+                set {
+                    this.categoriesInclude = value;
+                }
+            }
+            
+            /// <summary>This parameter is currently ignored</summary>
+            [Google.Apis.Util.RequestParameterAttribute("categories.useGcsConfig")]
+            public virtual System.Boolean? CategoriesUseGcsConfig {
+                get {
+                    return this.categoriesUseGcsConfig;
+                }
+                set {
+                    this.categoriesUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Channels specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("channels")]
+            public virtual string Channels {
+                get {
+                    return this.channels;
+                }
+                set {
+                    this.channels = value;
+                }
+            }
+            
+            /// <summary>Country restriction (ISO 3166)</summary>
+            [Google.Apis.Util.RequestParameterAttribute("country")]
+            public virtual string Country {
+                get {
+                    return this.country;
+                }
+                set {
+                    this.country = value;
+                }
+            }
+            
+            /// <summary>Crowding specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("crowdBy")]
+            public virtual string CrowdBy {
+                get {
+                    return this.crowdBy;
+                }
+                set {
+                    this.crowdBy = value;
+                }
+            }
+            
+            /// <summary>Currency restriction (ISO 4217)</summary>
+            [Google.Apis.Util.RequestParameterAttribute("currency")]
+            public virtual string Currency {
+                get {
+                    return this.currency;
+                }
+                set {
+                    this.currency = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.enableLogging")]
+            public virtual System.Boolean? DebugEnableLogging {
+                get {
+                    return this.debugEnableLogging;
+                }
+                set {
+                    this.debugEnableLogging = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.enabled")]
+            public virtual System.Boolean? DebugEnabled {
+                get {
+                    return this.debugEnabled;
+                }
+                set {
+                    this.debugEnabled = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.geocodeRequest")]
+            public virtual System.Boolean? DebugGeocodeRequest {
+                get {
+                    return this.debugGeocodeRequest;
+                }
+                set {
+                    this.debugGeocodeRequest = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.geocodeResponse")]
+            public virtual System.Boolean? DebugGeocodeResponse {
+                get {
+                    return this.debugGeocodeResponse;
+                }
+                set {
+                    this.debugGeocodeResponse = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.rdcRequest")]
+            public virtual System.Boolean? DebugRdcRequest {
+                get {
+                    return this.debugRdcRequest;
+                }
+                set {
+                    this.debugRdcRequest = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.rdcResponse")]
+            public virtual System.Boolean? DebugRdcResponse {
+                get {
+                    return this.debugRdcResponse;
+                }
+                set {
+                    this.debugRdcResponse = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.searchRequest")]
+            public virtual System.Boolean? DebugSearchRequest {
+                get {
+                    return this.debugSearchRequest;
+                }
+                set {
+                    this.debugSearchRequest = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug.searchResponse")]
+            public virtual System.Boolean? DebugSearchResponse {
+                get {
+                    return this.debugSearchResponse;
+                }
+                set {
+                    this.debugSearchResponse = value;
+                }
+            }
+            
+            /// <summary>Facets to discover</summary>
+            [Google.Apis.Util.RequestParameterAttribute("facets.discover")]
+            public virtual string FacetsDiscover {
+                get {
+                    return this.facetsDiscover;
+                }
+                set {
+                    this.facetsDiscover = value;
+                }
+            }
+            
+            /// <summary>Whether to return facet information</summary>
+            [Google.Apis.Util.RequestParameterAttribute("facets.enabled")]
+            public virtual System.Boolean? FacetsEnabled {
+                get {
+                    return this.facetsEnabled;
+                }
+                set {
+                    this.facetsEnabled = value;
+                }
+            }
+            
+            /// <summary>Facets to include (applies when useGcsConfig == false)</summary>
+            [Google.Apis.Util.RequestParameterAttribute("facets.include")]
+            public virtual string FacetsInclude {
+                get {
+                    return this.facetsInclude;
+                }
+                set {
+                    this.facetsInclude = value;
+                }
+            }
+            
+            /// <summary>Whether to return facet information as configured in the GCS account</summary>
+            [Google.Apis.Util.RequestParameterAttribute("facets.useGcsConfig")]
+            public virtual System.Boolean? FacetsUseGcsConfig {
+                get {
+                    return this.facetsUseGcsConfig;
+                }
+                set {
+                    this.facetsUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Language restriction (BCP 47)</summary>
+            [Google.Apis.Util.RequestParameterAttribute("language")]
+            public virtual string Language {
+                get {
+                    return this.language;
+                }
+                set {
+                    this.language = value;
+                }
+            }
+            
+            /// <summary>Maximum number of results to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("minAvailability")]
+            public virtual MinAvailability? MinAvailability {
+                get {
+                    return this.minAvailability;
+                }
+                set {
+                    this.minAvailability = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("productFields")]
+            public virtual string ProductFields {
+                get {
+                    return this.productFields;
+                }
+                set {
+                    this.productFields = value;
+                }
+            }
+            
+            /// <summary>Whether to return promotion information</summary>
+            [Google.Apis.Util.RequestParameterAttribute("promotions.enabled")]
+            public virtual System.Boolean? PromotionsEnabled {
+                get {
+                    return this.promotionsEnabled;
+                }
+                set {
+                    this.promotionsEnabled = value;
+                }
+            }
+            
+            /// <summary>Whether to return promotion information as configured in the GCS account</summary>
+            [Google.Apis.Util.RequestParameterAttribute("promotions.useGcsConfig")]
+            public virtual System.Boolean? PromotionsUseGcsConfig {
+                get {
+                    return this.promotionsUseGcsConfig;
+                }
+                set {
+                    this.promotionsUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Search query</summary>
+            [Google.Apis.Util.RequestParameterAttribute("q")]
+            public virtual string Q {
+                get {
+                    return this.q;
+                }
+                set {
+                    this.q = value;
+                }
+            }
+            
+            /// <summary>Ranking specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("rankBy")]
+            public virtual string RankBy {
+                get {
+                    return this.rankBy;
+                }
+                set {
+                    this.rankBy = value;
+                }
+            }
+            
+            /// <summary>Whether to return redirect information</summary>
+            [Google.Apis.Util.RequestParameterAttribute("redirects.enabled")]
+            public virtual System.Boolean? RedirectsEnabled {
+                get {
+                    return this.redirectsEnabled;
+                }
+                set {
+                    this.redirectsEnabled = value;
+                }
+            }
+            
+            /// <summary>Whether to return redirect information as configured in the GCS account</summary>
+            [Google.Apis.Util.RequestParameterAttribute("redirects.useGcsConfig")]
+            public virtual System.Boolean? RedirectsUseGcsConfig {
+                get {
+                    return this.redirectsUseGcsConfig;
+                }
+                set {
+                    this.redirectsUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Whether to return related queries</summary>
+            [Google.Apis.Util.RequestParameterAttribute("relatedQueries.enabled")]
+            public virtual System.Boolean? RelatedQueriesEnabled {
+                get {
+                    return this.relatedQueriesEnabled;
+                }
+                set {
+                    this.relatedQueriesEnabled = value;
+                }
+            }
+            
+            /// <summary>This parameter is currently ignored</summary>
+            [Google.Apis.Util.RequestParameterAttribute("relatedQueries.useGcsConfig")]
+            public virtual System.Boolean? RelatedQueriesUseGcsConfig {
+                get {
+                    return this.relatedQueriesUseGcsConfig;
+                }
+                set {
+                    this.relatedQueriesUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Restriction specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("restrictBy")]
+            public virtual string RestrictBy {
+                get {
+                    return this.restrictBy;
+                }
+                set {
+                    this.restrictBy = value;
+                }
+            }
+            
+            /// <summary>Whether safe search is enabled. Default: true</summary>
+            [Google.Apis.Util.RequestParameterAttribute("safe")]
+            public virtual System.Boolean? Safe {
+                get {
+                    return this.safe;
+                }
+                set {
+                    this.safe = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("sayt.enabled")]
+            public virtual System.Boolean? SaytEnabled {
+                get {
+                    return this.saytEnabled;
+                }
+                set {
+                    this.saytEnabled = value;
+                }
+            }
+            
+            /// <summary>Google Internal</summary>
+            [Google.Apis.Util.RequestParameterAttribute("sayt.useGcsConfig")]
+            public virtual System.Boolean? SaytUseGcsConfig {
+                get {
+                    return this.saytUseGcsConfig;
+                }
+                set {
+                    this.saytUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Whether to return shelf space ads</summary>
+            [Google.Apis.Util.RequestParameterAttribute("shelfSpaceAds.enabled")]
+            public virtual System.Boolean? ShelfSpaceAdsEnabled {
+                get {
+                    return this.shelfSpaceAdsEnabled;
+                }
+                set {
+                    this.shelfSpaceAdsEnabled = value;
+                }
+            }
+            
+            /// <summary>The maximum number of shelf space ads to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("shelfSpaceAds.maxResults")]
+            public virtual System.Int64? ShelfSpaceAdsMaxResults {
+                get {
+                    return this.shelfSpaceAdsMaxResults;
+                }
+                set {
+                    this.shelfSpaceAdsMaxResults = value;
+                }
+            }
+            
+            /// <summary>This parameter is currently ignored</summary>
+            [Google.Apis.Util.RequestParameterAttribute("shelfSpaceAds.useGcsConfig")]
+            public virtual System.Boolean? ShelfSpaceAdsUseGcsConfig {
+                get {
+                    return this.shelfSpaceAdsUseGcsConfig;
+                }
+                set {
+                    this.shelfSpaceAdsUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Query source</summary>
+            [Google.Apis.Util.RequestParameterAttribute("source")]
+            public virtual string Source {
+                get {
+                    return this.source;
+                }
+            }
+            
+            /// <summary>Whether to return spelling suggestions</summary>
+            [Google.Apis.Util.RequestParameterAttribute("spelling.enabled")]
+            public virtual System.Boolean? SpellingEnabled {
+                get {
+                    return this.spellingEnabled;
+                }
+                set {
+                    this.spellingEnabled = value;
+                }
+            }
+            
+            /// <summary>This parameter is currently ignored</summary>
+            [Google.Apis.Util.RequestParameterAttribute("spelling.useGcsConfig")]
+            public virtual System.Boolean? SpellingUseGcsConfig {
+                get {
+                    return this.spellingUseGcsConfig;
+                }
+                set {
+                    this.spellingUseGcsConfig = value;
+                }
+            }
+            
+            /// <summary>Index (1-based) of first product to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+            public virtual System.Int64? StartIndex {
+                get {
+                    return this.startIndex;
+                }
+                set {
+                    this.startIndex = value;
+                }
+            }
+            
+            /// <summary>Taxonomy name</summary>
+            [Google.Apis.Util.RequestParameterAttribute("taxonomy")]
+            public virtual string Taxonomy {
+                get {
+                    return this.taxonomy;
+                }
+                set {
+                    this.taxonomy = value;
+                }
+            }
+            
+            /// <summary>Image thumbnails specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("thumbnails")]
+            public virtual string Thumbnails {
+                get {
+                    return this.thumbnails;
+                }
+                set {
+                    this.thumbnails = value;
+                }
+            }
+            
+            /// <summary>One of CommerceSearchUseCase, ShoppingApiUseCase</summary>
+            [Google.Apis.Util.RequestParameterAttribute("useCase")]
+            public virtual string UseCase {
+                get {
+                    return this.useCase;
+                }
+                set {
+                    this.useCase = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "products";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
 }

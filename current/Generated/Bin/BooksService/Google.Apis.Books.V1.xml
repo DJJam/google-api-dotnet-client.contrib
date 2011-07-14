@@ -367,105 +367,122 @@
         <member name="P:Google.Apis.Books.V1.BooksService.DeveloperKey">
             <summary>Sets the DeveloperKey which this service uses for all requests</summary>
         </member>
-        <member name="M:Google.Apis.Books.V1.BookshelvesResource.GetAsStream(System.String,System.String,System.String)">
-            <summary>Retrieves a specific bookshelf for the specified user.</summary>
-            <param name="shelf">Required - Id of bookshelf to retrieve.</param>
-            <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
+        <member name="T:Google.Apis.Books.V1.BooksService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
-        <member name="M:Google.Apis.Books.V1.BookshelvesResource.ListAsStream(System.String,System.String)">
-            <summary>Retrieves a list of public bookshelves for the specified user.</summary>
+        <member name="F:Google.Apis.Books.V1.BooksService.Scopes.Books">
+            <summary>Manage your books</summary>
+        </member>
+        <member name="M:Google.Apis.Books.V1.BookshelvesResource.Get(System.String,System.String)">
+            <summary>Retrieves a specific bookshelf for the specified user.</summary>
             <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
+            <param name="shelf">Required - Id of bookshelf to retrieve.</param>
         </member>
         <member name="M:Google.Apis.Books.V1.BookshelvesResource.Get(System.String,System.String,System.String)">
             <summary>Retrieves a specific bookshelf for the specified user.</summary>
-            <param name="shelf">Required - Id of bookshelf to retrieve.</param>
             <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
+            <param name="shelf">Required - Id of bookshelf to retrieve.</param>
             <param name="source">Optional - String to identify the originator of this request.</param>
+        </member>
+        <member name="M:Google.Apis.Books.V1.BookshelvesResource.List(System.String)">
+            <summary>Retrieves a list of public bookshelves for the specified user.</summary>
+            <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
         </member>
         <member name="M:Google.Apis.Books.V1.BookshelvesResource.List(System.String,System.String)">
             <summary>Retrieves a list of public bookshelves for the specified user.</summary>
             <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
             <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
-        <member name="M:Google.Apis.Books.V1.BookshelvesResource.VolumesResource.ListAsStream(System.String,System.String,System.String)">
+        <member name="M:Google.Apis.Books.V1.BookshelvesResource.VolumesResource.List(System.String,System.String)">
             <summary>Retrieves volumes in a specific bookshelf for the specified user.</summary>
-            <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
             <param name="userId">Required - Id of user for whom to retrieve bookshelf volumes.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
+            <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
         </member>
         <member name="M:Google.Apis.Books.V1.BookshelvesResource.VolumesResource.List(System.String,System.String,System.String)">
             <summary>Retrieves volumes in a specific bookshelf for the specified user.</summary>
-            <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
             <param name="userId">Required - Id of user for whom to retrieve bookshelf volumes.</param>
+            <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
             <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.AddVolumeAsStream(System.String,System.String,System.String,System.String)">
+        <member name="P:Google.Apis.Books.V1.BookshelvesResource.VolumesResource.ListRequest.Shelf">
+            <summary>Id of bookshelf to retrieve volumes.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.BookshelvesResource.VolumesResource.ListRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.BookshelvesResource.VolumesResource.ListRequest.UserId">
+            <summary>Id of user for whom to retrieve bookshelf volumes.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.BookshelvesResource.GetRequest.Shelf">
+            <summary>Id of bookshelf to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.BookshelvesResource.GetRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.BookshelvesResource.GetRequest.UserId">
+            <summary>Id of user for whom to retrieve bookshelves.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.BookshelvesResource.ListRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.BookshelvesResource.ListRequest.UserId">
+            <summary>Id of user for whom to retrieve bookshelves.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.AddVolume(System.String,System.String)">
+            <summary>Adds a volume to a bookshelf.</summary>
+            <param name="shelf">Required - Id of bookshelf to which to add a volume.</param>
+            <param name="volumeId">Required - Id of volume to add.</param>
+        </member>
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.AddVolume(System.String,System.String,System.String)">
             <summary>Adds a volume to a bookshelf.</summary>
             <param name="shelf">Required - Id of bookshelf to which to add a volume.</param>
             <param name="volumeId">Required - Id of volume to add.</param>
             <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.ClearVolumesAsStream(System.String,System.String,System.String)">
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.ClearVolumes(System.String)">
+            <summary>Clears all volumes from a bookshelf.</summary>
+            <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
+        </member>
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.ClearVolumes(System.String,System.String)">
             <summary>Clears all volumes from a bookshelf.</summary>
             <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
             <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.GetAsStream(System.String,System.String)">
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.Get(System.String)">
             <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
             <param name="shelf">Required - Id of bookshelf to retrieve.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.ListAsStream(System.String)">
-            <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.RemoveVolumeAsStream(System.String,System.String,System.String,System.String)">
-            <summary>Removes a volume from a bookshelf.</summary>
-            <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-            <param name="volumeId">Required - Id of volume to remove.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.AddVolume(System.String,System.String,System.String,System.String)">
-            <summary>Adds a volume to a bookshelf.</summary>
-            <param name="shelf">Required - Id of bookshelf to which to add a volume.</param>
-            <param name="volumeId">Required - Id of volume to add.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.ClearVolumes(System.String,System.String,System.String)">
-            <summary>Clears all volumes from a bookshelf.</summary>
-            <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
         <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.Get(System.String,System.String)">
             <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
             <param name="shelf">Required - Id of bookshelf to retrieve.</param>
             <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.List">
+            <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
+        </member>
         <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.List(System.String)">
             <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
             <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.RemoveVolume(System.String,System.String,System.String,System.String)">
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.RemoveVolume(System.String,System.String)">
+            <summary>Removes a volume from a bookshelf.</summary>
+            <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
+            <param name="volumeId">Required - Id of volume to remove.</param>
+        </member>
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.RemoveVolume(System.String,System.String,System.String)">
             <summary>Removes a volume from a bookshelf.</summary>
             <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
             <param name="volumeId">Required - Id of volume to remove.</param>
             <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.ListAsStream(System.Nullable{System.Int64},System.Nullable{Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.Projection},System.String,System.String,System.Nullable{System.Int64})">
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.List">
             <summary>Gets volume information for volumes on a bookshelf.</summary>
-            <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return</param>
-            <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-            <param name="shelf">Optional - The bookshelf id or name retrieve volumes for.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-            <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first element to return (starts at 0)</param>
         </member>
-        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.List(System.Nullable{System.Int64},System.Nullable{Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.Projection},System.String,System.String,System.Nullable{System.Int64})">
+        <member name="M:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.List(System.String,System.Nullable{System.Int64},System.Nullable{Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.Projection},System.String,System.Nullable{System.Int64})">
             <summary>Gets volume information for volumes on a bookshelf.</summary>
+            <param name="shelf">Optional - The bookshelf id or name retrieve volumes for.</param>
             <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return</param>
             <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-            <param name="shelf">Optional - The bookshelf id or name retrieve volumes for.</param>
             <param name="source">Optional - String to identify the originator of this request.</param>
             <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first element to return (starts at 0)</param>
         </member>
@@ -478,30 +495,67 @@
         <member name="F:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.Projection.Lite">
             <summary>Includes a subset of fields in volumeInfo and accessInfo.</summary>
         </member>
-        <member name="M:Google.Apis.Books.V1.VolumesResource.GetAsStream(System.String,System.Nullable{Google.Apis.Books.V1.VolumesResource.Projection},System.String)">
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Projection">
+            <summary>Restrict information returned to a set of selected fields.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Shelf">
+            <summary>The bookshelf id or name retrieve volumes for.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.StartIndex">
+            <summary>Index of the first element to return (starts at 0)</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.AddVolumeRequest.Shelf">
+            <summary>Id of bookshelf to which to add a volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.AddVolumeRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.AddVolumeRequest.VolumeId">
+            <summary>Id of volume to add.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.Shelf">
+            <summary>Id of bookshelf from which to remove a volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.GetRequest.Shelf">
+            <summary>Id of bookshelf to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.GetRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.ListRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.Shelf">
+            <summary>Id of bookshelf from which to remove a volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.VolumeId">
+            <summary>Id of volume to remove.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.V1.VolumesResource.Get(System.String)">
             <summary>Gets volume information for a single volume.</summary>
             <param name="volumeId">Required - Id of volume to retrieve.</param>
-            <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
-        <member name="M:Google.Apis.Books.V1.VolumesResource.ListAsStream(System.String,System.Nullable{Google.Apis.Books.V1.VolumesResource.Download},System.Nullable{Google.Apis.Books.V1.VolumesResource.Filter},System.String,System.Nullable{System.Int64},System.Nullable{Google.Apis.Books.V1.VolumesResource.OrderBy},System.Nullable{Google.Apis.Books.V1.VolumesResource.PrintType},System.Nullable{Google.Apis.Books.V1.VolumesResource.Projection},System.String,System.Nullable{System.Int64})">
-            <summary>Performs a book search.</summary>
-            <param name="q">Required - Full-text search query string.</param>
-            <param name="download">Optional - Must be one of the following values [epub] - Restrict to volumes by download availability.</param>
-            <param name="filter">Optional - Must be one of the following values [ebooks, free-ebooks, full, paid-ebooks, partial] - Filter search results.</param>
-            <param name="langRestrict">Optional - Restrict results to books with this language code.</param>
-            <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 40 - Maximum number of results to return.</param>
-            <param name="orderBy">Optional - Must be one of the following values [newest, relevance] - Sort search results.</param>
-            <param name="printType">Optional - Must be one of the following values [all, books, magazines] - Restrict to books or magazines.</param>
-            <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-            <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to return (starts at 0)</param>
         </member>
         <member name="M:Google.Apis.Books.V1.VolumesResource.Get(System.String,System.Nullable{Google.Apis.Books.V1.VolumesResource.Projection},System.String)">
             <summary>Gets volume information for a single volume.</summary>
             <param name="volumeId">Required - Id of volume to retrieve.</param>
             <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
             <param name="source">Optional - String to identify the originator of this request.</param>
+        </member>
+        <member name="M:Google.Apis.Books.V1.VolumesResource.List(System.String)">
+            <summary>Performs a book search.</summary>
+            <param name="q">Required - Full-text search query string.</param>
         </member>
         <member name="M:Google.Apis.Books.V1.VolumesResource.List(System.String,System.Nullable{Google.Apis.Books.V1.VolumesResource.Download},System.Nullable{Google.Apis.Books.V1.VolumesResource.Filter},System.String,System.Nullable{System.Int64},System.Nullable{Google.Apis.Books.V1.VolumesResource.OrderBy},System.Nullable{Google.Apis.Books.V1.VolumesResource.PrintType},System.Nullable{Google.Apis.Books.V1.VolumesResource.Projection},System.String,System.Nullable{System.Int64})">
             <summary>Performs a book search.</summary>
@@ -569,6 +623,45 @@
         </member>
         <member name="F:Google.Apis.Books.V1.VolumesResource.PrintType.Magazines">
             <summary>Just magazines.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.GetRequest.Projection">
+            <summary>Restrict information returned to a set of selected fields.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.GetRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.GetRequest.VolumeId">
+            <summary>Id of volume to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.Download">
+            <summary>Restrict to volumes by download availability.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.Filter">
+            <summary>Filter search results.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.LangRestrict">
+            <summary>Restrict results to books with this language code.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.OrderBy">
+            <summary>Sort search results.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.PrintType">
+            <summary>Restrict to books or magazines.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.Projection">
+            <summary>Restrict information returned to a set of selected fields.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.Q">
+            <summary>Full-text search query string.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.V1.VolumesResource.ListRequest.StartIndex">
+            <summary>Index of the first result to return (starts at 0)</summary>
         </member>
     </members>
 </doc>

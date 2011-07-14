@@ -392,7 +392,7 @@ namespace Google.Apis.Urlshortener.V1 {
         }
         
         public UrlshortenerService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", UrlshortenerService.Name, UrlshortenerService.Version)))).GetService(UrlshortenerService.Version, UrlshortenerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(UrlshortenerService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", UrlshortenerService.Name, UrlshortenerService.Version)))).GetService(UrlshortenerService.Version, UrlshortenerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(UrlshortenerService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -435,6 +435,14 @@ namespace Google.Apis.Urlshortener.V1 {
          {
             return genericService.DeserializeResponse<T>(stream);
         }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Manage your goo.gl short URLs</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/urlshortener")]
+            Urlshortener,
+        }
     }
     
     public class UrlResource {
@@ -451,76 +459,32 @@ namespace Google.Apis.Urlshortener.V1 {
         
         /// <summary>Expands a short URL or gets creation time and analytics.</summary>
         /// <param name="shortUrl">Required - The short URL, including the protocol.</param>
-        /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, ANALYTICS_TOP_STRINGS, FULL] - Additional information to return.</param>
-        public virtual System.IO.Stream GetAsStream(string shortUrl, Projection? projection) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["shortUrl"] = shortUrl;
-            parameters["projection"] = projection;
-            logger.Debug("Executing url.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(UrlResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing url.get");
-            return ret;
-        }
-        
-        /// <summary>Creates a new short URL.</summary>
-        public virtual System.IO.Stream InsertAsStream(string body) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing url.insert");
-            System.IO.Stream ret = this.service.ExecuteRequest(UrlResource.Resource, "insert", body, parameters);
-            logger.Debug("Done Executing url.insert");
-            return ret;
-        }
-        
-        /// <summary>Retrieves a list of URLs shortened by a user.</summary>
-        /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, FULL] - Additional information to return.</param>
-        /// <param name="startToken">start-token - Optional - Token for requesting successive pages of results.</param>
-        public virtual System.IO.Stream ListAsStream(ProjectionEnum? projection, string startToken) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["projection"] = projection;
-            parameters["start-token"] = startToken;
-            logger.Debug("Executing url.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(UrlResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing url.list");
-            return ret;
+        public virtual GetRequest Get(string shortUrl) {
+            return new GetRequest(service, shortUrl);
         }
         
         /// <summary>Expands a short URL or gets creation time and analytics.</summary>
         /// <param name="shortUrl">Required - The short URL, including the protocol.</param>
         /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, ANALYTICS_TOP_STRINGS, FULL] - Additional information to return.</param>
-        public virtual Google.Apis.Urlshortener.V1.Data.Url Get(string shortUrl, Projection? projection) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["shortUrl"] = shortUrl;
-            parameters["projection"] = projection;
-            logger.Debug("Executing url.get");
-            Google.Apis.Urlshortener.V1.Data.Url ret = this.service.JsonToObject<Google.Apis.Urlshortener.V1.Data.Url>(this.service.ExecuteRequest(UrlResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing url.get");
-            return ret;
+        public virtual GetRequest Get(string shortUrl, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection) {
+            return new GetRequest(service, shortUrl, projection);
         }
         
         /// <summary>Creates a new short URL.</summary>
-        public virtual Google.Apis.Urlshortener.V1.Data.Url Insert(Google.Apis.Urlshortener.V1.Data.Url body) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing url.insert");
-            Google.Apis.Urlshortener.V1.Data.Url ret = this.service.JsonToObject<Google.Apis.Urlshortener.V1.Data.Url>(this.service.ExecuteRequest(UrlResource.Resource, "insert", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing url.insert");
-            return ret;
+        public virtual InsertRequest Insert(Google.Apis.Urlshortener.V1.Data.Url body) {
+            return new InsertRequest(service, body);
+        }
+        
+        /// <summary>Retrieves a list of URLs shortened by a user.</summary>
+        public virtual ListRequest List() {
+            return new ListRequest(service);
         }
         
         /// <summary>Retrieves a list of URLs shortened by a user.</summary>
         /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, FULL] - Additional information to return.</param>
         /// <param name="startToken">start-token - Optional - Token for requesting successive pages of results.</param>
-        public virtual Google.Apis.Urlshortener.V1.Data.UrlHistory List(ProjectionEnum? projection, string startToken) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["projection"] = projection;
-            parameters["start-token"] = startToken;
-            logger.Debug("Executing url.list");
-            Google.Apis.Urlshortener.V1.Data.UrlHistory ret = this.service.JsonToObject<Google.Apis.Urlshortener.V1.Data.UrlHistory>(this.service.ExecuteRequest(UrlResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing url.list");
-            return ret;
+        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] ProjectionEnum? projection, [System.Runtime.InteropServices.OptionalAttribute()] string startToken) {
+            return new ListRequest(service, projection, startToken);
         }
         
         /// <summary>Additional information to return.</summary>
@@ -551,6 +515,142 @@ namespace Google.Apis.Urlshortener.V1 {
             /// <summary>Returns short URL click counts.</summary>
             [Google.Apis.Util.StringValueAttribute("FULL")]
             FULL,
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.V1.Data.Url> {
+            
+            private Projection? projection;
+            
+            private string shortUrl;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shortUrl) : 
+                    base(service) {
+                this.shortUrl = shortUrl;
+            }
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shortUrl, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection) : 
+                    base(service) {
+                this.shortUrl = shortUrl;
+                this.projection = projection;
+            }
+            
+            /// <summary>Additional information to return.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            public virtual Projection? Projection {
+                get {
+                    return this.projection;
+                }
+                set {
+                    this.projection = value;
+                }
+            }
+            
+            /// <summary>The short URL, including the protocol.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("shortUrl")]
+            public virtual string ShortUrl {
+                get {
+                    return this.shortUrl;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "url";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
+        }
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.V1.Data.Url> {
+            
+            private Google.Apis.Urlshortener.V1.Data.Url bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Urlshortener.V1.Data.Url body) : 
+                    base(service) {
+                this.Body = body;
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Urlshortener.V1.Data.Url Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "url";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.V1.Data.UrlHistory> {
+            
+            private ProjectionEnum? projection;
+            
+            private string startToken;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service) : 
+                    base(service) {
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, [System.Runtime.InteropServices.OptionalAttribute()] ProjectionEnum? projection, [System.Runtime.InteropServices.OptionalAttribute()] string startToken) : 
+                    base(service) {
+                this.projection = projection;
+                this.startToken = startToken;
+            }
+            
+            /// <summary>Additional information to return.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            public virtual ProjectionEnum? Projection {
+                get {
+                    return this.projection;
+                }
+                set {
+                    this.projection = value;
+                }
+            }
+            
+            /// <summary>Token for requesting successive pages of results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("start-token")]
+            public virtual string StartToken {
+                get {
+                    return this.startToken;
+                }
+                set {
+                    this.startToken = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "url";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
 }

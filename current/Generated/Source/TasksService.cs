@@ -461,7 +461,7 @@ namespace Google.Apis.Tasks.V1 {
         }
         
         public TasksService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", TasksService.Name, TasksService.Version)))).GetService(TasksService.Version, TasksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(TasksService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", TasksService.Name, TasksService.Version)))).GetService(TasksService.Version, TasksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(TasksService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -510,6 +510,18 @@ namespace Google.Apis.Tasks.V1 {
          {
             return genericService.DeserializeResponse<T>(stream);
         }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Manage your tasks</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/tasks")]
+            Tasks,
+            
+            /// <summary>View your tasks</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/tasks.readonly")]
+            TasksReadonly,
+        }
     }
     
     public class TasklistsResource {
@@ -526,140 +538,284 @@ namespace Google.Apis.Tasks.V1 {
         
         /// <summary>Deletes the authenticated user&apos;s specified task list.</summary>
         /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream DeleteAsStream(string tasklist) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasklists.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasklistsResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing tasklists.delete");
-            return ret;
+        public virtual DeleteRequest Delete(string tasklist) {
+            return new DeleteRequest(service, tasklist);
         }
         
         /// <summary>Returns the authenticated user&apos;s specified task list.</summary>
         /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream GetAsStream(string tasklist) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasklists.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasklistsResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing tasklists.get");
-            return ret;
+        public virtual GetRequest Get(string tasklist) {
+            return new GetRequest(service, tasklist);
         }
         
         /// <summary>Creates a new task list and adds it to the authenticated user&apos;s task lists.</summary>
-        public virtual System.IO.Stream InsertAsStream(string body) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing tasklists.insert");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasklistsResource.Resource, "insert", body, parameters);
-            logger.Debug("Done Executing tasklists.insert");
-            return ret;
+        public virtual InsertRequest Insert(Google.Apis.Tasks.V1.Data.TaskList body) {
+            return new InsertRequest(service, body);
+        }
+        
+        /// <summary>Returns all the authenticated user&apos;s task lists.</summary>
+        public virtual ListRequest List() {
+            return new ListRequest(service);
         }
         
         /// <summary>Returns all the authenticated user&apos;s task lists.</summary>
         /// <param name="maxResults">Optional - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Maximum number of task lists returned on one page. Optional. The default is 100.</param>
         /// <param name="pageToken">Optional - Token specifying the result page to return. Optional.</param>
-        public virtual System.IO.Stream ListAsStream(System.Int64? maxResults, string pageToken) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["maxResults"] = maxResults;
-            parameters["pageToken"] = pageToken;
-            logger.Debug("Executing tasklists.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasklistsResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing tasklists.list");
-            return ret;
+        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pageToken) {
+            return new ListRequest(service, maxResults, pageToken);
         }
         
         /// <summary>Updates the authenticated user&apos;s specified task list. This method supports patch semantics.</summary>
         /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream PatchAsStream(string body, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasklists.patch");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasklistsResource.Resource, "patch", body, parameters);
-            logger.Debug("Done Executing tasklists.patch");
-            return ret;
+        public virtual PatchRequest Patch(Google.Apis.Tasks.V1.Data.TaskList body, string tasklist) {
+            return new PatchRequest(service, body, tasklist);
         }
         
         /// <summary>Updates the authenticated user&apos;s specified task list.</summary>
         /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream UpdateAsStream(string body, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasklists.update");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasklistsResource.Resource, "update", body, parameters);
-            logger.Debug("Done Executing tasklists.update");
-            return ret;
+        public virtual UpdateRequest Update(Google.Apis.Tasks.V1.Data.TaskList body, string tasklist) {
+            return new UpdateRequest(service, body, tasklist);
         }
         
-        /// <summary>Deletes the authenticated user&apos;s specified task list.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream Delete(string tasklist) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasklists.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasklistsResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing tasklists.delete");
-            return ret;
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string tasklist;
+            
+            public DeleteRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string tasklist) : 
+                    base(service) {
+                this.tasklist = tasklist;
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasklists";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
         }
         
-        /// <summary>Returns the authenticated user&apos;s specified task list.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual Google.Apis.Tasks.V1.Data.TaskList Get(string tasklist) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasklists.get");
-            Google.Apis.Tasks.V1.Data.TaskList ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.TaskList>(this.service.ExecuteRequest(TasklistsResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing tasklists.get");
-            return ret;
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.TaskList> {
+            
+            private string tasklist;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string tasklist) : 
+                    base(service) {
+                this.tasklist = tasklist;
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasklists";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
         }
         
-        /// <summary>Creates a new task list and adds it to the authenticated user&apos;s task lists.</summary>
-        public virtual Google.Apis.Tasks.V1.Data.TaskList Insert(Google.Apis.Tasks.V1.Data.TaskList body) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing tasklists.insert");
-            Google.Apis.Tasks.V1.Data.TaskList ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.TaskList>(this.service.ExecuteRequest(TasklistsResource.Resource, "insert", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing tasklists.insert");
-            return ret;
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.TaskList> {
+            
+            private Google.Apis.Tasks.V1.Data.TaskList bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Tasks.V1.Data.TaskList body) : 
+                    base(service) {
+                this.Body = body;
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Tasks.V1.Data.TaskList Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasklists";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
         }
         
-        /// <summary>Returns all the authenticated user&apos;s task lists.</summary>
-        /// <param name="maxResults">Optional - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Maximum number of task lists returned on one page. Optional. The default is 100.</param>
-        /// <param name="pageToken">Optional - Token specifying the result page to return. Optional.</param>
-        public virtual Google.Apis.Tasks.V1.Data.TaskLists List(System.Int64? maxResults, string pageToken) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["maxResults"] = maxResults;
-            parameters["pageToken"] = pageToken;
-            logger.Debug("Executing tasklists.list");
-            Google.Apis.Tasks.V1.Data.TaskLists ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.TaskLists>(this.service.ExecuteRequest(TasklistsResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing tasklists.list");
-            return ret;
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.TaskLists> {
+            
+            private System.Int64? maxResults;
+            
+            private string pageToken;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service) : 
+                    base(service) {
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pageToken) : 
+                    base(service) {
+                this.maxResults = maxResults;
+                this.pageToken = pageToken;
+            }
+            
+            /// <summary>Maximum number of task lists returned on one page. Optional. The default is 100.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
+            }
+            
+            /// <summary>Token specifying the result page to return. Optional.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            public virtual string PageToken {
+                get {
+                    return this.pageToken;
+                }
+                set {
+                    this.pageToken = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasklists";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
         
-        /// <summary>Updates the authenticated user&apos;s specified task list. This method supports patch semantics.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual Google.Apis.Tasks.V1.Data.TaskList Patch(Google.Apis.Tasks.V1.Data.TaskList body, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasklists.patch");
-            Google.Apis.Tasks.V1.Data.TaskList ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.TaskList>(this.service.ExecuteRequest(TasklistsResource.Resource, "patch", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing tasklists.patch");
-            return ret;
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.TaskList> {
+            
+            private string tasklist;
+            
+            private Google.Apis.Tasks.V1.Data.TaskList bodyValue;
+            
+            public PatchRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Tasks.V1.Data.TaskList body, string tasklist) : 
+                    base(service) {
+                this.Body = body;
+                this.tasklist = tasklist;
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Tasks.V1.Data.TaskList Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasklists";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "patch";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
         }
         
-        /// <summary>Updates the authenticated user&apos;s specified task list.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual Google.Apis.Tasks.V1.Data.TaskList Update(Google.Apis.Tasks.V1.Data.TaskList body, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasklists.update");
-            Google.Apis.Tasks.V1.Data.TaskList ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.TaskList>(this.service.ExecuteRequest(TasklistsResource.Resource, "update", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing tasklists.update");
-            return ret;
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.TaskList> {
+            
+            private string tasklist;
+            
+            private Google.Apis.Tasks.V1.Data.TaskList bodyValue;
+            
+            public UpdateRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Tasks.V1.Data.TaskList body, string tasklist) : 
+                    base(service) {
+                this.Body = body;
+                this.tasklist = tasklist;
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Tasks.V1.Data.TaskList Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasklists";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
         }
     }
     
@@ -677,56 +833,42 @@ namespace Google.Apis.Tasks.V1 {
         
         /// <summary>Clears all completed tasks from the specified task list. The affected tasks will be marked as &apos;hidden&apos; and no longer be returned by default when retrieving all tasks for a task list.</summary>
         /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream ClearAsStream(string body, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.clear");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "clear", body, parameters);
-            logger.Debug("Done Executing tasks.clear");
-            return ret;
+        public virtual ClearRequest Clear(string tasklist) {
+            return new ClearRequest(service, tasklist);
         }
         
         /// <summary>Deletes the specified task from the task list.</summary>
-        /// <param name="task">Required - Task identifier.</param>
         /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream DeleteAsStream(string task, string tasklist) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing tasks.delete");
-            return ret;
+        /// <param name="task">Required - Task identifier.</param>
+        public virtual DeleteRequest Delete(string tasklist, string task) {
+            return new DeleteRequest(service, tasklist, task);
         }
         
         /// <summary>Returns the specified task.</summary>
-        /// <param name="task">Required - Task identifier.</param>
         /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream GetAsStream(string task, string tasklist) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing tasks.get");
-            return ret;
+        /// <param name="task">Required - Task identifier.</param>
+        public virtual GetRequest Get(string tasklist, string task) {
+            return new GetRequest(service, tasklist, task);
+        }
+        
+        /// <summary>Creates a new task on the specified task list.</summary>
+        /// <param name="tasklist">Required - Task list identifier.</param>
+        public virtual InsertRequest Insert(Google.Apis.Tasks.V1.Data.Task body, string tasklist) {
+            return new InsertRequest(service, body, tasklist);
         }
         
         /// <summary>Creates a new task on the specified task list.</summary>
         /// <param name="tasklist">Required - Task list identifier.</param>
         /// <param name="parent">Optional - Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.</param>
         /// <param name="previous">Optional - Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.</param>
-        public virtual System.IO.Stream InsertAsStream(string body, string tasklist, string parent, string previous) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            parameters["parent"] = parent;
-            parameters["previous"] = previous;
-            logger.Debug("Executing tasks.insert");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "insert", body, parameters);
-            logger.Debug("Done Executing tasks.insert");
-            return ret;
+        public virtual InsertRequest Insert(Google.Apis.Tasks.V1.Data.Task body, string tasklist, [System.Runtime.InteropServices.OptionalAttribute()] string parent, [System.Runtime.InteropServices.OptionalAttribute()] string previous) {
+            return new InsertRequest(service, body, tasklist, parent, previous);
+        }
+        
+        /// <summary>Returns all tasks in the specified task list.</summary>
+        /// <param name="tasklist">Required - Task list identifier.</param>
+        public virtual ListRequest List(string tasklist) {
+            return new ListRequest(service, tasklist);
         }
         
         /// <summary>Returns all tasks in the specified task list.</summary>
@@ -741,196 +883,597 @@ namespace Google.Apis.Tasks.V1 {
         /// <param name="showDeleted">Optional - Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.</param>
         /// <param name="showHidden">Optional - Flag indicating whether hidden tasks are returned in the result. Optional. The default is False.</param>
         /// <param name="updatedMin">Optional - Lower bound for a task&apos;s last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.</param>
-        public virtual System.IO.Stream ListAsStream(string tasklist, string completedMax, string completedMin, string dueMax, string dueMin, System.Int64? maxResults, string pageToken, System.Boolean? showCompleted, System.Boolean? showDeleted, System.Boolean? showHidden, string updatedMin) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            parameters["completedMax"] = completedMax;
-            parameters["completedMin"] = completedMin;
-            parameters["dueMax"] = dueMax;
-            parameters["dueMin"] = dueMin;
-            parameters["maxResults"] = maxResults;
-            parameters["pageToken"] = pageToken;
-            parameters["showCompleted"] = showCompleted;
-            parameters["showDeleted"] = showDeleted;
-            parameters["showHidden"] = showHidden;
-            parameters["updatedMin"] = updatedMin;
-            logger.Debug("Executing tasks.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing tasks.list");
-            return ret;
+        public virtual ListRequest List(string tasklist, [System.Runtime.InteropServices.OptionalAttribute()] string completedMax, [System.Runtime.InteropServices.OptionalAttribute()] string completedMin, [System.Runtime.InteropServices.OptionalAttribute()] string dueMax, [System.Runtime.InteropServices.OptionalAttribute()] string dueMin, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pageToken, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showCompleted, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showDeleted, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showHidden, [System.Runtime.InteropServices.OptionalAttribute()] string updatedMin) {
+            return new ListRequest(service, tasklist, completedMax, completedMin, dueMax, dueMin, maxResults, pageToken, showCompleted, showDeleted, showHidden, updatedMin);
         }
         
         /// <summary>Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.</summary>
+        /// <param name="tasklist">Required - Task list identifier.</param>
         /// <param name="task">Required - Task identifier.</param>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        /// <param name="parent">Optional - New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.</param>
-        /// <param name="previous">Optional - New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.</param>
-        public virtual System.IO.Stream MoveAsStream(string body, string task, string tasklist, string parent, string previous) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            parameters["parent"] = parent;
-            parameters["previous"] = previous;
-            logger.Debug("Executing tasks.move");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "move", body, parameters);
-            logger.Debug("Done Executing tasks.move");
-            return ret;
-        }
-        
-        /// <summary>Updates the specified task. This method supports patch semantics.</summary>
-        /// <param name="task">Required - Task identifier.</param>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream PatchAsStream(string body, string task, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.patch");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "patch", body, parameters);
-            logger.Debug("Done Executing tasks.patch");
-            return ret;
-        }
-        
-        /// <summary>Updates the specified task.</summary>
-        /// <param name="task">Required - Task identifier.</param>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream UpdateAsStream(string body, string task, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.update");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "update", body, parameters);
-            logger.Debug("Done Executing tasks.update");
-            return ret;
-        }
-        
-        /// <summary>Clears all completed tasks from the specified task list. The affected tasks will be marked as &apos;hidden&apos; and no longer be returned by default when retrieving all tasks for a task list.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream Clear(string body, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.clear");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "clear", body, parameters);
-            logger.Debug("Done Executing tasks.clear");
-            return ret;
-        }
-        
-        /// <summary>Deletes the specified task from the task list.</summary>
-        /// <param name="task">Required - Task identifier.</param>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual System.IO.Stream Delete(string task, string tasklist) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(TasksResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing tasks.delete");
-            return ret;
-        }
-        
-        /// <summary>Returns the specified task.</summary>
-        /// <param name="task">Required - Task identifier.</param>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual Google.Apis.Tasks.V1.Data.Task Get(string task, string tasklist) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.get");
-            Google.Apis.Tasks.V1.Data.Task ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.Task>(this.service.ExecuteRequest(TasksResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing tasks.get");
-            return ret;
-        }
-        
-        /// <summary>Creates a new task on the specified task list.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        /// <param name="parent">Optional - Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.</param>
-        /// <param name="previous">Optional - Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.</param>
-        public virtual Google.Apis.Tasks.V1.Data.Task Insert(Google.Apis.Tasks.V1.Data.Task body, string tasklist, string parent, string previous) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            parameters["parent"] = parent;
-            parameters["previous"] = previous;
-            logger.Debug("Executing tasks.insert");
-            Google.Apis.Tasks.V1.Data.Task ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.Task>(this.service.ExecuteRequest(TasksResource.Resource, "insert", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing tasks.insert");
-            return ret;
-        }
-        
-        /// <summary>Returns all tasks in the specified task list.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        /// <param name="completedMax">Optional - Upper bound for a task&apos;s completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.</param>
-        /// <param name="completedMin">Optional - Lower bound for a task&apos;s completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.</param>
-        /// <param name="dueMax">Optional - Upper bound for a task&apos;s due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.</param>
-        /// <param name="dueMin">Optional - Lower bound for a task&apos;s due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.</param>
-        /// <param name="maxResults">Optional - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Maximum number of task lists returned on one page. Optional. The default is 100.</param>
-        /// <param name="pageToken">Optional - Token specifying the result page to return. Optional.</param>
-        /// <param name="showCompleted">Optional - Flag indicating whether completed tasks are returned in the result. Optional. The default is True.</param>
-        /// <param name="showDeleted">Optional - Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.</param>
-        /// <param name="showHidden">Optional - Flag indicating whether hidden tasks are returned in the result. Optional. The default is False.</param>
-        /// <param name="updatedMin">Optional - Lower bound for a task&apos;s last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.</param>
-        public virtual Google.Apis.Tasks.V1.Data.Tasks List(string tasklist, string completedMax, string completedMin, string dueMax, string dueMin, System.Int64? maxResults, string pageToken, System.Boolean? showCompleted, System.Boolean? showDeleted, System.Boolean? showHidden, string updatedMin) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["tasklist"] = tasklist;
-            parameters["completedMax"] = completedMax;
-            parameters["completedMin"] = completedMin;
-            parameters["dueMax"] = dueMax;
-            parameters["dueMin"] = dueMin;
-            parameters["maxResults"] = maxResults;
-            parameters["pageToken"] = pageToken;
-            parameters["showCompleted"] = showCompleted;
-            parameters["showDeleted"] = showDeleted;
-            parameters["showHidden"] = showHidden;
-            parameters["updatedMin"] = updatedMin;
-            logger.Debug("Executing tasks.list");
-            Google.Apis.Tasks.V1.Data.Tasks ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.Tasks>(this.service.ExecuteRequest(TasksResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing tasks.list");
-            return ret;
+        public virtual MoveRequest Move(string tasklist, string task) {
+            return new MoveRequest(service, tasklist, task);
         }
         
         /// <summary>Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.</summary>
-        /// <param name="task">Required - Task identifier.</param>
         /// <param name="tasklist">Required - Task list identifier.</param>
+        /// <param name="task">Required - Task identifier.</param>
         /// <param name="parent">Optional - New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.</param>
         /// <param name="previous">Optional - New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.</param>
-        public virtual Google.Apis.Tasks.V1.Data.Task Move(string body, string task, string tasklist, string parent, string previous) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            parameters["parent"] = parent;
-            parameters["previous"] = previous;
-            logger.Debug("Executing tasks.move");
-            Google.Apis.Tasks.V1.Data.Task ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.Task>(this.service.ExecuteRequest(TasksResource.Resource, "move", body, parameters));
-            logger.Debug("Done Executing tasks.move");
-            return ret;
+        public virtual MoveRequest Move(string tasklist, string task, [System.Runtime.InteropServices.OptionalAttribute()] string parent, [System.Runtime.InteropServices.OptionalAttribute()] string previous) {
+            return new MoveRequest(service, tasklist, task, parent, previous);
         }
         
         /// <summary>Updates the specified task. This method supports patch semantics.</summary>
-        /// <param name="task">Required - Task identifier.</param>
         /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual Google.Apis.Tasks.V1.Data.Task Patch(Google.Apis.Tasks.V1.Data.Task body, string task, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.patch");
-            Google.Apis.Tasks.V1.Data.Task ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.Task>(this.service.ExecuteRequest(TasksResource.Resource, "patch", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing tasks.patch");
-            return ret;
+        /// <param name="task">Required - Task identifier.</param>
+        public virtual PatchRequest Patch(Google.Apis.Tasks.V1.Data.Task body, string tasklist, string task) {
+            return new PatchRequest(service, body, tasklist, task);
         }
         
         /// <summary>Updates the specified task.</summary>
-        /// <param name="task">Required - Task identifier.</param>
         /// <param name="tasklist">Required - Task list identifier.</param>
-        public virtual Google.Apis.Tasks.V1.Data.Task Update(Google.Apis.Tasks.V1.Data.Task body, string task, string tasklist) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["task"] = task;
-            parameters["tasklist"] = tasklist;
-            logger.Debug("Executing tasks.update");
-            Google.Apis.Tasks.V1.Data.Task ret = this.service.JsonToObject<Google.Apis.Tasks.V1.Data.Task>(this.service.ExecuteRequest(TasksResource.Resource, "update", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing tasks.update");
-            return ret;
+        /// <param name="task">Required - Task identifier.</param>
+        public virtual UpdateRequest Update(Google.Apis.Tasks.V1.Data.Task body, string tasklist, string task) {
+            return new UpdateRequest(service, body, tasklist, task);
+        }
+        
+        public class ClearRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string tasklist;
+            
+            public ClearRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string tasklist) : 
+                    base(service) {
+                this.tasklist = tasklist;
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "clear";
+                }
+            }
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string task;
+            
+            private string tasklist;
+            
+            public DeleteRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string tasklist, string task) : 
+                    base(service) {
+                this.tasklist = tasklist;
+                this.task = task;
+            }
+            
+            /// <summary>Task identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("task")]
+            public virtual string Task {
+                get {
+                    return this.task;
+                }
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.Task> {
+            
+            private string task;
+            
+            private string tasklist;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string tasklist, string task) : 
+                    base(service) {
+                this.tasklist = tasklist;
+                this.task = task;
+            }
+            
+            /// <summary>Task identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("task")]
+            public virtual string Task {
+                get {
+                    return this.task;
+                }
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
+        }
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.Task> {
+            
+            private string parent;
+            
+            private string previous;
+            
+            private string tasklist;
+            
+            private Google.Apis.Tasks.V1.Data.Task bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Tasks.V1.Data.Task body, string tasklist) : 
+                    base(service) {
+                this.Body = body;
+                this.tasklist = tasklist;
+            }
+            
+            public InsertRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Tasks.V1.Data.Task body, string tasklist, [System.Runtime.InteropServices.OptionalAttribute()] string parent, [System.Runtime.InteropServices.OptionalAttribute()] string previous) : 
+                    base(service) {
+                this.Body = body;
+                this.tasklist = tasklist;
+                this.parent = parent;
+                this.previous = previous;
+            }
+            
+            /// <summary>Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("parent")]
+            public virtual string Parent {
+                get {
+                    return this.parent;
+                }
+                set {
+                    this.parent = value;
+                }
+            }
+            
+            /// <summary>Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("previous")]
+            public virtual string Previous {
+                get {
+                    return this.previous;
+                }
+                set {
+                    this.previous = value;
+                }
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Tasks.V1.Data.Task Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.Tasks> {
+            
+            private string completedMax;
+            
+            private string completedMin;
+            
+            private string dueMax;
+            
+            private string dueMin;
+            
+            private System.Int64? maxResults;
+            
+            private string pageToken;
+            
+            private System.Boolean? showCompleted;
+            
+            private System.Boolean? showDeleted;
+            
+            private System.Boolean? showHidden;
+            
+            private string tasklist;
+            
+            private string updatedMin;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string tasklist) : 
+                    base(service) {
+                this.tasklist = tasklist;
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string tasklist, [System.Runtime.InteropServices.OptionalAttribute()] string completedMax, [System.Runtime.InteropServices.OptionalAttribute()] string completedMin, [System.Runtime.InteropServices.OptionalAttribute()] string dueMax, [System.Runtime.InteropServices.OptionalAttribute()] string dueMin, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pageToken, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showCompleted, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showDeleted, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showHidden, [System.Runtime.InteropServices.OptionalAttribute()] string updatedMin) : 
+                    base(service) {
+                this.tasklist = tasklist;
+                this.completedMax = completedMax;
+                this.completedMin = completedMin;
+                this.dueMax = dueMax;
+                this.dueMin = dueMin;
+                this.maxResults = maxResults;
+                this.pageToken = pageToken;
+                this.showCompleted = showCompleted;
+                this.showDeleted = showDeleted;
+                this.showHidden = showHidden;
+                this.updatedMin = updatedMin;
+            }
+            
+            /// <summary>Upper bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("completedMax")]
+            public virtual string CompletedMax {
+                get {
+                    return this.completedMax;
+                }
+                set {
+                    this.completedMax = value;
+                }
+            }
+            
+            /// <summary>Lower bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("completedMin")]
+            public virtual string CompletedMin {
+                get {
+                    return this.completedMin;
+                }
+                set {
+                    this.completedMin = value;
+                }
+            }
+            
+            /// <summary>Upper bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("dueMax")]
+            public virtual string DueMax {
+                get {
+                    return this.dueMax;
+                }
+                set {
+                    this.dueMax = value;
+                }
+            }
+            
+            /// <summary>Lower bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("dueMin")]
+            public virtual string DueMin {
+                get {
+                    return this.dueMin;
+                }
+                set {
+                    this.dueMin = value;
+                }
+            }
+            
+            /// <summary>Maximum number of task lists returned on one page. Optional. The default is 100.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
+            }
+            
+            /// <summary>Token specifying the result page to return. Optional.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            public virtual string PageToken {
+                get {
+                    return this.pageToken;
+                }
+                set {
+                    this.pageToken = value;
+                }
+            }
+            
+            /// <summary>Flag indicating whether completed tasks are returned in the result. Optional. The default is True.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("showCompleted")]
+            public virtual System.Boolean? ShowCompleted {
+                get {
+                    return this.showCompleted;
+                }
+                set {
+                    this.showCompleted = value;
+                }
+            }
+            
+            /// <summary>Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
+            public virtual System.Boolean? ShowDeleted {
+                get {
+                    return this.showDeleted;
+                }
+                set {
+                    this.showDeleted = value;
+                }
+            }
+            
+            /// <summary>Flag indicating whether hidden tasks are returned in the result. Optional. The default is False.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("showHidden")]
+            public virtual System.Boolean? ShowHidden {
+                get {
+                    return this.showHidden;
+                }
+                set {
+                    this.showHidden = value;
+                }
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            /// <summary>Lower bound for a task's last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
+            public virtual string UpdatedMin {
+                get {
+                    return this.updatedMin;
+                }
+                set {
+                    this.updatedMin = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+        }
+        
+        public class MoveRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.Task> {
+            
+            private string parent;
+            
+            private string previous;
+            
+            private string task;
+            
+            private string tasklist;
+            
+            public MoveRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string tasklist, string task) : 
+                    base(service) {
+                this.tasklist = tasklist;
+                this.task = task;
+            }
+            
+            public MoveRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string tasklist, string task, [System.Runtime.InteropServices.OptionalAttribute()] string parent, [System.Runtime.InteropServices.OptionalAttribute()] string previous) : 
+                    base(service) {
+                this.tasklist = tasklist;
+                this.task = task;
+                this.parent = parent;
+                this.previous = previous;
+            }
+            
+            /// <summary>New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("parent")]
+            public virtual string Parent {
+                get {
+                    return this.parent;
+                }
+                set {
+                    this.parent = value;
+                }
+            }
+            
+            /// <summary>New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("previous")]
+            public virtual string Previous {
+                get {
+                    return this.previous;
+                }
+                set {
+                    this.previous = value;
+                }
+            }
+            
+            /// <summary>Task identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("task")]
+            public virtual string Task {
+                get {
+                    return this.task;
+                }
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "move";
+                }
+            }
+        }
+        
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.Task> {
+            
+            private string task;
+            
+            private string tasklist;
+            
+            private Google.Apis.Tasks.V1.Data.Task bodyValue;
+            
+            public PatchRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Tasks.V1.Data.Task body, string tasklist, string task) : 
+                    base(service) {
+                this.Body = body;
+                this.tasklist = tasklist;
+                this.task = task;
+            }
+            
+            /// <summary>Task identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("task")]
+            public virtual string Task {
+                get {
+                    return this.task;
+                }
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Tasks.V1.Data.Task Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "patch";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+        
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.V1.Data.Task> {
+            
+            private string task;
+            
+            private string tasklist;
+            
+            private Google.Apis.Tasks.V1.Data.Task bodyValue;
+            
+            public UpdateRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Tasks.V1.Data.Task body, string tasklist, string task) : 
+                    base(service) {
+                this.Body = body;
+                this.tasklist = tasklist;
+                this.task = task;
+            }
+            
+            /// <summary>Task identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("task")]
+            public virtual string Task {
+                get {
+                    return this.task;
+                }
+            }
+            
+            /// <summary>Task list identifier.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            public virtual string Tasklist {
+                get {
+                    return this.tasklist;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Tasks.V1.Data.Task Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "tasks";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
         }
     }
 }

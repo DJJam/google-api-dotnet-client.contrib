@@ -442,7 +442,7 @@ namespace Google.Apis.Books.V1.Data {
     
     public class Review {
         
-        private AuthorData author;
+        private Review.AuthorData author;
         
         private string content;
         
@@ -454,7 +454,7 @@ namespace Google.Apis.Books.V1.Data {
         
         private string rating;
         
-        private SourceData source;
+        private Review.SourceData source;
         
         private string title;
         
@@ -464,7 +464,7 @@ namespace Google.Apis.Books.V1.Data {
         
         /// <summary>Author of this review.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
-        public virtual AuthorData Author {
+        public virtual Review.AuthorData Author {
             get {
                 return this.author;
             }
@@ -530,7 +530,7 @@ namespace Google.Apis.Books.V1.Data {
         
         /// <summary>Information regarding the source of this review, when the review is not from a Google Books user.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("source")]
-        public virtual SourceData Source {
+        public virtual Review.SourceData Source {
             get {
                 return this.source;
             }
@@ -635,7 +635,7 @@ namespace Google.Apis.Books.V1.Data {
     
     public class Volume : Google.Apis.Requests.IResponse {
         
-        private AccessInfoData accessInfo;
+        private Volume.AccessInfoData accessInfo;
         
         private string etag;
         
@@ -643,19 +643,19 @@ namespace Google.Apis.Books.V1.Data {
         
         private string kind;
         
-        private SaleInfoData saleInfo;
+        private Volume.SaleInfoData saleInfo;
         
         private string selfLink;
         
-        private UserInfoData userInfo;
+        private Volume.UserInfoData userInfo;
         
-        private VolumeInfoData volumeInfo;
+        private Volume.VolumeInfoData volumeInfo;
         
         private Google.Apis.Requests.RequestError error;
         
         /// <summary>Any information about a volume related to reading or obtaining that volume text. This information can depend on country (books may be public domain in one country but not in another, e.g.).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("accessInfo")]
-        public virtual AccessInfoData AccessInfo {
+        public virtual Volume.AccessInfoData AccessInfo {
             get {
                 return this.accessInfo;
             }
@@ -699,7 +699,7 @@ namespace Google.Apis.Books.V1.Data {
         
         /// <summary>Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("saleInfo")]
-        public virtual SaleInfoData SaleInfo {
+        public virtual Volume.SaleInfoData SaleInfo {
             get {
                 return this.saleInfo;
             }
@@ -721,7 +721,7 @@ namespace Google.Apis.Books.V1.Data {
         
         /// <summary>User specific information related to this volume. (e.g. page this user last read or whether they purchased this book)</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("userInfo")]
-        public virtual UserInfoData UserInfo {
+        public virtual Volume.UserInfoData UserInfo {
             get {
                 return this.userInfo;
             }
@@ -732,7 +732,7 @@ namespace Google.Apis.Books.V1.Data {
         
         /// <summary>General volume information.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("volumeInfo")]
-        public virtual VolumeInfoData VolumeInfo {
+        public virtual Volume.VolumeInfoData VolumeInfo {
             get {
                 return this.volumeInfo;
             }
@@ -762,9 +762,9 @@ namespace Google.Apis.Books.V1.Data {
             
             private bool embeddable;
             
-            private EpubData epub;
+            private AccessInfoData.EpubData epub;
             
-            private PdfData pdf;
+            private AccessInfoData.PdfData pdf;
             
             private bool publicDomain;
             
@@ -815,7 +815,7 @@ namespace Google.Apis.Books.V1.Data {
             
             /// <summary>Information about epub content. (In LITE projection.)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("epub")]
-            public virtual EpubData Epub {
+            public virtual AccessInfoData.EpubData Epub {
                 get {
                     return this.epub;
                 }
@@ -826,7 +826,7 @@ namespace Google.Apis.Books.V1.Data {
             
             /// <summary>Information about pdf content. (In LITE projection.)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("pdf")]
-            public virtual PdfData Pdf {
+            public virtual AccessInfoData.PdfData Pdf {
                 get {
                     return this.pdf;
                 }
@@ -927,9 +927,9 @@ namespace Google.Apis.Books.V1.Data {
             
             private bool isEbook;
             
-            private ListPriceData listPrice;
+            private SaleInfoData.ListPriceData listPrice;
             
-            private RetailPriceData retailPrice;
+            private SaleInfoData.RetailPriceData retailPrice;
             
             private string saleability;
             
@@ -968,7 +968,7 @@ namespace Google.Apis.Books.V1.Data {
             
             /// <summary>Suggested retail price. (In LITE projection.)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("listPrice")]
-            public virtual ListPriceData ListPrice {
+            public virtual SaleInfoData.ListPriceData ListPrice {
                 get {
                     return this.listPrice;
                 }
@@ -979,7 +979,7 @@ namespace Google.Apis.Books.V1.Data {
             
             /// <summary>The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("retailPrice")]
-            public virtual RetailPriceData RetailPrice {
+            public virtual SaleInfoData.RetailPriceData RetailPrice {
                 get {
                     return this.retailPrice;
                 }
@@ -1127,11 +1127,11 @@ namespace Google.Apis.Books.V1.Data {
             
             private string description;
             
-            private DimensionsData dimensions;
+            private VolumeInfoData.DimensionsData dimensions;
             
-            private ImageLinksData imageLinks;
+            private VolumeInfoData.ImageLinksData imageLinks;
             
-            private IList<IndustryIdentifiersData> industryIdentifiers;
+            private IList<VolumeInfoData.IndustryIdentifiersData> industryIdentifiers;
             
             private string infoLink;
             
@@ -1212,7 +1212,7 @@ namespace Google.Apis.Books.V1.Data {
             
             /// <summary>Physical dimensions of this volume.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("dimensions")]
-            public virtual DimensionsData Dimensions {
+            public virtual VolumeInfoData.DimensionsData Dimensions {
                 get {
                     return this.dimensions;
                 }
@@ -1223,7 +1223,7 @@ namespace Google.Apis.Books.V1.Data {
             
             /// <summary>A list of image links for all the sizes that are available. (In LITE projection.)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("imageLinks")]
-            public virtual ImageLinksData ImageLinks {
+            public virtual VolumeInfoData.ImageLinksData ImageLinks {
                 get {
                     return this.imageLinks;
                 }
@@ -1234,7 +1234,7 @@ namespace Google.Apis.Books.V1.Data {
             
             /// <summary>Industry standard identifiers for this volume.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("industryIdentifiers")]
-            public virtual IList<IndustryIdentifiersData> IndustryIdentifiers {
+            public virtual IList<VolumeInfoData.IndustryIdentifiersData> IndustryIdentifiers {
                 get {
                     return this.industryIdentifiers;
                 }
@@ -1613,7 +1613,7 @@ namespace Google.Apis.Books.V1 {
         }
         
         public BooksService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", BooksService.Name, BooksService.Version)))).GetService(BooksService.Version, BooksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(BooksService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", BooksService.Name, BooksService.Version)))).GetService(BooksService.Version, BooksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(BooksService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -1668,6 +1668,14 @@ namespace Google.Apis.Books.V1 {
          {
             return genericService.DeserializeResponse<T>(stream);
         }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Manage your books</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/books")]
+            Books,
+        }
     }
     
     public class BookshelvesResource {
@@ -1692,63 +1700,31 @@ namespace Google.Apis.Books.V1 {
         }
         
         /// <summary>Retrieves a specific bookshelf for the specified user.</summary>
+        /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
         /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
-        /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-        /// <param name="source">Optional - String to identify the originator of this request.</param>
-        public virtual System.IO.Stream GetAsStream(string shelf, string userId, string source) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["shelf"] = shelf;
-            parameters["userId"] = userId;
-            parameters["source"] = source;
-            logger.Debug("Executing bookshelves.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing bookshelves.get");
-            return ret;
-        }
-        
-        /// <summary>Retrieves a list of public bookshelves for the specified user.</summary>
-        /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-        /// <param name="source">Optional - String to identify the originator of this request.</param>
-        public virtual System.IO.Stream ListAsStream(string userId, string source) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["source"] = source;
-            logger.Debug("Executing bookshelves.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing bookshelves.list");
-            return ret;
+        public virtual GetRequest Get(string userId, string shelf) {
+            return new GetRequest(service, userId, shelf);
         }
         
         /// <summary>Retrieves a specific bookshelf for the specified user.</summary>
-        /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
         /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
+        /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
         /// <param name="source">Optional - String to identify the originator of this request.</param>
-        public virtual Google.Apis.Books.V1.Data.Bookshelf Get(string shelf, string userId, string source) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["shelf"] = shelf;
-            parameters["userId"] = userId;
-            parameters["source"] = source;
-            logger.Debug("Executing bookshelves.get");
-            Google.Apis.Books.V1.Data.Bookshelf ret = this.service.JsonToObject<Google.Apis.Books.V1.Data.Bookshelf>(this.service.ExecuteRequest(BookshelvesResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing bookshelves.get");
-            return ret;
+        public virtual GetRequest Get(string userId, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
+            return new GetRequest(service, userId, shelf, source);
+        }
+        
+        /// <summary>Retrieves a list of public bookshelves for the specified user.</summary>
+        /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
+        public virtual ListRequest List(string userId) {
+            return new ListRequest(service, userId);
         }
         
         /// <summary>Retrieves a list of public bookshelves for the specified user.</summary>
         /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
         /// <param name="source">Optional - String to identify the originator of this request.</param>
-        public virtual Google.Apis.Books.V1.Data.Bookshelves List(string userId, string source) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["source"] = source;
-            logger.Debug("Executing bookshelves.list");
-            Google.Apis.Books.V1.Data.Bookshelves ret = this.service.JsonToObject<Google.Apis.Books.V1.Data.Bookshelves>(this.service.ExecuteRequest(BookshelvesResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing bookshelves.list");
-            return ret;
+        public virtual ListRequest List(string userId, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
+            return new ListRequest(service, userId, source);
         }
         
         public class VolumesResource {
@@ -1764,35 +1740,189 @@ namespace Google.Apis.Books.V1 {
             }
             
             /// <summary>Retrieves volumes in a specific bookshelf for the specified user.</summary>
-            /// <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
             /// <param name="userId">Required - Id of user for whom to retrieve bookshelf volumes.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual System.IO.Stream ListAsStream(string shelf, string userId, string source) {
-                string body = null;
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["userId"] = userId;
-                parameters["source"] = source;
-                logger.Debug("Executing volumes.list");
-                System.IO.Stream ret = this.service.ExecuteRequest(VolumesResource.Resource, "list", body, parameters);
-                logger.Debug("Done Executing volumes.list");
-                return ret;
+            /// <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
+            public virtual ListRequest List(string userId, string shelf) {
+                return new ListRequest(service, userId, shelf);
             }
             
             /// <summary>Retrieves volumes in a specific bookshelf for the specified user.</summary>
-            /// <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
             /// <param name="userId">Required - Id of user for whom to retrieve bookshelf volumes.</param>
+            /// <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
             /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual Google.Apis.Books.V1.Data.Volumes List(string shelf, string userId, string source) {
-                string body = null;
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["userId"] = userId;
-                parameters["source"] = source;
-                logger.Debug("Executing volumes.list");
-                Google.Apis.Books.V1.Data.Volumes ret = this.service.JsonToObject<Google.Apis.Books.V1.Data.Volumes>(this.service.ExecuteRequest(VolumesResource.Resource, "list", body, parameters));
-                logger.Debug("Done Executing volumes.list");
-                return ret;
+            public virtual ListRequest List(string userId, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
+                return new ListRequest(service, userId, shelf, source);
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.V1.Data.Volumes> {
+                
+                private string shelf;
+                
+                private string source;
+                
+                private string userId;
+                
+                public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string userId, string shelf) : 
+                        base(service) {
+                    this.userId = userId;
+                    this.shelf = shelf;
+                }
+                
+                public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string userId, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                        base(service) {
+                    this.userId = userId;
+                    this.shelf = shelf;
+                    this.source = source;
+                }
+                
+                /// <summary>Id of bookshelf to retrieve volumes.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                public virtual string Shelf {
+                    get {
+                        return this.shelf;
+                    }
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this.source;
+                    }
+                    set {
+                        this.source = value;
+                    }
+                }
+                
+                /// <summary>Id of user for whom to retrieve bookshelf volumes.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userId")]
+                public virtual string UserId {
+                    get {
+                        return this.userId;
+                    }
+                }
+                
+                protected override string ResourceName {
+                    get {
+                        return "bookshelves.volumes";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.V1.Data.Bookshelf> {
+            
+            private string shelf;
+            
+            private string source;
+            
+            private string userId;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string userId, string shelf) : 
+                    base(service) {
+                this.userId = userId;
+                this.shelf = shelf;
+            }
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string userId, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                    base(service) {
+                this.userId = userId;
+                this.shelf = shelf;
+                this.source = source;
+            }
+            
+            /// <summary>Id of bookshelf to retrieve.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("shelf")]
+            public virtual string Shelf {
+                get {
+                    return this.shelf;
+                }
+            }
+            
+            /// <summary>String to identify the originator of this request.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("source")]
+            public virtual string Source {
+                get {
+                    return this.source;
+                }
+                set {
+                    this.source = value;
+                }
+            }
+            
+            /// <summary>Id of user for whom to retrieve bookshelves.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "bookshelves";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.V1.Data.Bookshelves> {
+            
+            private string source;
+            
+            private string userId;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string userId) : 
+                    base(service) {
+                this.userId = userId;
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string userId, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                    base(service) {
+                this.userId = userId;
+                this.source = source;
+            }
+            
+            /// <summary>String to identify the originator of this request.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("source")]
+            public virtual string Source {
+                get {
+                    return this.source;
+                }
+                set {
+                    this.source = value;
+                }
+            }
+            
+            /// <summary>Id of user for whom to retrieve bookshelves.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "bookshelves";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
             }
         }
     }
@@ -1842,139 +1972,68 @@ namespace Google.Apis.Books.V1 {
             /// <summary>Adds a volume to a bookshelf.</summary>
             /// <param name="shelf">Required - Id of bookshelf to which to add a volume.</param>
             /// <param name="volumeId">Required - Id of volume to add.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual System.IO.Stream AddVolumeAsStream(string body, string shelf, string volumeId, string source) {
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["volumeId"] = volumeId;
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.addVolume");
-                System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "addVolume", body, parameters);
-                logger.Debug("Done Executing bookshelves.addVolume");
-                return ret;
-            }
-            
-            /// <summary>Clears all volumes from a bookshelf.</summary>
-            /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual System.IO.Stream ClearVolumesAsStream(string body, string shelf, string source) {
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.clearVolumes");
-                System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "clearVolumes", body, parameters);
-                logger.Debug("Done Executing bookshelves.clearVolumes");
-                return ret;
-            }
-            
-            /// <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
-            /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual System.IO.Stream GetAsStream(string shelf, string source) {
-                string body = null;
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.get");
-                System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "get", body, parameters);
-                logger.Debug("Done Executing bookshelves.get");
-                return ret;
-            }
-            
-            /// <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual System.IO.Stream ListAsStream(string source) {
-                string body = null;
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.list");
-                System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "list", body, parameters);
-                logger.Debug("Done Executing bookshelves.list");
-                return ret;
-            }
-            
-            /// <summary>Removes a volume from a bookshelf.</summary>
-            /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-            /// <param name="volumeId">Required - Id of volume to remove.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual System.IO.Stream RemoveVolumeAsStream(string body, string shelf, string volumeId, string source) {
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["volumeId"] = volumeId;
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.removeVolume");
-                System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "removeVolume", body, parameters);
-                logger.Debug("Done Executing bookshelves.removeVolume");
-                return ret;
+            public virtual AddVolumeRequest AddVolume(string shelf, string volumeId) {
+                return new AddVolumeRequest(service, shelf, volumeId);
             }
             
             /// <summary>Adds a volume to a bookshelf.</summary>
             /// <param name="shelf">Required - Id of bookshelf to which to add a volume.</param>
             /// <param name="volumeId">Required - Id of volume to add.</param>
             /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual System.IO.Stream AddVolume(string body, string shelf, string volumeId, string source) {
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["volumeId"] = volumeId;
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.addVolume");
-                System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "addVolume", body, parameters);
-                logger.Debug("Done Executing bookshelves.addVolume");
-                return ret;
+            public virtual AddVolumeRequest AddVolume(string shelf, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
+                return new AddVolumeRequest(service, shelf, volumeId, source);
+            }
+            
+            /// <summary>Clears all volumes from a bookshelf.</summary>
+            /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
+            public virtual ClearVolumesRequest ClearVolumes(string shelf) {
+                return new ClearVolumesRequest(service, shelf);
             }
             
             /// <summary>Clears all volumes from a bookshelf.</summary>
             /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
             /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual System.IO.Stream ClearVolumes(string body, string shelf, string source) {
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.clearVolumes");
-                System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "clearVolumes", body, parameters);
-                logger.Debug("Done Executing bookshelves.clearVolumes");
-                return ret;
+            public virtual ClearVolumesRequest ClearVolumes(string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
+                return new ClearVolumesRequest(service, shelf, source);
+            }
+            
+            /// <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
+            /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
+            public virtual GetRequest Get(string shelf) {
+                return new GetRequest(service, shelf);
             }
             
             /// <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
             /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
             /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual Google.Apis.Books.V1.Data.Bookshelf Get(string shelf, string source) {
-                string body = null;
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.get");
-                Google.Apis.Books.V1.Data.Bookshelf ret = this.service.JsonToObject<Google.Apis.Books.V1.Data.Bookshelf>(this.service.ExecuteRequest(BookshelvesResource.Resource, "get", body, parameters));
-                logger.Debug("Done Executing bookshelves.get");
-                return ret;
+            public virtual GetRequest Get(string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
+                return new GetRequest(service, shelf, source);
+            }
+            
+            /// <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
+            public virtual ListRequest List() {
+                return new ListRequest(service);
             }
             
             /// <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
             /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual Google.Apis.Books.V1.Data.Bookshelves List(string source) {
-                string body = null;
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.list");
-                Google.Apis.Books.V1.Data.Bookshelves ret = this.service.JsonToObject<Google.Apis.Books.V1.Data.Bookshelves>(this.service.ExecuteRequest(BookshelvesResource.Resource, "list", body, parameters));
-                logger.Debug("Done Executing bookshelves.list");
-                return ret;
+            public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] string source) {
+                return new ListRequest(service, source);
+            }
+            
+            /// <summary>Removes a volume from a bookshelf.</summary>
+            /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
+            /// <param name="volumeId">Required - Id of volume to remove.</param>
+            public virtual RemoveVolumeRequest RemoveVolume(string shelf, string volumeId) {
+                return new RemoveVolumeRequest(service, shelf, volumeId);
             }
             
             /// <summary>Removes a volume from a bookshelf.</summary>
             /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
             /// <param name="volumeId">Required - Id of volume to remove.</param>
             /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual System.IO.Stream RemoveVolume(string body, string shelf, string volumeId, string source) {
-                System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                parameters["shelf"] = shelf;
-                parameters["volumeId"] = volumeId;
-                parameters["source"] = source;
-                logger.Debug("Executing bookshelves.removeVolume");
-                System.IO.Stream ret = this.service.ExecuteRequest(BookshelvesResource.Resource, "removeVolume", body, parameters);
-                logger.Debug("Done Executing bookshelves.removeVolume");
-                return ret;
+            public virtual RemoveVolumeRequest RemoveVolume(string shelf, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
+                return new RemoveVolumeRequest(service, shelf, volumeId, source);
             }
             
             public class VolumesResource {
@@ -1990,43 +2049,18 @@ namespace Google.Apis.Books.V1 {
                 }
                 
                 /// <summary>Gets volume information for volumes on a bookshelf.</summary>
-                /// <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return</param>
-                /// <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-                /// <param name="shelf">Optional - The bookshelf id or name retrieve volumes for.</param>
-                /// <param name="source">Optional - String to identify the originator of this request.</param>
-                /// <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first element to return (starts at 0)</param>
-                public virtual System.IO.Stream ListAsStream(System.Int64? maxResults, Projection? projection, string shelf, string source, System.Int64? startIndex) {
-                    string body = null;
-                    System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                    parameters["maxResults"] = maxResults;
-                    parameters["projection"] = projection;
-                    parameters["shelf"] = shelf;
-                    parameters["source"] = source;
-                    parameters["startIndex"] = startIndex;
-                    logger.Debug("Executing volumes.list");
-                    System.IO.Stream ret = this.service.ExecuteRequest(VolumesResource.Resource, "list", body, parameters);
-                    logger.Debug("Done Executing volumes.list");
-                    return ret;
+                public virtual ListRequest List() {
+                    return new ListRequest(service);
                 }
                 
                 /// <summary>Gets volume information for volumes on a bookshelf.</summary>
+                /// <param name="shelf">Optional - The bookshelf id or name retrieve volumes for.</param>
                 /// <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return</param>
                 /// <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-                /// <param name="shelf">Optional - The bookshelf id or name retrieve volumes for.</param>
                 /// <param name="source">Optional - String to identify the originator of this request.</param>
                 /// <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first element to return (starts at 0)</param>
-                public virtual Google.Apis.Books.V1.Data.Volumes List(System.Int64? maxResults, Projection? projection, string shelf, string source, System.Int64? startIndex) {
-                    string body = null;
-                    System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-                    parameters["maxResults"] = maxResults;
-                    parameters["projection"] = projection;
-                    parameters["shelf"] = shelf;
-                    parameters["source"] = source;
-                    parameters["startIndex"] = startIndex;
-                    logger.Debug("Executing volumes.list");
-                    Google.Apis.Books.V1.Data.Volumes ret = this.service.JsonToObject<Google.Apis.Books.V1.Data.Volumes>(this.service.ExecuteRequest(VolumesResource.Resource, "list", body, parameters));
-                    logger.Debug("Done Executing volumes.list");
-                    return ret;
+                public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] string shelf, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
+                    return new ListRequest(service, shelf, maxResults, projection, source, startIndex);
                 }
                 
                 /// <summary>Restrict information returned to a set of selected fields.</summary>
@@ -2040,6 +2074,356 @@ namespace Google.Apis.Books.V1 {
                     /// <summary>Includes a subset of fields in volumeInfo and accessInfo.</summary>
                     [Google.Apis.Util.StringValueAttribute("lite")]
                     Lite,
+                }
+                
+                public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.V1.Data.Volumes> {
+                    
+                    private System.Int64? maxResults;
+                    
+                    private Projection? projection;
+                    
+                    private string shelf;
+                    
+                    private string source;
+                    
+                    private System.Int64? startIndex;
+                    
+                    public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service) : 
+                            base(service) {
+                    }
+                    
+                    public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, [System.Runtime.InteropServices.OptionalAttribute()] string shelf, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
+                            base(service) {
+                        this.shelf = shelf;
+                        this.maxResults = maxResults;
+                        this.projection = projection;
+                        this.source = source;
+                        this.startIndex = startIndex;
+                    }
+                    
+                    /// <summary>Maximum number of results to return</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+                    public virtual System.Int64? MaxResults {
+                        get {
+                            return this.maxResults;
+                        }
+                        set {
+                            this.maxResults = value;
+                        }
+                    }
+                    
+                    /// <summary>Restrict information returned to a set of selected fields.</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("projection")]
+                    public virtual Projection? Projection {
+                        get {
+                            return this.projection;
+                        }
+                        set {
+                            this.projection = value;
+                        }
+                    }
+                    
+                    /// <summary>The bookshelf id or name retrieve volumes for.</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                    public virtual string Shelf {
+                        get {
+                            return this.shelf;
+                        }
+                        set {
+                            this.shelf = value;
+                        }
+                    }
+                    
+                    /// <summary>String to identify the originator of this request.</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("source")]
+                    public virtual string Source {
+                        get {
+                            return this.source;
+                        }
+                        set {
+                            this.source = value;
+                        }
+                    }
+                    
+                    /// <summary>Index of the first element to return (starts at 0)</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+                    public virtual System.Int64? StartIndex {
+                        get {
+                            return this.startIndex;
+                        }
+                        set {
+                            this.startIndex = value;
+                        }
+                    }
+                    
+                    protected override string ResourceName {
+                        get {
+                            return "mylibrary.bookshelves.volumes";
+                        }
+                    }
+                    
+                    protected override string MethodName {
+                        get {
+                            return "list";
+                        }
+                    }
+                }
+            }
+            
+            public class AddVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
+                
+                private string shelf;
+                
+                private string source;
+                
+                private string volumeId;
+                
+                public AddVolumeRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shelf, string volumeId) : 
+                        base(service) {
+                    this.shelf = shelf;
+                    this.volumeId = volumeId;
+                }
+                
+                public AddVolumeRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shelf, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                        base(service) {
+                    this.shelf = shelf;
+                    this.volumeId = volumeId;
+                    this.source = source;
+                }
+                
+                /// <summary>Id of bookshelf to which to add a volume.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                public virtual string Shelf {
+                    get {
+                        return this.shelf;
+                    }
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this.source;
+                    }
+                    set {
+                        this.source = value;
+                    }
+                }
+                
+                /// <summary>Id of volume to add.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                public virtual string VolumeId {
+                    get {
+                        return this.volumeId;
+                    }
+                }
+                
+                protected override string ResourceName {
+                    get {
+                        return "mylibrary.bookshelves";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "addVolume";
+                    }
+                }
+            }
+            
+            public class ClearVolumesRequest : Google.Apis.Requests.ServiceRequest<string> {
+                
+                private string shelf;
+                
+                private string source;
+                
+                public ClearVolumesRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shelf) : 
+                        base(service) {
+                    this.shelf = shelf;
+                }
+                
+                public ClearVolumesRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                        base(service) {
+                    this.shelf = shelf;
+                    this.source = source;
+                }
+                
+                /// <summary>Id of bookshelf from which to remove a volume.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                public virtual string Shelf {
+                    get {
+                        return this.shelf;
+                    }
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this.source;
+                    }
+                    set {
+                        this.source = value;
+                    }
+                }
+                
+                protected override string ResourceName {
+                    get {
+                        return "mylibrary.bookshelves";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "clearVolumes";
+                    }
+                }
+            }
+            
+            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.V1.Data.Bookshelf> {
+                
+                private string shelf;
+                
+                private string source;
+                
+                public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shelf) : 
+                        base(service) {
+                    this.shelf = shelf;
+                }
+                
+                public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                        base(service) {
+                    this.shelf = shelf;
+                    this.source = source;
+                }
+                
+                /// <summary>Id of bookshelf to retrieve.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                public virtual string Shelf {
+                    get {
+                        return this.shelf;
+                    }
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this.source;
+                    }
+                    set {
+                        this.source = value;
+                    }
+                }
+                
+                protected override string ResourceName {
+                    get {
+                        return "mylibrary.bookshelves";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "get";
+                    }
+                }
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.V1.Data.Bookshelves> {
+                
+                private string source;
+                
+                public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service) : 
+                        base(service) {
+                }
+                
+                public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                        base(service) {
+                    this.source = source;
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this.source;
+                    }
+                    set {
+                        this.source = value;
+                    }
+                }
+                
+                protected override string ResourceName {
+                    get {
+                        return "mylibrary.bookshelves";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+            
+            public class RemoveVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
+                
+                private string shelf;
+                
+                private string source;
+                
+                private string volumeId;
+                
+                public RemoveVolumeRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shelf, string volumeId) : 
+                        base(service) {
+                    this.shelf = shelf;
+                    this.volumeId = volumeId;
+                }
+                
+                public RemoveVolumeRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string shelf, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                        base(service) {
+                    this.shelf = shelf;
+                    this.volumeId = volumeId;
+                    this.source = source;
+                }
+                
+                /// <summary>Id of bookshelf from which to remove a volume.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                public virtual string Shelf {
+                    get {
+                        return this.shelf;
+                    }
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this.source;
+                    }
+                    set {
+                        this.source = value;
+                    }
+                }
+                
+                /// <summary>Id of volume to remove.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                public virtual string VolumeId {
+                    get {
+                        return this.volumeId;
+                    }
+                }
+                
+                protected override string ResourceName {
+                    get {
+                        return "mylibrary.bookshelves";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "removeVolume";
+                    }
                 }
             }
         }
@@ -2059,64 +2443,22 @@ namespace Google.Apis.Books.V1 {
         
         /// <summary>Gets volume information for a single volume.</summary>
         /// <param name="volumeId">Required - Id of volume to retrieve.</param>
-        /// <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-        /// <param name="source">Optional - String to identify the originator of this request.</param>
-        public virtual System.IO.Stream GetAsStream(string volumeId, Projection? projection, string source) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["volumeId"] = volumeId;
-            parameters["projection"] = projection;
-            parameters["source"] = source;
-            logger.Debug("Executing volumes.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(VolumesResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing volumes.get");
-            return ret;
-        }
-        
-        /// <summary>Performs a book search.</summary>
-        /// <param name="q">Required - Full-text search query string.</param>
-        /// <param name="download">Optional - Must be one of the following values [epub] - Restrict to volumes by download availability.</param>
-        /// <param name="filter">Optional - Must be one of the following values [ebooks, free-ebooks, full, paid-ebooks, partial] - Filter search results.</param>
-        /// <param name="langRestrict">Optional - Restrict results to books with this language code.</param>
-        /// <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 40 - Maximum number of results to return.</param>
-        /// <param name="orderBy">Optional - Must be one of the following values [newest, relevance] - Sort search results.</param>
-        /// <param name="printType">Optional - Must be one of the following values [all, books, magazines] - Restrict to books or magazines.</param>
-        /// <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-        /// <param name="source">Optional - String to identify the originator of this request.</param>
-        /// <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to return (starts at 0)</param>
-        public virtual System.IO.Stream ListAsStream(string q, Download? download, Filter? filter, string langRestrict, System.Int64? maxResults, OrderBy? orderBy, PrintType? printType, Projection? projection, string source, System.Int64? startIndex) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["q"] = q;
-            parameters["download"] = download;
-            parameters["filter"] = filter;
-            parameters["langRestrict"] = langRestrict;
-            parameters["maxResults"] = maxResults;
-            parameters["orderBy"] = orderBy;
-            parameters["printType"] = printType;
-            parameters["projection"] = projection;
-            parameters["source"] = source;
-            parameters["startIndex"] = startIndex;
-            logger.Debug("Executing volumes.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(VolumesResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing volumes.list");
-            return ret;
+        public virtual GetRequest Get(string volumeId) {
+            return new GetRequest(service, volumeId);
         }
         
         /// <summary>Gets volume information for a single volume.</summary>
         /// <param name="volumeId">Required - Id of volume to retrieve.</param>
         /// <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
         /// <param name="source">Optional - String to identify the originator of this request.</param>
-        public virtual Google.Apis.Books.V1.Data.Volume Get(string volumeId, Projection? projection, string source) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["volumeId"] = volumeId;
-            parameters["projection"] = projection;
-            parameters["source"] = source;
-            logger.Debug("Executing volumes.get");
-            Google.Apis.Books.V1.Data.Volume ret = this.service.JsonToObject<Google.Apis.Books.V1.Data.Volume>(this.service.ExecuteRequest(VolumesResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing volumes.get");
-            return ret;
+        public virtual GetRequest Get(string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
+            return new GetRequest(service, volumeId, projection, source);
+        }
+        
+        /// <summary>Performs a book search.</summary>
+        /// <param name="q">Required - Full-text search query string.</param>
+        public virtual ListRequest List(string q) {
+            return new ListRequest(service, q);
         }
         
         /// <summary>Performs a book search.</summary>
@@ -2130,23 +2472,8 @@ namespace Google.Apis.Books.V1 {
         /// <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
         /// <param name="source">Optional - String to identify the originator of this request.</param>
         /// <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to return (starts at 0)</param>
-        public virtual Google.Apis.Books.V1.Data.Volumes List(string q, Download? download, Filter? filter, string langRestrict, System.Int64? maxResults, OrderBy? orderBy, PrintType? printType, Projection? projection, string source, System.Int64? startIndex) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["q"] = q;
-            parameters["download"] = download;
-            parameters["filter"] = filter;
-            parameters["langRestrict"] = langRestrict;
-            parameters["maxResults"] = maxResults;
-            parameters["orderBy"] = orderBy;
-            parameters["printType"] = printType;
-            parameters["projection"] = projection;
-            parameters["source"] = source;
-            parameters["startIndex"] = startIndex;
-            logger.Debug("Executing volumes.list");
-            Google.Apis.Books.V1.Data.Volumes ret = this.service.JsonToObject<Google.Apis.Books.V1.Data.Volumes>(this.service.ExecuteRequest(VolumesResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing volumes.list");
-            return ret;
+        public virtual ListRequest List(string q, [System.Runtime.InteropServices.OptionalAttribute()] Download? download, [System.Runtime.InteropServices.OptionalAttribute()] Filter? filter, [System.Runtime.InteropServices.OptionalAttribute()] string langRestrict, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] OrderBy? orderBy, [System.Runtime.InteropServices.OptionalAttribute()] PrintType? printType, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
+            return new ListRequest(service, q, download, filter, langRestrict, maxResults, orderBy, printType, projection, source, startIndex);
         }
         
         /// <summary>Restrict information returned to a set of selected fields.</summary>
@@ -2224,6 +2551,230 @@ namespace Google.Apis.Books.V1 {
             /// <summary>Just magazines.</summary>
             [Google.Apis.Util.StringValueAttribute("magazines")]
             Magazines,
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.V1.Data.Volume> {
+            
+            private Projection? projection;
+            
+            private string source;
+            
+            private string volumeId;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string volumeId) : 
+                    base(service) {
+                this.volumeId = volumeId;
+            }
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
+                    base(service) {
+                this.volumeId = volumeId;
+                this.projection = projection;
+                this.source = source;
+            }
+            
+            /// <summary>Restrict information returned to a set of selected fields.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            public virtual Projection? Projection {
+                get {
+                    return this.projection;
+                }
+                set {
+                    this.projection = value;
+                }
+            }
+            
+            /// <summary>String to identify the originator of this request.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("source")]
+            public virtual string Source {
+                get {
+                    return this.source;
+                }
+                set {
+                    this.source = value;
+                }
+            }
+            
+            /// <summary>Id of volume to retrieve.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+            public virtual string VolumeId {
+                get {
+                    return this.volumeId;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "volumes";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.V1.Data.Volumes> {
+            
+            private Download? download;
+            
+            private Filter? filter;
+            
+            private string langRestrict;
+            
+            private System.Int64? maxResults;
+            
+            private OrderBy? orderBy;
+            
+            private PrintType? printType;
+            
+            private Projection? projection;
+            
+            private string q;
+            
+            private string source;
+            
+            private System.Int64? startIndex;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string q) : 
+                    base(service) {
+                this.q = q;
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string q, [System.Runtime.InteropServices.OptionalAttribute()] Download? download, [System.Runtime.InteropServices.OptionalAttribute()] Filter? filter, [System.Runtime.InteropServices.OptionalAttribute()] string langRestrict, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] OrderBy? orderBy, [System.Runtime.InteropServices.OptionalAttribute()] PrintType? printType, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
+                    base(service) {
+                this.q = q;
+                this.download = download;
+                this.filter = filter;
+                this.langRestrict = langRestrict;
+                this.maxResults = maxResults;
+                this.orderBy = orderBy;
+                this.printType = printType;
+                this.projection = projection;
+                this.source = source;
+                this.startIndex = startIndex;
+            }
+            
+            /// <summary>Restrict to volumes by download availability.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("download")]
+            public virtual Download? Download {
+                get {
+                    return this.download;
+                }
+                set {
+                    this.download = value;
+                }
+            }
+            
+            /// <summary>Filter search results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("filter")]
+            public virtual Filter? Filter {
+                get {
+                    return this.filter;
+                }
+                set {
+                    this.filter = value;
+                }
+            }
+            
+            /// <summary>Restrict results to books with this language code.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("langRestrict")]
+            public virtual string LangRestrict {
+                get {
+                    return this.langRestrict;
+                }
+                set {
+                    this.langRestrict = value;
+                }
+            }
+            
+            /// <summary>Maximum number of results to return.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
+            }
+            
+            /// <summary>Sort search results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("orderBy")]
+            public virtual OrderBy? OrderBy {
+                get {
+                    return this.orderBy;
+                }
+                set {
+                    this.orderBy = value;
+                }
+            }
+            
+            /// <summary>Restrict to books or magazines.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("printType")]
+            public virtual PrintType? PrintType {
+                get {
+                    return this.printType;
+                }
+                set {
+                    this.printType = value;
+                }
+            }
+            
+            /// <summary>Restrict information returned to a set of selected fields.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            public virtual Projection? Projection {
+                get {
+                    return this.projection;
+                }
+                set {
+                    this.projection = value;
+                }
+            }
+            
+            /// <summary>Full-text search query string.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("q")]
+            public virtual string Q {
+                get {
+                    return this.q;
+                }
+            }
+            
+            /// <summary>String to identify the originator of this request.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("source")]
+            public virtual string Source {
+                get {
+                    return this.source;
+                }
+                set {
+                    this.source = value;
+                }
+            }
+            
+            /// <summary>Index of the first result to return (starts at 0)</summary>
+            [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+            public virtual System.Int64? StartIndex {
+                get {
+                    return this.startIndex;
+                }
+                set {
+                    this.startIndex = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "volumes";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
 }

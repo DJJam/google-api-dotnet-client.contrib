@@ -407,7 +407,7 @@ namespace Google.Apis.Latitude.V1 {
         }
         
         public LatitudeService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", LatitudeService.Name, LatitudeService.Version)))).GetService(LatitudeService.Version, LatitudeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(LatitudeService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", LatitudeService.Name, LatitudeService.Version)))).GetService(LatitudeService.Version, LatitudeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(LatitudeService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -471,65 +471,116 @@ namespace Google.Apis.Latitude.V1 {
         }
         
         /// <summary>Deletes the authenticated user&apos;s current location.</summary>
-        public virtual System.IO.Stream DeleteAsStream() {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing currentLocation.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(CurrentLocationResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing currentLocation.delete");
-            return ret;
+        public virtual DeleteRequest Delete() {
+            return new DeleteRequest(service);
+        }
+        
+        /// <summary>Returns the authenticated user&apos;s current location.</summary>
+        public virtual GetRequest Get() {
+            return new GetRequest(service);
         }
         
         /// <summary>Returns the authenticated user&apos;s current location.</summary>
         /// <param name="granularity">Optional - Granularity of the requested location.</param>
-        public virtual System.IO.Stream GetAsStream(string granularity) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["granularity"] = granularity;
-            logger.Debug("Executing currentLocation.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(CurrentLocationResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing currentLocation.get");
-            return ret;
+        public virtual GetRequest Get([System.Runtime.InteropServices.OptionalAttribute()] string granularity) {
+            return new GetRequest(service, granularity);
         }
         
         /// <summary>Updates or creates the user&apos;s current location.</summary>
-        public virtual System.IO.Stream InsertAsStream(string body) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing currentLocation.insert");
-            System.IO.Stream ret = this.service.ExecuteRequest(CurrentLocationResource.Resource, "insert", body, parameters);
-            logger.Debug("Done Executing currentLocation.insert");
-            return ret;
+        public virtual InsertRequest Insert(Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson body) {
+            return new InsertRequest(service, body);
         }
         
-        /// <summary>Deletes the authenticated user&apos;s current location.</summary>
-        public virtual System.IO.Stream Delete() {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing currentLocation.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(CurrentLocationResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing currentLocation.delete");
-            return ret;
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            public DeleteRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service) : 
+                    base(service) {
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "currentLocation";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
         }
         
-        /// <summary>Returns the authenticated user&apos;s current location.</summary>
-        /// <param name="granularity">Optional - Granularity of the requested location.</param>
-        public virtual Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson Get(string granularity) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["granularity"] = granularity;
-            logger.Debug("Executing currentLocation.get");
-            Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson ret = this.service.JsonToObject<Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson>(this.service.ExecuteRequest(CurrentLocationResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing currentLocation.get");
-            return ret;
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson> {
+            
+            private string granularity;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service) : 
+                    base(service) {
+            }
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, [System.Runtime.InteropServices.OptionalAttribute()] string granularity) : 
+                    base(service) {
+                this.granularity = granularity;
+            }
+            
+            /// <summary>Granularity of the requested location.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("granularity")]
+            public virtual string Granularity {
+                get {
+                    return this.granularity;
+                }
+                set {
+                    this.granularity = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "currentLocation";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
         }
         
-        /// <summary>Updates or creates the user&apos;s current location.</summary>
-        public virtual Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson Insert(Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson body) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing currentLocation.insert");
-            Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson ret = this.service.JsonToObject<Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson>(this.service.ExecuteRequest(CurrentLocationResource.Resource, "insert", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing currentLocation.insert");
-            return ret;
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson> {
+            
+            private Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson body) : 
+                    base(service) {
+                this.Body = body;
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Latitude.V1.Data.LatitudeCurrentlocationResourceJson Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "currentLocation";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
         }
     }
     
@@ -547,37 +598,31 @@ namespace Google.Apis.Latitude.V1 {
         
         /// <summary>Deletes a location from the user&apos;s location history.</summary>
         /// <param name="locationId">Required - Timestamp of the location to delete (ms since epoch).</param>
-        public virtual System.IO.Stream DeleteAsStream(string locationId) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["locationId"] = locationId;
-            logger.Debug("Executing location.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(LocationResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing location.delete");
-            return ret;
+        public virtual DeleteRequest Delete(string locationId) {
+            return new DeleteRequest(service, locationId);
+        }
+        
+        /// <summary>Reads a location from the user&apos;s location history.</summary>
+        /// <param name="locationId">Required - Timestamp of the location to read (ms since epoch).</param>
+        public virtual GetRequest Get(string locationId) {
+            return new GetRequest(service, locationId);
         }
         
         /// <summary>Reads a location from the user&apos;s location history.</summary>
         /// <param name="locationId">Required - Timestamp of the location to read (ms since epoch).</param>
         /// <param name="granularity">Optional - Granularity of the location to return.</param>
-        public virtual System.IO.Stream GetAsStream(string locationId, string granularity) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["locationId"] = locationId;
-            parameters["granularity"] = granularity;
-            logger.Debug("Executing location.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(LocationResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing location.get");
-            return ret;
+        public virtual GetRequest Get(string locationId, [System.Runtime.InteropServices.OptionalAttribute()] string granularity) {
+            return new GetRequest(service, locationId, granularity);
         }
         
         /// <summary>Inserts or updates a location in the user&apos;s location history.</summary>
-        public virtual System.IO.Stream InsertAsStream(string body) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing location.insert");
-            System.IO.Stream ret = this.service.ExecuteRequest(LocationResource.Resource, "insert", body, parameters);
-            logger.Debug("Done Executing location.insert");
-            return ret;
+        public virtual InsertRequest Insert(Google.Apis.Latitude.V1.Data.Location body) {
+            return new InsertRequest(service, body);
+        }
+        
+        /// <summary>Lists the user&apos;s location history.</summary>
+        public virtual ListRequest List() {
+            return new ListRequest(service);
         }
         
         /// <summary>Lists the user&apos;s location history.</summary>
@@ -585,70 +630,202 @@ namespace Google.Apis.Latitude.V1 {
         /// <param name="maxResults">max-results - Optional - Maximum number of locations to return.</param>
         /// <param name="maxTime">max-time - Optional - Maximum timestamp of locations to return (ms since epoch).</param>
         /// <param name="minTime">min-time - Optional - Minimum timestamp of locations to return (ms since epoch).</param>
-        public virtual System.IO.Stream ListAsStream(string granularity, string maxResults, string maxTime, string minTime) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["granularity"] = granularity;
-            parameters["max-results"] = maxResults;
-            parameters["max-time"] = maxTime;
-            parameters["min-time"] = minTime;
-            logger.Debug("Executing location.list");
-            System.IO.Stream ret = this.service.ExecuteRequest(LocationResource.Resource, "list", body, parameters);
-            logger.Debug("Done Executing location.list");
-            return ret;
+        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] string granularity, [System.Runtime.InteropServices.OptionalAttribute()] string maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string maxTime, [System.Runtime.InteropServices.OptionalAttribute()] string minTime) {
+            return new ListRequest(service, granularity, maxResults, maxTime, minTime);
         }
         
-        /// <summary>Deletes a location from the user&apos;s location history.</summary>
-        /// <param name="locationId">Required - Timestamp of the location to delete (ms since epoch).</param>
-        public virtual System.IO.Stream Delete(string locationId) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["locationId"] = locationId;
-            logger.Debug("Executing location.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(LocationResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing location.delete");
-            return ret;
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string locationId;
+            
+            public DeleteRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string locationId) : 
+                    base(service) {
+                this.locationId = locationId;
+            }
+            
+            /// <summary>Timestamp of the location to delete (ms since epoch).</summary>
+            [Google.Apis.Util.RequestParameterAttribute("locationId")]
+            public virtual string LocationId {
+                get {
+                    return this.locationId;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "location";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
         }
         
-        /// <summary>Reads a location from the user&apos;s location history.</summary>
-        /// <param name="locationId">Required - Timestamp of the location to read (ms since epoch).</param>
-        /// <param name="granularity">Optional - Granularity of the location to return.</param>
-        public virtual Google.Apis.Latitude.V1.Data.Location Get(string locationId, string granularity) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["locationId"] = locationId;
-            parameters["granularity"] = granularity;
-            logger.Debug("Executing location.get");
-            Google.Apis.Latitude.V1.Data.Location ret = this.service.JsonToObject<Google.Apis.Latitude.V1.Data.Location>(this.service.ExecuteRequest(LocationResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing location.get");
-            return ret;
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.V1.Data.Location> {
+            
+            private string granularity;
+            
+            private string locationId;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string locationId) : 
+                    base(service) {
+                this.locationId = locationId;
+            }
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string locationId, [System.Runtime.InteropServices.OptionalAttribute()] string granularity) : 
+                    base(service) {
+                this.locationId = locationId;
+                this.granularity = granularity;
+            }
+            
+            /// <summary>Granularity of the location to return.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("granularity")]
+            public virtual string Granularity {
+                get {
+                    return this.granularity;
+                }
+                set {
+                    this.granularity = value;
+                }
+            }
+            
+            /// <summary>Timestamp of the location to read (ms since epoch).</summary>
+            [Google.Apis.Util.RequestParameterAttribute("locationId")]
+            public virtual string LocationId {
+                get {
+                    return this.locationId;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "location";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
         }
         
-        /// <summary>Inserts or updates a location in the user&apos;s location history.</summary>
-        public virtual Google.Apis.Latitude.V1.Data.Location Insert(Google.Apis.Latitude.V1.Data.Location body) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            logger.Debug("Executing location.insert");
-            Google.Apis.Latitude.V1.Data.Location ret = this.service.JsonToObject<Google.Apis.Latitude.V1.Data.Location>(this.service.ExecuteRequest(LocationResource.Resource, "insert", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing location.insert");
-            return ret;
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.V1.Data.Location> {
+            
+            private Google.Apis.Latitude.V1.Data.Location bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Latitude.V1.Data.Location body) : 
+                    base(service) {
+                this.Body = body;
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Latitude.V1.Data.Location Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "location";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
         }
         
-        /// <summary>Lists the user&apos;s location history.</summary>
-        /// <param name="granularity">Optional - Granularity of the requested locations.</param>
-        /// <param name="maxResults">max-results - Optional - Maximum number of locations to return.</param>
-        /// <param name="maxTime">max-time - Optional - Maximum timestamp of locations to return (ms since epoch).</param>
-        /// <param name="minTime">min-time - Optional - Minimum timestamp of locations to return (ms since epoch).</param>
-        public virtual Google.Apis.Latitude.V1.Data.LocationFeed List(string granularity, string maxResults, string maxTime, string minTime) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["granularity"] = granularity;
-            parameters["max-results"] = maxResults;
-            parameters["max-time"] = maxTime;
-            parameters["min-time"] = minTime;
-            logger.Debug("Executing location.list");
-            Google.Apis.Latitude.V1.Data.LocationFeed ret = this.service.JsonToObject<Google.Apis.Latitude.V1.Data.LocationFeed>(this.service.ExecuteRequest(LocationResource.Resource, "list", body, parameters));
-            logger.Debug("Done Executing location.list");
-            return ret;
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.V1.Data.LocationFeed> {
+            
+            private string granularity;
+            
+            private string maxResults;
+            
+            private string maxTime;
+            
+            private string minTime;
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service) : 
+                    base(service) {
+            }
+            
+            public ListRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, [System.Runtime.InteropServices.OptionalAttribute()] string granularity, [System.Runtime.InteropServices.OptionalAttribute()] string maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string maxTime, [System.Runtime.InteropServices.OptionalAttribute()] string minTime) : 
+                    base(service) {
+                this.granularity = granularity;
+                this.maxResults = maxResults;
+                this.maxTime = maxTime;
+                this.minTime = minTime;
+            }
+            
+            /// <summary>Granularity of the requested locations.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("granularity")]
+            public virtual string Granularity {
+                get {
+                    return this.granularity;
+                }
+                set {
+                    this.granularity = value;
+                }
+            }
+            
+            /// <summary>Maximum number of locations to return.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual string MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
+            }
+            
+            /// <summary>Maximum timestamp of locations to return (ms since epoch).</summary>
+            [Google.Apis.Util.RequestParameterAttribute("max-time")]
+            public virtual string MaxTime {
+                get {
+                    return this.maxTime;
+                }
+                set {
+                    this.maxTime = value;
+                }
+            }
+            
+            /// <summary>Minimum timestamp of locations to return (ms since epoch).</summary>
+            [Google.Apis.Util.RequestParameterAttribute("min-time")]
+            public virtual string MinTime {
+                get {
+                    return this.minTime;
+                }
+                set {
+                    this.minTime = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "location";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
         }
     }
 }

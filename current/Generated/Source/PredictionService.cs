@@ -16,10 +16,10 @@ namespace Google.Apis.Prediction.V1_2.Data {
     
     public class Input {
         
-        private InputData input;
+        private Input.InputData input;
         
         [Newtonsoft.Json.JsonPropertyAttribute("input")]
-        public virtual InputData InputValue {
+        public virtual Input.InputData InputValue {
             get {
                 return this.input;
             }
@@ -52,7 +52,7 @@ namespace Google.Apis.Prediction.V1_2.Data {
         
         private string outputLabel;
         
-        private IList<OutputMultiData> outputMulti;
+        private IList<Output.OutputMultiData> outputMulti;
         
         private double outputValue;
         
@@ -91,7 +91,7 @@ namespace Google.Apis.Prediction.V1_2.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("outputMulti")]
-        public virtual IList<OutputMultiData> OutputMulti {
+        public virtual IList<Output.OutputMultiData> OutputMulti {
             get {
                 return this.outputMulti;
             }
@@ -164,7 +164,7 @@ namespace Google.Apis.Prediction.V1_2.Data {
         
         private string kind;
         
-        private ModelInfoData modelInfo;
+        private Training.ModelInfoData modelInfo;
         
         private string selfLink;
         
@@ -193,7 +193,7 @@ namespace Google.Apis.Prediction.V1_2.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("modelInfo")]
-        public virtual ModelInfoData ModelInfo {
+        public virtual Training.ModelInfoData ModelInfo {
             get {
                 return this.modelInfo;
             }
@@ -335,7 +335,7 @@ namespace Google.Apis.Prediction.V1_2 {
         }
         
         public PredictionService() : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.WebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", PredictionService.Name, PredictionService.Version)))).GetService(PredictionService.Version, PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(PredictionService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", PredictionService.Name, PredictionService.Version)))).GetService(PredictionService.Version, PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(PredictionService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
         }
         
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
@@ -384,6 +384,14 @@ namespace Google.Apis.Prediction.V1_2 {
          {
             return genericService.DeserializeResponse<T>(stream);
         }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Manage your data in the Google Prediction API</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/prediction")]
+            Prediction,
+        }
     }
     
     public class HostedmodelsResource {
@@ -400,24 +408,55 @@ namespace Google.Apis.Prediction.V1_2 {
         
         /// <summary>Submit input and request an output against a hosted model</summary>
         /// <param name="hostedModelName">Required - The name of a hosted model</param>
-        public virtual System.IO.Stream PredictAsStream(string body, string hostedModelName) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["hostedModelName"] = hostedModelName;
-            logger.Debug("Executing hostedmodels.predict");
-            System.IO.Stream ret = this.service.ExecuteRequest(HostedmodelsResource.Resource, "predict", body, parameters);
-            logger.Debug("Done Executing hostedmodels.predict");
-            return ret;
+        public virtual PredictRequest Predict(Google.Apis.Prediction.V1_2.Data.Input body, string hostedModelName) {
+            return new PredictRequest(service, body, hostedModelName);
         }
         
-        /// <summary>Submit input and request an output against a hosted model</summary>
-        /// <param name="hostedModelName">Required - The name of a hosted model</param>
-        public virtual Google.Apis.Prediction.V1_2.Data.Output Predict(Google.Apis.Prediction.V1_2.Data.Input body, string hostedModelName) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["hostedModelName"] = hostedModelName;
-            logger.Debug("Executing hostedmodels.predict");
-            Google.Apis.Prediction.V1_2.Data.Output ret = this.service.JsonToObject<Google.Apis.Prediction.V1_2.Data.Output>(this.service.ExecuteRequest(HostedmodelsResource.Resource, "predict", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing hostedmodels.predict");
-            return ret;
+        public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.V1_2.Data.Output> {
+            
+            private string hostedModelName;
+            
+            private Google.Apis.Prediction.V1_2.Data.Input bodyValue;
+            
+            public PredictRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Prediction.V1_2.Data.Input body, string hostedModelName) : 
+                    base(service) {
+                this.Body = body;
+                this.hostedModelName = hostedModelName;
+            }
+            
+            /// <summary>The name of a hosted model</summary>
+            [Google.Apis.Util.RequestParameterAttribute("hostedModelName")]
+            public virtual string HostedModelName {
+                get {
+                    return this.hostedModelName;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Prediction.V1_2.Data.Input Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "hostedmodels";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "predict";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
         }
     }
     
@@ -435,94 +474,192 @@ namespace Google.Apis.Prediction.V1_2 {
         
         /// <summary>Delete a trained model</summary>
         /// <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
-        public virtual System.IO.Stream DeleteAsStream(string data) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["data"] = data;
-            logger.Debug("Executing training.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(TrainingResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing training.delete");
-            return ret;
+        public virtual DeleteRequest Delete(string data) {
+            return new DeleteRequest(service, data);
         }
         
         /// <summary>Check training status of your model</summary>
         /// <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
-        public virtual System.IO.Stream GetAsStream(string data) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["data"] = data;
-            logger.Debug("Executing training.get");
-            System.IO.Stream ret = this.service.ExecuteRequest(TrainingResource.Resource, "get", body, parameters);
-            logger.Debug("Done Executing training.get");
-            return ret;
+        public virtual GetRequest Get(string data) {
+            return new GetRequest(service, data);
+        }
+        
+        /// <summary>Begin training your model</summary>
+        public virtual InsertRequest Insert(Google.Apis.Prediction.V1_2.Data.Training body) {
+            return new InsertRequest(service, body);
         }
         
         /// <summary>Begin training your model</summary>
         /// <param name="data">Optional - mybucket%2Fmydata resource in Google Storage</param>
-        public virtual System.IO.Stream InsertAsStream(string body, string data) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["data"] = data;
-            logger.Debug("Executing training.insert");
-            System.IO.Stream ret = this.service.ExecuteRequest(TrainingResource.Resource, "insert", body, parameters);
-            logger.Debug("Done Executing training.insert");
-            return ret;
+        public virtual InsertRequest Insert(Google.Apis.Prediction.V1_2.Data.Training body, [System.Runtime.InteropServices.OptionalAttribute()] string data) {
+            return new InsertRequest(service, body, data);
         }
         
         /// <summary>Add new data to a trained model</summary>
         /// <param name="data">Required</param>
-        public virtual System.IO.Stream UpdateAsStream(string body, string data) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["data"] = data;
-            logger.Debug("Executing training.update");
-            System.IO.Stream ret = this.service.ExecuteRequest(TrainingResource.Resource, "update", body, parameters);
-            logger.Debug("Done Executing training.update");
-            return ret;
+        public virtual UpdateRequest Update(Google.Apis.Prediction.V1_2.Data.Update body, string data) {
+            return new UpdateRequest(service, body, data);
         }
         
-        /// <summary>Delete a trained model</summary>
-        /// <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
-        public virtual System.IO.Stream Delete(string data) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["data"] = data;
-            logger.Debug("Executing training.delete");
-            System.IO.Stream ret = this.service.ExecuteRequest(TrainingResource.Resource, "delete", body, parameters);
-            logger.Debug("Done Executing training.delete");
-            return ret;
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string data;
+            
+            public DeleteRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string data) : 
+                    base(service) {
+                this.data = data;
+            }
+            
+            /// <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            [Google.Apis.Util.RequestParameterAttribute("data")]
+            public virtual string Data {
+                get {
+                    return this.data;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "training";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
         }
         
-        /// <summary>Check training status of your model</summary>
-        /// <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
-        public virtual Google.Apis.Prediction.V1_2.Data.Training Get(string data) {
-            string body = null;
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["data"] = data;
-            logger.Debug("Executing training.get");
-            Google.Apis.Prediction.V1_2.Data.Training ret = this.service.JsonToObject<Google.Apis.Prediction.V1_2.Data.Training>(this.service.ExecuteRequest(TrainingResource.Resource, "get", body, parameters));
-            logger.Debug("Done Executing training.get");
-            return ret;
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.V1_2.Data.Training> {
+            
+            private string data;
+            
+            public GetRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, string data) : 
+                    base(service) {
+                this.data = data;
+            }
+            
+            /// <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            [Google.Apis.Util.RequestParameterAttribute("data")]
+            public virtual string Data {
+                get {
+                    return this.data;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "training";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
         }
         
-        /// <summary>Begin training your model</summary>
-        /// <param name="data">Optional - mybucket%2Fmydata resource in Google Storage</param>
-        public virtual Google.Apis.Prediction.V1_2.Data.Training Insert(Google.Apis.Prediction.V1_2.Data.Training body, string data) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["data"] = data;
-            logger.Debug("Executing training.insert");
-            Google.Apis.Prediction.V1_2.Data.Training ret = this.service.JsonToObject<Google.Apis.Prediction.V1_2.Data.Training>(this.service.ExecuteRequest(TrainingResource.Resource, "insert", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing training.insert");
-            return ret;
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.V1_2.Data.Training> {
+            
+            private string data;
+            
+            private Google.Apis.Prediction.V1_2.Data.Training bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Prediction.V1_2.Data.Training body) : 
+                    base(service) {
+                this.Body = body;
+            }
+            
+            public InsertRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Prediction.V1_2.Data.Training body, [System.Runtime.InteropServices.OptionalAttribute()] string data) : 
+                    base(service) {
+                this.Body = body;
+                this.data = data;
+            }
+            
+            /// <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            [Google.Apis.Util.RequestParameterAttribute("data")]
+            public virtual string Data {
+                get {
+                    return this.data;
+                }
+                set {
+                    this.data = value;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Prediction.V1_2.Data.Training Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "training";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
         }
         
-        /// <summary>Add new data to a trained model</summary>
-        /// <param name="data">Required</param>
-        public virtual Google.Apis.Prediction.V1_2.Data.Training Update(Google.Apis.Prediction.V1_2.Data.Update body, string data) {
-            System.Collections.Generic.Dictionary<string, object> parameters = new System.Collections.Generic.Dictionary<string, object>();
-            parameters["data"] = data;
-            logger.Debug("Executing training.update");
-            Google.Apis.Prediction.V1_2.Data.Training ret = this.service.JsonToObject<Google.Apis.Prediction.V1_2.Data.Training>(this.service.ExecuteRequest(TrainingResource.Resource, "update", this.service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing training.update");
-            return ret;
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.V1_2.Data.Training> {
+            
+            private string data;
+            
+            private Google.Apis.Prediction.V1_2.Data.Update bodyValue;
+            
+            public UpdateRequest(Google.Apis.Discovery.ISchemaAwareRequestExecutor service, Google.Apis.Prediction.V1_2.Data.Update body, string data) : 
+                    base(service) {
+                this.Body = body;
+                this.data = data;
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("data")]
+            public virtual string Data {
+                get {
+                    return this.data;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Prediction.V1_2.Data.Update Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "training";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
         }
     }
 }
