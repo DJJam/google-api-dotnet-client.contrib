@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Adexchangebuyer.V1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Adexchangebuyer.V1.AdexchangebuyerService.DeveloperKey">
+            <summary>Sets the DeveloperKey which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.V1.AccountsResource.Get(System.String)">
+            <summary>Gets one account by id.</summary>
+            <param name="id">Required - The account id</param>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.V1.AccountsResource.List">
+            <summary>Retrieves a list of accounts.</summary>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.V1.AccountsResource.Patch(Google.Apis.Adexchangebuyer.V1.Data.Accounts,System.String)">
+            <summary>Updates an existing account. This method supports patch semantics.</summary>
+            <param name="id">Required - The account id</param>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.V1.AccountsResource.Update(Google.Apis.Adexchangebuyer.V1.Data.Accounts,System.String)">
+            <summary>Updates an existing account.</summary>
+            <param name="id">Required - The account id</param>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.V1.AccountsResource.GetRequest.Id">
+            <summary>The account id</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.V1.AccountsResource.PatchRequest.Id">
+            <summary>The account id</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.V1.AccountsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.V1.AccountsResource.UpdateRequest.Id">
+            <summary>The account id</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.V1.AccountsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>
