@@ -1,9 +1,10 @@
 Google .NET Client Library
-Release '20111109-1.1.4329-beta'
+Stable Release '20111109-1.1.4329-beta'
 Wednesday, November 09, 2011
 ===========================================
 
 Changes:
+  728: Added tag 20111109-1.1.4329-beta for changeset adfc9ae26f49
   727: Look up parameter information in Service as well as Method when building request.
   726: Filter out hand coded common parameters.
   725: Update build release program to include new Google.Tests.Utility DLL.
