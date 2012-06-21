@@ -4,6 +4,7 @@ Thursday, June 21, 2012
 ===========================================
 
 Changes:
+  808: Added tag 20120621-1.2.4555-beta for changeset 2712ce699661
   802: Implement both ServiceRequest and ResumableUpload for media upload enabled methods.
   800: Prevent null ref exception on request without parameters.
   799: Comments from code review.
