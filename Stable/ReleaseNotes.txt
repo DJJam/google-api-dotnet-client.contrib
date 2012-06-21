@@ -1,9 +1,20 @@
 Google .NET Client Library
-Stable Release '20120504-1.2.4507-beta'
-Friday, May 04, 2012
+Stable Release '20120621-1.2.4555-beta'
+Thursday, June 21, 2012
 ===========================================
 
 Changes:
+  802: Implement both ServiceRequest and ResumableUpload for media upload enabled methods.
+  800: Prevent null ref exception on request without parameters.
+  799: Comments from code review.
+  798: Move mock server to utility for use in
+  other classes.
+  797: Fix repeated parameters in HttpWebRequestBuilder.
+  796: Fix ResumableUpload to use
+  Content-Range: */XXX
+  for single block and zero size uploads.
+  795: Remove the remaining NAnt binaries (no longer used).
+  794: Added tag 20120504-1.2.4507-beta for changeset cb27c7f55604
   793: Fix resumable upload response body calculation #210.
   792: Update build release to build current always and stable only in stable mode.
   791: Added tag 20120503-1.2.4506-beta for changeset 407f7cb59bae
