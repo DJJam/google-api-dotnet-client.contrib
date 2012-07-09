@@ -1,10 +1,11 @@
 Google .NET Client Library
-Stable Release '20120626-1.2.4560-beta'
-Tuesday, June 26, 2012
+Stable Release '20120709-1.2.4573-beta'
+Monday, July 09, 2012
 ===========================================
 
 Changes:
-  808: Merge
+  811: Added tag 20120626-1.2.4560-beta for changeset fe0d989acd99
+  809: Merge
   806: Added tag 20120621-1.2.4555-beta for changeset 2712ce699661
   805: Use */xxx notation only on 0-byte files.
   803: Implement both ServiceRequest and ResumableUpload for media upload enabled methods.
