@@ -1,9 +1,11 @@
 Google .NET Client Library
-Stable Release '20121005-1.2.4661-beta'
-05 October 2012
+Stable Release '20121011-1.2.4667-beta'
+11 October 2012
 ===========================================
 
 Changes:
+  863: merge issue_261_nullreference_in_catch as per codereview https://codereview.appspot.com/6620056/
+  856: Added tag 20121005-1.2.4661-beta for changeset e996892fab93
   855: Added tag 20120921-1.2.4647-beta for changeset b1f561e3e46a
   854: Added tag 20120914-1.2.4640-beta for changeset 85e79552468a
   853: Merge issue_253_QuoteaUser as per https://codereview.appspot.com/6497137/
