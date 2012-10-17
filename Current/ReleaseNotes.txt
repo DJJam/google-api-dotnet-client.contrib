@@ -4,6 +4,7 @@ Stable Release '20121017-1.2.4673-beta'
 ===========================================
 
 Changes:
+  865: Added tag 20121017-1.2.4673-beta for changeset 80a6472929f6
   864: Added tag 20121011-1.2.4667-beta for changeset 8833faa38abd
   863: merge issue_261_nullreference_in_catch as per codereview https://codereview.appspot.com/6620056/
   856: Added tag 20121005-1.2.4661-beta for changeset e996892fab93
