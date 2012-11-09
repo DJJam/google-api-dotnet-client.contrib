@@ -1,9 +1,11 @@
 Google .NET Client Library
-Stable Release '20121031-1.2.4687-beta'
-31 October 2012
+Stable Release '20121109-1.2.4696-beta'
+09 November 2012
 ===========================================
 
 Changes:
+  870: Issue 247: fix capitalization of some file names so that they agree with the project configuration
+  869: Added tag 20121031-1.2.4687-beta for changeset 7076c4092ebf
   868: Added tag 20121031-1.2.4687-beta for changeset fff584b3e1ef
   867: Added tag 20121026-1.2.4682-beta for changeset b16e837f7769
   866: Added tag 20121017-1.2.4673-beta for changeset 0a429ff2f2ba
