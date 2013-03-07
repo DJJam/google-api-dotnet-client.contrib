@@ -1,8 +1,0 @@
-Google .NET Client Library
-Stable Release '20120907-1.2.4633-beta'
-07 September 2012
-===========================================
-
-Changes:
-  842: Added tag 20120903-1.2.4629-beta for changeset 55245fea6dfb
-
