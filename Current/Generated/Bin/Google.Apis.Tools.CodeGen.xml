@@ -4,6 +4,89 @@
         <name>Google.Apis.Tools.CodeGen</name>
     </assembly>
     <members>
+        <member name="T:Google.Apis.Tools.CodeGen.CachedWebDiscoveryDevice">
+            <summary>
+            WebDiscoveryDevice allows clients to fetch discovery documents from a web based service.
+            Caches discovery files locally to prevent unnecessary requests to the discovery server
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.CachedWebDiscoveryDevice.#ctor(System.Uri)">
+            <summary>
+            Creates a new cached web discovery device with the default cache folder
+            </summary>
+            <param name="discoveryUri"></param>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.CachedWebDiscoveryDevice.#ctor(System.Uri,System.IO.DirectoryInfo)">
+            <summary>
+            Creates a new cached web discovery device
+            </summary>
+            <param name="discoveryUri"></param>
+            <param name="cacheDirectory"></param>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.CachedWebDiscoveryDevice.Fetch">
+            <summary>
+            Fetches the discovery document from either a local cache if it exsits otherwise using
+            a WebDiscoveryDecivce 
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/>
+            </returns>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.CachedWebDiscoveryDevice.GetCacheFile">
+            <summary>
+            Retrieves a file info of the cache file used for this device
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Google.Apis.Tools.CodeGen.CachedWebDiscoveryDevice.DiscoveryUri">
+            <summary>
+            The URI from which the data is fetched
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Tools.CodeGen.CachedWebDiscoveryDevice.CacheDuration">
+            <summary>
+            Defines the cache duration in seconds
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Tools.CodeGen.CachedWebDiscoveryDevice.CacheDirectory">
+            <summary>
+            DirectoryInfo of the cache directory
+            Must be a valid directory
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.MediaDownloaderDecorator">
+            <summary>
+            Media Downloader decorator which adds the following members in case the method supports media download:
+            <list type="bullet">
+            <item><description>MediaDownloader getter property</description></item> 
+            <item><description>Download method which gets a stream</description></item>
+            <item><description>DownloadAsync method which gets a stream</description></item>
+            <item><description>DownloadAsync method which gets a stream and a cancellation token</description></item>
+            </list> 
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator">
+            <summary>
+            Classes that implement this interface will be called when building a request within a resource class.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator.DecorateClass(Google.Apis.Discovery.IResource,Google.Apis.Discovery.IMethod,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Adds code to the class "requestClass" based on the specified "request" method.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.MediaDownloaderDecorator.GenerateMediaDownloaderProperty(System.CodeDom.CodeTypeDeclaration)">
+            <summary>Generates an <seealso cref="T:Google.Apis.Download.IMediaDownloader"/> property.</summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.MediaDownloaderDecorator.GenerateDownload(System.CodeDom.CodeTypeDeclaration)">
+            <summary>Generates a <c>Download</c> method which gets a stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.MediaDownloaderDecorator.GenerateDownloadAsync(System.CodeDom.CodeTypeDeclaration,System.Boolean)">
+            <summary>
+            Generates a <c>DownloadAsync</c> method which gets the stream and if the given <c>useCancellationToken</c> 
+            parameter is <c>true</c> a cancellation token as well.
+            </summary>
+        </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil">
             <summary>
             Helper class for all decorators.
@@ -120,16 +203,6 @@
             A decorator that adds support for a request body to the request class by implementing the "Body"-autoproperty.
             </summary>
         </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator">
-            <summary>
-            Classes that implement this interface will be called when building a request within a resource class.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator.DecorateClass(Google.Apis.Discovery.IResource,Google.Apis.Discovery.IMethod,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)">
-            <summary>
-            Adds code to the class "requestClass" based on the specified "request" method.
-            </summary>
-        </member>
         <member name="F:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BodyPropertyDecorator.BodyPropertyName">
             <summary>
             Name of the "Body" property.
@@ -197,10 +270,13 @@
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.UploadConstructorDecorator">
             <summary>
             Generates the standard constructors of an upload request.
-             1. A constructor taking the service and mandatory parameters and initalizing the base class
-                with the baseUri, path and HTTP method for this upload request.
+            A resumable upload constructor takes the service and mandatory parameters and initializes the base class with 
+            the service, path and HTTP method for this upload request.
             Example:
-            <c>public InsertRequest(BaseService service, int requiredParameter, ..) : base(service.BaseUri, "path", "POST") {..}</c>
+            <c>
+            public InsertRequest(IClientService service, int requiredParameter, ..) 
+                : base(service, "path", "POST") {..}
+            </c>
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.UploadConstructorDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider)">
@@ -213,12 +289,6 @@
             <summary>
             Creates the constructor for this request class which only takes required arguments.
             </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.UploadConstructorDecorator.AddAuthorizationAssignment(System.CodeDom.CodeConstructor)">
-            <summary>
-            Adds this.Authenticator = service.Authenticator to <paramref name="constructor"/>
-            </summary>
-            <param name="constructor">The resumable upload constructor.</param>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator">
             <summary>
@@ -306,16 +376,6 @@
         <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.DeclareInputParameter(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IDiscoveryParameter,Google.Apis.Discovery.IMethod)">
             <summary>
             Creates a declaration for the specified parameter.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.CreateExecuteCall(Google.Apis.Discovery.IMethod)">
-            <summary>
-            this.service.ExecuteRequest(...);
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.CreateExecuteRequest(Google.Apis.Discovery.IMethod)">
-            <summary>
-            ret = this.service.ExecuteRequest(...);
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator">
@@ -569,8 +629,6 @@
             public override string Name { get { return "discovery"; } }
             </c>
             </summary>
-            <param name="service"></param>
-            <returns></returns>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.BaseClientServiceAbstractPropertiesDecorator.CreateUriProperty(Google.Apis.Discovery.IService)">
             <summary>
@@ -579,8 +637,14 @@
             public override string BaseUri { get { return "https://www.googleapis.com/discovery/v1/"; } }
             </c>
             </summary>
-            <param name="service"></param>
-            <returns></returns>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.BaseClientServiceAbstractPropertiesDecorator.CreateBasePathProperty(Google.Apis.Discovery.IService)">
+            <summary>
+            Adds a BasePath property which returns the base path for this resource, e.g.
+            <c>
+            public override string BasePath { get { return "/discovery/v1/"; } }
+            </c>
+            </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator">
             <summary>
@@ -673,38 +737,6 @@
             Adds private constants Version (VersionName), Name (NameName) and BaseUri (BaseUriName) 
             to the ServiceClass.
             </summary>
-        </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.CreateRequestMethodServiceDecorator">
-            <summary>
-            Adds the Method <code>CreateRequest(string resource, string method)</code>
-            </summary>
-            <remarks>
-            This method is required for the generated code to function. So either this decorator or another 
-            that creates this method should be included in the code-generation process.
-            </remarks>
-        </member>
-        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.CreateRequestMethodServiceDecorator.CreateRequestMethodName">
-            <summary>
-            The name of the CreateRequest-method
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.CreateRequestMethodServiceDecorator.GenerateCreateRequestMethod">
-            <summary>
-            Generates the <c>IClientService.CreateRequest()</c> method.
-            </summary>
-            <returns><c>CodeMemberMethod</c> describing the method.</returns>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.CreateRequestMethodServiceDecorator.CreateRequestLocalVar">
-            <summary>
-            <code>Google.Apis.Requests.IRequest request = Request.CreateRequest(this, serviceRequest);</code>
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.CreateRequestMethodServiceDecorator.CreateWithApiKey">
-            <summary>
-            if (string.IsNullOrEmpty(APIKey) == false)
-               request = request.WithAPIKey(APIKey)
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.StandardConstructServiceDecorator">
             <summary>
