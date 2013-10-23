@@ -1,0 +1,43 @@
+Google .NET Client Library
+Stable Release '1.6.0-beta'
+Wednesday, October 23, 2013
+===========================================
+
+Changes:
+  965: Change the nuspec descritpions
+  964: Fix a bug on creating core nuget packages
+  963 and 962: Remove all content of ThirdParty library except DotNetOpenAuth
+  961: Upgrade Newtonsoft.Json to 5.0.8 and add IClientServiceRequest interface (not generic)
+  958, 959 and 960: Rename MVC NuGet package from MVC4 to MVC
+  957: Fix a small bug in the release process
+  956: Issue 351: Reimplement OAuth2 library (Step 7): Change the release process to support new packages
+    https://codereview.appspot.com/13251043/
+  955: Issue 351: Reimplement OAuth2 (Step 5): WP support
+    https://codereview.appspot.com/14295045/
+  954: Issue 351: Reimplement OAuth2 (Step 6): WinRT Support
+    https://codereview.appspot.com/14433060/
+  953: Issue 361: MediaDownloader can't download drive export list
+    https://codereview.appspot.com/13480044/
+  952: Issue 351: Reimplement OAuth2 (Step 4): ServiceAccount and MVC
+    https://codereview.appspot.com/14341043/
+  951: Issue 351: Reimplement OAuth2 library (Step 3 - Tests, UserCredential and Flows)
+    https://codereview.appspot.com/13972043/
+  950: Issue 146: Pass override HTTP header when request URI too long
+    https://code.google.com/p/google-api-dotnet-client/issues/detail?id=146
+    https://codereview.appspot.com/13096044/
+  949: Issue 383: ExecuteAsync creates unnecessary additional Task
+    https://codereview.appspot.com/14229044/
+  948: Issue 377: New build tool releasing a new version
+    https://codereview.appspot.com/12767046
+  947: Issue 351: Reimplement OAuth2 - Step 2 (Auth PCL - only data types)
+    https://codereview.appspot.com/13632059/
+  946: Issue 148: Extension method should be internal (and not public)
+  945: Merge
+  944: Add NuGet.exe to Tootls\.nuget folder
+  943: Issue 351: Reimplement OAuth2 library (Step 1)
+    https://codereview.appspot.com/13412046/
+  942: Change the directory of Google.Apis.NuGet.Publisher project
+  941: merge
+  940: Rename IMediaDownloaded file to IMediaDownloader
+  939: Issue 376: Generate NuGet publisher to publish Google.Apis packages
+    https://codereview.appspot.com/12662047/
