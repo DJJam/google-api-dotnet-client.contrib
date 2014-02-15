@@ -133,13 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html#aea77e9061205280b7433e45850bbec8d">AuthorizationCodeFlow</a> (<a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow_1_1Initializer.html">Initializer</a> initializer)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new flow using the initializer's properties.  <a href="#aea77e9061205280b7433e45850bbec8d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Responses_1_1TokenResponse.html">TokenResponse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html#aaff47bfded3c40e6341156613c6a32dc">LoadTokenAsync</a> (string userId, CancellationToken taskCancellationToken)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously loads the user's token using the flow's </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>IDataStore</dd></dl>
-<p>.  <a href="#aaff47bfded3c40e6341156613c6a32dc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously loads the user's token using the flow's <a class="el" href="interfaceGoogle_1_1Apis_1_1Util_1_1Store_1_1IDataStore.html" title="Stores and manages data objects, where the key is a string and the value is an object.">Google.Apis.Util.Store.IDataStore</a>.  <a href="#aaff47bfded3c40e6341156613c6a32dc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html#a503e32f935c32483351305b319e8f736">DeleteTokenAsync</a> (string userId, CancellationToken taskCancellationToken)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously deletes the user's token using the flow's </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>IDataStore</dd></dl>
-<p>.  <a href="#a503e32f935c32483351305b319e8f736"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously deletes the user's token using the flow's <a class="el" href="interfaceGoogle_1_1Apis_1_1Util_1_1Store_1_1IDataStore.html" title="Stores and manages data objects, where the key is a string and the value is an object.">Google.Apis.Util.Store.IDataStore</a>.  <a href="#a503e32f935c32483351305b319e8f736"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationCodeRequestUrl.html">AuthorizationCodeRequestUrl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html#a21306997c082244ff35aa247147a8507">CreateAuthorizationCodeRequest</a> (string redirectUri)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an authorization code request with the specified redirect URI.  <a href="#a21306997c082244ff35aa247147a8507"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Responses_1_1TokenResponse.html">TokenResponse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html#ae800a73ce82d01e0329e19cc68b02a2c">ExchangeCodeForTokenAsync</a> (string userId, string code, string redirectUri, CancellationToken taskCancellationToken)</td></tr>
@@ -239,9 +235,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Asynchronously deletes the user's token using the flow's </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>IDataStore</dd></dl>
-<p>. </p>
+<p>Asynchronously deletes the user's token using the flow's <a class="el" href="interfaceGoogle_1_1Apis_1_1Util_1_1Store_1_1IDataStore.html" title="Stores and manages data objects, where the key is a string and the value is an object.">Google.Apis.Util.Store.IDataStore</a>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>User identifier.</td></tr>
@@ -332,9 +326,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Asynchronously loads the user's token using the flow's </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>IDataStore</dd></dl>
-<p>. </p>
+<p>Asynchronously loads the user's token using the flow's <a class="el" href="interfaceGoogle_1_1Apis_1_1Util_1_1Store_1_1IDataStore.html" title="Stores and manages data objects, where the key is a string and the value is an object.">Google.Apis.Util.Store.IDataStore</a>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>User identifier</td></tr>
