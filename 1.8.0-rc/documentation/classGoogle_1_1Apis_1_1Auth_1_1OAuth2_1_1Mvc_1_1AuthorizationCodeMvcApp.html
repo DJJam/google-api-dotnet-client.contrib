@@ -127,17 +127,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1AuthorizationCodeMvcApp.html#a2ab3ee054976f09b2ea3963bf7f7a98c">AuthorizationCodeMvcApp</a> (<a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1AuthorizationCodeMvcApp.html#ae3822af6d876d4326b8802617a1c8825">Controller</a> controller, <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html">FlowMetadata</a> flowData)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new authorization code MVC app using the given controller and flow data.  <a href="#a2ab3ee054976f09b2ea3963bf7f7a98c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp_1_1AuthResult.html">AuthResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1AuthorizationCodeMvcApp.html#a335ce92fd10d32b9e1a2ae4be6f699f6">AuthorizeAsync</a> (CancellationToken taskCancellationToken)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously authorizes the installed application to access user's protected data. It gets the user identifier by calling to </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html#a8e62dc65dce25a544e33ba73a09768ea" title="Gets the user identifier.">FlowMetadata.GetUserId</a>, AuthorizationCodeWebApp.AuthorizeAsync</dd></dl>
-<p>and then calls to .  <a href="#a335ce92fd10d32b9e1a2ae4be6f699f6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously authorizes the installed application to access user's protected data. It gets the user identifier by calling to <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html#a8e62dc65dce25a544e33ba73a09768ea" title="Gets the user identifier.">Google.Apis.Auth.OAuth2.Mvc.FlowMetadata.GetUserId</a> and then calls to Google.Apis.Auth.OAuth2.AuthorizationCodeWebApp.AuthorizeAsync.  <a href="#a335ce92fd10d32b9e1a2ae4be6f699f6"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1AuthorizationCodeMvcApp.html#ae3822af6d876d4326b8802617a1c8825">Controller</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1AuthorizationCodeMvcApp.html#ae3822af6d876d4326b8802617a1c8825">Controller</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the controller which is the owner of this authorization code MVC app instance.  <a href="#ae3822af6d876d4326b8802617a1c8825"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html">FlowMetadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1AuthorizationCodeMvcApp.html#a86f178d4d7791f9ad9098d5824450e78">FlowData</a><code> [get]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html" title="Flow metadata abstract class which contains the reference to the IAuthorizationCodeFlowand method to ...">Google.Apis.Auth.OAuth2.Mvc.FlowMetadata</a></dd></dl>
-<p>object.  <a href="#a86f178d4d7791f9ad9098d5824450e78"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html" title="Flow metadata abstract class which contains the reference to the Google.Apis.Auth.OAuth2.FlowsIAuthorizationCodeFlow and method to get the user identifier.">Google.Apis.Auth.OAuth2.Mvc.FlowMetadata</a> object.  <a href="#a86f178d4d7791f9ad9098d5824450e78"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Thread-safe OAuth 2.0 authorization code flow for a MVC web application that persists end-user credentials. </p>
@@ -187,9 +183,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Asynchronously authorizes the installed application to access user's protected data. It gets the user identifier by calling to </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html#a8e62dc65dce25a544e33ba73a09768ea" title="Gets the user identifier.">FlowMetadata.GetUserId</a>, AuthorizationCodeWebApp.AuthorizeAsync</dd></dl>
-<p>and then calls to . </p>
+<p>Asynchronously authorizes the installed application to access user's protected data. It gets the user identifier by calling to <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html#a8e62dc65dce25a544e33ba73a09768ea" title="Gets the user identifier.">Google.Apis.Auth.OAuth2.Mvc.FlowMetadata.GetUserId</a> and then calls to Google.Apis.Auth.OAuth2.AuthorizationCodeWebApp.AuthorizeAsync. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">taskCancellationToken</td><td>Cancellation token to cancel an operation</td></tr>
@@ -227,9 +221,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets the </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html" title="Flow metadata abstract class which contains the reference to the IAuthorizationCodeFlowand method to ...">Google.Apis.Auth.OAuth2.Mvc.FlowMetadata</a></dd></dl>
-<p>object. </p>
+<p>Gets the <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1FlowMetadata.html" title="Flow metadata abstract class which contains the reference to the Google.Apis.Auth.OAuth2.FlowsIAuthorizationCodeFlow and method to get the user identifier.">Google.Apis.Auth.OAuth2.Mvc.FlowMetadata</a> object. </p>
 
 </div>
 </div>

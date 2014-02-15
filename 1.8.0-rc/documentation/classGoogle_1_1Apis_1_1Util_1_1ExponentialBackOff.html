@@ -127,15 +127,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1ExponentialBackOff.html#a9ce45afa60a89a720b5cd3a4ab16601f">ExponentialBackOff</a> (TimeSpan deltaBackOff, int maximumNumOfRetries=10)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new exponential back-off with the given delta and maximum retries.  <a href="#a9ce45afa60a89a720b5cd3a4ab16601f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1ExponentialBackOff.html#a3ac17ef58e8c2ffd41197cad75f83596">GetNextBackOff</a> (int currentRetry)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the a time span to wait before next retry. If the current retry reached the maximum number of retries, the returned value is </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>TimeSpan.MinValue</dd></dl>
-<p>.  <a href="#a3ac17ef58e8c2ffd41197cad75f83596"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the a time span to wait before next retry. If the current retry reached the maximum number of retries, the returned value is TimeSpan.MinValue.  <a href="#a3ac17ef58e8c2ffd41197cad75f83596"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1ExponentialBackOff.html#a8177384ced25b5dec3ff497bb2bf1868">DeltaBackOff</a><code> [get]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delta time span used to generate a random milliseconds to add to the next back-off. If the value is </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>System.TimeSpan.Zero</dd></dl>
-<p>then the generated back-off will be exactly 1, 2, 4, 8, 16, etc. seconds. A valid value is between zero and one second. The default value is 250ms, which means that the generated back-off will be [0.75-1.25]sec, [1.75-2.25]sec, [3.75-4.25]sec, and so on.  <a href="#a8177384ced25b5dec3ff497bb2bf1868"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delta time span used to generate a random milliseconds to add to the next back-off. If the value is System.TimeSpan.Zero then the generated back-off will be exactly 1, 2, 4, 8, 16, etc. seconds. A valid value is between zero and one second. The default value is 250ms, which means that the generated back-off will be [0.75-1.25]sec, [1.75-2.25]sec, [3.75-4.25]sec, and so on.  <a href="#a8177384ced25b5dec3ff497bb2bf1868"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1ExponentialBackOff.html#a906e0b63b9bac4bd3ad1c396390de4eb">MaxNumOfRetries</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximum number of retries. Default value is <code>10</code>.  <a href="#a906e0b63b9bac4bd3ad1c396390de4eb"></a><br/></td></tr>
 </table>
@@ -205,9 +201,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets the a time span to wait before next retry. If the current retry reached the maximum number of retries, the returned value is </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>TimeSpan.MinValue</dd></dl>
-<p>. </p>
+<p>Gets the a time span to wait before next retry. If the current retry reached the maximum number of retries, the returned value is TimeSpan.MinValue. </p>
 
 <p>Implements <a class="el" href="interfaceGoogle_1_1Apis_1_1Util_1_1IBackOff.html#a4e5a5e29bef168a2d0a9a207db235d05">Google.Apis.Util.IBackOff</a>.</p>
 
@@ -225,9 +219,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets the delta time span used to generate a random milliseconds to add to the next back-off. If the value is </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>System.TimeSpan.Zero</dd></dl>
-<p>then the generated back-off will be exactly 1, 2, 4, 8, 16, etc. seconds. A valid value is between zero and one second. The default value is 250ms, which means that the generated back-off will be [0.75-1.25]sec, [1.75-2.25]sec, [3.75-4.25]sec, and so on. </p>
+<p>Gets the delta time span used to generate a random milliseconds to add to the next back-off. If the value is System.TimeSpan.Zero then the generated back-off will be exactly 1, 2, 4, 8, 16, etc. seconds. A valid value is between zero and one second. The default value is 250ms, which means that the generated back-off will be [0.75-1.25]sec, [1.75-2.25]sec, [3.75-4.25]sec, and so on. </p>
 
 </div>
 </div>

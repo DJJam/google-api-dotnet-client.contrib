@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="Google::Apis::Http::BackOffHandler" --><!-- doxytag: inherits="Google::Apis::Http::IHttpUnsuccessfulResponseHandler,Google::Apis::Http::IHttpExceptionHandler" -->
-<p>A thread-safe back-off handler which handles an abnormal HTTP response or an exception with IBackOff.  
+<p>A thread-safe back-off handler which handles an abnormal HTTP response or an exception with <a class="el" href="interfaceGoogle_1_1Apis_1_1Util_1_1IBackOff.html" title="Strategy interface to control back-off between retry attempts.">Google.Apis.Util.IBackOff</a>.  
  <a href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Apis.Http.BackOffHandler:</div>
@@ -150,10 +150,10 @@ Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Func&lt; HttpResponseMessage, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler.html#a5d569398b59a5fb5a4d0bea48b7279f2">HandleUnsuccessfulResponseFunc</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a delegate function which indicates whether this back-off handler should handle an abnormal HTTP response. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#aafe28eadf2c870b625e3fc64c5fa6e0c" title="Default function which handles server errors (503).">Initializer.DefaultHandleUnsuccessfulResponseFunc</a>.  <a href="#a5d569398b59a5fb5a4d0bea48b7279f2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Func&lt; Exception, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler.html#ac3593175b80e7ed4b3ea7963aab0855c">HandleExceptionFunc</a><code> [get, set]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a delegate function which indicates whether this back-off handler should handle an exception. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a94c609729a34b4c6e886cd807e7c8e29" title="Default function which handles exception which aren&#39;t System.Threading.Tasks.TaskCanceledException, System.OperationCanceledExceptionor . Those exceptions represent a task or an operation which was canceled and shouldn&#39;t be retried.">Initializer.DefaultHandleExceptionFunc</a>.  <a href="#ac3593175b80e7ed4b3ea7963aab0855c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a delegate function which indicates whether this back-off handler should handle an exception. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a94c609729a34b4c6e886cd807e7c8e29" title="Default function which handles exception which aren&#39;t System.Threading.Tasks.TaskCanceledException or...">Initializer.DefaultHandleExceptionFunc</a>.  <a href="#ac3593175b80e7ed4b3ea7963aab0855c"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>A thread-safe back-off handler which handles an abnormal HTTP response or an exception with IBackOff. </p>
+<div class="textblock"><p>A thread-safe back-off handler which handles an abnormal HTTP response or an exception with <a class="el" href="interfaceGoogle_1_1Apis_1_1Util_1_1IBackOff.html" title="Strategy interface to control back-off between retry attempts.">Google.Apis.Util.IBackOff</a>. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad42bf06c61a0dbf3a65f1edb045b0d5c"></a><!-- doxytag: member="Google::Apis::Http::BackOffHandler::BackOffHandler" ref="ad42bf06c61a0dbf3a65f1edb045b0d5c" args="(IBackOff backOff)" -->
 <div class="memitem">
@@ -319,7 +319,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets a delegate function which indicates whether this back-off handler should handle an exception. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a94c609729a34b4c6e886cd807e7c8e29" title="Default function which handles exception which aren&#39;t System.Threading.Tasks.TaskCanceledException, System.OperationCanceledExceptionor . Those exceptions represent a task or an operation which was canceled and shouldn&#39;t be retried.">Initializer.DefaultHandleExceptionFunc</a>. </p>
+<p>Gets a delegate function which indicates whether this back-off handler should handle an exception. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a94c609729a34b4c6e886cd807e7c8e29" title="Default function which handles exception which aren&#39;t System.Threading.Tasks.TaskCanceledException or...">Initializer.DefaultHandleExceptionFunc</a>. </p>
 
 </div>
 </div>

@@ -124,19 +124,17 @@ Static Public Attributes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default function which handles server errors (503).  <a href="#aafe28eadf2c870b625e3fc64c5fa6e0c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static readonly Func<br class="typebreak"/>
 &lt; Exception, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a94c609729a34b4c6e886cd807e7c8e29">DefaultHandleExceptionFunc</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default function which handles exception which aren't </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>System.Threading.Tasks.TaskCanceledException, System.OperationCanceledException</dd></dl>
-<p>or . Those exceptions represent a task or an operation which was canceled and shouldn't be retried.  <a href="#a94c609729a34b4c6e886cd807e7c8e29"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default function which handles exception which aren't System.Threading.Tasks.TaskCanceledException or System.OperationCanceledException. Those exceptions represent a task or an operation which was canceled and shouldn't be retried.  <a href="#a94c609729a34b4c6e886cd807e7c8e29"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceGoogle_1_1Apis_1_1Util_1_1IBackOff.html">IBackOff</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a098f9b2924b147f11f3be2b5233f6028">BackOff</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the back-off policy used by this back-off handler.  <a href="#a098f9b2924b147f11f3be2b5233f6028"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#ae07bc640fee0becf896807f93cfa2e7c">MaxTimeSpan</a><code> [get, set]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the maximum time span to wait. If the back-off instance returns a greater time span than this value, this handler returns <code>false</code> to both <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler.html#a43557966974c69e38284b05759f64ca9" title="Handles an exception thrown when sending a HTTP request. A simple rule must be followed, if you modify the request object in a way that the exception can be resolved, you must return true.">HandleExceptionAsync</a> and <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler.html#abe060fb2972e4ed9d8deee8eac2f626d" title="Handles an abnormal response when sending a HTTP request. A simple rule must be followed, if you modify the request object in a way that the abnormal response can be resolved, you must return true.">HandleResponseAsync</a>. Default value is 16 seconds per a retry request.  <a href="#ae07bc640fee0becf896807f93cfa2e7c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the maximum time span to wait. If the back-off instance returns a greater time span than this value, this handler returns <code>false</code> to both <code>HandleExceptionAsync</code> and <code>HandleResponseAsync</code>. Default value is 16 seconds per a retry request.  <a href="#ae07bc640fee0becf896807f93cfa2e7c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Func&lt; HttpResponseMessage, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#aa955629c21e0c484f5ea211b56348c4c">HandleUnsuccessfulResponseFunc</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a delegate function which indicates whether this back-off handler should handle an abnormal HTTP response. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#aafe28eadf2c870b625e3fc64c5fa6e0c" title="Default function which handles server errors (503).">DefaultHandleUnsuccessfulResponseFunc</a>.  <a href="#aa955629c21e0c484f5ea211b56348c4c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Func&lt; Exception, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a456af6031521776d7bf8c387d6f14e72">HandleExceptionFunc</a><code> [get, set]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a delegate function which indicates whether this back-off handler should handle an exception. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a94c609729a34b4c6e886cd807e7c8e29" title="Default function which handles exception which aren&#39;t System.Threading.Tasks.TaskCanceledException, System.OperationCanceledExceptionor . Those exceptions represent a task or an operation which was canceled and shouldn&#39;t be retried.">DefaultHandleExceptionFunc</a>.  <a href="#a456af6031521776d7bf8c387d6f14e72"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a delegate function which indicates whether this back-off handler should handle an exception. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a94c609729a34b4c6e886cd807e7c8e29" title="Default function which handles exception which aren&#39;t System.Threading.Tasks.TaskCanceledException or...">DefaultHandleExceptionFunc</a>.  <a href="#a456af6031521776d7bf8c387d6f14e72"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>An initializer class to initialize a back-off handler. </p>
@@ -174,9 +172,7 @@ Properties</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><pre class="fragment">
                 (ex) =&gt; !(ex is TaskCanceledException || ex is OperationCanceledException)
 </pre></div>
-<p>Default function which handles exception which aren't </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>System.Threading.Tasks.TaskCanceledException, System.OperationCanceledException</dd></dl>
-<p>or . Those exceptions represent a task or an operation which was canceled and shouldn't be retried. </p>
+<p>Default function which handles exception which aren't System.Threading.Tasks.TaskCanceledException or System.OperationCanceledException. Those exceptions represent a task or an operation which was canceled and shouldn't be retried. </p>
 
 </div>
 </div>
@@ -224,7 +220,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets a delegate function which indicates whether this back-off handler should handle an exception. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a94c609729a34b4c6e886cd807e7c8e29" title="Default function which handles exception which aren&#39;t System.Threading.Tasks.TaskCanceledException, System.OperationCanceledExceptionor . Those exceptions represent a task or an operation which was canceled and shouldn&#39;t be retried.">DefaultHandleExceptionFunc</a>. </p>
+<p>Gets or sets a delegate function which indicates whether this back-off handler should handle an exception. The default is <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler_1_1Initializer.html#a94c609729a34b4c6e886cd807e7c8e29" title="Default function which handles exception which aren&#39;t System.Threading.Tasks.TaskCanceledException or...">DefaultHandleExceptionFunc</a>. </p>
 
 </div>
 </div>
@@ -254,7 +250,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the maximum time span to wait. If the back-off instance returns a greater time span than this value, this handler returns <code>false</code> to both <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler.html#a43557966974c69e38284b05759f64ca9" title="Handles an exception thrown when sending a HTTP request. A simple rule must be followed, if you modify the request object in a way that the exception can be resolved, you must return true.">HandleExceptionAsync</a> and <a class="el" href="classGoogle_1_1Apis_1_1Http_1_1BackOffHandler.html#abe060fb2972e4ed9d8deee8eac2f626d" title="Handles an abnormal response when sending a HTTP request. A simple rule must be followed, if you modify the request object in a way that the abnormal response can be resolved, you must return true.">HandleResponseAsync</a>. Default value is 16 seconds per a retry request. </p>
+<p>Gets or sets the maximum time span to wait. If the back-off instance returns a greater time span than this value, this handler returns <code>false</code> to both <code>HandleExceptionAsync</code> and <code>HandleResponseAsync</code>. Default value is 16 seconds per a retry request. </p>
 
 </div>
 </div>

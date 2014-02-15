@@ -123,9 +123,7 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual ActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1Controllers_1_1AuthCallbackController.html#a9bf0bc223566198779e4b0751f1284f8">OnTokenError</a> (<a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Responses_1_1TokenErrorResponse.html">TokenErrorResponse</a> errorResponse)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A callback which gets the error when this controller didn't receive an authorization code. The default implementation throws a </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>TokenResponseException</dd></dl>
-<p>.  <a href="#a9bf0bc223566198779e4b0751f1284f8"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A callback which gets the error when this controller didn't receive an authorization code. The default implementation throws a <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Responses_1_1TokenResponseException.html" title="Token response exception which is thrown in case of receiving a token error when an authorization cod...">Google.Apis.Auth.OAuth2.Responses.TokenResponseException</a>.  <a href="#a9bf0bc223566198779e4b0751f1284f8"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9bf88b4ff979d77de4a10aaa8b667af"></a><!-- doxytag: member="Google::Apis::Auth::OAuth2::Mvc::Controllers::AuthCallbackController::Logger" ref="ad9bf88b4ff979d77de4a10aaa8b667af" args="" -->
@@ -168,9 +166,7 @@ Properties</h2></td></tr>
 <div class="memdoc">
 
 <p>The authorization callback which receives an authorization code which contains an error or a code. If a code is available the method exchange the coed with an access token and redirect back to the original page which initialized the auth process (using the state parameter). </p>
-<p>The current timeout is set to 10 seconds. You can change the default behavior by setting </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>System.Web.Mvc.AsyncTimeoutAttribute</dd></dl>
-<p>with a different value on your controller. </p>
+<p>The current timeout is set to 10 seconds. You can change the default behavior by setting System.Web.Mvc.AsyncTimeoutAttribute with a different value on your controller. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">authorizationCode</td><td>Authorization code response which contains the code or an error.</td></tr>
@@ -178,8 +174,7 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Redirect action to the state parameter or <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1Controllers_1_1AuthCallbackController.html#a9bf0bc223566198779e4b0751f1284f8" title="A callback which gets the error when this controller didn&#39;t receive an authorization code...">OnTokenError</a></dd></dl>
-in case of an error. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Redirect action to the state parameter or <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1Controllers_1_1AuthCallbackController.html#a9bf0bc223566198779e4b0751f1284f8" title="A callback which gets the error when this controller didn&#39;t receive an authorization code...">OnTokenError</a> in case of an error. </dd></dl>
 
 </div>
 </div>
@@ -198,9 +193,7 @@ in case of an error. </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>A callback which gets the error when this controller didn't receive an authorization code. The default implementation throws a </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>TokenResponseException</dd></dl>
-<p>. </p>
+<p>A callback which gets the error when this controller didn't receive an authorization code. The default implementation throws a <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Responses_1_1TokenResponseException.html" title="Token response exception which is thrown in case of receiving a token error when an authorization cod...">Google.Apis.Auth.OAuth2.Responses.TokenResponseException</a>. </p>
 
 </div>
 </div>

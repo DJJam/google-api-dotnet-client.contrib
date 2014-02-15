@@ -160,7 +160,7 @@ Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html">IClientService</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html#a6acea023325d888a183e24fc954b2c90">Service</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the service.  <a href="#a6acea023325d888a183e24fc954b2c90"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html#aee1b66b6c310f13697bb55f341730479">Path</a><code> [get, set]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the path of the method (combined with IClientService.BaseUri) to produce absolute Uri.  <a href="#aee1b66b6c310f13697bb55f341730479"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the path of the method (combined with <a class="el" href="interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html#a4c6ebbda1a0f2b2ed8f6a241a87e50a7" title="Gets the BaseUri of the service. All request paths should be relative to this URI.">Google.Apis.Services.IClientService.BaseUri</a>) to produce absolute Uri.  <a href="#aee1b66b6c310f13697bb55f341730479"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html#a9bae6e0dcad4dd7fc96027e6abf2e6c5">HttpMethod</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the HTTP method of this upload (used to initialize the upload).  <a href="#a9bae6e0dcad4dd7fc96027e6abf2e6c5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Stream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html#a391f4280ef5dc27d28e2bfb1b4052998">ContentStream</a><code> [get, set]</code></td></tr>
@@ -508,9 +508,7 @@ template&lt;TRequest &gt; </div>
 <div class="memdoc">
 
 <p>Uploads the content to the server. This method is synchronous and will block until the upload is completed. </p>
-<p>In case the upload fails the </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="interfaceGoogle_1_1Apis_1_1Upload_1_1IUploadProgress.html#adf2cdb90233265055fa9d2f805d331af" title="Gets an exception if one occurred.">IUploadProgress.Exception </a></dd></dl>
-<p>will contain the exception that cause the failure. </p>
+<p>In case the upload fails the <a class="el" href="interfaceGoogle_1_1Apis_1_1Upload_1_1IUploadProgress.html#adf2cdb90233265055fa9d2f805d331af" title="Gets an exception if one occurred.">IUploadProgress.Exception</a> will contain the exception that cause the failure. </p>
 
 </div>
 </div>
@@ -552,9 +550,7 @@ template&lt;TRequest &gt; </div>
 <div class="memdoc">
 
 <p>Uploads the content to the server using the given cancellation token. </p>
-<p>In case the upload fails </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="interfaceGoogle_1_1Apis_1_1Upload_1_1IUploadProgress.html#adf2cdb90233265055fa9d2f805d331af" title="Gets an exception if one occurred.">IUploadProgress.Exception </a>, System.Threading.Tasks.TaskCanceledException</dd></dl>
-<p>will contain the exception that cause the failure. The only exception which will be thrown is  which indicates that the task was canceled.</p>
+<p>In case the upload fails <a class="el" href="interfaceGoogle_1_1Apis_1_1Upload_1_1IUploadProgress.html#adf2cdb90233265055fa9d2f805d331af" title="Gets an exception if one occurred.">IUploadProgress.Exception</a> will contain the exception that cause the failure. The only exception which will be thrown is System.Threading.Tasks.TaskCanceledException which indicates that the task was canceled.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">cancellationToken</td><td>A cancellation token to cancel operation.</td></tr>
@@ -698,7 +694,7 @@ template&lt;TRequest &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Gets or sets the path of the method (combined with IClientService.BaseUri) to produce absolute Uri. </p>
+<p>Gets or sets the path of the method (combined with <a class="el" href="interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html#a4c6ebbda1a0f2b2ed8f6a241a87e50a7" title="Gets the BaseUri of the service. All request paths should be relative to this URI.">Google.Apis.Services.IClientService.BaseUri</a>) to produce absolute Uri. </p>
 
 </div>
 </div>
