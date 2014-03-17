@@ -3,6 +3,6 @@ Stable Release '1.8.1'
 Monday, March 17, 2014
 ===========================================
 
-!NO CODE CHANGES FROM RC!
+!THERE ARE NO CODE CHANGES FROM RC!
 Developers guide was improved significantely:
 https://developers.google.com/api-client-library/dotnet/
