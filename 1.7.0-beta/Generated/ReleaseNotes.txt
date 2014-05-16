@@ -1,0 +1,16 @@
+Google .NET Client Library
+Stable Release '1.7.0-beta'
+Wednesday, December 18, 2013
+===========================================
+
+Changes:
+  981: DateTime bug when server gets "2013-12-17T23:26:42Z" and not "updated=2013-12-17T23:26:42.000Z"
+  message=Invalid value for: Invalid format: "2013-12-17T23:26:42Z" is malformed at "Z"
+  980: Issue 428: Fix a bug in using a DateTime as a query parameter
+  979: Issue 401: Malformed HTTP request based on not honoring the Uri Template Spec (http://tools.ietf.org/html/rfc6570)
+  978: Issue 425: Set HttpStatusCode on GoogleApiException when available
+  977: Issue 420: RequestAccessTokenAsync and RefreshAccessTokenAsync should be public
+  976: Issue 60: Support Batch Request
+  975: Call ConfigureAwait on every call to await (when applicable)
+  973: Issue 407: Split Google.Apis to Google.Apis.Core and Google.Apis
+  969: Issue 404: Remove obsolete code (GoogleApis.Authentication)

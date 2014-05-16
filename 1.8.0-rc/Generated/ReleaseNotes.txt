@@ -1,0 +1,22 @@
+Google .NET Client Library
+Stable Release '1.8.0-rc'
+Monday, February 17, 2014
+===========================================
+
+Changes:
+  996-997: WP Auth bug fix
+  995: Improve comments for doxygen proess (Step 2)
+  994: Improve comments for doxygen (step 1)
+  992-993: Improve comment on AuthActionFilter
+  991: Fix comments
+  990: Issue 362: Add a resume method to media upload
+  https://codereview.appspot.com/61660043
+  989: Release tool should support rc
+  988: Fix comment (and\or ==> and \ or)
+  987: Issue 422: Back btton doesn't work on WP auth login
+  Issue 431: WebAuthenticationBrokerUserControl.OnBrowserNavigationFailed throws ArgumentNullException when no network connectivity
+  https://codereview.appspot.com/46440043/
+  986: Issue 436: Add Utility methods to parse DateTime to string and stirng to DateTime
+  https://codereview.appspot.com/46920043/
+  985: Issue 432: Batch request with null callback throws exception
+  https://codereview.appspot.com/46460043/

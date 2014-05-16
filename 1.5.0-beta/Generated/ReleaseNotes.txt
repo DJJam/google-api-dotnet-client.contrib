@@ -1,0 +1,19 @@
+Google .NET Client Library
+Stable Release '1.5.0-beta'
+Monday, August 19, 2013
+===========================================
+
+Changes:
+  913: Issue 369: Change deafult behavior of a HTTP request (Number Tries = 3, BackOff of 503 by default)
+  https://codereview.appspot.com/12566043/
+  912: Add documenation to DotNet4 project
+  911: Change in .hgignore add Google.Apis.*xml
+  910: Issues 373 (Execute bug), 374 (Remove Tests.Utility assembly) and 375 (Clean warnings)
+  https://codereview.appspot.com/12772043/
+  909: Update .hgignore file
+  908: Issue 360: Fix a bug in ResumableUpload when media size is unknown
+  https://codereview.appspot.com/11347044/
+  907: Issue 325: Remove discovery and codegen parts from the library
+  https://codereview.appspot.com/12020043/
+  906: Issue 368: Update NuGet.exe
+  904: Update Microsoft.Http.Client.LICENSE.rtf

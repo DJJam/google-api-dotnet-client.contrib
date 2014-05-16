@@ -1,0 +1,24 @@
+Google .NET Client Library
+Stable Release '20121220-1.2.4737-beta'
+Thursday, December 20, 2012
+===========================================
+
+Changes:
+  872: Added tag 20121205-1.2.4722-beta for changeset c976562071c7
+  871: Added tag 20121109-1.2.4696-beta for changeset 7d54264f7000
+  870: Issue 247: fix capitalization of some file names so that they agree with the project configuration
+  869: Added tag 20121031-1.2.4687-beta for changeset 7076c4092ebf
+  868: Added tag 20121031-1.2.4687-beta for changeset fff584b3e1ef
+  867: Added tag 20121026-1.2.4682-beta for changeset b16e837f7769
+  866: Added tag 20121017-1.2.4673-beta for changeset 0a429ff2f2ba
+  865: Added tag 20121017-1.2.4673-beta for changeset 80a6472929f6
+  864: Added tag 20121011-1.2.4667-beta for changeset 8833faa38abd
+  863: merge issue_261_nullreference_in_catch as per codereview https://codereview.appspot.com/6620056/
+  856: Added tag 20121005-1.2.4661-beta for changeset e996892fab93
+  855: Added tag 20120921-1.2.4647-beta for changeset b1f561e3e46a
+  854: Added tag 20120914-1.2.4640-beta for changeset 85e79552468a
+  853: Merge issue_253_QuoteaUser as per https://codereview.appspot.com/6497137/
+  849: Merge issue_251_releasetool as per https://codereview.appspot.com/6490107/
+  843: Added tag 20120907-1.2.4633-beta for changeset d2b230bcef5a
+  842: Added tag 20120903-1.2.4629-beta for changeset 55245fea6dfb
+

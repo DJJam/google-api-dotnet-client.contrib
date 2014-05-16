@@ -1,0 +1,39 @@
+Google .NET Client Library
+Stable Release '20120504-1.2.4507-beta'
+Friday, May 04, 2012
+===========================================
+
+Changes:
+  793: Fix resumable upload response body calculation #210.
+  792: Update build release to build current always and stable only in stable mode.
+  791: Added tag 20120503-1.2.4506-beta for changeset 407f7cb59bae
+  790: Merge
+  789: Merge in issue 210
+  784: Added tag 20120502-1.2.4504-beta for changeset 9199a89782a5
+  783: Fix the async model to properly chain events when a body is attached.
+  782: Release 1.2-beta completed
+  773: Rework request class to use HttpWebRequestBuilder.
+  772: Create HttpWebRequestBuilder helper class.
+  771: Merge
+  770: Added tag 20120425-1.1.4497-beta for changeset 716ba91de9aa
+  769: Fix async request ordering, causing a bug on .NET 4.0
+  http://codereview.appspot.com/6055049/
+  http://code.google.com/p/google-api-dotnet-client/issues/detail?id=181
+  768: Disable ServicePoint on Silverlight
+  767: [mq]: ImproveServiceGeneratorErrorReporting
+  766: Remove annotations nodes from json schema generator
+  765: Improve error reporting
+  764: Remove remaining nant tasks
+  763: [mq]: Fix errors caused by renaming fields in tests.
+  762: Merge
+  758: Merge
+  756: Merge
+  753: Merge
+  751: Merge
+  749: Merge
+  746: Disable Expect-100-Continue behavior
+  745: Added tag 20120316-1.1.4457-beta for changeset edf87cb68f03
+  744: Branch merge: Add --tag command line switch to BuildRelease.exe
+  741: Merge issue 194
+  740: Patch by Claudio Cherubino to adapt to changes in OAuth refresh/access tokens from the server.
+
