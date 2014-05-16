@@ -560,13 +560,6 @@
     </member>
     <member kind="function">
       <type>async Task&lt; bool &gt;</type>
-      <name>RefreshTokenAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
-      <anchor>ac0df5aa0d60bd0a0b42562b324e6f7c0</anchor>
-      <arglist>(CancellationToken taskCancellationToken)</arglist>
-    </member>
-    <member kind="function">
-      <type>async Task&lt; bool &gt;</type>
       <name>HandleResponseAsync</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
       <anchor>a86b8ac154212a2bb9e7552a0956c40c1</anchor>
@@ -579,11 +572,46 @@
       <anchor>aaadc63c621f1e6f1dca9e50c9534d40d</anchor>
       <arglist>(ConfigurableHttpClient httpClient)</arglist>
     </member>
+    <member kind="function">
+      <type>async Task&lt; bool &gt;</type>
+      <name>RefreshTokenAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
+      <anchor>ac0df5aa0d60bd0a0b42562b324e6f7c0</anchor>
+      <arglist>(CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="function">
+      <type>async Task&lt; bool &gt;</type>
+      <name>RevokeTokenAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
+      <anchor>ab4bca8df1cbe91326492c859d1121c95</anchor>
+      <arglist>(CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="variable" protection="protected" static="yes">
+      <type>static readonly ILogger</type>
+      <name>Logger</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
+      <anchor>a700c73ebdb274f6e1c0566ccaa774221</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="property">
       <type>TokenResponse</type>
       <name>Token</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
       <anchor>a489d0614913768e9056aa7172003e57a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IAuthorizationCodeFlow</type>
+      <name>Flow</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
+      <anchor>abd000cb3a4f51639ec57a40d3ded98b5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>UderId</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
+      <anchor>a7dc07ddc9ed7bf4b9507c16f21cfbbb9</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -605,11 +633,25 @@
       <arglist>(Stream clientSecretsStream, IEnumerable&lt; string &gt; scopes, string user, CancellationToken taskCancellationToken, IDataStore dataStore=null)</arglist>
     </member>
     <member kind="function" static="yes">
+      <type>static async Task</type>
+      <name>ReauthorizeAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html</anchorfile>
+      <anchor>aa60d7591017f4e08e5abc5b859bcf42c</anchor>
+      <arglist>(UserCredential userCredential, CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="function" static="yes">
       <type>static async Task&lt; UserCredential &gt;</type>
       <name>AuthorizeAsync</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html</anchorfile>
       <anchor>a75a651cb8b58b9293e7b9e2eb35db452</anchor>
       <arglist>(Uri clientSecretsUri, IEnumerable&lt; string &gt; scopes, string user, CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static async Task</type>
+      <name>ReauthorizeAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html</anchorfile>
+      <anchor>aa60d7591017f4e08e5abc5b859bcf42c</anchor>
+      <arglist>(UserCredential userCredential, CancellationToken taskCancellationToken)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static async Task&lt; UserCredential &gt;</type>
@@ -624,6 +666,13 @@
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html</anchorfile>
       <anchor>af3bfb673f6bbf8f11b61dcf29bb7fc61</anchor>
       <arglist>(Stream clientSecretsStream, IEnumerable&lt; string &gt; scopes, string user, CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static async Task</type>
+      <name>ReauthorizeAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html</anchorfile>
+      <anchor>aa60d7591017f4e08e5abc5b859bcf42c</anchor>
+      <arglist>(UserCredential userCredential, CancellationToken taskCancellationToken)</arglist>
     </member>
     <member kind="variable" static="yes">
       <type>static string</type>
@@ -904,6 +953,13 @@
       <arglist>(AuthorizationCodeFlow.Initializer authorizationCodeFlowInitializer)</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>AuthorizationCodeWinRTInstalledApp</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWinRTInstalledApp.html</anchorfile>
+      <anchor>a534f51d05af26bedb7223a4ec72e21e2</anchor>
+      <arglist>(IAuthorizationCodeFlow flow)</arglist>
+    </member>
+    <member kind="function">
       <type>async Task&lt; UserCredential &gt;</type>
       <name>AuthorizeAsync</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWinRTInstalledApp.html</anchorfile>
@@ -935,6 +991,13 @@
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWPInstalledApp.html</anchorfile>
       <anchor>ab0eacaa8e2e0964ab8fd07f892b41be5</anchor>
       <arglist>(AuthorizationCodeFlow.Initializer authorizationCodeFlowInitializer)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>AuthorizationCodeWPInstalledApp</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWPInstalledApp.html</anchorfile>
+      <anchor>afee998e2e02ed2ae06c3787a44323333</anchor>
+      <arglist>(IAuthorizationCodeFlow flow)</arglist>
     </member>
     <member kind="function">
       <type>Task&lt; UserCredential &gt;</type>
@@ -1029,6 +1092,13 @@
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html</anchorfile>
       <anchor>a658d834ed20a2e2101fc6c87245d3ca2</anchor>
       <arglist>(string userId, string refreshToken, CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual Task</type>
+      <name>RevokeTokenAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html</anchorfile>
+      <anchor>ae92d37224651b15b15fa7f958bc8f0e3</anchor>
+      <arglist>(string userId, string token, CancellationToken taskCancellationToken)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -1184,8 +1254,8 @@
       <type></type>
       <name>GoogleAuthorizationCodeFlow</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1GoogleAuthorizationCodeFlow.html</anchorfile>
-      <anchor>a91f41e4cd159225ed2a086bc3e4243e4</anchor>
-      <arglist>(AuthorizationCodeFlow.Initializer initializer)</arglist>
+      <anchor>a60e7a9a55750d9e1492d68983a543d7c</anchor>
+      <arglist>(Initializer initializer)</arglist>
     </member>
     <member kind="function">
       <type>override AuthorizationCodeRequestUrl</type>
@@ -1193,6 +1263,20 @@
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1GoogleAuthorizationCodeFlow.html</anchorfile>
       <anchor>a04ae35127ff2264613d6cf720a238569</anchor>
       <arglist>(string redirectUri)</arglist>
+    </member>
+    <member kind="function">
+      <type>override async Task</type>
+      <name>RevokeTokenAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1GoogleAuthorizationCodeFlow.html</anchorfile>
+      <anchor>ae690257820712e21c1e31e6f2c89098a</anchor>
+      <arglist>(string userId, string token, CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>RevokeTokenUrl</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1GoogleAuthorizationCodeFlow.html</anchorfile>
+      <anchor>a9d77f0a9bbf5adcd6702b41f931909d9</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -1205,6 +1289,13 @@
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1GoogleAuthorizationCodeFlow_1_1Initializer.html</anchorfile>
       <anchor>a0f77270b2a345e2ff24f6451e4f9e9c1</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>RevokeTokenUrl</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1GoogleAuthorizationCodeFlow_1_1Initializer.html</anchorfile>
+      <anchor>af7db3ba428bc309a2b489b1fe06c83b7</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="interface">
@@ -1244,6 +1335,13 @@
       <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1IAuthorizationCodeFlow.html</anchorfile>
       <anchor>ac8becb04009ca1b6023bbc36aa566818</anchor>
       <arglist>(string userId, string refreshToken, CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="function">
+      <type>Task</type>
+      <name>RevokeTokenAsync</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1IAuthorizationCodeFlow.html</anchorfile>
+      <anchor>a92818c58535cf0a621bf688032996769</anchor>
+      <arglist>(string userId, string token, CancellationToken taskCancellationToken)</arglist>
     </member>
     <member kind="property">
       <type>IAccessMethod</type>
@@ -1409,6 +1507,7 @@
     <class kind="class">Google::Apis::Auth::OAuth2::Requests::AuthorizationRequestUrl</class>
     <class kind="class">Google::Apis::Auth::OAuth2::Requests::GoogleAssertionTokenRequest</class>
     <class kind="class">Google::Apis::Auth::OAuth2::Requests::GoogleAuthorizationCodeRequestUrl</class>
+    <class kind="class">Google::Apis::Auth::OAuth2::Requests::GoogleRevokeTokenRequest</class>
     <class kind="class">Google::Apis::Auth::OAuth2::Requests::RefreshTokenRequest</class>
     <class kind="class">Google::Apis::Auth::OAuth2::Requests::TokenRequest</class>
     <class kind="class">Google::Apis::Auth::OAuth2::Requests::TokenRequestExtenstions</class>
@@ -1560,6 +1659,38 @@
       <name>LoginHint</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1GoogleAuthorizationCodeRequestUrl.html</anchorfile>
       <anchor>afc81df96c1ea85d2308a7cae898ec6f0</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::OAuth2::Requests::GoogleRevokeTokenRequest</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1GoogleRevokeTokenRequest.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>GoogleRevokeTokenRequest</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1GoogleRevokeTokenRequest.html</anchorfile>
+      <anchor>ad23ac03635f4a8a3a386a16c0a094e54</anchor>
+      <arglist>(Uri revokeTokenUrl)</arglist>
+    </member>
+    <member kind="function">
+      <type>Uri</type>
+      <name>Build</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1GoogleRevokeTokenRequest.html</anchorfile>
+      <anchor>ad168f74963f8bc8a8c90ffbc6ec1f0ee</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>Uri</type>
+      <name>RevokeTokenUrl</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1GoogleRevokeTokenRequest.html</anchorfile>
+      <anchor>a88e497e03cc885d3ea4ce2ba557e287f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>Token</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1GoogleRevokeTokenRequest.html</anchorfile>
+      <anchor>a188dce27753eb670c0c39eda5f4823b1</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -4318,8 +4449,8 @@
       <type></type>
       <name>FileDataStore</name>
       <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html</anchorfile>
-      <anchor>a13c4d436cb3f19bfdb07b412642d107a</anchor>
-      <arglist>(string folder)</arglist>
+      <anchor>ada06ef35d54323ae1ade04b8f3d833e4</anchor>
+      <arglist>(string folderPath)</arglist>
     </member>
     <member kind="function">
       <type>Task</type>
