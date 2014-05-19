@@ -132,7 +132,7 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously reauthorizes the user. This method should be called if the users want to authorize after they revoked the token.  <a href="#aa60d7591017f4e08e5abc5b859bcf42c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html#ad6be667a419f8de10d11a8571adea411">Folder</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html#ad6be667a419f8de10d11a8571adea411">Folder</a> = &quot;Google.Apis.Auth&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The folder which is used by the <a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html" title="File data store that implements IDataStore. This store creates a different file for each combination ...">Google.Apis.Util.Store.FileDataStore</a>.  <a href="#ad6be667a419f8de10d11a8571adea411"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -526,16 +526,14 @@ Static Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html#ad6be667a419f8de10d11a8571adea411">Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker.Folder</a><code> [static]</code></td>
+          <td class="memname">string <a class="el" href="classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html#ad6be667a419f8de10d11a8571adea411">Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker.Folder</a> = &quot;Google.Apis.Auth&quot;<code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<b>Initial value:</b><div class="fragment"><pre class="fragment"> Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), <span class="stringliteral">&quot;Google.Apis.Auth&quot;</span>)
-</pre></div>
+
 <p>The folder which is used by the <a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html" title="File data store that implements IDataStore. This store creates a different file for each combination ...">Google.Apis.Util.Store.FileDataStore</a>. </p>
-<p>From version 1.8.2 this string contains the full path and not just a relative folder. The reason that this is not 'private const' is that a user can change it and store the credentials in a different location. </p>
+<p>The reason that this is not 'private const' is that a user can change it and store the credentials in a different location. </p>
 
 </div>
 </div>

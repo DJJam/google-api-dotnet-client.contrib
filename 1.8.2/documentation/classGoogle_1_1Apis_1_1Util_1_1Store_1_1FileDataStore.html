@@ -124,8 +124,8 @@ Inheritance diagram for Google.Apis.Util.Store.FileDataStore:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html#ada06ef35d54323ae1ade04b8f3d833e4">FileDataStore</a> (string folderPath)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new file data store with the specified folder. This folder is created (if it doesn't exist yet) under Environment.SpecialFolder.ApplicationData.  <a href="#ada06ef35d54323ae1ade04b8f3d833e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html#ad55039dfb449b4345c6928bb05cf0a43">FileDataStore</a> (string folder, bool fullPath=false)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new file data store. If <code>fullPath</code> is <code>false</code> the path will be used as relative to Environment.SpecialFolder.ApplicationData, otherwise the input folder will be treated as absolute. The folder is created if it doesn't exist yet.  <a href="#ad55039dfb449b4345c6928bb05cf0a43"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html#ae7c4f9bfda9520ff76fd47d232393ace">StoreAsync&lt; T &gt;</a> (string key, T value)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the given value for the given key. It creates a new file (named <a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html#a8de56a84178219d3e9c734132d25652c" title="Creates a unique stored key based on the key and the class type.">GenerateStoredKey</a>) in <a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html#a4916b98dae452f16fb4d929ee798508f" title="Gets the full folder path.">FolderPath</a>.  <a href="#ae7c4f9bfda9520ff76fd47d232393ace"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html#a75e630a6f5aa244cae546d63d2ab69ed">DeleteAsync&lt; T &gt;</a> (string key)</td></tr>
@@ -146,25 +146,36 @@ Properties</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>File data store that implements <a class="el" href="interfaceGoogle_1_1Apis_1_1Util_1_1Store_1_1IDataStore.html" title="Stores and manages data objects, where the key is a string and the value is an object.">IDataStore</a>. This store creates a different file for each combination of type and key. This file data store stores a JSON format of the specified object. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ada06ef35d54323ae1ade04b8f3d833e4"></a><!-- doxytag: member="Google::Apis::Util::Store::FileDataStore::FileDataStore" ref="ada06ef35d54323ae1ade04b8f3d833e4" args="(string folderPath)" -->
+<a class="anchor" id="ad55039dfb449b4345c6928bb05cf0a43"></a><!-- doxytag: member="Google::Apis::Util::Store::FileDataStore::FileDataStore" ref="ad55039dfb449b4345c6928bb05cf0a43" args="(string folder, bool fullPath=false)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html#ada06ef35d54323ae1ade04b8f3d833e4">Google.Apis.Util.Store.FileDataStore.FileDataStore</a> </td>
+          <td class="memname"><a class="el" href="classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html#ad55039dfb449b4345c6928bb05cf0a43">Google.Apis.Util.Store.FileDataStore.FileDataStore</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>folderPath</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td class="paramname"><em>folder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fullPath</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Constructs a new file data store with the specified folder. This folder is created (if it doesn't exist yet) under Environment.SpecialFolder.ApplicationData. </p>
+<p>Constructs a new file data store. If <code>fullPath</code> is <code>false</code> the path will be used as relative to Environment.SpecialFolder.ApplicationData, otherwise the input folder will be treated as absolute. The folder is created if it doesn't exist yet. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">folderPath</td><td>Folder path. From version 1.8.2 this string contains the full path and not just a relative folder. </td></tr>
+    <tr><td class="paramname">folder</td><td>Folder path.</td></tr>
+    <tr><td class="paramname">fullPath</td><td>Defines weather the folder parameter is absolute or relative to Environment.SpecialFolder.ApplicationData. </td></tr>
   </table>
   </dd>
 </dl>
