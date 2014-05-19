@@ -4449,8 +4449,8 @@
       <type></type>
       <name>FileDataStore</name>
       <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1FileDataStore.html</anchorfile>
-      <anchor>ada06ef35d54323ae1ade04b8f3d833e4</anchor>
-      <arglist>(string folderPath)</arglist>
+      <anchor>ad55039dfb449b4345c6928bb05cf0a43</anchor>
+      <arglist>(string folder, bool fullPath=false)</arglist>
     </member>
     <member kind="function">
       <type>Task</type>
