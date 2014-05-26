@@ -1,0 +1,19 @@
+Google .NET Client Library
+Stable Release '1.8.2'
+Monday, May 26, 2014
+===========================================
+
+Changes:
+  1011: Issue 452: Fixing a incompatible change that was committed before
+  https://codereview.appspot.com/100490046/
+  1010: Issue 464: Can't send HTTP request when setting an invalid etag
+  https://codereview.appspot.com/96320045/
+  1009: Issue 463: Add support in token revocation
+  https://codereview.appspot.com/94340043/
+  1008: Issue 462: Improve FileDataStore impl
+  https://codereview.appspot.com/97380043/
+  1007: Imrpove NuGet Publisher's logs
+  1006: Issue 455: Translate api doesn't work in POST mode (bug in MaxUrlLengthInterceptor)
+  https://codereview.appspot.com/87170043/
+  1004: Added tag 1.8.1 for changeset b3cd8869205a
+  1003: Release 1.8.1
