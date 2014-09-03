@@ -360,7 +360,7 @@
     <class kind="class">Google::Apis::Auth::OAuth2::PromptCodeReceiver</class>
     <class kind="class">Google::Apis::Auth::OAuth2::ServiceAccountCredential</class>
     <class kind="class">Google::Apis::Auth::OAuth2::AuthorizationCodeBroker</class>
-    <class kind="class">Google::Apis::Auth::OAuth2::AuthorizationCodeWinRTInstalledApp</class>
+    <class kind="class">Google::Apis::Auth::OAuth2::AuthorizationCodeWindowsInstalledApp</class>
     <class kind="class">Google::Apis::Auth::OAuth2::AuthorizationCodeWPInstalledApp</class>
     <class kind="class">Google::Apis::Auth::OAuth2::WebAuthenticationBrokerUserControl</class>
   </compound>
@@ -942,42 +942,42 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>Google::Apis::Auth::OAuth2::AuthorizationCodeWinRTInstalledApp</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWinRTInstalledApp.html</filename>
+    <name>Google::Apis::Auth::OAuth2::AuthorizationCodeWindowsInstalledApp</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWindowsInstalledApp.html</filename>
     <base>Google::Apis::Auth::OAuth2::IAuthorizationCodeInstalledApp</base>
     <member kind="function">
       <type></type>
-      <name>AuthorizationCodeWinRTInstalledApp</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWinRTInstalledApp.html</anchorfile>
-      <anchor>a3afadfb6f8940f896f0cf6cb9565dfe1</anchor>
+      <name>AuthorizationCodeWindowsInstalledApp</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWindowsInstalledApp.html</anchorfile>
+      <anchor>a6541295e1336283b181a6666dabcd683</anchor>
       <arglist>(AuthorizationCodeFlow.Initializer authorizationCodeFlowInitializer)</arglist>
     </member>
     <member kind="function">
       <type></type>
-      <name>AuthorizationCodeWinRTInstalledApp</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWinRTInstalledApp.html</anchorfile>
-      <anchor>a534f51d05af26bedb7223a4ec72e21e2</anchor>
+      <name>AuthorizationCodeWindowsInstalledApp</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWindowsInstalledApp.html</anchorfile>
+      <anchor>ab2ecfdb153126e7323ae6d87b90cdd93</anchor>
       <arglist>(IAuthorizationCodeFlow flow)</arglist>
     </member>
     <member kind="function">
       <type>async Task&lt; UserCredential &gt;</type>
       <name>AuthorizeAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWinRTInstalledApp.html</anchorfile>
-      <anchor>ad29a868e52fcafc7ab063826ddc1c0d2</anchor>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWindowsInstalledApp.html</anchorfile>
+      <anchor>a4e84eba6b85627f319045c171b31eac3</anchor>
       <arglist>(string userId, CancellationToken taskCancellationToken)</arglist>
     </member>
     <member kind="property">
       <type>IAuthorizationCodeFlow</type>
       <name>Flow</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWinRTInstalledApp.html</anchorfile>
-      <anchor>a7fe03d808063e2e266be3b1b32eb5eef</anchor>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWindowsInstalledApp.html</anchorfile>
+      <anchor>a9cf78567719860fe122d98106d339471</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>ICodeReceiver</type>
       <name>CodeReceiver</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWinRTInstalledApp.html</anchorfile>
-      <anchor>ab7636c4688c7ed39fca71b0a1654b3d5</anchor>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWindowsInstalledApp.html</anchorfile>
+      <anchor>ab6088382028b9917251e2ced71b03455</anchor>
       <arglist></arglist>
     </member>
   </compound>
