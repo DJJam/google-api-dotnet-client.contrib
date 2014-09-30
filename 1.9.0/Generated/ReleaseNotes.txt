@@ -1,0 +1,19 @@
+Google .NET Client Library
+Stable Release '1.9.0'
+Tuesday, September 30, 2014
+===========================================
+
+Changes:
+  1020: Issue 471: Support Windows 8.1 application
+  (NOTE: There is not a full solution for WP8.1 and there is a problem in building the project using Google.Apis.Release tool)
+  https://codereview.appspot.com/135720043/
+  1019: Issue 475: Pressing the back-button on WP crashes the application
+  https://codereview.appspot.com/117500043/
+  1018: Issue 471: Support Windows Phone 8.1 - Upgrade JSON.NET to 6.0.4 and update Portable projects to profile 328
+  1017: Use profile 136 for now (everything compiles again)
+  
+  Need to investigate how can we support portable-net40+sl50+win+wpa81+wp80 (profile 328) for Newtonsoft.Json and Zlib.Portable.
+  Both those packages are missing some configuration for profile 328.
+  1016: Update projects to support profile 328 (for universal apps)
+  1015: Issue 478: Update NuGet dependencies
+  https://codereview.appspot.com/111210044/
