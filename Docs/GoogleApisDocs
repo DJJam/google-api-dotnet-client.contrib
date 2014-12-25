@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <tagfile>
   <compound kind="namespace">
     <name>Google</name>
@@ -23,13 +23,6 @@
       <anchorfile>classGoogle_1_1GoogleApiException.html</anchorfile>
       <anchor>a441a17db8cc2ee9ebc2a5113fd4860de</anchor>
       <arglist>(string serviceName, string message)</arglist>
-    </member>
-    <member kind="function">
-      <type>override string</type>
-      <name>ToString</name>
-      <anchorfile>classGoogle_1_1GoogleApiException.html</anchorfile>
-      <anchor>a9cd083074199e3da63771b8de17eacb2</anchor>
-      <arglist>()</arglist>
     </member>
     <member kind="property">
       <type>string</type>
@@ -61,33 +54,38 @@
     <namespace>Google::Apis::Util</namespace>
     <class kind="interface">Google::Apis::ISerializer</class>
     <member kind="enumeration">
+      <type></type>
       <name>ETagAction</name>
       <anchorfile>namespaceGoogle_1_1Apis.html</anchorfile>
       <anchor>a13a666df9dd05d974c22f747752186ed</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Default</name>
       <anchorfile>namespaceGoogle_1_1Apis.html</anchorfile>
-      <anchor>a13a666df9dd05d974c22f747752186ed</anchor>
+      <anchor>a13a666df9dd05d974c22f747752186eda7a1920d61156abc05a60135aefe8bc67</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Ignore</name>
       <anchorfile>namespaceGoogle_1_1Apis.html</anchorfile>
-      <anchor>a13a666df9dd05d974c22f747752186ed</anchor>
+      <anchor>a13a666df9dd05d974c22f747752186edafd038fc7f319e48f3115d92bf5bdbef9</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>IfMatch</name>
       <anchorfile>namespaceGoogle_1_1Apis.html</anchorfile>
-      <anchor>a13a666df9dd05d974c22f747752186ed</anchor>
+      <anchor>a13a666df9dd05d974c22f747752186edac518519c3fc8af1cb7cc73111419feab</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>IfNoneMatch</name>
       <anchorfile>namespaceGoogle_1_1Apis.html</anchorfile>
-      <anchor>a13a666df9dd05d974c22f747752186ed</anchor>
+      <anchor>a13a666df9dd05d974c22f747752186eda6947efa30b7a4b701974f68105e333e5</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -155,36 +153,6 @@
     <name>Google::Apis::Auth::GoogleJsonWebSignature::Header</name>
     <filename>classGoogle_1_1Apis_1_1Auth_1_1GoogleJsonWebSignature_1_1Header.html</filename>
     <base>Google::Apis::Auth::JsonWebSignature::Header</base>
-  </compound>
-  <compound kind="class">
-    <name>Google::Apis::Auth::GoogleJsonWebSignature::Payload</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1GoogleJsonWebSignature_1_1Payload.html</filename>
-    <base>Google::Apis::Auth::JsonWebSignature::Payload</base>
-    <member kind="property">
-      <type>string</type>
-      <name>Scope</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1GoogleJsonWebSignature_1_1Payload.html</anchorfile>
-      <anchor>a734c07fc88b7f7b86894a63090eb411b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>Prn</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1GoogleJsonWebSignature_1_1Payload.html</anchorfile>
-      <anchor>a58dfb6ea736fecd552bd59007b1f6c53</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Google::Apis::Auth::JsonWebSignature</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebSignature.html</filename>
-    <class kind="class">Google::Apis::Auth::JsonWebSignature::Header</class>
-    <class kind="class">Google::Apis::Auth::JsonWebSignature::Payload</class>
-  </compound>
-  <compound kind="class">
-    <name>Google::Apis::Auth::JsonWebSignature::Header</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebSignature_1_1Header.html</filename>
-    <base>Google::Apis::Auth::JsonWebToken::Header</base>
     <member kind="property">
       <type>string</type>
       <name>Algorithm</name>
@@ -241,21 +209,6 @@
       <anchor>a4faaaa5c0ac0f3c0ea4159fb9a8e31d7</anchor>
       <arglist></arglist>
     </member>
-  </compound>
-  <compound kind="class">
-    <name>Google::Apis::Auth::JsonWebSignature::Payload</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebSignature_1_1Payload.html</filename>
-    <base>Google::Apis::Auth::JsonWebToken::Payload</base>
-  </compound>
-  <compound kind="class">
-    <name>Google::Apis::Auth::JsonWebToken</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebToken.html</filename>
-    <class kind="class">Google::Apis::Auth::JsonWebToken::Header</class>
-    <class kind="class">Google::Apis::Auth::JsonWebToken::Payload</class>
-  </compound>
-  <compound kind="class">
-    <name>Google::Apis::Auth::JsonWebToken::Header</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebToken_1_1Header.html</filename>
     <member kind="property">
       <type>string</type>
       <name>Type</name>
@@ -272,8 +225,23 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>Google::Apis::Auth::JsonWebToken::Payload</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebToken_1_1Payload.html</filename>
+    <name>Google::Apis::Auth::GoogleJsonWebSignature::Payload</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1GoogleJsonWebSignature_1_1Payload.html</filename>
+    <base>Google::Apis::Auth::JsonWebSignature::Payload</base>
+    <member kind="property">
+      <type>string</type>
+      <name>Scope</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1GoogleJsonWebSignature_1_1Payload.html</anchorfile>
+      <anchor>a734c07fc88b7f7b86894a63090eb411b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>Prn</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1GoogleJsonWebSignature_1_1Payload.html</anchorfile>
+      <anchor>a58dfb6ea736fecd552bd59007b1f6c53</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="property">
       <type>string</type>
       <name>Issuer</name>
@@ -338,6 +306,36 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::JsonWebSignature</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebSignature.html</filename>
+    <class kind="class">Google::Apis::Auth::JsonWebSignature::Header</class>
+    <class kind="class">Google::Apis::Auth::JsonWebSignature::Payload</class>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::JsonWebSignature::Header</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebSignature_1_1Header.html</filename>
+    <base>Google::Apis::Auth::JsonWebToken::Header</base>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::JsonWebSignature::Payload</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebSignature_1_1Payload.html</filename>
+    <base>Google::Apis::Auth::JsonWebToken::Payload</base>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::JsonWebToken</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebToken.html</filename>
+    <class kind="class">Google::Apis::Auth::JsonWebToken::Header</class>
+    <class kind="class">Google::Apis::Auth::JsonWebToken::Payload</class>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::JsonWebToken::Header</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebToken_1_1Header.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::JsonWebToken::Payload</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1JsonWebToken_1_1Payload.html</filename>
+  </compound>
   <compound kind="namespace">
     <name>Google::Apis::Auth::OAuth2</name>
     <filename>namespaceGoogle_1_1Apis_1_1Auth_1_1OAuth2.html</filename>
@@ -349,11 +347,13 @@
     <class kind="class">Google::Apis::Auth::OAuth2::AuthorizationCodeInstalledApp</class>
     <class kind="class">Google::Apis::Auth::OAuth2::BearerToken</class>
     <class kind="class">Google::Apis::Auth::OAuth2::ClientSecrets</class>
+    <class kind="class">Google::Apis::Auth::OAuth2::ComputeCredential</class>
     <class kind="class">Google::Apis::Auth::OAuth2::GoogleClientSecrets</class>
     <class kind="class">Google::Apis::Auth::OAuth2::GoogleAuthConsts</class>
     <class kind="interface">Google::Apis::Auth::OAuth2::IAccessMethod</class>
     <class kind="interface">Google::Apis::Auth::OAuth2::IAuthorizationCodeInstalledApp</class>
     <class kind="interface">Google::Apis::Auth::OAuth2::ICodeReceiver</class>
+    <class kind="class">Google::Apis::Auth::OAuth2::ServiceCredential</class>
     <class kind="class">Google::Apis::Auth::OAuth2::UserCredential</class>
     <class kind="class">Google::Apis::Auth::OAuth2::GoogleWebAuthorizationBroker</class>
     <class kind="class">Google::Apis::Auth::OAuth2::LocalServerCodeReceiver</class>
@@ -363,6 +363,7 @@
     <class kind="class">Google::Apis::Auth::OAuth2::AuthorizationCodeWindowsInstalledApp</class>
     <class kind="class">Google::Apis::Auth::OAuth2::AuthorizationCodeWPInstalledApp</class>
     <class kind="class">Google::Apis::Auth::OAuth2::WebAuthenticationBrokerUserControl</class>
+    <class kind="class">Google::Apis::Auth::OAuth2::SerializableWebAuthResult</class>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::AuthorizationCodeInstalledApp</name>
@@ -394,6 +395,20 @@
       <name>CodeReceiver</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeInstalledApp.html</anchorfile>
       <anchor>a4d430a850a5d4522477a8fb4043d43a6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IAuthorizationCodeFlow</type>
+      <name>Flow</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1IAuthorizationCodeInstalledApp.html</anchorfile>
+      <anchor>acdbbcb412e4655f3618a577a399fbe49</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>ICodeReceiver</type>
+      <name>CodeReceiver</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1IAuthorizationCodeInstalledApp.html</anchorfile>
+      <anchor>adea44d175db640f19851fb76ec1dbf5b</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -460,6 +475,157 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>Google::Apis::Auth::OAuth2::ComputeCredential</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ComputeCredential.html</filename>
+    <base>Google::Apis::Auth::OAuth2::ServiceCredential</base>
+    <class kind="class">Google::Apis::Auth::OAuth2::ComputeCredential::Initializer</class>
+    <member kind="function">
+      <type></type>
+      <name>ComputeCredential</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ComputeCredential.html</anchorfile>
+      <anchor>a983d3cd8430a2b4d485b58af2a16cedb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ComputeCredential</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ComputeCredential.html</anchorfile>
+      <anchor>a98609649cbd1ed059e71a6e2322fd333</anchor>
+      <arglist>(Initializer initializer)</arglist>
+    </member>
+    <member kind="function">
+      <type>override async Task&lt; bool &gt;</type>
+      <name>RequestAccessTokenAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ComputeCredential.html</anchorfile>
+      <anchor>aba08b4258ca5774e0f494b88ea528aff</anchor>
+      <arglist>(CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ServiceCredential</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>a26340e9b310625e48b285c6ca708d275</anchor>
+      <arglist>(Initializer initializer)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Initialize</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>a05c597d3b857361b845dbfb64e5e3123</anchor>
+      <arglist>(ConfigurableHttpClient httpClient)</arglist>
+    </member>
+    <member kind="function">
+      <type>async Task</type>
+      <name>InterceptAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>a15b189a18d7dbf8177dfc9836df2ea79</anchor>
+      <arglist>(HttpRequestMessage request, CancellationToken cancellationToken)</arglist>
+    </member>
+    <member kind="function">
+      <type>async Task&lt; bool &gt;</type>
+      <name>HandleResponseAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>a1083a37601642b6c3de3848c7e7a9c35</anchor>
+      <arglist>(HandleUnsuccessfulResponseArgs args)</arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>TokenServerUrl</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>a909e976f1bf930fc6b7f3460b153397b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IClock</type>
+      <name>Clock</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>aabf72f84db91dcb70ff4c0787f162da1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IAccessMethod</type>
+      <name>AccessMethod</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>a49e9a8760ae9eac03e40e44e870dd57b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>ConfigurableHttpClient</type>
+      <name>HttpClient</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>a9902651dcea52aa43cfe74f1f8436f80</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>TokenResponse</type>
+      <name>Token</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>a6dd5f5bca705e381b8fe97d58bf52c23</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::OAuth2::ComputeCredential::Initializer</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ComputeCredential_1_1Initializer.html</filename>
+    <base>Google::Apis::Auth::OAuth2::ServiceCredential::Initializer</base>
+    <member kind="function">
+      <type></type>
+      <name>Initializer</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ComputeCredential_1_1Initializer.html</anchorfile>
+      <anchor>a6e1f839ea1fa9fba525006c7cc7bc709</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Initializer</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ComputeCredential_1_1Initializer.html</anchorfile>
+      <anchor>a91024460509292ec3ca5c0b1d1467948</anchor>
+      <arglist>(string tokenUrl)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>Initializer</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential_1_1Initializer.html</anchorfile>
+      <anchor>ae6e8700d117cf19e7b13640f64aea19e</anchor>
+      <arglist>(string tokenServerUrl)</arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>TokenServerUrl</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential_1_1Initializer.html</anchorfile>
+      <anchor>aec077462b72f808c45a0f79f50311c97</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IClock</type>
+      <name>Clock</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential_1_1Initializer.html</anchorfile>
+      <anchor>a87fc2ddfa599616524bc85be83e070e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IAccessMethod</type>
+      <name>AccessMethod</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential_1_1Initializer.html</anchorfile>
+      <anchor>a14499eb1d8e540a7de07871f73a0824f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IHttpClientFactory</type>
+      <name>HttpClientFactory</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential_1_1Initializer.html</anchorfile>
+      <anchor>a7fffe1699358e11b7c1271e03d393817</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>ExponentialBackOffPolicy</type>
+      <name>DefaultExponentialBackOffPolicy</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential_1_1Initializer.html</anchorfile>
+      <anchor>a91012138344cdaa73947991adaa48df6</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::GoogleClientSecrets</name>
     <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleClientSecrets.html</filename>
     <member kind="function" static="yes">
@@ -505,20 +671,6 @@
       <anchor>a37c37961e22511212481fe951ac32a9e</anchor>
       <arglist>(string userId, CancellationToken taskCancellationToken)</arglist>
     </member>
-    <member kind="property">
-      <type>IAuthorizationCodeFlow</type>
-      <name>Flow</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1IAuthorizationCodeInstalledApp.html</anchorfile>
-      <anchor>acdbbcb412e4655f3618a577a399fbe49</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>ICodeReceiver</type>
-      <name>CodeReceiver</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1IAuthorizationCodeInstalledApp.html</anchorfile>
-      <anchor>adea44d175db640f19851fb76ec1dbf5b</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="interface">
     <name>Google::Apis::Auth::OAuth2::ICodeReceiver</name>
@@ -537,6 +689,25 @@
       <anchor>a9475f15f3fee3db3bd4a6261605787e5</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::OAuth2::ServiceCredential</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</filename>
+    <base>Google::Apis::Http::IHttpExecuteInterceptor</base>
+    <base>Google::Apis::Http::IHttpUnsuccessfulResponseHandler</base>
+    <base>Google::Apis::Http::IConfigurableHttpClientInitializer</base>
+    <class kind="class">Google::Apis::Auth::OAuth2::ServiceCredential::Initializer</class>
+    <member kind="function" virtualness="pure">
+      <type>abstract Task&lt; bool &gt;</type>
+      <name>RequestAccessTokenAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential.html</anchorfile>
+      <anchor>af5d786def385fe2badcc852fdee0b168</anchor>
+      <arglist>(CancellationToken taskCancellationToken)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::OAuth2::ServiceCredential::Initializer</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceCredential_1_1Initializer.html</filename>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::UserCredential</name>
@@ -586,13 +757,6 @@
       <anchor>ab4bca8df1cbe91326492c859d1121c95</anchor>
       <arglist>(CancellationToken taskCancellationToken)</arglist>
     </member>
-    <member kind="variable" protection="protected" static="yes">
-      <type>static readonly ILogger</type>
-      <name>Logger</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
-      <anchor>a700c73ebdb274f6e1c0566ccaa774221</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="property">
       <type>TokenResponse</type>
       <name>Token</name>
@@ -609,9 +773,9 @@
     </member>
     <member kind="property">
       <type>string</type>
-      <name>UderId</name>
+      <name>UserId</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1UserCredential.html</anchorfile>
-      <anchor>a7dc07ddc9ed7bf4b9507c16f21cfbbb9</anchor>
+      <anchor>abfbb4de861bc2d028e28252122d148b4</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -674,6 +838,20 @@
       <anchor>aa60d7591017f4e08e5abc5b859bcf42c</anchor>
       <arglist>(UserCredential userCredential, CancellationToken taskCancellationToken)</arglist>
     </member>
+    <member kind="function" static="yes">
+      <type>static async Task&lt; UserCredential &gt;</type>
+      <name>AuthorizeAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html</anchorfile>
+      <anchor>a75a651cb8b58b9293e7b9e2eb35db452</anchor>
+      <arglist>(Uri clientSecretsUri, IEnumerable&lt; string &gt; scopes, string user, CancellationToken taskCancellationToken)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static async Task</type>
+      <name>ReauthorizeAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1GoogleWebAuthorizationBroker.html</anchorfile>
+      <anchor>aa60d7591017f4e08e5abc5b859bcf42c</anchor>
+      <arglist>(UserCredential userCredential, CancellationToken taskCancellationToken)</arglist>
+    </member>
     <member kind="variable" static="yes">
       <type>static string</type>
       <name>Folder</name>
@@ -693,13 +871,6 @@
       <anchor>aa89c2a4659b538448fad8dcce6883e5f</anchor>
       <arglist>(AuthorizationCodeRequestUrl url, CancellationToken taskCancellationToken)</arglist>
     </member>
-    <member kind="property">
-      <type>string</type>
-      <name>RedirectUri</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1LocalServerCodeReceiver.html</anchorfile>
-      <anchor>a25c954e46932103a4cd0353c536203b1</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::PromptCodeReceiver</name>
@@ -712,20 +883,11 @@
       <anchor>a37768c4faad958495250b452486e5d2c</anchor>
       <arglist>(AuthorizationCodeRequestUrl url, CancellationToken taskCancellationToken)</arglist>
     </member>
-    <member kind="property">
-      <type>string</type>
-      <name>RedirectUri</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1PromptCodeReceiver.html</anchorfile>
-      <anchor>a631698e3284bf66b66e6310d24702498</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::ServiceAccountCredential</name>
     <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</filename>
-    <base>Google::Apis::Http::IHttpExecuteInterceptor</base>
-    <base>Google::Apis::Http::IHttpUnsuccessfulResponseHandler</base>
-    <base>Google::Apis::Http::IConfigurableHttpClientInitializer</base>
+    <base>Google::Apis::Auth::OAuth2::ServiceCredential</base>
     <class kind="class">Google::Apis::Auth::OAuth2::ServiceAccountCredential::Initializer</class>
     <member kind="function">
       <type></type>
@@ -735,31 +897,10 @@
       <arglist>(Initializer initializer)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
-      <name>Initialize</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
-      <anchor>afc7d5bd77d62af833f3ea9ef575fbfd9</anchor>
-      <arglist>(ConfigurableHttpClient httpClient)</arglist>
-    </member>
-    <member kind="function">
-      <type>async Task</type>
-      <name>InterceptAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
-      <anchor>abc66ccd2a489e0f1827414756c99eeb4</anchor>
-      <arglist>(HttpRequestMessage request, CancellationToken cancellationToken)</arglist>
-    </member>
-    <member kind="function">
-      <type>async Task&lt; bool &gt;</type>
-      <name>HandleResponseAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
-      <anchor>a1a7d1421c14275ced625bf2488f4abd7</anchor>
-      <arglist>(HandleUnsuccessfulResponseArgs args)</arglist>
-    </member>
-    <member kind="function">
-      <type>async Task&lt; bool &gt;</type>
+      <type>override async Task&lt; bool &gt;</type>
       <name>RequestAccessTokenAsync</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
-      <anchor>a258d434f51c8ca03c9ea6971aa868a02</anchor>
+      <anchor>ad4274b9389ff1f737fad07e1834e2c88</anchor>
       <arglist>(CancellationToken taskCancellationToken)</arglist>
     </member>
     <member kind="property">
@@ -767,13 +908,6 @@
       <name>Id</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
       <anchor>a48f3519ade7d64852ec0a749e5291173</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>TokenServerUrl</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
-      <anchor>a0ca0b51644b49af4facbd1993f206973</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
@@ -791,44 +925,17 @@
       <arglist></arglist>
     </member>
     <member kind="property">
-      <type>IClock</type>
-      <name>Clock</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
-      <anchor>a02cefc8a9498cca6daf90870c107d082</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IAccessMethod</type>
-      <name>AccessMethod</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
-      <anchor>a80ba5a3f71666cba0692b6036b1d4ca8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>ConfigurableHttpClient</type>
-      <name>HttpClient</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
-      <anchor>a824730d1ebe1824698d4d77dde656e19</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
       <type>RSACryptoServiceProvider</type>
       <name>Key</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
       <anchor>ad1faab0edc390c4a5d44d39c5393b5b0</anchor>
       <arglist></arglist>
     </member>
-    <member kind="property">
-      <type>TokenResponse</type>
-      <name>Token</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential.html</anchorfile>
-      <anchor>a9d297d1c8a89413f5d4d3c41d5654d23</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::ServiceAccountCredential::Initializer</name>
     <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential_1_1Initializer.html</filename>
+    <base>Google::Apis::Auth::OAuth2::ServiceCredential::Initializer</base>
     <member kind="function">
       <type></type>
       <name>Initializer</name>
@@ -859,13 +966,6 @@
     </member>
     <member kind="property">
       <type>string</type>
-      <name>TokenServerUrl</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential_1_1Initializer.html</anchorfile>
-      <anchor>a9edf5d6a29043a61feaeaf99dca07893</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
       <name>User</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential_1_1Initializer.html</anchorfile>
       <anchor>a71e3e316cb672908af5a5d9861395149</anchor>
@@ -879,38 +979,10 @@
       <arglist></arglist>
     </member>
     <member kind="property">
-      <type>IClock</type>
-      <name>Clock</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential_1_1Initializer.html</anchorfile>
-      <anchor>aa3eabb9b4b4834057d23c015027a181c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
       <type>RSACryptoServiceProvider</type>
       <name>Key</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential_1_1Initializer.html</anchorfile>
       <anchor>a6c996999b286a60eb3cf3757bad9f40f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IAccessMethod</type>
-      <name>AccessMethod</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential_1_1Initializer.html</anchorfile>
-      <anchor>a91b8e43be04f0b7b15fafb8e78e5c999</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IHttpClientFactory</type>
-      <name>HttpClientFactory</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential_1_1Initializer.html</anchorfile>
-      <anchor>a94945e205851190d6273393485762c26</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>ExponentialBackOffPolicy</type>
-      <name>DefaultExponentialBackOffPolicy</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1ServiceAccountCredential_1_1Initializer.html</anchorfile>
-      <anchor>a96b312e0bede132c8a15bace4e30336e</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -919,6 +991,7 @@
     <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeBroker.html</filename>
     <base>Google::Apis::Auth::OAuth2::ICodeReceiver</base>
     <base>Google::Apis::Auth::OAuth2::ICodeReceiver</base>
+    <base>Google::Apis::Auth::OAuth2::ICodeReceiver</base>
     <member kind="function">
       <type>async Task&lt; AuthorizationCodeResponseUrl &gt;</type>
       <name>ReceiveCodeAsync</name>
@@ -933,12 +1006,12 @@
       <anchor>a1186c86259ff9f8ae1721b5c9c319330</anchor>
       <arglist>(AuthorizationCodeRequestUrl url, CancellationToken taskCancellationToken)</arglist>
     </member>
-    <member kind="property">
-      <type>string</type>
-      <name>RedirectUri</name>
+    <member kind="function">
+      <type>async Task&lt; AuthorizationCodeResponseUrl &gt;</type>
+      <name>ReceiveCodeAsync</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeBroker.html</anchorfile>
-      <anchor>a88d2db908ccde1dabaabbf967111a750</anchor>
-      <arglist></arglist>
+      <anchor>a1186c86259ff9f8ae1721b5c9c319330</anchor>
+      <arglist>(AuthorizationCodeRequestUrl url, CancellationToken taskCancellationToken)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -966,24 +1039,11 @@
       <anchor>a4e84eba6b85627f319045c171b31eac3</anchor>
       <arglist>(string userId, CancellationToken taskCancellationToken)</arglist>
     </member>
-    <member kind="property">
-      <type>IAuthorizationCodeFlow</type>
-      <name>Flow</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWindowsInstalledApp.html</anchorfile>
-      <anchor>a9cf78567719860fe122d98106d339471</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>ICodeReceiver</type>
-      <name>CodeReceiver</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWindowsInstalledApp.html</anchorfile>
-      <anchor>ab6088382028b9917251e2ced71b03455</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::AuthorizationCodeWPInstalledApp</name>
     <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWPInstalledApp.html</filename>
+    <base>Google::Apis::Auth::OAuth2::IAuthorizationCodeInstalledApp</base>
     <base>Google::Apis::Auth::OAuth2::IAuthorizationCodeInstalledApp</base>
     <member kind="function">
       <type></type>
@@ -1006,37 +1066,65 @@
       <anchor>a00093e5aae4de3e01055a64a4178f544</anchor>
       <arglist>(string userId, CancellationToken taskCancellationToken)</arglist>
     </member>
-    <member kind="property">
-      <type>IAuthorizationCodeFlow</type>
-      <name>Flow</name>
+    <member kind="function">
+      <type></type>
+      <name>AuthorizationCodeWPInstalledApp</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWPInstalledApp.html</anchorfile>
-      <anchor>a819db710d638a196b027faed175000da</anchor>
-      <arglist></arglist>
+      <anchor>ab0eacaa8e2e0964ab8fd07f892b41be5</anchor>
+      <arglist>(AuthorizationCodeFlow.Initializer authorizationCodeFlowInitializer)</arglist>
     </member>
-    <member kind="property">
-      <type>ICodeReceiver</type>
-      <name>CodeReceiver</name>
+    <member kind="function">
+      <type></type>
+      <name>AuthorizationCodeWPInstalledApp</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWPInstalledApp.html</anchorfile>
-      <anchor>af8fa3ba24b49d3936cee3c6a55684ee2</anchor>
-      <arglist></arglist>
+      <anchor>afee998e2e02ed2ae06c3787a44323333</anchor>
+      <arglist>(IAuthorizationCodeFlow flow)</arglist>
+    </member>
+    <member kind="function">
+      <type>async Task&lt; UserCredential &gt;</type>
+      <name>AuthorizeAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1AuthorizationCodeWPInstalledApp.html</anchorfile>
+      <anchor>ab32b19dfe46c146a8198904be6f32ce4</anchor>
+      <arglist>(string userId, CancellationToken taskCancellationToken)</arglist>
     </member>
   </compound>
   <compound kind="class">
-    <name>Google::Apis::Auth::OAuth2::WebAuthenticationBrokerUserControl</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1WebAuthenticationBrokerUserControl.html</filename>
+    <name>Google::Apis::Auth::OAuth2::SerializableWebAuthResult</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1SerializableWebAuthResult.html</filename>
     <member kind="function">
       <type></type>
-      <name>WebAuthenticationBrokerUserControl</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1WebAuthenticationBrokerUserControl.html</anchorfile>
-      <anchor>aa4a4477fe1659472f250ab03a31350d7</anchor>
+      <name>SerializableWebAuthResult</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1SerializableWebAuthResult.html</anchorfile>
+      <anchor>a45297cf354a3c4fd0041dabf4f7c0175</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>Task&lt; AuthorizationCodeResponseUrl &gt;</type>
-      <name>Launch</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1WebAuthenticationBrokerUserControl.html</anchorfile>
-      <anchor>ad359d7d71a34bc13be1695ee46d2cb75</anchor>
-      <arglist>(Uri uri)</arglist>
+      <type></type>
+      <name>SerializableWebAuthResult</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1SerializableWebAuthResult.html</anchorfile>
+      <anchor>a9b0e174e0167bcc5121cbaf92b54472e</anchor>
+      <arglist>(WebAuthenticationResult result)</arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>ResponseData</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1SerializableWebAuthResult.html</anchorfile>
+      <anchor>a4c1ac858803ccd6f4bc893943894cf5a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>uint</type>
+      <name>ResponseErrorDetail</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1SerializableWebAuthResult.html</anchorfile>
+      <anchor>a450d592e8d8a05357458bbeb741d895a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>WebAuthenticationStatus</type>
+      <name>ResponseStatus</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1SerializableWebAuthResult.html</anchorfile>
+      <anchor>af20c90d47423f7a657503376e3cf0d28</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="namespace">
@@ -1100,13 +1188,6 @@
       <anchor>ae92d37224651b15b15fa7f958bc8f0e3</anchor>
       <arglist>(string userId, string token, CancellationToken taskCancellationToken)</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
-      <name>Dispose</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html</anchorfile>
-      <anchor>af4049da1557b610b5fafa63ed41b0d38</anchor>
-      <arglist>()</arglist>
-    </member>
     <member kind="property">
       <type>string</type>
       <name>TokenServerUrl</name>
@@ -1152,15 +1233,22 @@
     <member kind="property">
       <type>IAccessMethod</type>
       <name>AccessMethod</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html</anchorfile>
-      <anchor>a38b9578f5725d58863b2ed5e0324a702</anchor>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1IAuthorizationCodeFlow.html</anchorfile>
+      <anchor>a89fe8c8e67626e248b318e6b125a1adf</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>IClock</type>
       <name>Clock</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1AuthorizationCodeFlow.html</anchorfile>
-      <anchor>ad77f32cb22e9dcf955f747b3f2745cce</anchor>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1IAuthorizationCodeFlow.html</anchorfile>
+      <anchor>ac1799852aa4db4ca05778b94bb3d7701</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IDataStore</type>
+      <name>DataStore</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1IAuthorizationCodeFlow.html</anchorfile>
+      <anchor>a6c5f4eb93ae037b51bb648f4e61e1932</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -1343,27 +1431,6 @@
       <anchor>a92818c58535cf0a621bf688032996769</anchor>
       <arglist>(string userId, string token, CancellationToken taskCancellationToken)</arglist>
     </member>
-    <member kind="property">
-      <type>IAccessMethod</type>
-      <name>AccessMethod</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1IAuthorizationCodeFlow.html</anchorfile>
-      <anchor>a89fe8c8e67626e248b318e6b125a1adf</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IClock</type>
-      <name>Clock</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1IAuthorizationCodeFlow.html</anchorfile>
-      <anchor>ac1799852aa4db4ca05778b94bb3d7701</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IDataStore</type>
-      <name>DataStore</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Flows_1_1IAuthorizationCodeFlow.html</anchorfile>
-      <anchor>a6c5f4eb93ae037b51bb648f4e61e1932</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="namespace">
     <name>Google::Apis::Auth::OAuth2::Mvc</name>
@@ -1391,6 +1458,20 @@
       <anchor>a335ce92fd10d32b9e1a2ae4be6f699f6</anchor>
       <arglist>(CancellationToken taskCancellationToken)</arglist>
     </member>
+    <member kind="function">
+      <type></type>
+      <name>AuthorizationCodeWebApp</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
+      <anchor>a9c7fe9a9c721cb03acb9f06cefa62b1c</anchor>
+      <arglist>(IAuthorizationCodeFlow flow, string redirectUri, string state)</arglist>
+    </member>
+    <member kind="function">
+      <type>async Task&lt; AuthResult &gt;</type>
+      <name>AuthorizeAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
+      <anchor>a955aa2de4606b356b399b9ca5edd3194</anchor>
+      <arglist>(string userId, CancellationToken taskCancellationToken)</arglist>
+    </member>
     <member kind="property">
       <type>Controller</type>
       <name>Controller</name>
@@ -1403,6 +1484,41 @@
       <name>FlowData</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1AuthorizationCodeMvcApp.html</anchorfile>
       <anchor>a86f178d4d7791f9ad9098d5824450e78</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IAuthorizationCodeFlow</type>
+      <name>Flow</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
+      <anchor>a42597ba89dfdd3940830b5ec45f4aff0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>RedirectUri</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
+      <anchor>a59dc40fe8ed51965ea1a6541bb5bd6a4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>State</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
+      <anchor>a134645b54f63f84c492acf9749ddbb1f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const string</type>
+      <name>StateKey</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
+      <anchor>a8acac8a8b41b7741d74d95d45f9987f0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>const int</type>
+      <name>StateRandomLength</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
+      <anchor>acc49c233e5c56592064ab8b3328d964b</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -1452,13 +1568,6 @@
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1Controllers_1_1AuthCallbackController.html</anchorfile>
       <anchor>a9bf0bc223566198779e4b0751f1284f8</anchor>
       <arglist>(TokenErrorResponse errorResponse)</arglist>
-    </member>
-    <member kind="variable" protection="protected" static="yes">
-      <type>static readonly ILogger</type>
-      <name>Logger</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Mvc_1_1Controllers_1_1AuthCallbackController.html</anchorfile>
-      <anchor>ad9bf88b4ff979d77de4a10aaa8b667af</anchor>
-      <arglist></arglist>
     </member>
     <member kind="property" protection="protected">
       <type>IAuthorizationCodeFlow</type>
@@ -1530,36 +1639,6 @@
       <anchor>a3dbe04cf232c1e52852a0faeebd57d78</anchor>
       <arglist>()</arglist>
     </member>
-  </compound>
-  <compound kind="class">
-    <name>Google::Apis::Auth::OAuth2::Requests::AuthorizationCodeTokenRequest</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationCodeTokenRequest.html</filename>
-    <base>Google::Apis::Auth::OAuth2::Requests::TokenRequest</base>
-    <member kind="function">
-      <type></type>
-      <name>AuthorizationCodeTokenRequest</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationCodeTokenRequest.html</anchorfile>
-      <anchor>a34b218fbf45c0ad01c929e008d152bd5</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>Code</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationCodeTokenRequest.html</anchorfile>
-      <anchor>a37bd4effc135c0ad1637f207d12be800</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>RedirectUri</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationCodeTokenRequest.html</anchorfile>
-      <anchor>a659b96df632c358aa7113c816cddc652</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Google::Apis::Auth::OAuth2::Requests::AuthorizationRequestUrl</name>
-    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationRequestUrl.html</filename>
     <member kind="function">
       <type></type>
       <name>AuthorizationRequestUrl</name>
@@ -1609,6 +1688,64 @@
       <anchor>a3d4dc3d2895425b7cc358c8c0eda8776</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::OAuth2::Requests::AuthorizationCodeTokenRequest</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationCodeTokenRequest.html</filename>
+    <base>Google::Apis::Auth::OAuth2::Requests::TokenRequest</base>
+    <member kind="function">
+      <type></type>
+      <name>AuthorizationCodeTokenRequest</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationCodeTokenRequest.html</anchorfile>
+      <anchor>a34b218fbf45c0ad01c929e008d152bd5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>Code</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationCodeTokenRequest.html</anchorfile>
+      <anchor>a37bd4effc135c0ad1637f207d12be800</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>RedirectUri</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationCodeTokenRequest.html</anchorfile>
+      <anchor>a659b96df632c358aa7113c816cddc652</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>Scope</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1TokenRequest.html</anchorfile>
+      <anchor>adf798fb16789517730ef98653bff8e17</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>GrantType</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1TokenRequest.html</anchorfile>
+      <anchor>ae265dea49e9f4ef5d140354db89aa709</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>ClientId</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1TokenRequest.html</anchorfile>
+      <anchor>ab062a0b9b8f1858a23332712e7040fdd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>ClientSecret</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1TokenRequest.html</anchorfile>
+      <anchor>a5cc58192df7bb1031f91932eb32a7273</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Auth::OAuth2::Requests::AuthorizationRequestUrl</name>
+    <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1AuthorizationRequestUrl.html</filename>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::Requests::GoogleAssertionTokenRequest</name>
@@ -1666,13 +1803,6 @@
     <name>Google::Apis::Auth::OAuth2::Requests::GoogleRevokeTokenRequest</name>
     <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1GoogleRevokeTokenRequest.html</filename>
     <member kind="function">
-      <type></type>
-      <name>GoogleRevokeTokenRequest</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1GoogleRevokeTokenRequest.html</anchorfile>
-      <anchor>ad23ac03635f4a8a3a386a16c0a094e54</anchor>
-      <arglist>(Uri revokeTokenUrl)</arglist>
-    </member>
-    <member kind="function">
       <type>Uri</type>
       <name>Build</name>
       <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1GoogleRevokeTokenRequest.html</anchorfile>
@@ -1716,34 +1846,6 @@
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::Requests::TokenRequest</name>
     <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1TokenRequest.html</filename>
-    <member kind="property">
-      <type>string</type>
-      <name>Scope</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1TokenRequest.html</anchorfile>
-      <anchor>adf798fb16789517730ef98653bff8e17</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>GrantType</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1TokenRequest.html</anchorfile>
-      <anchor>ae265dea49e9f4ef5d140354db89aa709</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>ClientId</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1TokenRequest.html</anchorfile>
-      <anchor>ab062a0b9b8f1858a23332712e7040fdd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>ClientSecret</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Requests_1_1TokenRequest.html</anchorfile>
-      <anchor>a5cc58192df7bb1031f91932eb32a7273</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="namespace">
     <name>Google::Apis::Auth::OAuth2::Responses</name>
@@ -1816,13 +1918,6 @@
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::Responses::TokenErrorResponse</name>
     <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Responses_1_1TokenErrorResponse.html</filename>
-    <member kind="function">
-      <type>override string</type>
-      <name>ToString</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Responses_1_1TokenErrorResponse.html</anchorfile>
-      <anchor>a17059bdeb6bd17c4fcb5b6bf99866f7d</anchor>
-      <arglist>()</arglist>
-    </member>
     <member kind="function">
       <type></type>
       <name>TokenErrorResponse</name>
@@ -1940,55 +2035,6 @@
     <name>Google::Apis::Auth::OAuth2::Web::AuthorizationCodeWebApp</name>
     <filename>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</filename>
     <class kind="class">Google::Apis::Auth::OAuth2::Web::AuthorizationCodeWebApp::AuthResult</class>
-    <member kind="function">
-      <type></type>
-      <name>AuthorizationCodeWebApp</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
-      <anchor>a9c7fe9a9c721cb03acb9f06cefa62b1c</anchor>
-      <arglist>(IAuthorizationCodeFlow flow, string redirectUri, string state)</arglist>
-    </member>
-    <member kind="function">
-      <type>async Task&lt; AuthResult &gt;</type>
-      <name>AuthorizeAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
-      <anchor>a955aa2de4606b356b399b9ca5edd3194</anchor>
-      <arglist>(string userId, CancellationToken taskCancellationToken)</arglist>
-    </member>
-    <member kind="variable">
-      <type>const string</type>
-      <name>StateKey</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
-      <anchor>a8acac8a8b41b7741d74d95d45f9987f0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>const int</type>
-      <name>StateRandomLength</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
-      <anchor>acc49c233e5c56592064ab8b3328d964b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IAuthorizationCodeFlow</type>
-      <name>Flow</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
-      <anchor>a42597ba89dfdd3940830b5ec45f4aff0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>RedirectUri</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
-      <anchor>a59dc40fe8ed51965ea1a6541bb5bd6a4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>State</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Auth_1_1OAuth2_1_1Web_1_1AuthorizationCodeWebApp.html</anchorfile>
-      <anchor>a134645b54f63f84c492acf9749ddbb1f</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Auth::OAuth2::Web::AuthorizationCodeWebApp::AuthResult</name>
@@ -2025,27 +2071,31 @@
     <class kind="interface">Google::Apis::Discovery::IParameter</class>
     <class kind="class">Google::Apis::Discovery::Parameter</class>
     <member kind="enumeration">
+      <type></type>
       <name>DiscoveryVersion</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Discovery.html</anchorfile>
       <anchor>af6ecb2d16d9d7abf980b915754eb0c76</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Version_1_0</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Discovery.html</anchorfile>
-      <anchor>af6ecb2d16d9d7abf980b915754eb0c76</anchor>
+      <anchor>af6ecb2d16d9d7abf980b915754eb0c76ae9914d03abe9cb6381eba59283eb96e7</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
+      <type></type>
       <name>Features</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Discovery.html</anchorfile>
       <anchor>a26a1886e6cd81a5e19834aef318ecf85</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>LegacyDataResponse</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Discovery.html</anchorfile>
-      <anchor>a26a1886e6cd81a5e19834aef318ecf85</anchor>
+      <anchor>a26a1886e6cd81a5e19834aef318ecf85aedc5b78ce04c0d5a655567c735d6bd1f</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -2092,41 +2142,6 @@
     <name>Google::Apis::Discovery::Parameter</name>
     <filename>classGoogle_1_1Apis_1_1Discovery_1_1Parameter.html</filename>
     <base>Google::Apis::Discovery::IParameter</base>
-    <member kind="property">
-      <type>string</type>
-      <name>Name</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Discovery_1_1Parameter.html</anchorfile>
-      <anchor>aed15a3dd52c6e6189e624823ffcdf94c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>Pattern</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Discovery_1_1Parameter.html</anchorfile>
-      <anchor>a309d71f4ecea61a61af01bd09eedfd96</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>bool</type>
-      <name>IsRequired</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Discovery_1_1Parameter.html</anchorfile>
-      <anchor>ad0a744cd949d08d2f0a484dc0857b773</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>ParameterType</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Discovery_1_1Parameter.html</anchorfile>
-      <anchor>aea903286d52c414a2b0f0488ef43f318</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>DefaultValue</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Discovery_1_1Parameter.html</anchorfile>
-      <anchor>a5838149c65bc038699d1558fc53ac5e7</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="namespace">
     <name>Google::Apis::Download</name>
@@ -2135,33 +2150,38 @@
     <class kind="interface">Google::Apis::Download::IMediaDownloader</class>
     <class kind="class">Google::Apis::Download::MediaDownloader</class>
     <member kind="enumeration">
+      <type></type>
       <name>DownloadStatus</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Download.html</anchorfile>
       <anchor>a897888bf4394d1bc76b84acdb155ffeb</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>NotStarted</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Download.html</anchorfile>
-      <anchor>a897888bf4394d1bc76b84acdb155ffeb</anchor>
+      <anchor>a897888bf4394d1bc76b84acdb155ffebafa7be7845bc42b3491d9d0377958be94</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Downloading</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Download.html</anchorfile>
-      <anchor>a897888bf4394d1bc76b84acdb155ffeb</anchor>
+      <anchor>a897888bf4394d1bc76b84acdb155ffebac7e71badf20a04f36d11be557ceb7a5b</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Completed</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Download.html</anchorfile>
-      <anchor>a897888bf4394d1bc76b84acdb155ffeb</anchor>
+      <anchor>a897888bf4394d1bc76b84acdb155ffeba07ca5050e697392c9ed47e6453f1453f</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Failed</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Download.html</anchorfile>
-      <anchor>a897888bf4394d1bc76b84acdb155ffeb</anchor>
+      <anchor>a897888bf4394d1bc76b84acdb155ffebad7c8c85bf79bbe1b7188497c32c3b0ca</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -2233,7 +2253,6 @@
     <name>Google::Apis::Download::MediaDownloader</name>
     <filename>classGoogle_1_1Apis_1_1Download_1_1MediaDownloader.html</filename>
     <base>Google::Apis::Download::IMediaDownloader</base>
-    <class kind="class">Google::Apis::Download::MediaDownloader::DownloadProgress</class>
     <member kind="function">
       <type></type>
       <name>MediaDownloader</name>
@@ -2276,13 +2295,6 @@
       <anchor>a17b58acaf0e8973996c8d3034d55cd17</anchor>
       <arglist></arglist>
     </member>
-    <member kind="event">
-      <type>Action&lt; IDownloadProgress &gt;</type>
-      <name>ProgressChanged</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Download_1_1MediaDownloader.html</anchorfile>
-      <anchor>a44e2c07812cca67251f83907cbd5ea05</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="namespace">
     <name>Google::Apis::Http</name>
@@ -2304,27 +2316,31 @@
     <class kind="interface">Google::Apis::Http::IHttpUnsuccessfulResponseHandler</class>
     <class kind="class">Google::Apis::Http::MaxUrlLengthInterceptor</class>
     <member kind="enumeration">
+      <type></type>
       <name>ExponentialBackOffPolicy</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Http.html</anchorfile>
       <anchor>a0bcc672afd8ddb40cf5fd149aa40f3e2</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>None</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Http.html</anchorfile>
-      <anchor>a0bcc672afd8ddb40cf5fd149aa40f3e2</anchor>
+      <anchor>a0bcc672afd8ddb40cf5fd149aa40f3e2a6adf97f83acf6453d4a6a4b1070f3754</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Exception</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Http.html</anchorfile>
-      <anchor>a0bcc672afd8ddb40cf5fd149aa40f3e2</anchor>
+      <anchor>a0bcc672afd8ddb40cf5fd149aa40f3e2ab0d4998a26f5b5742ad38c4af8817e32</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>UnsuccessfulResponse503</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Http.html</anchorfile>
-      <anchor>a0bcc672afd8ddb40cf5fd149aa40f3e2</anchor>
+      <anchor>a0bcc672afd8ddb40cf5fd149aa40f3e2a21ef1e90bb8350262502f56559978710</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -2760,25 +2776,6 @@
       <arglist>(HandleUnsuccessfulResponseArgs args)</arglist>
     </member>
   </compound>
-  <compound kind="class">
-    <name>Google::Apis::Http::MaxUrlLengthInterceptor</name>
-    <filename>classGoogle_1_1Apis_1_1Http_1_1MaxUrlLengthInterceptor.html</filename>
-    <base>Google::Apis::Http::IHttpExecuteInterceptor</base>
-    <member kind="function">
-      <type></type>
-      <name>MaxUrlLengthInterceptor</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Http_1_1MaxUrlLengthInterceptor.html</anchorfile>
-      <anchor>afbade8edc2830af093c957e82963766c</anchor>
-      <arglist>(uint maxUrlLength)</arglist>
-    </member>
-    <member kind="function">
-      <type>Task</type>
-      <name>InterceptAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Http_1_1MaxUrlLengthInterceptor.html</anchorfile>
-      <anchor>a127ce4cf7fad16ea0230b555afccb1cb</anchor>
-      <arglist>(HttpRequestMessage request, CancellationToken cancellationToken)</arglist>
-    </member>
-  </compound>
   <compound kind="namespace">
     <name>Google::Apis::Json</name>
     <filename>namespaceGoogle_1_1Apis_1_1Json.html</filename>
@@ -2794,34 +2791,6 @@
   <compound kind="class">
     <name>Google::Apis::Json::RFC3339DateTimeConverter</name>
     <filename>classGoogle_1_1Apis_1_1Json_1_1RFC3339DateTimeConverter.html</filename>
-    <member kind="function">
-      <type>override object</type>
-      <name>ReadJson</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Json_1_1RFC3339DateTimeConverter.html</anchorfile>
-      <anchor>ad99979f8fb93541ef1f7aec39e489fc2</anchor>
-      <arglist>(Newtonsoft.Json.JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)</arglist>
-    </member>
-    <member kind="function">
-      <type>override bool</type>
-      <name>CanConvert</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Json_1_1RFC3339DateTimeConverter.html</anchorfile>
-      <anchor>aa30165e523844bfc33c660eb3a7527d2</anchor>
-      <arglist>(Type objectType)</arglist>
-    </member>
-    <member kind="function">
-      <type>override void</type>
-      <name>WriteJson</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Json_1_1RFC3339DateTimeConverter.html</anchorfile>
-      <anchor>a386f546a3e4eb603f4aea426b701cc95</anchor>
-      <arglist>(JsonWriter writer, object value, JsonSerializer serializer)</arglist>
-    </member>
-    <member kind="property">
-      <type>override bool</type>
-      <name>CanRead</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Json_1_1RFC3339DateTimeConverter.html</anchorfile>
-      <anchor>a3f899ad1507caa19b046dd98457e2be1</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Json::NewtonsoftJsonSerializer</name>
@@ -2867,13 +2836,6 @@
       <name>Instance</name>
       <anchorfile>classGoogle_1_1Apis_1_1Json_1_1NewtonsoftJsonSerializer.html</anchorfile>
       <anchor>ac176681c2e8c615fae4d41572002cc9e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>Format</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Json_1_1NewtonsoftJsonSerializer.html</anchorfile>
-      <anchor>abde6125fde6be0dc19abf953d2cf428b</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -2997,13 +2959,6 @@
       <anchor>a8b7228e55363c5df52353b023b9f300e</anchor>
       <arglist>(string message, params object[] formatArgs)</arglist>
     </member>
-    <member kind="property">
-      <type>bool</type>
-      <name>IsDebugEnabled</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Logging_1_1NullLogger.html</anchorfile>
-      <anchor>a158dc66f2b3f2fd26399f5e12d7495a6</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>Google::Apis::Logging::Log4NetLogger</name>
@@ -3072,23 +3027,16 @@
       <anchor>a0f91efb11651ceb4846ace946a6ac0e4</anchor>
       <arglist>(string message, params object[] formatArgs)</arglist>
     </member>
-    <member kind="property">
-      <type>bool</type>
-      <name>IsDebugEnabled</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Logging_1_1Log4NetLogger.html</anchorfile>
-      <anchor>a3225e88a6cd314e24f43c1d9391c2be5</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="namespace">
     <name>Google::Apis::Requests</name>
     <filename>namespaceGoogle_1_1Apis_1_1Requests.html</filename>
     <namespace>Google::Apis::Requests::Parameters</namespace>
     <class kind="class">Google::Apis::Requests::BatchRequest</class>
-    <class kind="class">Google::Apis::Requests::ClientServiceRequest-g</class>
+    <class kind="class">Google::Apis::Requests::ClientServiceRequest&lt; TResponse &gt;</class>
     <class kind="class">Google::Apis::Requests::HttpRequestMessageExtenstions</class>
     <class kind="interface">Google::Apis::Requests::IClientServiceRequest</class>
-    <class kind="interface">Google::Apis::Requests::IClientServiceRequest-g</class>
+    <class kind="interface">Google::Apis::Requests::IClientServiceRequest&lt; TResponse &gt;</class>
     <class kind="interface">Google::Apis::Requests::IDirectResponseSchema</class>
     <class kind="class">Google::Apis::Requests::RequestBuilder</class>
     <class kind="class">Google::Apis::Requests::RequestError</class>
@@ -3097,8 +3045,6 @@
   <compound kind="class">
     <name>Google::Apis::Requests::BatchRequest</name>
     <filename>classGoogle_1_1Apis_1_1Requests_1_1BatchRequest.html</filename>
-    <class kind="class">Google::Apis::Requests::BatchRequest::InnerRequest</class>
-    <class kind="class">Google::Apis::Requests::BatchRequest::InnerRequest-g</class>
     <member kind="function">
       <type>delegate void</type>
       <name>OnResponse&lt; in TResponse &gt;</name>
@@ -3150,160 +3096,86 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>Google::Apis::Requests::ClientServiceRequest-g</name>
-    <filename>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</filename>
+    <name>Google::Apis::Requests::ClientServiceRequest&lt; TResponse &gt;</name>
+    <filename>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</filename>
     <templarg></templarg>
-    <base>Google::Apis::Requests::IClientServiceRequest</base>
+    <base>Google::Apis::Requests::IClientServiceRequest&lt; TResponse &gt;</base>
     <member kind="function">
       <type>TResponse</type>
       <name>Execute</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a81eb8c843193ed6ddf1e343545247655</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>Stream</type>
       <name>ExecuteAsStream</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a37289cba8927d6c3b5fec8294e58de7f</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>async Task&lt; TResponse &gt;</type>
       <name>ExecuteAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a14cb70db90af6d3aeeeee4ae4d70740b</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>async Task&lt; TResponse &gt;</type>
       <name>ExecuteAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a96bd61761c657780940bcd705fc7178f</anchor>
       <arglist>(CancellationToken cancellationToken)</arglist>
     </member>
     <member kind="function">
       <type>async Task&lt; Stream &gt;</type>
       <name>ExecuteAsStreamAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a01455230ddc09334bbf48d18f66aa478</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>async Task&lt; Stream &gt;</type>
       <name>ExecuteAsStreamAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a933752f3e3d01b161647c80750350937</anchor>
       <arglist>(CancellationToken cancellationToken)</arglist>
     </member>
     <member kind="function">
       <type>HttpRequestMessage</type>
       <name>CreateRequest</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>ae8904febaf5a2c78346ad67de6c1f95f</anchor>
       <arglist>(Nullable&lt; bool &gt; overrideGZipEnabled=null)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type></type>
       <name>ClientServiceRequest</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>ad00c8a4da31c814d5e3acddb5f7d498c</anchor>
       <arglist>(IClientService service)</arglist>
     </member>
     <member kind="function" protection="protected" virtualness="virtual">
       <type>virtual void</type>
       <name>InitParameters</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a060892f57b588f79983d70dd998d6963</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>string</type>
       <name>GenerateRequestUri</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>ac69944d28a418e752ad8f368f5732f7a</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" protection="protected" virtualness="virtual">
-      <type>virtual object</type>
-      <name>GetBody</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
-      <anchor>aec16905b31480873d9b89eb24c680343</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="property">
       <type>ETagAction</type>
       <name>ETagAction</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a11a4dfccbdacf14ca6a05ef6e8861647</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>abstract string</type>
-      <name>MethodName</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
-      <anchor>a0808c5a545850acec7f74fc114b5835f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>abstract string</type>
-      <name>RestPath</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
-      <anchor>a5a880cf8c7c87340b901a12a7ce791ce</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>abstract string</type>
-      <name>HttpMethod</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
-      <anchor>aa663dda41f8c5cdc2137c1109ff40065</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IDictionary&lt; string, IParameter &gt;</type>
-      <name>RequestParameters</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
-      <anchor>a9425bf375875ca12a6cbd01f97218dc2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IClientService</type>
-      <name>Service</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1ClientServiceRequest-g.html</anchorfile>
-      <anchor>a5c47649525b560fdde995d03f5316be6</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="interface">
-    <name>Google::Apis::Requests::IClientServiceRequest</name>
-    <filename>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</filename>
-    <member kind="function">
-      <type>HttpRequestMessage</type>
-      <name>CreateRequest</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</anchorfile>
-      <anchor>a743b5a4e2dd948474b9fcdb7b7827254</anchor>
-      <arglist>(Nullable&lt; bool &gt; overrideGZipEnabled=null)</arglist>
-    </member>
-    <member kind="function">
-      <type>Task&lt; Stream &gt;</type>
-      <name>ExecuteAsStreamAsync</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</anchorfile>
-      <anchor>a4949a547c81ead443b3fab0198e23704</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Task&lt; Stream &gt;</type>
-      <name>ExecuteAsStreamAsync</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</anchorfile>
-      <anchor>a48a87d8104deee360ba1e3fbb479be88</anchor>
-      <arglist>(CancellationToken cancellationToken)</arglist>
-    </member>
-    <member kind="function">
-      <type>Stream</type>
-      <name>ExecuteAsStream</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</anchorfile>
-      <anchor>a60d59c69eff08d2a9addc8725315e9fd</anchor>
-      <arglist>()</arglist>
     </member>
     <member kind="property">
       <type>string</type>
@@ -3342,28 +3214,60 @@
     </member>
   </compound>
   <compound kind="interface">
-    <name>Google::Apis::Requests::IClientServiceRequest-g</name>
-    <filename>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest-g.html</filename>
+    <name>Google::Apis::Requests::IClientServiceRequest</name>
+    <filename>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</filename>
+    <member kind="function">
+      <type>HttpRequestMessage</type>
+      <name>CreateRequest</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</anchorfile>
+      <anchor>a743b5a4e2dd948474b9fcdb7b7827254</anchor>
+      <arglist>(Nullable&lt; bool &gt; overrideGZipEnabled=null)</arglist>
+    </member>
+    <member kind="function">
+      <type>Task&lt; Stream &gt;</type>
+      <name>ExecuteAsStreamAsync</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</anchorfile>
+      <anchor>a4949a547c81ead443b3fab0198e23704</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Task&lt; Stream &gt;</type>
+      <name>ExecuteAsStreamAsync</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</anchorfile>
+      <anchor>a48a87d8104deee360ba1e3fbb479be88</anchor>
+      <arglist>(CancellationToken cancellationToken)</arglist>
+    </member>
+    <member kind="function">
+      <type>Stream</type>
+      <name>ExecuteAsStream</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest.html</anchorfile>
+      <anchor>a60d59c69eff08d2a9addc8725315e9fd</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="interface">
+    <name>Google::Apis::Requests::IClientServiceRequest&lt; TResponse &gt;</name>
+    <filename>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest_3_01TResponse_01_4.html</filename>
     <templarg></templarg>
     <base>Google::Apis::Requests::IClientServiceRequest</base>
     <member kind="function">
       <type>Task&lt; TResponse &gt;</type>
       <name>ExecuteAsync</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest-g.html</anchorfile>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a6a7454a99fc79d896d5a3aa9e15c8a0c</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>Task&lt; TResponse &gt;</type>
       <name>ExecuteAsync</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest-g.html</anchorfile>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>a33927d4a38bba9a80d7bfcd256e16f0a</anchor>
       <arglist>(CancellationToken cancellationToken)</arglist>
     </member>
     <member kind="function">
       <type>TResponse</type>
       <name>Execute</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest-g.html</anchorfile>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Requests_1_1IClientServiceRequest_3_01TResponse_01_4.html</anchorfile>
       <anchor>ad5a3fd92a5ef4a982cc4d45b2ee933d6</anchor>
       <arglist>()</arglist>
     </member>
@@ -3436,23 +3340,18 @@
     <name>Google::Apis::Requests::RequestError</name>
     <filename>classGoogle_1_1Apis_1_1Requests_1_1RequestError.html</filename>
     <member kind="enumeration">
+      <type></type>
       <name>ErrorCodes</name>
       <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1RequestError.html</anchorfile>
       <anchor>a0c8ab7f1e6a6075cbf5e2817e59ce5e2</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>ETagConditionFailed</name>
       <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1RequestError.html</anchorfile>
-      <anchor>a0c8ab7f1e6a6075cbf5e2817e59ce5e2</anchor>
+      <anchor>a0c8ab7f1e6a6075cbf5e2817e59ce5e2ada63d99119f629ac01573f067089fe87</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>override string</type>
-      <name>ToString</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1RequestError.html</anchorfile>
-      <anchor>ad94c01fcee9350fe3dc33dc2a97ea23e</anchor>
-      <arglist>()</arglist>
     </member>
     <member kind="property">
       <type>IList&lt; SingleError &gt;</type>
@@ -3479,13 +3378,6 @@
   <compound kind="class">
     <name>Google::Apis::Requests::SingleError</name>
     <filename>classGoogle_1_1Apis_1_1Requests_1_1SingleError.html</filename>
-    <member kind="function">
-      <type>override string</type>
-      <name>ToString</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Requests_1_1SingleError.html</anchorfile>
-      <anchor>ad4f72c6655c706d8015f361ccf133b3a</anchor>
-      <arglist>()</arglist>
-    </member>
     <member kind="property">
       <type>string</type>
       <name>Domain</name>
@@ -3642,13 +3534,6 @@
       <anchor>a96f4bfb4a959af3f34af7a3218ef77b3</anchor>
       <arglist>(HttpResponseMessage response)</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>Dispose</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>a595edfa543239e57ef4cdf70b3289b05</anchor>
-      <arglist>()</arglist>
-    </member>
     <member kind="function" protection="protected">
       <type></type>
       <name>BaseClientService</name>
@@ -3666,71 +3551,71 @@
     <member kind="property">
       <type>ConfigurableHttpClient</type>
       <name>HttpClient</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>aa41faa13ac02f1f78ff42a72055c7120</anchor>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>ace19b564df8f7a4aeda2216f2329c249</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>IConfigurableHttpClientInitializer</type>
       <name>HttpClientInitializer</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>aed1767f6bedae930d5be6a03cfc121de</anchor>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>a050fc585c1d2cef2e3fb9eed6dcc4de5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>Name</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>a0cb200f30691b17992b3dc335ba95f10</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>BaseUri</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>a4c6ebbda1a0f2b2ed8f6a241a87e50a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>string</type>
+      <name>BasePath</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>a71091893ef4e1ec72f2e5251bb6ac704</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="property">
+      <type>IList&lt; string &gt;</type>
+      <name>Features</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>a9c08fefd95d342ff3f8fdf7c8a619f65</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>bool</type>
       <name>GZipEnabled</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>a27f1175f4c80550f03845ca582c0b41f</anchor>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>a1bdd8a0af72f55397ea988674f774d46</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>string</type>
       <name>ApiKey</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>af6c9bc8042fac9b6f166ad18c31fb176</anchor>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>ac928887e74688a94e5c9c00f49d3e7d3</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>string</type>
       <name>ApplicationName</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>abebb7d350578580ee1e77ab206b26628</anchor>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>adf0509e150f932decf05e50ed44eb4a8</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>ISerializer</type>
       <name>Serializer</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>acb585e52806b1976f67389b7897b5643</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>abstract string</type>
-      <name>Name</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>a22229fe5291a0afadf73d929a7311a42</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>abstract string</type>
-      <name>BaseUri</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>ab40c60cef32c1cf4009cd987c6f9f722</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>abstract string</type>
-      <name>BasePath</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>a5d2ed5ba481f707f2202d580e400d4af</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>abstract IList&lt; string &gt;</type>
-      <name>Features</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Services_1_1BaseClientService.html</anchorfile>
-      <anchor>a5234b55e84556c8e664016d209a0402e</anchor>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
+      <anchor>a58e4de84ec1db54f24853c42470a2d8c</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -3832,116 +3717,53 @@
       <anchor>a0483968fae0c0fd85fec88b3af36b220</anchor>
       <arglist>(HttpResponseMessage response)</arglist>
     </member>
-    <member kind="property">
-      <type>ConfigurableHttpClient</type>
-      <name>HttpClient</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>ace19b564df8f7a4aeda2216f2329c249</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IConfigurableHttpClientInitializer</type>
-      <name>HttpClientInitializer</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>a050fc585c1d2cef2e3fb9eed6dcc4de5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>Name</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>a0cb200f30691b17992b3dc335ba95f10</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>BaseUri</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>a4c6ebbda1a0f2b2ed8f6a241a87e50a7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>BasePath</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>a71091893ef4e1ec72f2e5251bb6ac704</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>IList&lt; string &gt;</type>
-      <name>Features</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>a9c08fefd95d342ff3f8fdf7c8a619f65</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>bool</type>
-      <name>GZipEnabled</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>a1bdd8a0af72f55397ea988674f774d46</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>ApiKey</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>ac928887e74688a94e5c9c00f49d3e7d3</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>string</type>
-      <name>ApplicationName</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>adf0509e150f932decf05e50ed44eb4a8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>ISerializer</type>
-      <name>Serializer</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Services_1_1IClientService.html</anchorfile>
-      <anchor>a58e4de84ec1db54f24853c42470a2d8c</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="namespace">
     <name>Google::Apis::Upload</name>
     <filename>namespaceGoogle_1_1Apis_1_1Upload.html</filename>
     <class kind="interface">Google::Apis::Upload::IUploadProgress</class>
-    <class kind="class">Google::Apis::Upload::ResumableUpload-g</class>
+    <class kind="class">Google::Apis::Upload::ResumableUpload&lt; TRequest &gt;</class>
+    <class kind="class">Google::Apis::Upload::ResumableUpload&lt; TRequest, TResponse &gt;</class>
     <member kind="enumeration">
+      <type></type>
       <name>UploadStatus</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Upload.html</anchorfile>
       <anchor>a4c9367b7fbcb0e30d9a8fd041d98719d</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>NotStarted</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Upload.html</anchorfile>
-      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719d</anchor>
+      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719dafa7be7845bc42b3491d9d0377958be94</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Starting</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Upload.html</anchorfile>
-      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719d</anchor>
+      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719dac2efe4bbd13e6cb0db293e72884273c0</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Uploading</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Upload.html</anchorfile>
-      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719d</anchor>
+      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719da3f1c5b0049a9751e6f5f9e702b74a0dd</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Completed</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Upload.html</anchorfile>
-      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719d</anchor>
+      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719da07ca5050e697392c9ed47e6453f1453f</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Failed</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Upload.html</anchorfile>
-      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719d</anchor>
+      <anchor>a4c9367b7fbcb0e30d9a8fd041d98719dad7c8c85bf79bbe1b7188497c32c3b0ca</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -3971,177 +3793,182 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>Google::Apis::Upload::ResumableUpload-g</name>
-    <filename>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</filename>
+    <name>Google::Apis::Upload::ResumableUpload&lt; TRequest &gt;</name>
+    <filename>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</filename>
     <templarg></templarg>
-    <class kind="class">Google::Apis::Upload::ResumableUpload-g::ResumableUploadProgress</class>
-    <class kind="class">Google::Apis::Upload::ResumableUpload-g::ServerErrorCallback</class>
     <member kind="function">
       <type>IUploadProgress</type>
       <name>GetProgress</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a6a3791c8d0a6334de7eb3c71f0fd2f41</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>IUploadProgress</type>
       <name>Upload</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>ab59fd736de7cfbd1f8752ffe4242a31e</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>Task&lt; IUploadProgress &gt;</type>
       <name>UploadAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a72b308464b3454818802f406973e1a72</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>async Task&lt; IUploadProgress &gt;</type>
       <name>UploadAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a7690ac79bb948fa7faab178bf4e3de4a</anchor>
       <arglist>(CancellationToken cancellationToken)</arglist>
     </member>
     <member kind="function">
       <type>IUploadProgress</type>
       <name>Resume</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a11e5c0af94fad477f52be959dce0f5ce</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>Task&lt; IUploadProgress &gt;</type>
       <name>ResumeAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>adaa8ebf7233fa6de4fd7b84ac26d18a6</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>async Task&lt; IUploadProgress &gt;</type>
       <name>ResumeAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a18bcbec84166e418edd6c12cb1ae389a</anchor>
       <arglist>(CancellationToken cancellationToken)</arglist>
     </member>
     <member kind="variable">
       <type>const int</type>
       <name>MinimumChunkSize</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a66377e21fc1eaa7ca1154ae595f9b084</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>const int</type>
       <name>DefaultChunkSize</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a44653e34fea0574d930602660ff439e3</anchor>
       <arglist></arglist>
     </member>
     <member kind="function" protection="protected">
       <type></type>
       <name>ResumableUpload</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>ad2519530317f0b075404a918d07a90a1</anchor>
       <arglist>(IClientService service, string path, string httpMethod, Stream contentStream, string contentType)</arglist>
     </member>
     <member kind="function" protection="protected" virtualness="virtual">
       <type>virtual void</type>
       <name>ProcessResponse</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a2eba8f4b0af7d1c64b9eb14c119fba25</anchor>
       <arglist>(HttpResponseMessage httpResponse)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>async Task&lt; bool &gt;</type>
       <name>SendNextChunkAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>aaa88920dc176873958ec35e682b3edbd</anchor>
       <arglist>(Stream stream, CancellationToken cancellationToken)</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type></type>
-      <name>ResumableUpload</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
-      <anchor>ad2519530317f0b075404a918d07a90a1</anchor>
-      <arglist>(IClientService service, string path, string httpMethod, Stream contentStream, string contentType)</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>override void</type>
-      <name>ProcessResponse</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
-      <anchor>a01c3cce5cd5c77e4994c99cccfb96593</anchor>
-      <arglist>(HttpResponseMessage response)</arglist>
     </member>
     <member kind="property">
       <type>IClientService</type>
       <name>Service</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a6acea023325d888a183e24fc954b2c90</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>string</type>
       <name>Path</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>aee1b66b6c310f13697bb55f341730479</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>string</type>
       <name>HttpMethod</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a9bae6e0dcad4dd7fc96027e6abf2e6c5</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>Stream</type>
       <name>ContentStream</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a391f4280ef5dc27d28e2bfb1b4052998</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>string</type>
       <name>ContentType</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a04f78131bd7556648434b8338497cdc6</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>TRequest</type>
       <name>Body</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>a66c6f07ebbca459a4c3b90491c3d6469</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>int</type>
       <name>ChunkSize</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>ae8be093fb83c27dc10d27cbb8ce54c16</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>TResponse</type>
-      <name>ResponseBody</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
-      <anchor>a540044148efc57109271ace743070a50</anchor>
       <arglist></arglist>
     </member>
     <member kind="event">
       <type>Action&lt; IUploadProgress &gt;</type>
       <name>ProgressChanged</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_01_4.html</anchorfile>
       <anchor>af11b9bc769b4a9ff481d4e0a3000f656</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Upload::ResumableUpload&lt; TRequest, TResponse &gt;</name>
+    <filename>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_00_01TResponse_01_4.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <base>Google::Apis::Upload::ResumableUpload&lt; TRequest &gt;</base>
+    <member kind="function" protection="protected">
+      <type></type>
+      <name>ResumableUpload</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_00_01TResponse_01_4.html</anchorfile>
+      <anchor>a98f3f4bf9a176156b73a87c4d326c8f0</anchor>
+      <arglist>(IClientService service, string path, string httpMethod, Stream contentStream, string contentType)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>override void</type>
+      <name>ProcessResponse</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_00_01TResponse_01_4.html</anchorfile>
+      <anchor>aff89a247b6a201e30164e29bcc63580b</anchor>
+      <arglist>(HttpResponseMessage response)</arglist>
+    </member>
+    <member kind="property">
+      <type>TResponse</type>
+      <name>ResponseBody</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_00_01TResponse_01_4.html</anchorfile>
+      <anchor>ae9bbaae98680caf6b4dc30d2f106a2f8</anchor>
       <arglist></arglist>
     </member>
     <member kind="event">
       <type>Action&lt; TResponse &gt;</type>
       <name>ResponseReceived</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload-g.html</anchorfile>
-      <anchor>a6f9f265569f25b301c519776ef6ed1bd</anchor>
+      <anchorfile>classGoogle_1_1Apis_1_1Upload_1_1ResumableUpload_3_01TRequest_00_01TResponse_01_4.html</anchorfile>
+      <anchor>a419567cde5ad3e1361c32e22824006d9</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -4154,27 +3981,30 @@
     <class kind="interface">Google::Apis::Util::IBackOff</class>
     <class kind="interface">Google::Apis::Util::IClock</class>
     <class kind="class">Google::Apis::Util::SystemClock</class>
-    <class kind="class">Google::Apis::Util::Repeatable-g</class>
+    <class kind="class">Google::Apis::Util::Repeatable&lt; T &gt;</class>
     <class kind="class">Google::Apis::Util::RequestParameterAttribute</class>
-    <class kind="class">Google::Apis::Util::StandardResponse-g</class>
+    <class kind="class">Google::Apis::Util::StandardResponse&lt; InnerType &gt;</class>
     <class kind="class">Google::Apis::Util::StringValueAttribute</class>
     <class kind="class">Google::Apis::Util::Utilities</class>
     <member kind="enumeration">
+      <type></type>
       <name>RequestParameterType</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Util.html</anchorfile>
       <anchor>a97201aa67f9d7d241b722c672945985c</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Path</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Util.html</anchorfile>
-      <anchor>a97201aa67f9d7d241b722c672945985c</anchor>
+      <anchor>a97201aa67f9d7d241b722c672945985caac70412e939d72a9234cdebb1af5867b</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <type>@</type>
       <name>Query</name>
       <anchorfile>namespaceGoogle_1_1Apis_1_1Util.html</anchorfile>
-      <anchor>a97201aa67f9d7d241b722c672945985c</anchor>
+      <anchor>a97201aa67f9d7d241b722c672945985ca66c1b4c7f3dc385b68a9fa903ccd016d</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -4217,6 +4047,13 @@
       <anchor>a906e0b63b9bac4bd3ad1c396390de4eb</anchor>
       <arglist></arglist>
     </member>
+    <member kind="property">
+      <type>int</type>
+      <name>MaxNumOfRetries</name>
+      <anchorfile>interfaceGoogle_1_1Apis_1_1Util_1_1IBackOff.html</anchorfile>
+      <anchor>ac1d3ab28b8174c0ac04a369ed5c8653b</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="interface">
     <name>Google::Apis::Util::IBackOff</name>
@@ -4227,13 +4064,6 @@
       <anchorfile>interfaceGoogle_1_1Apis_1_1Util_1_1IBackOff.html</anchorfile>
       <anchor>a4e5a5e29bef168a2d0a9a207db235d05</anchor>
       <arglist>(int currentRetry)</arglist>
-    </member>
-    <member kind="property">
-      <type>int</type>
-      <name>MaxNumOfRetries</name>
-      <anchorfile>interfaceGoogle_1_1Apis_1_1Util_1_1IBackOff.html</anchorfile>
-      <anchor>ac1d3ab28b8174c0ac04a369ed5c8653b</anchor>
-      <arglist></arglist>
     </member>
   </compound>
   <compound kind="interface">
@@ -4272,57 +4102,36 @@
       <anchor>a6ac5cec1f7de6372d79e0689c16e3c06</anchor>
       <arglist>()</arglist>
     </member>
-    <member kind="property">
-      <type>DateTime</type>
-      <name>Now</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1SystemClock.html</anchorfile>
-      <anchor>a39a0d6897bd21a5287b8119f4be1a3eb</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="property">
-      <type>DateTime</type>
-      <name>UtcNow</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1SystemClock.html</anchorfile>
-      <anchor>ace51b42687764a8d4be2902af882757d</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
-    <name>Google::Apis::Util::Repeatable-g</name>
-    <filename>classGoogle_1_1Apis_1_1Util_1_1Repeatable-g.html</filename>
+    <name>Google::Apis::Util::Repeatable&lt; T &gt;</name>
+    <filename>classGoogle_1_1Apis_1_1Util_1_1Repeatable_3_01T_01_4.html</filename>
     <templarg></templarg>
     <member kind="function">
       <type></type>
       <name>Repeatable</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Repeatable-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Repeatable_3_01T_01_4.html</anchorfile>
       <anchor>a5eeb47dfe5375406ec66cf46bb8c4677</anchor>
       <arglist>(IEnumerable&lt; T &gt; enumeration)</arglist>
-    </member>
-    <member kind="function">
-      <type>IEnumerator&lt; T &gt;</type>
-      <name>GetEnumerator</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Repeatable-g.html</anchorfile>
-      <anchor>a122f427da32007da92031cfe1a6b1b11</anchor>
-      <arglist>()</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static implicit</type>
       <name>operator Repeatable&lt; T &gt;</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Repeatable-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Repeatable_3_01T_01_4.html</anchorfile>
       <anchor>a0285284dd6dd2766eb3d491f061f6d33</anchor>
       <arglist>(T elem)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static implicit</type>
       <name>operator Repeatable&lt; T &gt;</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Repeatable-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Repeatable_3_01T_01_4.html</anchorfile>
       <anchor>a48aad90aafa4d0e18f2369898c0a53c1</anchor>
       <arglist>(T[] elem)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static implicit</type>
       <name>operator Repeatable&lt; T &gt;</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Repeatable-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Repeatable_3_01T_01_4.html</anchorfile>
       <anchor>add1d2971d0fc3c05c55887ff2ab9a3ac</anchor>
       <arglist>(List&lt; T &gt; elem)</arglist>
     </member>
@@ -4360,20 +4169,20 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>Google::Apis::Util::StandardResponse-g</name>
-    <filename>classGoogle_1_1Apis_1_1Util_1_1StandardResponse-g.html</filename>
+    <name>Google::Apis::Util::StandardResponse&lt; InnerType &gt;</name>
+    <filename>classGoogle_1_1Apis_1_1Util_1_1StandardResponse_3_01InnerType_01_4.html</filename>
     <templarg></templarg>
     <member kind="property">
       <type>InnerType</type>
       <name>Data</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1StandardResponse-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1StandardResponse_3_01InnerType_01_4.html</anchorfile>
       <anchor>ab7211ecc2610b92ffe6fc9e67cf28f2d</anchor>
       <arglist></arglist>
     </member>
     <member kind="property">
       <type>RequestError</type>
       <name>Error</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1StandardResponse-g.html</anchorfile>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1StandardResponse_3_01InnerType_01_4.html</anchorfile>
       <anchor>ae67f944e1c2f65deeb0de8772389df26</anchor>
       <arglist></arglist>
     </member>
@@ -4406,8 +4215,8 @@
     <filename>namespaceGoogle_1_1Apis_1_1Util_1_1Store.html</filename>
     <class kind="interface">Google::Apis::Util::Store::IDataStore</class>
     <class kind="class">Google::Apis::Util::Store::FileDataStore</class>
-    <class kind="class">Google::Apis::Util::Store::StroageDataStore</class>
     <class kind="class">Google::Apis::Util::Store::StorageDataStore</class>
+    <class kind="class">Google::Apis::Util::Store::PasswordVaultDataStore</class>
   </compound>
   <compound kind="interface">
     <name>Google::Apis::Util::Store::IDataStore</name>
@@ -4496,41 +4305,9 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>Google::Apis::Util::Store::StroageDataStore</name>
-    <filename>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StroageDataStore.html</filename>
-    <base>Google::Apis::Util::Store::IDataStore</base>
-    <member kind="function">
-      <type>async Task</type>
-      <name>StoreAsync&lt; T &gt;</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StroageDataStore.html</anchorfile>
-      <anchor>ad0fbadd1d208718dd891e81a1f2710ba</anchor>
-      <arglist>(string key, T value)</arglist>
-    </member>
-    <member kind="function">
-      <type>async Task</type>
-      <name>DeleteAsync&lt; T &gt;</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StroageDataStore.html</anchorfile>
-      <anchor>adc6cf4123c910fda0d689fe788690a5e</anchor>
-      <arglist>(string key)</arglist>
-    </member>
-    <member kind="function">
-      <type>async Task&lt; T &gt;</type>
-      <name>GetAsync&lt; T &gt;</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StroageDataStore.html</anchorfile>
-      <anchor>a4cb121117fa9ef4267bdaaee02b6ada5</anchor>
-      <arglist>(string key)</arglist>
-    </member>
-    <member kind="function">
-      <type>async Task</type>
-      <name>ClearAsync</name>
-      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StroageDataStore.html</anchorfile>
-      <anchor>ab00a2d8bf08e5381b5b289fed2815929</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>Google::Apis::Util::Store::StorageDataStore</name>
     <filename>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StorageDataStore.html</filename>
+    <base>Google::Apis::Util::Store::IDataStore</base>
     <base>Google::Apis::Util::Store::IDataStore</base>
     <member kind="function">
       <type>async Task</type>
@@ -4560,5 +4337,594 @@
       <anchor>a4fdb6c2e1ddc7c6c9b1f4e2ef0e3cc81</anchor>
       <arglist>()</arglist>
     </member>
+    <member kind="function">
+      <type>async Task</type>
+      <name>StoreAsync&lt; T &gt;</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StorageDataStore.html</anchorfile>
+      <anchor>a415d522defe3c24c8b51b1ec9b758c5a</anchor>
+      <arglist>(string key, T value)</arglist>
+    </member>
+    <member kind="function">
+      <type>async Task</type>
+      <name>DeleteAsync&lt; T &gt;</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StorageDataStore.html</anchorfile>
+      <anchor>afe7889786ea1c07651ba951982b36d13</anchor>
+      <arglist>(string key)</arglist>
+    </member>
+    <member kind="function">
+      <type>async Task&lt; T &gt;</type>
+      <name>GetAsync&lt; T &gt;</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StorageDataStore.html</anchorfile>
+      <anchor>a57e6d35d5f587ee8712821dfa2de8cb3</anchor>
+      <arglist>(string key)</arglist>
+    </member>
+    <member kind="function">
+      <type>async Task</type>
+      <name>ClearAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1StorageDataStore.html</anchorfile>
+      <anchor>a4fdb6c2e1ddc7c6c9b1f4e2ef0e3cc81</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>Google::Apis::Util::Store::PasswordVaultDataStore</name>
+    <filename>classGoogle_1_1Apis_1_1Util_1_1Store_1_1PasswordVaultDataStore.html</filename>
+    <base>Google::Apis::Util::Store::IDataStore</base>
+    <member kind="function">
+      <type>Task</type>
+      <name>StoreAsync&lt; T &gt;</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1PasswordVaultDataStore.html</anchorfile>
+      <anchor>a916792b6b2be6a67f0656d88b384f537</anchor>
+      <arglist>(string key, T value)</arglist>
+    </member>
+    <member kind="function">
+      <type>Task</type>
+      <name>DeleteAsync&lt; T &gt;</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1PasswordVaultDataStore.html</anchorfile>
+      <anchor>a867eec0b6a5b629591e07976be297b3f</anchor>
+      <arglist>(string key)</arglist>
+    </member>
+    <member kind="function">
+      <type>Task&lt; T &gt;</type>
+      <name>GetAsync&lt; T &gt;</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1PasswordVaultDataStore.html</anchorfile>
+      <anchor>a5c357a0cc7bc0075a6436eda54c29c4f</anchor>
+      <arglist>(string key)</arglist>
+    </member>
+    <member kind="function">
+      <type>Task</type>
+      <name>ClearAsync</name>
+      <anchorfile>classGoogle_1_1Apis_1_1Util_1_1Store_1_1PasswordVaultDataStore.html</anchorfile>
+      <anchor>a963e98b819ff4c46b0e774be9628ae98</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="dir">
+    <name>[Media]</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis/Apis/[Media]/</path>
+    <filename>dir_84eca1a64f617fb2a1e48ad53b782845.html</filename>
+    <dir>Download</dir>
+    <dir>Upload</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Apis</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Windows/Apis/</path>
+    <filename>dir_0abf00992c24df1642f9f9f0217b1c7f.html</filename>
+    <dir>Util</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Apis</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP81/Apis/</path>
+    <filename>dir_8d66b005e0913c5dc34c942bad9a8c4d.html</filename>
+    <dir>Util</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Apis</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.DotNet4/Apis/</path>
+    <filename>dir_418c128f7de7a35c54b15460fde85362.html</filename>
+    <dir>Logging</dir>
+    <dir>Util</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Apis</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP/Apis/</path>
+    <filename>dir_58cdca6311b786d96fa97d3e269b39a7.html</filename>
+    <dir>Util</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Apis</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis/Apis/</path>
+    <filename>dir_378bd959d4077fb67acfffe3533a191b.html</filename>
+    <dir>[Media]</dir>
+    <dir>Requests</dir>
+    <dir>Services</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Apis</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Apis/</path>
+    <filename>dir_d491e182530bf1df139afbb2810f6069.html</filename>
+    <dir>Discovery</dir>
+    <dir>Http</dir>
+    <dir>Json</dir>
+    <dir>Logging</dir>
+    <dir>Requests</dir>
+    <dir>Util</dir>
+    <file>ISerializer.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Controllers</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.Mvc4/OAuth2/Mvc/Controllers/</path>
+    <filename>dir_cc12b5ed5f733641a8374d4ca4adbb0e.html</filename>
+    <file>AuthCallbackController.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>default</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/</path>
+    <filename>dir_68e462a361a1a7b54db7746a47331b19.html</filename>
+    <dir>Src</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Discovery</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Apis/Discovery/</path>
+    <filename>dir_626de13b6ddd05a106f6fdda6770079f.html</filename>
+    <file>DiscoveryVersion.cs</file>
+    <file>Features.cs</file>
+    <file>IParameter.cs</file>
+    <file>Parameter.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Download</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis/Apis/[Media]/Download/</path>
+    <filename>dir_b2780c808d2e7b07144aa2901094ccd0.html</filename>
+    <file>IDownloadProgress.cs</file>
+    <file>IMediaDownloader.cs</file>
+    <file>MediaDownloader.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Filters</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.Mvc4/OAuth2/Mvc/Filters/</path>
+    <filename>dir_227ab2626c31253217a62586e8123216.html</filename>
+    <file>AuthActionFilter.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Flows</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth/OAuth2/Flows/</path>
+    <filename>dir_7a2a9ffd28460054c43623abad3da4a8.html</filename>
+    <file>AuthorizationCodeFlow.cs</file>
+    <file>GoogleAuthorizationCodeFlow.cs</file>
+    <file>IAuthorizationCodeFlow.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis/</path>
+    <filename>dir_9b18da597ad5621ea2991e74aa096d35.html</filename>
+    <dir>Apis</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.Auth</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth/</path>
+    <filename>dir_f267e8ca07589908d9271679184c5bcb.html</filename>
+    <dir>OAuth2</dir>
+    <dir>Properties</dir>
+    <file>GoogleJsonWebSignature.cs</file>
+    <file>JsonWebSignature.cs</file>
+    <file>JsonWebToken.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.Auth.DotNet4</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.DotNet4/</path>
+    <filename>dir_a1a83bc1215c626df272642bdf94d16e.html</filename>
+    <dir>OAuth2</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.Auth.Mvc4</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.Mvc4/</path>
+    <filename>dir_474de0994f1d82fcf3303883bdf44449.html</filename>
+    <dir>OAuth2</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.Auth.Windows</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.Windows/</path>
+    <filename>dir_f0b392fbae9453917527e464e4fa429f.html</filename>
+    <dir>OAuth2</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.Auth.WP</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.WP/</path>
+    <filename>dir_972c80019d8f63bcaa1974649bcd833d.html</filename>
+    <dir>OAuth2</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.Auth.WP81</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.WP81/</path>
+    <filename>dir_ade386144ff0cdf4394b250ff7efd587.html</filename>
+    <dir>OAuth2</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.Core</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/</path>
+    <filename>dir_946f78e9fe0c0cb23d48459d8137ad79.html</filename>
+    <dir>Apis</dir>
+    <dir>Properties</dir>
+    <file>ApplicationContext.cs</file>
+    <file>GoogleApiException.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.DotNet4</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.DotNet4/</path>
+    <filename>dir_5321764af0ce56359b02f75fd41c5f6e.html</filename>
+    <dir>Apis</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.Windows</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Windows/</path>
+    <filename>dir_7ed5cca2c9843580cead78f48158d091.html</filename>
+    <dir>Apis</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.WP</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP/</path>
+    <filename>dir_a12c766c12272231d3bfb01ded246453.html</filename>
+    <dir>Apis</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>GoogleApis.WP81</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP81/</path>
+    <filename>dir_71ef55c7dd4757417dce5282a6f6ac9d.html</filename>
+    <dir>Apis</dir>
+    <dir>Properties</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Http</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Apis/Http/</path>
+    <filename>dir_75182a481fcaf725ac31cf6de4856499.html</filename>
+    <file>BackOffHandler.cs</file>
+    <file>ConfigurableHttpClient.cs</file>
+    <file>ConfigurableMessageHandler.cs</file>
+    <file>ExponentialBackOffInitializer.cs</file>
+    <file>HttpClientFactory.cs</file>
+    <file>HttpConsts.cs</file>
+    <file>HttpExtenstions.cs</file>
+    <file>IConfigurableHttpClientInitializer.cs</file>
+    <file>IHttpClientFactory.cs</file>
+    <file>IHttpExceptionHandler.cs</file>
+    <file>IHttpExecuteInterceptor.cs</file>
+    <file>IHttpUnsuccessfulResponseHandler.cs</file>
+    <file>MaxUrlLengthInterceptor.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Json</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Apis/Json/</path>
+    <filename>dir_c35f7d57e8ee6d8498fb5a5c5f513c79.html</filename>
+    <file>IJsonSerializer.cs</file>
+    <file>NewtonsoftJsonSerializer.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Logging</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.DotNet4/Apis/Logging/</path>
+    <filename>dir_0282df38bf61baae813df4beedf36398.html</filename>
+    <file>Log4NetLogger.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Logging</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Apis/Logging/</path>
+    <filename>dir_e1a40de0ac988d5f8cb979e9310a59ca.html</filename>
+    <file>ILogger.cs</file>
+    <file>NullLogger.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Mvc</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.Mvc4/OAuth2/Mvc/</path>
+    <filename>dir_ee0e01f8fa084c6f2aa4c93673bd0f64.html</filename>
+    <dir>Controllers</dir>
+    <dir>Filters</dir>
+    <file>AuthorizationCodeMvcApp.cs</file>
+    <file>FlowMetadata.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>OAuth2</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.DotNet4/OAuth2/</path>
+    <filename>dir_be1a34b66fd5990f8054c19ced2f7ee2.html</filename>
+    <file>GoogleApis.Auth.DotNet4/OAuth2/GoogleWebAuthorizationBroker.cs</file>
+    <file>LocalServerCodeReceiver.cs</file>
+    <file>PromptCodeReceiver.cs</file>
+    <file>ServiceAccountCredential.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>OAuth2</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth/OAuth2/</path>
+    <filename>dir_4c0319a4ee5debf8bc880e2cacb3edbc.html</filename>
+    <dir>Flows</dir>
+    <dir>Requests</dir>
+    <dir>Responses</dir>
+    <dir>Web</dir>
+    <file>AuthorizationCodeInstalledApp.cs</file>
+    <file>BearerToken.cs</file>
+    <file>ClientSecrets.cs</file>
+    <file>ComputeCredential.cs</file>
+    <file>GoogleClientSecrets.cs</file>
+    <file>GoogleConsts.cs</file>
+    <file>IAccessMethod.cs</file>
+    <file>IAuthorizationCodeInstalledApp.cs</file>
+    <file>ICodeReceiver.cs</file>
+    <file>ServiceCredential.cs</file>
+    <file>UserCredential.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>OAuth2</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.WP81/OAuth2/</path>
+    <filename>dir_8b7984ea9ffc09dc02a03bb7b562497c.html</filename>
+    <file>GoogleApis.Auth.WP81/OAuth2/AuthorizationCodeBroker.cs</file>
+    <file>1/OAuth2/AuthorizationCodeWPInstalledApp.cs</file>
+    <file>GoogleApis.Auth.WP81/OAuth2/GoogleWebAuthorizationBroker.cs</file>
+    <file>SerializableWebAuthResult.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>OAuth2</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.WP/OAuth2/</path>
+    <filename>dir_40c678c40198801e2e5f42733c138d93.html</filename>
+    <file>GoogleApis.Auth.WP/OAuth2/AuthorizationCodeBroker.cs</file>
+    <file>OAuth2/AuthorizationCodeWPInstalledApp.cs</file>
+    <file>GoogleApis.Auth.WP/OAuth2/GoogleWebAuthorizationBroker.cs</file>
+    <file>WebAuthenticationBrokerUserControl.xaml.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>OAuth2</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.Windows/OAuth2/</path>
+    <filename>dir_7421665612f76397d5e081f59c67791c.html</filename>
+    <file>GoogleApis.Auth.Windows/OAuth2/AuthorizationCodeBroker.cs</file>
+    <file>AuthorizationCodeWindowsInstalledApp.cs</file>
+    <file>GoogleApis.Auth.Windows/OAuth2/GoogleWebAuthorizationBroker.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>OAuth2</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.Mvc4/OAuth2/</path>
+    <filename>dir_bc0ed0f9ebae69137c978d03344c374d.html</filename>
+    <dir>Mvc</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Parameters</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Apis/Requests/Parameters/</path>
+    <filename>dir_daa8e541ae08569d487f799f21828072.html</filename>
+    <file>ParameterCollection.cs</file>
+    <file>ParameterUtils.cs</file>
+    <file>ParameterValidator.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP81/Properties/</path>
+    <filename>dir_3a08466f4de8b5fecf77021c00a9cb1d.html</filename>
+    <file>WP81/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP/Properties/</path>
+    <filename>dir_4ce6630a2923bd1b317f1c5a18a22bd1.html</filename>
+    <file>WP/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Windows/Properties/</path>
+    <filename>dir_bcbc253eaa7960e9cd9eab89477b5ce3.html</filename>
+    <file>Windows/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.DotNet4/Properties/</path>
+    <filename>dir_51c940bc3b93e9f84b9128f56b79b4a0.html</filename>
+    <file>DotNet4/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Properties/</path>
+    <filename>dir_f16c7508ca1892f44fd0e097125f6535.html</filename>
+    <file>Core/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.WP81/Properties/</path>
+    <filename>dir_a395005adb052d920bde4d0285bf37db.html</filename>
+    <file>Auth.WP81/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.WP/Properties/</path>
+    <filename>dir_1c0d3f1adb98462ebf3864078524edfe.html</filename>
+    <file>Auth.WP/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.Windows/Properties/</path>
+    <filename>dir_d2e012831a78c3f6d008efa33c77dc74.html</filename>
+    <file>Auth.Windows/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.Mvc4/Properties/</path>
+    <filename>dir_e3a58ca1e1fc3e9fbeacc75f5f9a569e.html</filename>
+    <file>Auth.Mvc4/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth.DotNet4/Properties/</path>
+    <filename>dir_da2f37254b7bdc973ef2342b31884d84.html</filename>
+    <file>Auth.DotNet4/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth/Properties/</path>
+    <filename>dir_946347c23534a841d1c12bdd686aaf5f.html</filename>
+    <file>Auth/Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Properties</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis/Properties/</path>
+    <filename>dir_c0c3f39bf1c5366014ddca7c343b66bc.html</filename>
+    <file>Properties/AssemblyInfo.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Protect</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP/Apis/Util/Protect/</path>
+    <filename>dir_2741a45dfc0362dca95e48746c783eb5.html</filename>
+    <file>DataProtection.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Requests</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Apis/Requests/</path>
+    <filename>dir_0515893a100bef43ba986909f1ab74dc.html</filename>
+    <dir>Parameters</dir>
+    <file>RequestBuilder.cs</file>
+    <file>RequestError.cs</file>
+    <file>SingleError.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Requests</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis/Apis/Requests/</path>
+    <filename>dir_32428288b873317426d8b6fd4828cc98.html</filename>
+    <file>BatchRequest.cs</file>
+    <file>ClientServiceRequest.cs</file>
+    <file>ETagAction.cs</file>
+    <file>HttpRequestMessageExtenstions.cs</file>
+    <file>IClientServiceRequest.cs</file>
+    <file>IDirectResponseSchema.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Requests</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth/OAuth2/Requests/</path>
+    <filename>dir_b1c77d4190d1899c610d75ee19d4ddac.html</filename>
+    <file>AuthorizationCodeRequestUrl.cs</file>
+    <file>AuthorizationCodeTokenRequest.cs</file>
+    <file>AuthorizationRequestUrl.cs</file>
+    <file>GoogleAssertionTokenRequest.cs</file>
+    <file>GoogleAuthorizationCodeRequestUrl.cs</file>
+    <file>GoogleRevokeTokenRequest.cs</file>
+    <file>RefreshTokenRequest.cs</file>
+    <file>TokenRequest.cs</file>
+    <file>TokenRequestExtenstions.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Responses</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth/OAuth2/Responses/</path>
+    <filename>dir_e93cf931afb8deee8d85f09190728ef4.html</filename>
+    <file>AuthorizationCodeResponseUrl.cs</file>
+    <file>TokenErrorResponse.cs</file>
+    <file>TokenResponse.cs</file>
+    <file>TokenResponseException.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Services</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis/Apis/Services/</path>
+    <filename>dir_32fd926de5e1e6c0d22f306358a95b46.html</filename>
+    <file>BaseClientService.cs</file>
+    <file>IClientService.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Src</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/</path>
+    <filename>dir_5e71bd7118cd27da24e3f1aab0ece227.html</filename>
+    <dir>GoogleApis</dir>
+    <dir>GoogleApis.Auth</dir>
+    <dir>GoogleApis.Auth.DotNet4</dir>
+    <dir>GoogleApis.Auth.Mvc4</dir>
+    <dir>GoogleApis.Auth.Windows</dir>
+    <dir>GoogleApis.Auth.WP</dir>
+    <dir>GoogleApis.Auth.WP81</dir>
+    <dir>GoogleApis.Core</dir>
+    <dir>GoogleApis.DotNet4</dir>
+    <dir>GoogleApis.Windows</dir>
+    <dir>GoogleApis.WP</dir>
+    <dir>GoogleApis.WP81</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Store</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP/Apis/Util/Store/</path>
+    <filename>dir_a8707332da46182533d8f4376660411b.html</filename>
+    <file>GoogleApis.WP/Apis/Util/Store/StorageDataStore.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Store</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Windows/Apis/Util/Store/</path>
+    <filename>dir_6e3da7e156d412ec544d8a3c6715f496.html</filename>
+    <file>GoogleApis.Windows/Apis/Util/Store/StorageDataStore.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Store</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP81/Apis/Util/Store/</path>
+    <filename>dir_b82664d7fb0c1b7d7fea1c3e23be530b.html</filename>
+    <file>PasswordVaultDataStore.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Store</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Apis/Util/Store/</path>
+    <filename>dir_49f1cd3dcdea348a00357afc65ed6592.html</filename>
+    <file>IDataStore.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Store</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.DotNet4/Apis/Util/Store/</path>
+    <filename>dir_d54a23a00bfbfcdfa321721912cbadec.html</filename>
+    <file>FileDataStore.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Upload</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis/Apis/[Media]/Upload/</path>
+    <filename>dir_90132f725d67e2da3b1646b7f9c9d49c.html</filename>
+    <file>IUploadProgress.cs</file>
+    <file>ResumableUpload.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Util</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Windows/Apis/Util/</path>
+    <filename>dir_cfae54aea01f63ae067cc34ee0d82cad.html</filename>
+    <dir>Store</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Util</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP81/Apis/Util/</path>
+    <filename>dir_418f10eb4a71422ab23f4c6563a076ee.html</filename>
+    <dir>Store</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Util</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.DotNet4/Apis/Util/</path>
+    <filename>dir_2a407345f198c125df7470d276ec512d.html</filename>
+    <dir>Store</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Util</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Core/Apis/Util/</path>
+    <filename>dir_0a044e58c992a5c625375d4465070ca7.html</filename>
+    <dir>Store</dir>
+    <file>ExponentialBackOff.cs</file>
+    <file>IBackOff.cs</file>
+    <file>IClock.cs</file>
+    <file>Repeatable.cs</file>
+    <file>RequestParameterAttribute.cs</file>
+    <file>StandardResponse.cs</file>
+    <file>StringValueAttribute.cs</file>
+    <file>Utilities.cs</file>
+  </compound>
+  <compound kind="dir">
+    <name>Util</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.WP/Apis/Util/</path>
+    <filename>dir_8605a946cf81b3e65ae9455f1ddd9fc4.html</filename>
+    <dir>Protect</dir>
+    <dir>Store</dir>
+  </compound>
+  <compound kind="dir">
+    <name>Web</name>
+    <path>/usr/local/google/home/peleyal/code.google.com/google-api-dotnet-client/default/Src/GoogleApis.Auth/OAuth2/Web/</path>
+    <filename>dir_25f9e1a39854753ea967de0219571a8d.html</filename>
+    <file>AuthorizationCodeWebApp.cs</file>
+    <file>AuthWebUtility.cs</file>
   </compound>
 </tagfile>
