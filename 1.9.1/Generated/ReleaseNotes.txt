@@ -1,0 +1,21 @@
+Google .NET Client Library
+Stable Release '1.9.1'
+Monday, December 29, 2014
+===========================================
+
+Changes:
+  1030: Tools\Google.Apis.Release - Don't clean the generated directory, it should contains .NET doc
+  1029: NuGet package should refer to the release notes as the project url
+  1028: Improve ComputeCredential error while trying to request a new access token
+    https://codereview.appspot.com/186470043/
+  1027: Issue 503: TokenResponse.IsExpired returns true at one minute after token expiration
+    https://codereview.appspot.com/184430043/
+  1026: Supports Compute Credentials
+    https://codereview.appspot.com/181560043
+  1025: Chnage version to 1.9.1 and output xml for new WP8.1 projects
+  1024: Issue 471: Support WP 8.1 projects
+    https://codereview.appspot.com/176220043/
+  1023: Issue 330 - Operation Could Destabilize Runtime Google.Api.Services.BaseClientService
+    https://codereview.appspot.com/110190043/
+  1022: Issue 482: GoogleWebAuthorizationBroker.AuthorizeAsync - browser will not self-close
+    https://codereview.appspot.com/162630043/
